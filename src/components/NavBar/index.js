@@ -5,6 +5,8 @@ import { Tab } from '@material-ui/core';
 import Typography from "@material-ui/core/Typography";
 import './style.css';
 
+
+
 const AntTabs = withStyles({
   root: {
     borderBottom: "1px solid black"
@@ -78,7 +80,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   },
   padding: {
-    padding: theme.spacing(3)
+    padding: theme.spacing(0)
   },
   demo1: {
     backgroundColor: theme.palette.background.paper
@@ -101,7 +103,7 @@ function NavBar() {
       <div className={classes.demo1}>
         <Typography className={classes.padding} />
       </div>
-      <div className={classes.demo2}>
+      <div className={classes.demo2} id="NavBar">
         <StyledTabs
           value={value}
           onChange={handleChange}
@@ -111,9 +113,12 @@ function NavBar() {
           <StyledTab label="Chloe" />
           <StyledTab label="Supreme" />
           <StyledTab label="Leader" />
+          <StyledTab label="Sign In" id = "signIn"/>
         </StyledTabs>
+
         <Typography className={classes.padding} />
       </div>
+
     </div>
   );
 }
