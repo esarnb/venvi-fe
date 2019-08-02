@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
+import { Tab } from '@material-ui/core';
 import Typography from "@material-ui/core/Typography";
 import './style.css';
 
@@ -88,7 +88,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function NavBar() {
+function NavBar() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -119,4 +119,4 @@ export default function NavBar() {
 }
 
 
-export default Navbar;
+export default NavBar;
