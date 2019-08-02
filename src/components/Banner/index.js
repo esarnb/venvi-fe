@@ -52,12 +52,12 @@ class Banner extends React.Component {
             }}
           />
           <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
-            Google Books Search
+            VENVI
           </TweenOne>
           <TweenOne className="banner-user-text" 
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
-            Search for and Save Books of Interest
+             (Insert Slogan Here)
           </TweenOne>
         </Element>
       </BannerAnim>);
