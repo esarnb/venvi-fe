@@ -6,7 +6,7 @@ import Container from '../components/Container';
 import './index.css'
 
 
-class Home extends React.Component {
+class Search extends React.Component {
 
 render () {
   return (
@@ -23,4 +23,4 @@ render () {
 }
 }
 
-export default Home;
+export default Search;
