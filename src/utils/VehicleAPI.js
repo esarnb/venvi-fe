@@ -1,7 +1,6 @@
 import app from "./index";
 
 export default {
-
 // Get all reviews (need to do average ratings for top picks)
   // getTopReviews() {
   //   app.get("/api/review").then(res => console.log(res.data));
