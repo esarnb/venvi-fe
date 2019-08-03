@@ -2,8 +2,14 @@ import app from "./index";
 
 export default {
 
-    getQuery() {
-    app.get("/api/vehicle").then(res => console.log(res.data));
+// Get all reviews (need to do average ratings for top picks)
+  // getTopReviews() {
+  //   app.get("/api/review").then(res => console.log(res.data));
+  // },
+
+  // Reviews get all reviews of cars
+  getReviews() {
+    app.get("/api/review").then(res => console.log(res.data));
   },
     postQuery() {
       app.post("/api/vehicle/new", {msg: "Vehicle has been added"}).then(res => console.log(res.data));
