@@ -3,8 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import API from '../src/utils/API'
 import Home from './pages'
-import Search from './pages/search.js'
-import Profile from './pages/profile.js'
+import Search from './pages/search'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 class App extends React.Component {
@@ -12,7 +11,7 @@ class App extends React.Component {
   componentDidMount() {
   let id = 123;
   API.postQuery();
-  API.getResponse();
+  API.getQuery();
   API.putQuery(id);
   API.deleteQuery(id);
 }
