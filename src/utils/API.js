@@ -2,10 +2,9 @@ import app from "./index";
 
 export default {
 
-    getResponse() {
-      app.get("/api/vehicle/all").then(res => console.log(res.data));
-    },
-  
+    getQuery() {
+    app.get("/api/vehicle").then(res => console.log(res.data));
+  },
     postQuery() {
       app.post("/api/vehicle/new", {msg: "Vehicle has been added"}).then(res => console.log(res.data));
     },
