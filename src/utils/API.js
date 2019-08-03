@@ -2,7 +2,7 @@ import app from "./index";
 
 export default {
 
-    getQuery() {
+    getResponse() {
     app.get("/api/vehicle").then(res => console.log(res.data));
   },
     postQuery() {
