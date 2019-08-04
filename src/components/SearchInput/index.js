@@ -13,8 +13,8 @@ state = {
 
 searchAction() {
     console.log("Submit")
-    // var makeVeri = false;
-    // var modelVeri = false;
+    var makeVeri = false;
+    var modelVeri = false;
 
     axios.get("https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json")
         .then(response => {
@@ -26,7 +26,7 @@ searchAction() {
             allMakes.map(value => {
                 if(value.MakeName.toLowerCase().indexOf(queryMake) > -1) {
                     console.log("Make match!")
-                    // makeVeri = true;
+                    makeVeri = true;
                 }
             })
 
@@ -44,9 +44,30 @@ searchAction() {
                             allModels.map(value => {
                                 if(value.Model_Name.toLowerCase().indexOf(queryModel) > -1) {
                                     console.log("Model match!")
-                                    // modelVeri = true;
+                                    modelVeri = true;
                                 }
                             })
+
+                            var year = "";
+                            if (Number.parseInt(this.state.year)) {
+                                year = Number.parseInt(this.state.year)
+                            }
+
+
+                            if (makeVeri && modelVeri) {
+                                console.log("All input OK.")
+                                console.log(`https://www.googleapis.com/customsearch/v1?q=${year} ${queryMake}+${queryModel}&cx=014855097092208085078%3A6cwyf6e5-oc&searchType=image&fileType=png&key=AIzaSyBEg43tCIEFbmsUD3hVAMZtNOFGcj7M0Cs`)
+                                axios.get(`https://www.googleapis.com/customsearch/v1?q=${year} ${queryMake}+${queryModel}&cx=014855097092208085078%3A6cwyf6e5-oc&searchType=image&fileType=png&key=AIzaSyBEg43tCIEFbmsUD3hVAMZtNOFGcj7M0Cs`)
+                                    .then(response => {
+                                        var images = response.data.items[0].link;
+                                        console.log(images)
+                                    })
+                            }
+                            else {
+                                console.log("Error.")
+                            }
+
+
                         })
                 })
 
@@ -74,7 +95,7 @@ render () {
                     <TextInput name="model" value={this.state.model} onChange={this.handleChange} type="text" label="Model" />                    
                 </Col>
                 <Col className="input-field">
-                    <TextInput name="year" type="text" label="Year" />                    
+                    <TextInput name="year" value={this.state.year} onChange={this.handleChange} type="text" label="Year" />                    
                 </Col>
                 </Row>
                 <Row>
