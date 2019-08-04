@@ -6,9 +6,9 @@ h4
 
 .content
 {
-	background-image: url("https://images.unsplash.com/photo-1547149600-a6cdf8fce60c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80");
+	/*background-image: url("https://images.unsplash.com/photo-1547149600-a6cdf8fce60c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80");*/
 	background-size: cover;
-	background-color: gold;
+/*	background-color: go;*/
 	padding: 10%;
 	height: 400px;
 }

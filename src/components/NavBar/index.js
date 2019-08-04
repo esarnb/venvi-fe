@@ -23,7 +23,7 @@ const AntTab = withStyles(theme => ({
     minWidth: 72,
     fontWeight: theme.typography.fontWeightRegular,
     marginRight: theme.spacing(4),
-    opacity: 0.5,
+    opacity: 1,
     fontFamily: [
       "-apple-system",
       "BlinkMacSystemFont",
@@ -38,7 +38,7 @@ const AntTab = withStyles(theme => ({
     ].join(","),
     "&:hover": {
       color: "black",
-      opacity: 0.5
+      opacity: 1
     },
     "&$selected": {
       color: "black",
@@ -117,7 +117,6 @@ function NavBar() {
           <StyledTab label="CHLOE" className="navTab"/>
           <StyledTab label="SUPREME" className="navTab"/>
           <StyledTab label="LEADER" className="navTab"/>
-          <StyledTab label="SIGN IN" id = "signIn"/>
         </StyledTabs>
 
         <Typography className={classes.padding} />

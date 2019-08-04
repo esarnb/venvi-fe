@@ -27,11 +27,11 @@ class Banner extends React.Component {
               // background: '#64CBCC',
             }}
           />
-          <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
+          <TweenOne className="banner-user-title" animation={{ x: -30, opacity: 0, type: 'from' }}>
             VENVI
           </TweenOne>
           <TweenOne className="banner-user-text" 
-            animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
+            animation={{ x: -30, opacity: 0, type: 'from', delay: 100 }}
           >
              Reviews for Consumers by Consumers
           </TweenOne>
@@ -76,11 +76,11 @@ class Banner extends React.Component {
 
             }}
           />
-          <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
+          <TweenOne className="banner-user-title" animation={{ x: -30, opacity: 0, type: 'from' }}>
             VENVI
           </TweenOne>
           <TweenOne className="banner-user-text" 
-            animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
+            animation={{ x: -30, opacity: 0, type: 'from', delay: 100 }}
           >
             Reviews for Consumers by Consumers
           </TweenOne>
