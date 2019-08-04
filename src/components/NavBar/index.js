@@ -3,6 +3,7 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import { Tab } from '@material-ui/core';
 import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
 import './style.css';
 
 
@@ -12,7 +13,7 @@ const AntTabs = withStyles({
     borderBottom: "1px solid black"
   },
   indicator: {
-    backgroundColor: "#red"
+    backgroundColor: "#black"
   }
 })(Tabs);
 
@@ -22,6 +23,7 @@ const AntTab = withStyles(theme => ({
     minWidth: 72,
     fontWeight: theme.typography.fontWeightRegular,
     marginRight: theme.spacing(4),
+    opacity: 1,
     fontFamily: [
       "-apple-system",
       "BlinkMacSystemFont",
@@ -35,15 +37,15 @@ const AntTab = withStyles(theme => ({
       '"Segoe UI Symbol"'
     ].join(","),
     "&:hover": {
-      color: "green",
+      color: "black",
       opacity: 1
     },
     "&$selected": {
-      color: "white",
-      fontWeight: theme.typography.fontWeightMedium
+      color: "black",
+      fontWeight: theme.typography.fontWeightHigh
     },
     "&:focus": {
-      color: "green"
+      color: "black",
     }
   },
   selected: {}
@@ -55,9 +57,11 @@ const StyledTabs = withStyles({
     justifyContent: "center",
     backgroundColor: "transparent",
     "& > div": {
-      maxWidth: 40,
+      maxWidth: 80,
       width: "100%",
-      backgroundColor: "gold"
+      backgroundColor: "gold",
+      height: 1
+
     }
   }
 })(props => <Tabs {...props} TabIndicatorProps={{ children: <div /> }} />);
@@ -66,9 +70,10 @@ const StyledTab = withStyles(theme => ({
   root: {
     textTransform: "none",
     color: "#fff",
+    paddingBottom: 0,
     fontWeight: theme.typography.fontWeightRegular,
     fontSize: theme.typography.pxToRem(15),
-    marginRight: theme.spacing(1),
+    marginRight: theme.spacing(0),
     "&:focus": {
       opacity: 1
     }
@@ -99,8 +104,8 @@ function NavBar() {
   }
 
   return (
-    <div className={classes.root}>
-      <div className={classes.demo1}>
+    <div className={classes.root} id = "navbarSection">
+      <div className={classes.demo1} id="logo">
         <Typography className={classes.padding} />
       </div>
       <div className={classes.demo2} id="NavBar">
@@ -109,11 +114,9 @@ function NavBar() {
           onChange={handleChange}
           aria-label="styled tabs example"
         >
-          <div>Hi</div>
-          <StyledTab label="Chloe" />
-          <StyledTab label="Supreme" />
-          <StyledTab label="Leader" />
-          <StyledTab label="Sign In" id = "signIn"/>
+          <StyledTab label="CHLOE" className="navTab"/>
+          <StyledTab label="SUPREME" className="navTab"/>
+          <StyledTab label="LEADER" className="navTab"/>
         </StyledTabs>
 
         <Typography className={classes.padding} />

@@ -13,30 +13,30 @@ class Banner extends React.Component {
   render(){
     return (
       <BannerAnim prefixCls="banner-user" autoPlay>
-        <Element 
+       <Element 
           prefixCls="banner-user-elem"
-          key="0"
+          key="1" 
         >
           <BgElement
             key="bg"
             className="bg"
-            style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80')`,              
+           style={{
+              backgroundImage: `url('https://free4kwallpapers.com/uploads/originals/2015/07/14/lamborghini-aventador-wallpaper-hd.jpg')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              // background: '#364D79'
-
+              // background: '#64CBCC',
             }}
           />
-          <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
+          <TweenOne className="banner-user-title" animation={{ x: -30, opacity: 0, type: 'from' }}>
             VENVI
           </TweenOne>
           <TweenOne className="banner-user-text" 
-            animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
+            animation={{ x: -30, opacity: 0, type: 'from', delay: 100 }}
           >
-            (Insert Slogan Here)
+             Reviews for Consumers by Consumers
           </TweenOne>
         </Element>
+        
         <Element 
           prefixCls="banner-user-elem"
           key="1" 
@@ -45,7 +45,7 @@ class Banner extends React.Component {
             key="bg"
             className="bg"
            style={{
-              backgroundImage: `url('https://zos.alipayobjects.com/rmsportal/gGlUMYGEIvjDOOw.jpg')`,
+              backgroundImage: `url('https://images.unsplash.com/photo-1508500444513-ae7b32a20b84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               // background: '#64CBCC',
@@ -57,9 +57,37 @@ class Banner extends React.Component {
           <TweenOne className="banner-user-text" 
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
-             (Insert Slogan Here)
+             Reviews for Consumers by Consumers
           </TweenOne>
         </Element>
+        <Element 
+          prefixCls="banner-user-elem"
+          key="0"
+        >
+          <BgElement
+            key="bg"
+            className="bg"
+            style={{
+        
+             backgroundImage: `url('https://images.unsplash.com/photo-1517994112540-009c47ea476b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1981&q=80')`,             
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              // background: '#364D79'
+
+            }}
+          />
+          <TweenOne className="banner-user-title" animation={{ x: -30, opacity: 0, type: 'from' }}>
+            VENVI
+          </TweenOne>
+          <TweenOne className="banner-user-text" 
+            animation={{ x: -30, opacity: 0, type: 'from', delay: 100 }}
+          >
+            Reviews for Consumers by Consumers
+          </TweenOne>
+        </Element>
+       
+        
+        
       </BannerAnim>);
   }
 }

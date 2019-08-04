@@ -4,16 +4,16 @@ h4
 	font-weight: bold;
 }
 
-#footerContent
+.content
 {
-	/*background-image: url("https://images.unsplash.com/photo-1521193089946-7aa29d1fe776?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");*/
-	background-color: black;
+	/*background-image: url("https://images.unsplash.com/photo-1547149600-a6cdf8fce60c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80");*/
 	background-size: cover;
-	padding: 5%;
-	height: 100px;
+/*	background-color: go;*/
+	padding: 10%;
+	height: 400px;
 }
 
-.footerSection
+.section
 {
 	height: 100%;
 }
