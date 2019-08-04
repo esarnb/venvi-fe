@@ -12,7 +12,6 @@ class Market extends React.Component {
 render () {
   return (
     <div>
-        <NavBar/>
         <Container>
         	<h3> Market </h3>
         	<span id="line"></span>
