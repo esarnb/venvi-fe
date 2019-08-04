@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar';
 import Banner from '../components/Banner';
 import ButtonBases from '../components/ButtonBases';
 import Container from '../components/Container';
+import MarketBtn from '../components/MarketBtn';
 import './index.css'
 
 
@@ -12,11 +13,10 @@ render () {
   return (
     <div>
         <NavBar/>
-        <Banner />
         <Container>
-        	<h1> Market </h1>
-        	<span id="line"> </span>
-        	<ButtonBases />
+        	<h3> Market </h3>
+        	<span id="line"></span>
+        <MarketBtn/>
         </Container>
     </div>
   );
