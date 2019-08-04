@@ -1,7 +1,7 @@
 #signIn
 {
 	position: absolute;
-	right: 3%;
+	right: 12%;
 }
 
 #NavBar
@@ -35,7 +35,7 @@
 	bottom: 1 !important;
 }
 
-#navbarSection, #NavBar, #logo
+#navbarSection, #NavBar,#logo
 {
 	position: fixed;
 	top: 0;
