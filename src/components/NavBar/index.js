@@ -3,6 +3,7 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import { Tab } from '@material-ui/core';
 import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
 import './style.css';
 
 
@@ -110,9 +111,9 @@ function NavBar() {
           aria-label="styled tabs example"
         >
           <div>Hi</div>
-          <StyledTab label="Chloe" />
-          <StyledTab label="Supreme" />
-          <StyledTab label="Leader" />
+          <StyledTab label="Chloe" className="navTab"/>
+          <StyledTab label="Supreme" className="navTab"/>
+          <StyledTab label="Leader" className="navTab"/>
           <StyledTab label="Sign In" id = "signIn"/>
         </StyledTabs>
 

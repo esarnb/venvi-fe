@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar';
 import Banner from '../components/Banner';
 import ButtonBases from '../components/ButtonBases';
 import Container from '../components/Container';
+import Divider from '../components/Divider';
 import './index.css'
 
 
@@ -11,10 +12,11 @@ class Home extends React.Component {
 render () {
   return (
     <div>
-        <NavBar/>
+
         <Banner />
+            <Divider />
         <Container>
-        	<h1> Top Consumer Picks </h1>
+        	<h3> Top Consumer Picks </h3>
         	<span id="line"> </span>
         	<ButtonBases />
         </Container>

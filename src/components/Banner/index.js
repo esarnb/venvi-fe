@@ -21,7 +21,8 @@ class Banner extends React.Component {
             key="bg"
             className="bg"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80')`,              
+        
+             backgroundImage: `url('https://images.unsplash.com/photo-1517994112540-009c47ea476b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1981&q=80')`,             
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               // background: '#364D79'
@@ -34,7 +35,7 @@ class Banner extends React.Component {
           <TweenOne className="banner-user-text" 
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
-            (Insert Slogan Here)
+            Reviews for Consumers by Consumers
           </TweenOne>
         </Element>
         <Element 
@@ -45,7 +46,7 @@ class Banner extends React.Component {
             key="bg"
             className="bg"
            style={{
-              backgroundImage: `url('https://zos.alipayobjects.com/rmsportal/gGlUMYGEIvjDOOw.jpg')`,
+              backgroundImage: `url('https://images.unsplash.com/photo-1508500444513-ae7b32a20b84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               // background: '#64CBCC',
@@ -57,9 +58,10 @@ class Banner extends React.Component {
           <TweenOne className="banner-user-text" 
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
-             (Insert Slogan Here)
+             Reviews for Consumers by Consumers
           </TweenOne>
         </Element>
+        
       </BannerAnim>);
   }
 }
