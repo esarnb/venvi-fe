@@ -3,22 +3,24 @@ import NavBar from '../components/NavBar';
 import Banner from '../components/Banner';
 import ButtonBases from '../components/ButtonBases';
 import Container from '../components/Container';
-import UserProfile from '../components/UserProfile';
-import ListCard from '../components/ListCard';
+import './index.css'
 
 
-class Profile extends React.Component {
-render () {    
+class Market extends React.Component {
+
+render () {
   return (
     <div>
-
+        <NavBar/>
+        <Banner />
         <Container>
-        <UserProfile/>
-        <ListCard/>
+        	<h1> Market </h1>
+        	<span id="line"> </span>
+        	<ButtonBases />
         </Container>
     </div>
   );
 }
 }
 
-export default Profile;
+export default Market;
