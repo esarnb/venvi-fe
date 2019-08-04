@@ -1,6 +1,5 @@
 .banner-user{
   height: 600px;
-  margin-bottom: 3%;
 }
 .banner-user-elem{
   text-align: center;
@@ -9,11 +8,17 @@
   overflow: hidden;
 }
 .banner-user-elem .banner-user-title{
-  font-size: 32px;
-  top: 40%;
+  font-size: 45px;
+  right: 33.5%;
+  top: 25%;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
 }
 .banner-user-elem .banner-user-text{
-  top: 40%;
+  right: 26%;
+  font-size: 20px;
+  top: 33%;
+  font-family: 'Open Sans', sans-serif;
 }
 .banner-anim-elem .bg{
   width: 100%;
