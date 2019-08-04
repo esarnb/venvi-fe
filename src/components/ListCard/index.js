@@ -1,142 +1,115 @@
-// import React from 'react';
-//   import Button from '@material-ui/core/Button';
-//   import Card from '@material-ui/core/Card';
-//   import CardMedia from '@material-ui/core/CardMedia';
-//   import CardContent from '@material-ui/core/CardContent';
-//   import Typography from '@material-ui/core/Typography';
-  
-/* eslint-disable max-len,no-script-url,jsx-a11y/anchor-is-valid */
-import React from "react";
-import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import clsx from 'clsx';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import Collapse from '@material-ui/core/Collapse';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import { yellow } from '@material-ui/core/colors';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-const PostCard02 = () => (
-  <Card className={"MuiPostCard--02"}>
-    <CardMedia
-      className={"MuiCardMedia-root"}
-      image={
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2000px-Git_icon.svg.png"
-      }
-    />
-    <CardContent className={"MuiCardContent-root"}>
-      <Typography className={"MuiTypography--date"} variant={"overline"}>
-        28 Mar 2019
-      </Typography>
-      <Typography
-        className={"MuiTypography--heading"}
-        variant={"h6"}
-        gutterBottom
-      >
-        What is Git ?
-      </Typography>
-      <Typography className={"MuiTypography--subheading"}>
-        Git is a distributed version control system. Every dev has a working
-        copy of the code and...
-      </Typography>
-      <Button className={"MuiButton--readMore"}>Read More</Button>
-    </CardContent>
-  </Card>
-);
-
-PostCard02.getTheme = muiBaseTheme => ({
-  MuiCard: {
-    root: {
-      "&.MuiPostCard--02": {
-        borderRadius: muiBaseTheme.spacing.unit * 2, // 16px
-        transition: "0.3s",
-        boxShadow: "0px 14px 80px rgba(34, 35, 58, 0.2)",
-        width: "95%",
-        position: "relative",
-        maxWidth: 800,
-        marginLeft: "auto",
-        overflow: "initial",
-        background: "#ffffff",
-        display: "flex",
-        alignItems: "center",
-        padding: `${muiBaseTheme.spacing.unit * 2}px 0`,
-        "&:hover": {
-          transform: "translateY(-3px)",
-          boxShadow: "0 4px 20px 0 rgba(0,0,0,0.12)"
-        },
-        "& .MuiCardMedia-root": {
-          flexShrink: 0,
-          width: "40%",
-          paddingTop: "48%",
-          transform: "translateX(-24%)",
-          boxShadow: "4px 4px 20px 1px rgba(252, 56, 56, 0.2)",
-          borderRadius: muiBaseTheme.spacing.unit * 2, // 16
-          backgroundImage: "linear-gradient(147deg, #fe8a39 0%, #fd3838 74%)",
-          backgroundColor: muiBaseTheme.palette.common.white,
-          overflow: "hidden",
-          "&:after": {
-            content: '" "',
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundImage: "linear-gradient(147deg, #fe8a39 0%, #fd3838 74%)",
-            borderRadius: muiBaseTheme.spacing.unit * 2, // 16
-            opacity: 0.5
-          }
-        },
-        "& .MuiCardContent-root": {
-          textAlign: "left",
-          paddingLeft: 0,
-          padding: muiBaseTheme.spacing.unit * 2
-        },
-        "& .MuiTypography--heading": {
-          fontWeight: "bold"
-        },
-        "& .MuiTypography--subheading": {
-          marginBottom: muiBaseTheme.spacing.unit * 2
-        },
-        "& .MuiButton--readMore": {
-          backgroundImage: "linear-gradient(147deg, #fe8a39 0%, #fd3838 74%)",
-          boxShadow: "0px 4px 32px rgba(252, 56, 56, 0.4)",
-          borderRadius: 100,
-          paddingLeft: 24,
-          paddingRight: 24,
-          color: "#ffffff"
-        }
-      }
+const useStyles = makeStyles(theme => ({
+  card: {
+    maxWidth: 345,
+    '&:hover': {
+        border: "1px",
+        boxShadow: "5px 10px 8px 10px lightgrey",
     }
-  }
-});
-PostCard02.metadata = {
-  name: "Post Card II",
-  description: "Personal Post",
-  credit: "https://codemyui.com/gradient-card-ui-image-info-slider/"
-};
+  },
+  media: {
+    width: 325,
+    paddingTop: '47%', // 16:9
+    marginLeft: '5%',
+    marginTop: '7%',
+  },
+  expand: {
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: 'rotate(180deg)',
+  },
+  avatar: {
+    backgroundColor: yellow[700],
+  },
+}));
 
-  // const ListCard = () => (
-  //   <Card className={'MuiPostCard--02'}>
-  //     <CardMedia
-  //       className={'MuiCardMedia-root'}
-  //       image={
-  //         'https://dealerimages.dealereprocess.com/image/upload/c_limit,f_auto,fl_lossy,w_600/v1/svp/dep/20toytoasupra3/toyota_20supra3_angularfront_white'
-  //       }
-  //     />
-  //     <CardContent className={'MuiCardContent-root'}>
-  //       <Typography className={'MuiTypography--date'} variant={'overline'}>
-  //         28 Mar 2019
-  //       </Typography>
-  //       <Typography
-  //         className={'MuiTypography--heading'}
-  //         variant={'h6'}
-  //         gutterBottom
-  //       >
-  //         To be or not to be...
-  //       </Typography>
-  //       <Typography className={'MuiTypography--subheading'}>
-  //        We da best music
-  //       </Typography>
-  //       <Button className={'MuiButton--readMore'}>Read Lots more</Button>
-  //     </CardContent>
-  //   </Card>
-  // );
-  
-  export default PostCard02;
+export default function RecipeReviewCard() {
+  const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
+
+  function handleExpandClick() {
+    setExpanded(!expanded);
+  }
+
+  return (
+    <Card className={classes.card} id="list-card">
+      <CardHeader
+        avatar={
+          <Avatar aria-label="recipe" className={classes.avatar}>
+            SLC
+          </Avatar>
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title="Shrimp and Chorizo Paella"
+        subheader="September 14, 2016"
+      />
+      <CardMedia
+        className={classes.media}
+        image="https://static.tcimg.net/vehicles/primary/d82385debfdb47d1/2019-Lamborghini-Aventador-white-full_color-driver_side_front_quarter.png"
+        title="Paella dish"
+      />
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton id="favorite" aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography paragraph>Price: $500,000</Typography>
+          <Typography paragraph>
+          </Typography>
+          <Typography paragraph>
+          </Typography>
+          <Typography paragraph>
+          </Typography>
+          <Typography>
+          </Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+  );
+}
