@@ -1,5 +1,5 @@
 import React from "react";
-import { TextInput, Row, Col } from "react-materialize"
+import { TextInput, Row, Col, Button } from "react-materialize"
 
 function SearchInput() {
 
@@ -7,7 +7,7 @@ function SearchInput() {
         <Row>
             <Col>
             <form>
-                <Row>
+                <Row style={{marginBottom: '0px'}}>
                 <Col className="input-field">
                     <TextInput id="make" type="text" label="Make" />                    
                 </Col>
@@ -15,8 +15,11 @@ function SearchInput() {
                     <TextInput id="model" type="text" label="Model" />                    
                 </Col>
                 <Col className="input-field">
-                    <TextInput id="year" type="text" label="Year" />                    
+                    <TextInput id="year" type="text" label="Year"   />                    
                 </Col>
+                </Row>
+                <Row>
+                    <Button id="searchButton" className="#37474f blue-grey darken-3" waves="light" style={{marginLeft: '22px'}}>Search</Button>
                 </Row>
             </form>
             </Col>
