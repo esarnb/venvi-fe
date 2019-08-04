@@ -4,6 +4,7 @@ import Banner from '../components/Banner';
 import ButtonBases from '../components/ButtonBases';
 import Container from '../components/Container';
 import Divider from '../components/Divider';
+import Footer from '../components/Footer';
 import './index.css'
 
 
@@ -12,7 +13,6 @@ class Home extends React.Component {
 render () {
   return (
     <div>
-
         <Banner />
             <Divider />
         <Container>
@@ -20,6 +20,7 @@ render () {
         	<span id="line"> </span>
         	<ButtonBases />
         </Container>
+        <Footer />
     </div>
   );
 }

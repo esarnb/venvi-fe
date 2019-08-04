@@ -3,19 +3,6 @@ import ReactDOM from 'react-dom';
 import { Icon, Spin} from 'antd';
 import './style.css';
 
-// ReactDOM.render(
-//   <div className="icons-list">
-//     <Icon type="home" />
-//     <Icon type="setting" theme="filled" />
-//     <Icon type="smile" theme="outlined" />
-//     <Icon type="sync" spin />
-//     <Icon type="smile" rotate={180} />
-//     <Icon type="loading" />
-//   </div>,
-//   mountNode,
-// );
-
-
 function Divider(){
     return (
 

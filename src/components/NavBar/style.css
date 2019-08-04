@@ -1,15 +1,45 @@
 #signIn
 {
 	position: absolute;
-	right: 0;
+	right: 3%;
 }
 
 #NavBar
 {
-	padding: 0.8%;
+	padding: 2%;
+	opacity: 0.9;
+	padding-left: 10%;
 }
 
 .navTab
 {
-   font-weight: bold;
+   letter-spacing: 0;
+   padding-bottom: 0px;
 }	
+
+#links
+{
+	margin-left: 5%;
+}
+
+.MuiTab-root
+{
+	letter-spacing: 0 !important;
+	min-width: 100px !important;
+}
+
+
+.PrivateTabIndicator-root-69
+{
+	height: 1px !important;
+	bottom: 1 !important;
+}
+
+#navbarSection, #NavBar, #logo
+{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+}
+
