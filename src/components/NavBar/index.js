@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import { Tab } from '@material-ui/core';
+import Icon from '@material-ui/core/Icon';
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import './style.css';
@@ -114,9 +115,11 @@ function NavBar() {
           onChange={handleChange}
           aria-label="styled tabs example"
         >
-          <StyledTab label="CHLOE" className="navTab"/>
-          <StyledTab label="SUPREME" className="navTab"/>
-          <StyledTab label="LEADER" className="navTab"/>
+          <StyledTab label="Home" className="navTab" href="/"/>
+          <StyledTab label="Search" className="navTab" href="/search"/>
+          <StyledTab label="Market Place" className="navTab" href="market"/>
+          <StyledTab label="Profile" className="navTab" href="profile"/>
+          <Icon><i id ="signIn" className="fas fa-user"></i></Icon>
         </StyledTabs>
 
         <Typography className={classes.padding} />
