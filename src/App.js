@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
 import API from '../src/utils/API'
 import Home from './pages/home'
 import Search from './pages/search'
