@@ -1,5 +1,4 @@
 import React from 'react';
-// import NavBar from '../components/NavBar';
 // import Banner from '../components/Banner';
 // import ButtonBases from '../components/ButtonBases';
 import Container from '../components/Container';
@@ -8,16 +7,16 @@ import ListCard from '../components/ListCard';
 
 
 class Profile extends React.Component {
-render () {    
-  return (
-    <div>
+  render() {
+    return (
+      <div>
         <Container>
-        <UserProfile/>
-        <ListCard/>
+          <UserProfile />
+          <ListCard />
         </Container>
-    </div>
-  );
-}
+      </div>
+    );
+  }
 }
 
 export default Profile;

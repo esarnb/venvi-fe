@@ -1,11 +1,11 @@
 import app from "./index";
 
-// module.exports = {
+/*============================================================ 
+                        LISTING API
+  ============================================================*/
 
-  /*============================================================ 
-                          LISTING API
-    ============================================================*/
-  export const Listing = {
+export const Listing = {
+
   // Marketplace get all listings of cars (create join table)
   getAllListing() {
     app.get("/api/listing/all").then(res => console.log(res.data));
@@ -18,27 +18,30 @@ import app from "./index";
 
   // Create new listing
   postListing() {
-    app.post("/api/listing/new", {msg: "New listing has been created"}).then(res => console.log(res.data));
+    app.post("/api/listing/new", { msg: "New listing has been created" }).then(res => console.log(res.data));
   },
 
   // To update listing
   updateListing(id) {
-    app.put(`/api/listing/update/${id}`, {msg: "update this listing"}).then(res => {
+    app.put(`/api/listing/update/${id}`, { msg: "update this listing" }).then(res => {
       console.log(res.data);
     })
   },
 
   // Delete Listing
   deleteQuery(id) {
-    app.delete(`/api/listing/delete/${id}`, {msg: "delete this listing"}).then(res => {
+    app.delete(`/api/listing/delete/${id}`, { msg: "delete this listing" }).then(res => {
       console.log(res.data);
     })
   },
 }
-  /*============================================================ 
-                          REVIEW API
-    ============================================================*/
+
+/*============================================================ 
+                        REVIEW API
+  ============================================================*/
+
 export const Review = {
+
   // Reviews of specific car
   getCarReview(vehicleId) {
     app.get(`/api/review/${vehicleId}`).then(res => console.log(res.data));
@@ -51,97 +54,105 @@ export const Review = {
 
   //Create new review
   postReview() {
-    app.post(`/api/review/new`, {msg: "Review has been added"}).then(res => console.log(res.data));
+    app.post(`/api/review/new`, { msg: "Review has been added" }).then(res => console.log(res.data));
   },
 
   //Stretch Goal
   deleteQuery(reviewId) {
-    app.delete(`/api/review/delete/${reviewId}`, {msg: "delete this review"}).then(res => {
+    app.delete(`/api/review/delete/${reviewId}`, { msg: "delete this review" }).then(res => {
       console.log(res.data);
     })
   },
 }
-  /*============================================================ 
-                          USER API
-    ============================================================*/
 
-  export const UserAPI = {
+/*============================================================ 
+                        USER API
+  ============================================================*/
+
+export const UserAPI = {
+
   // To return user profile page
   getProfile() {
     app.get("/api/user/:user").then(res => console.log(res.data));
   },
 
-// To create user account in our database
+  // To create user account in our database
   postQuery() {
-    app.post("/api/user/new", {msg: "Hello Buddy"}).then(res => console.log(res.data));
+    app.post("/api/user/new", { msg: "Hello Buddy" }).then(res => console.log(res.data));
   },
 
-// Updates user profile pic using AWS
+  // Updates user profile pic using AWS
   putProfile(id) {
-    app.put(`/api/user/update/${id}`, {msg: "update profile pic"}).then(res => {
+    app.put(`/api/user/update/${id}`, { msg: "update profile pic" }).then(res => {
       console.log(res.data);
     })
   },
 
   // Strech Goal to delete user account from our database
   deleteQuery(id) {
-    app.delete(`/api/vehicle/delete/${id}`, {msg: "I no longer want it"}).then(res => {
+    app.delete(`/api/vehicle/delete/${id}`, { msg: "I no longer want it" }).then(res => {
       console.log(res.data);
     })
   }
 }
-  /*============================================================ 
-                          VEHICLE API
-    ============================================================*/
+
+/*============================================================ 
+                        VEHICLE API
+  ============================================================*/
+
 export const Vehicle = {
+
   // Reviews get all reviews of cars
   getVehicles() {
     app.get("/api/review").then(res => console.log(res.data));
   },
 
   postQuery() {
-    app.post("/api/vehicle/new", {msg: "Vehicle has been added"}).then(res => console.log(res.data));
+    app.post("/api/vehicle/new", { msg: "Vehicle has been added" }).then(res => console.log(res.data));
   },
 }
-  
-  /*============================================================ 
-                          AUTH API
-    ============================================================*/
+
+/*============================================================ 
+                        AUTH API
+  ============================================================*/
+
 export const Auth = {
+
+  //
   login() {
     app.get("/auth/google/login").then(res => console.log("AUTH GET: ", res.data, res));
-    
+
   },
 }
 
 
-  
-  /*============================================================ 
-                          TEST API
-    ============================================================*/
+
+/*============================================================ 
+                        TEST API
+  ============================================================*/
 
 export const Test = {
+
+  //Testing CRUD
   getResponse() {
     app.get("/api/vehicle/all").then(res => console.log(res.data));
   },
 
   postQuery() {
-    app.post("/api/vehicle/new", {msg: "Vehicle has been added"}).then(res => console.log(res.data));
+    app.post("/api/vehicle/new", { msg: "Vehicle has been added" }).then(res => console.log(res.data));
   },
 
   putQuery(id) {
-    app.put(`/api/vehicle/update/${id}`, {msg: "update this listing"}).then(res => {
+    app.put(`/api/vehicle/update/${id}`, { msg: "update this listing" }).then(res => {
       console.log(res.data);
     })
   },
 
   deleteQuery(id) {
-    app.delete(`/api/vehicle/delete/${id}`, {msg: "delete this listing"}).then(res => {
+    app.delete(`/api/vehicle/delete/${id}`, { msg: "delete this listing" }).then(res => {
       console.log(res.data);
     })
   }
 }
 
 export default ".";
-  
-// }
