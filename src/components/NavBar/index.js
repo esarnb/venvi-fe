@@ -4,10 +4,9 @@ import Tabs from "@material-ui/core/Tabs";
 import { Tab } from '@material-ui/core';
 import Icon from '@material-ui/core/Icon';
 import Typography from "@material-ui/core/Typography";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import './style.css';
-
-
+import * as API from "../../utils/API";
 
 const AntTabs = withStyles({
   root: {
@@ -96,6 +95,10 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+// const goToLogin = () => {
+//   UserAPI.login()
+// }
+
 function NavBar() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -119,8 +122,8 @@ function NavBar() {
           <StyledTab label="Search" className="navTab" href="/search"/>
           <StyledTab label="Market Place" className="navTab" href="market"/>
           <StyledTab label="Profile" className="navTab" href="profile"/>
-          <Icon><i id ="signIn" className="fas fa-user"></i></Icon>
-        </StyledTabs>
+          <a onClick={() => API.Auth.login()}> <Icon><i id ="signIn" href="/auth/google/" className="fas fa-user"></i></Icon> </a>
+          </StyledTabs>
 
         <Typography className={classes.padding} />
       </div>

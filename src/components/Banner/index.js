@@ -15,7 +15,7 @@ class Banner extends React.Component {
       <BannerAnim prefixCls="banner-user" autoPlay>
        <Element 
           prefixCls="banner-user-elem"
-          key="1" 
+          key="2" 
         >
           <BgElement
             key="bg"

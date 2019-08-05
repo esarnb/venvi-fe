@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
-import API from '../src/utils/API'
+import {Test} from '../src/utils/API'
 import Home from './pages/home'
 import Search from './pages/search'
 import Profile from './pages/profile'
@@ -14,13 +14,11 @@ class App extends React.Component {
 
   componentDidMount() {
   let id = 123;
-  API.postQuery();
-  API.getResponse();
-  API.putQuery(id);
-  API.deleteQuery(id);
+  Test.postQuery();
+  Test.getResponse();
+  Test.putQuery(id);
+  Test.deleteQuery(id);
 }
-
-
 
 render () {
   return (
