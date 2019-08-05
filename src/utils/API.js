@@ -103,14 +103,31 @@ export const Listing = {
 
 export const Vehicle = {
 
-  // Reviews get all reviews of cars
-  getVehicles() {
-    app.get("/api/review").then(res => console.log(res.data));
+  // get all vehicles
+  getAllVehicles() {
+    app.get("/api/vehicles").then(res => console.log(res.data));
+  }, 
+
+  addVehicle() {
+    app.post("/api/vehicles/", { msg: "New Vehicle has been created" }).then(res => console.log(res.data));
   },
 
-  postQuery() {
-    app.post("/api/vehicle/new", { msg: "Vehicle has been added" }).then(res => console.log(res.data));
+ 
+  getVehicles(id) {
+    app.get(`/api/vehicles/${id}`).then(res => console.log(res.data));
   },
+
+  updateVehicle(id) {
+    app.put(`/api/vehicles/${id}`, { msg: "update this Vehicle" }).then(res => {
+      console.log(res.data);
+    })
+  },
+
+  deleteVehicle(id) {
+    app.delete(`/api/vehicles/${id}`, { msg: "delete this Vehicle" }).then(res => {
+      console.log(res.data);
+    })
+  }
 }
 
 
