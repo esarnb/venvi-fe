@@ -2,54 +2,59 @@ import React from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import { Tab } from '@material-ui/core';
-import Icon from '@material-ui/core/Icon';
+// import Icon from '@material-ui/core/Icon';
 import Typography from "@material-ui/core/Typography";
 // import { Link } from "react-router-dom";
 import './style.css';
 import * as API from "../../utils/API";
 
-const AntTabs = withStyles({
-  root: {
-    borderBottom: "1px solid black"
-  },
-  indicator: {
-    backgroundColor: "#black"
-  }
-})(Tabs);
 
-const AntTab = withStyles(theme => ({
-  root: {
-    textTransform: "none",
-    minWidth: 72,
-    fontWeight: theme.typography.fontWeightRegular,
-    marginRight: theme.spacing(4),
-    opacity: 1,
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"'
-    ].join(","),
-    "&:hover": {
-      color: "black",
-      opacity: 1
-    },
-    "&$selected": {
-      color: "black",
-      fontWeight: theme.typography.fontWeightHigh
-    },
-    "&:focus": {
-      color: "black",
-    }
-  },
-  selected: {}
-}))(props => <Tab disableRipple {...props} />);
+/**
+ * UNUSED AntTabs AntTab
+ */
+
+// const AntTabs = withStyles({
+//   root: {
+//     borderBottom: "1px solid black"
+//   },
+//   indicator: {
+//     backgroundColor: "#black"
+//   }
+// })(Tabs);
+
+// const AntTab = withStyles(theme => ({
+//   root: {
+//     textTransform: "none",
+//     minWidth: 72,
+//     fontWeight: theme.typography.fontWeightRegular,
+//     marginRight: theme.spacing(4),
+//     opacity: 1,
+//     fontFamily: [
+//       "-apple-system",
+//       "BlinkMacSystemFont",
+//       '"Segoe UI"',
+//       "Roboto",
+//       '"Helvetica Neue"',
+//       "Arial",
+//       "sans-serif",
+//       '"Apple Color Emoji"',
+//       '"Segoe UI Emoji"',
+//       '"Segoe UI Symbol"'
+//     ].join(","),
+//     "&:hover": {
+//       color: "black",
+//       opacity: 1
+//     },
+//     "&$selected": {
+//       color: "black",
+//       fontWeight: theme.typography.fontWeightHigh
+//     },
+//     "&:focus": {
+//       color: "black",
+//     }
+//   },
+//   selected: {}
+// }))(props => <Tab disableRipple {...props} />);
 
 const StyledTabs = withStyles({
   indicator: {
@@ -122,7 +127,7 @@ function NavBar() {
           <StyledTab label="Search" className="navTab" href="/search"/>
           <StyledTab label="Market Place" className="navTab" href="market"/>
           <StyledTab label="Profile" className="navTab" href="profile"/>
-          <a onClick={() => API.Auth.login()}> <Icon><i id ="signIn" href="/auth/google/" className="fas fa-user"></i></Icon> </a>
+          <StyledTab label="" onClick={() => API.Auth.login()} href="/auth/google/" id ="signIn" className="fas fa-user" style={{float: "right"}}/>
           </StyledTabs>
 
         <Typography className={classes.padding} />

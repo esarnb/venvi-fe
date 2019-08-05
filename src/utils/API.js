@@ -120,6 +120,8 @@ export const Auth = {
 
   //
   login() {
+    console.log("LOGIN ONCLICK");
+    
     app.get("/auth/google/login").then(res => console.log("AUTH GET: ", res.data, res));
 
   },

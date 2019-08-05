@@ -13,6 +13,7 @@ import NavBar from './components/NavBar';
 class App extends React.Component {
 
   componentDidMount() {
+    //Testing CRUD Routes
     let id = 123;
     Test.postQuery();
     Test.getResponse();
