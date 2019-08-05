@@ -1,8 +1,9 @@
 import React from 'react';
 // import NavBar from '../components/NavBar';
 // import Banner from '../components/Banner';
-import ButtonBases from '../components/ButtonBases';
+// import ButtonBases from '../components/ButtonBases';
 import Container from '../components/Container';
+import SearchInput from '../components/SearchInput'
 import './index.css'
 
 
@@ -11,11 +12,10 @@ class Search extends React.Component {
 render () {
   return (
     <div>
-
         <Container>
-        	<h2> Top Consumr Picks </h2>
+        	<h2> Top Consumer Picks </h2>
         	<span id="line"> </span>
-        	<ButtonBases />
+        	<SearchInput />
         </Container>
     </div>
   );

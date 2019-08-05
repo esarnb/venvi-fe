@@ -11,7 +11,6 @@ class Profile extends React.Component {
 render () {    
   return (
     <div>
-
         <Container>
         <UserProfile/>
         <ListCard/>
