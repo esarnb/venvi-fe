@@ -49,7 +49,7 @@ export const UserAPI = {
                         LISTING API
   ============================================================*/
 
-export const Listing = {
+export const ListingAPI = {
 
   // Marketplace get all listings of cars (create join table)
   getAllListing() {
@@ -98,10 +98,49 @@ export const Listing = {
 
 
 /*============================================================ 
+                        BOOKMARK API
+  ============================================================*/
+
+export const BookmarkAPI = {
+
+  //get all bookmarks of cars
+  getAllBookmark() {
+    app.get("/api/bookmarks").then(res => console.log(res.data));
+  },
+
+
+  // Create new Bookmark
+  addBookmark() {
+    app.post("/api/bookmarks", { msg: "New bookmark has been created" }).then(res => console.log(res.data));
+  },
+
+  getBookmark(id) {
+    app.put(`/api/bookmarks/${id}`, { msg: "get bookmark by id" }).then(res => {
+      console.log(res.data);
+    })
+  },
+
+  deleteBookmark(id) {
+    app.delete(`/api/bookmarks/${id}`, { msg: "delete this listing" }).then(res => {
+      console.log(res.data);
+    })
+  },
+
+  getBookmarkByUser(id) {
+    app.put(`/api/bookmarks/user/${id}`, { msg: "get bookmarks by userid" }).then(res => {
+      console.log(res.data);
+    })
+  }
+}
+
+
+
+
+/*============================================================ 
                         VEHICLE API
   ============================================================*/
 
-export const Vehicle = {
+export const VehicleAPI = {
 
   // get all vehicles
   getAllVehicles() {
@@ -136,7 +175,7 @@ export const Vehicle = {
                         REVIEW API
   ============================================================*/
 
-export const Review = {
+export const ReviewAPI = {
 
    // Reviews all reviews of cars
   getAllReviews() {
