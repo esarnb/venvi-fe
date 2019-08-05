@@ -138,26 +138,28 @@ export const Vehicle = {
 
 export const Review = {
 
-  // Reviews of specific car
-  getCarReview(vehicleId) {
-    app.get(`/api/review/${vehicleId}`).then(res => console.log(res.data));
-  },
-
-  // Reviews all reviews of cars
+   // Reviews all reviews of cars
   getAllReviews() {
-    app.get("/api/review").then(res => console.log(res.data));
+    app.get("/api/reviews").then(res => console.log(res.data));
   },
 
-  //Create new review
-  postReview() {
-    app.post(`/api/review/new`, { msg: "Review has been added" }).then(res => console.log(res.data));
+   //Create new review
+  addReview() {
+    app.post(`/api/reviews`, { msg: "Review has been added" }).then(res => console.log(res.data));
   },
 
-  //Stretch Goal
-  deleteQuery(reviewId) {
-    app.delete(`/api/review/delete/${reviewId}`, { msg: "delete this review" }).then(res => {
+  getReviewById(id) {
+    app.get(`/api/reviews/${id}`).then(res => console.log(res.data));
+  },
+
+  deleteReview(id) {
+    app.delete(`/api/reviews/${id}`, { msg: "delete this review" }).then(res => {
       console.log(res.data);
     })
+  },
+
+  getReviewByVehicle(id) {
+    app.get(`/api/reviews/vehicle/${id}`).then(res => console.log(res.data));
   },
 }
 
