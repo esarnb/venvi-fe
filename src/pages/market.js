@@ -1,25 +1,23 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
-import Banner from '../components/Banner';
-import ButtonBases from '../components/ButtonBases';
+// import Banner from '../components/Banner';
+// import ButtonBases from '../components/ButtonBases';
 import Container from '../components/Container';
 import MarketBtn from '../components/MarketBtn';
 import './index.css'
 
 
 class Market extends React.Component {
-
-render () {
-  return (
-    <div>
+  render() {
+    return (
+      <div>
         <Container>
-        	<h3> Market </h3>
-        	<span id="line"></span>
-        <MarketBtn/>
+          <h3> Market </h3>
+          <span id="line"></span>
+          <MarketBtn />
         </Container>
-    </div>
-  );
-}
+      </div>
+    );
+  }
 }
 
 export default Market;
