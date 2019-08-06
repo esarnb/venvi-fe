@@ -25,7 +25,6 @@ class App extends React.Component {
     // Test.deleteQuery(id);
     // UserAPI.getAllUsers();
 
-    this.setState({userid: userid})
   }
 
 
