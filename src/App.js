@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 
-import { Test } from '../src/utils/API'
+import { Test, Auth } from '../src/utils/API'
 import Home from './pages/Home'
 import Search from './pages/Search'
 import Profile from './pages/Profile'
