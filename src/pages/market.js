@@ -5,6 +5,7 @@ import Container from '../components/Container';
 import { MarketBuy, MarketSell } from '../components/MarketBtn';
 import SearchInput from '../components/SearchInput';
 import ListForm from '../components/ListForm';
+import NavBar from '../components/NavBar';
 import './index.css'
 
 
