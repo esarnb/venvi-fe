@@ -20,8 +20,14 @@ class Search extends React.Component {
   }
 
   infoCallback = data => {
-    console.log("Callback:")
-    console.log(data)
+    console.log("Callback:");
+    console.log(`${data.year} + ${data.make} + ${data.model}`);
+    this.setState({
+      make: data.make,
+      model: data.model,
+      year: data.year,
+      imgURL: data.imgURL
+    })
   }
 
   render() {
@@ -31,7 +37,11 @@ class Search extends React.Component {
           <h2> Top Consumer Picks </h2>
           <span id="line"> </span>
           <SearchInput infoGet={this.infoCallback}/>
-          <ReviewCard />
+          <ReviewCard image={this.state.imgURL} 
+            make={this.state.make}
+            model={this.state.model}
+            year={this.state.year}
+          />
         </Container>
       </div>
     );

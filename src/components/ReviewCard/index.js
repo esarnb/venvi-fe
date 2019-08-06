@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { TextInput, Row, Col, Button, Card } from "react-materialize";
+import { TextInput, Row, Col } from "react-materialize";
+import './style.css';
 
 class ReviewCard extends Component {
 
@@ -8,16 +9,17 @@ class ReviewCard extends Component {
         return (
             <Row>
                 <Col>
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/sample-1.jpg" />
-                            <span class="card-title">Card Title</span>
+                    <div className="card">
+                        <div className="card-image">
+                            <img src={this.props.image} />
+                            <span className="card-title">{this.props.year} {this.props.make} {this.props.model}</span>
                         </div>
-                        <div class="card-content">
+                        <div className="card-content">
                             <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
+                            I am convenient because I require little markup to use effectively.
+                            </p>
                         </div>
-                        <div class="card-action">
+                        <div className="card-action">
                             <a href="#">This is a link</a>
                         </div>
                     </div>
