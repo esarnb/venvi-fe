@@ -15,10 +15,11 @@ class App extends React.Component {
   componentDidMount() {
     //Testing CRUD Routes
     let id = 123;
-    Test.postQuery();
-    Test.getResponse();
-    Test.putQuery(id);
-    Test.deleteQuery(id);
+    // Test.postQuery();
+    // Test.getResponse();
+    // Test.putQuery(id);
+    // Test.deleteQuery(id);
+    // UserAPI.getAllUsers();
   }
 
   render() {

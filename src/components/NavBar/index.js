@@ -9,52 +9,52 @@ import './style.css';
 import * as API from "../../utils/API";
 
 
-/**
- * UNUSED AntTabs AntTab
- */
+// /**
+//  * UNUSED AntTabs AntTab
+//  */
 
-// const AntTabs = withStyles({
-//   root: {
-//     borderBottom: "1px solid black"
-//   },
-//   indicator: {
-//     backgroundColor: "#black"
-//   }
-// })(Tabs);
+const AntTabs = withStyles({
+  root: {
+    borderBottom: "1px solid black"
+  },
+  indicator: {
+    backgroundColor: "#black"
+  }
+})(Tabs);
 
-// const AntTab = withStyles(theme => ({
-//   root: {
-//     textTransform: "none",
-//     minWidth: 72,
-//     fontWeight: theme.typography.fontWeightRegular,
-//     marginRight: theme.spacing(4),
-//     opacity: 1,
-//     fontFamily: [
-//       "-apple-system",
-//       "BlinkMacSystemFont",
-//       '"Segoe UI"',
-//       "Roboto",
-//       '"Helvetica Neue"',
-//       "Arial",
-//       "sans-serif",
-//       '"Apple Color Emoji"',
-//       '"Segoe UI Emoji"',
-//       '"Segoe UI Symbol"'
-//     ].join(","),
-//     "&:hover": {
-//       color: "black",
-//       opacity: 1
-//     },
-//     "&$selected": {
-//       color: "black",
-//       fontWeight: theme.typography.fontWeightHigh
-//     },
-//     "&:focus": {
-//       color: "black",
-//     }
-//   },
-//   selected: {}
-// }))(props => <Tab disableRipple {...props} />);
+const AntTab = withStyles(theme => ({
+  root: {
+    textTransform: "none",
+    minWidth: 72,
+    fontWeight: theme.typography.fontWeightRegular,
+    marginRight: theme.spacing(4),
+    opacity: 1,
+    fontFamily: [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"'
+    ].join(","),
+    "&:hover": {
+      color: "black",
+      opacity: 1
+    },
+    "&$selected": {
+      color: "black",
+      fontWeight: theme.typography.fontWeightHigh
+    },
+    "&:focus": {
+      color: "black",
+    }
+  },
+  selected: {}
+}))(props => <Tab disableRipple {...props} />);
 
 const StyledTabs = withStyles({
   indicator: {
@@ -123,10 +123,10 @@ function NavBar() {
           onChange={handleChange}
           aria-label="styled tabs example"
         >
-          <StyledTab label="Home" className="navTab" href="/"/>
-          <StyledTab label="Search" className="navTab" href="/search"/>
-          <StyledTab label="Market Place" className="navTab" href="market"/>
-          <StyledTab label="Profile" className="navTab" href="profile"/>
+          <StyledTab label="HOME" className="navTab" href="/"/>
+          <StyledTab label="SEARCH" className="navTab" href="/search"/>
+          <StyledTab label="MARKET PLACE" className="navTab" href="market"/>
+          <StyledTab label="PROFILE" className="navTab" href="profile"/>
           <StyledTab label="" onClick={() => API.Auth.login()} href="/auth/google/" id ="signIn" className="fas fa-user" style={{float: "right"}}/>
           </StyledTabs>
 

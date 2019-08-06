@@ -3,6 +3,7 @@ import React from 'react';
 // import ButtonBases from '../components/ButtonBases';
 import Container from '../components/Container';
 import SearchInput from '../components/SearchInput'
+
 import './index.css'
 
 
@@ -15,6 +16,7 @@ class Search extends React.Component {
           <span id="line"> </span>
           <SearchInput />
         </Container>
+
       </div>
     );
   }

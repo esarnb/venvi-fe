@@ -18,8 +18,9 @@ class Home extends React.Component {
           <h3> Top Consumer Picks </h3>
           <span id="line"> </span>
           <ButtonBases />
-          <Card />
+      
         </Container>
+        <Card />
         <Footer />
       </div>
     );
