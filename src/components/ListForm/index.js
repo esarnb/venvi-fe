@@ -1,16 +1,35 @@
 import React, { Component } from "react";
 import { TextInput, Row, Col, Button } from "react-materialize";
 import axios from "axios";
+import { UserAPI, ListingAPI, BookmarkAPI} from '../../utils/API'
 
 class ListForm extends Component {
 
+
 state = {
     vin: "",
+    price:"",
     make:"",
     model:"",
     year:"",
     file:"",
+    UserId: "",
+    listings: [],
+    currentListingId: ""
 }
+
+componentDidMount() {
+    //Testing CRUD Routes
+    let id = 123;
+    // Test.postQuery();
+    // Test.getResponse();
+    // Test.putQuery(id);
+    // Test.deleteQuery(id);
+    // UserAPI.getAllUsers();
+    // this.getAllListing();
+
+  }
+
 
 searchAction() {
     console.log("Submit")
@@ -30,7 +49,68 @@ searchAction() {
             this.setState({make:vin.Make, model:vin.Model, year:vin.ModelYear})
             }
         })
+
+
+    setTimeout(this.saveListing, 3000);
+
 }
+
+
+saveListing = () =>
+{
+    let price = this.state.price;
+    let make = this.state.make;
+    let model = this.state.model;
+    let year = this.state.year;
+    let UserId = 1;
+    let vin = this.state.vin;
+
+    let image = this.state.file;
+
+     var listing =
+            {
+                price: price,
+                make: make,
+                model: model,
+                year: year,
+                UserId: UserId,
+                vin: vin
+            }
+    console.log(listing);
+    ListingAPI.postListing(listing).then(function(data)
+    {
+        console.log("saved listing");
+        console.log(data);
+
+
+        //Get back lisitng id to upload photo
+        console.log("saved listing id");
+        console.log(data.data.id);
+        this.setState(currentListingId: data.data.id);
+    });
+
+    setTimeout(this.getAllListing, 3000);
+}
+
+
+
+getAllListing = () =>
+{
+    ListingAPI.getAllListing().then(function(data){
+      console.log("databack");
+      console.log(data);
+
+    });
+}
+
+
+uploadListingPhoto = () =>
+{
+    
+}
+
+
+
 
 handleChange = event => {
     const { name, value } = event.target;
@@ -46,7 +126,8 @@ handleImageChange = event => {
 validate = () => {
     var carId = this.state.vin;
     var file = this.state.file;
-    console.log("file", file)
+    var price = this.state.price;
+    console.log("price", price)
     if (!carId || !file) {
         console.log("it works here")
         alert ("Please fill out required fields")
@@ -64,6 +145,9 @@ render () {
                 <Row style={{marginBottom: '0px'}}>
                 <Col className="input-field">
                     <TextInput name="vin" value={this.state.vin} onChange={this.handleChange} type="text" label="Vin" />                    
+                </Col>
+                    <Col className="input-field">
+                    <TextInput name="price" value={this.state.price} onChange={this.handleChange} type="text" label="Price" />                    
                 </Col>
                 <Col className="input-field">
                     <TextInput name="make" value={this.state.make} onChange={this.handleChange} type="text" label="Make"  disabled={true}/>                    
