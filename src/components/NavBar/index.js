@@ -4,9 +4,10 @@ import Tabs from "@material-ui/core/Tabs";
 import { Tab } from '@material-ui/core';
 // import Icon from '@material-ui/core/Icon';
 import Typography from "@material-ui/core/Typography";
-import { Link } from "react-router-dom";
+
 import './style.css';
 import * as API from "../../utils/API";
+import { Link } from "react-router-dom";
 
 
 // /**
@@ -104,7 +105,7 @@ const useStyles = makeStyles(theme => ({
 //   UserAPI.login()
 // }
 
-function NavBar() {
+function NavBar(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -128,11 +129,15 @@ function NavBar() {
           <StyledTab label="Market Place" className="navTab" href="market"/>
           <StyledTab label="Profile" className="navTab" href="profile"/>
           <StyledTab label="" onClick={() => API.Auth.login()} href="auth/google/" id ="signIn" className="fas fa-user" style={{float: "right"}}/> */}
+          
           <Link to="/venvi-fe/"><StyledTab label="Home" className="navTab"/></Link>
           <Link to="/venvi-fe/search"><StyledTab label="Search" className="navTab"/></Link>
-          <Link to="/venvi-fe/market"><StyledTab label="Market" className="navTab"/></Link>
-          <Link to="/venvi-fe/profile"><StyledTab label="Profile" className="navTab"/></Link>
-          <Link to="/venvi-fe/received/"><StyledTab label="Auth" className="navTab"/></Link>
+          {props.userid ? (
+            <React.Fragment>
+              <Link to="/venvi-fe/market"><StyledTab label="Market" className="navTab"/></Link>
+              <Link to="/venvi-fe/profile"><StyledTab label="Profile" className="navTab"/></Link>
+             </React.Fragment>
+          ): <React.Fragment />}
           <a onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}}>SignIn</a>
 
           </StyledTabs>
