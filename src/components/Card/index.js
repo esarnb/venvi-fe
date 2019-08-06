@@ -9,32 +9,26 @@ import './style.css';
 
 function Card(){
     return (
+<div>
 <div id = "cardSection">
-<div className="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-    <div className="uk-card-media-left uk-cover-container">
-        <img src="https://images01.oe24.at/Aventador_SVJ-roadster2.jpg/bigStory/374.840.502" alt="" uk-cover />
-         <canvas width="600" height="400"></canvas>
-    </div>
-    <div>
-        <div className="uk-card-body">
-            <h3 className="uk-card-title">Media Left</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+    <div className="uk-card uk-card-default uk-column-1-2 uk-column-divider">
+        <div className="uk-card-media-left" id="imageSection">
+            <img src="https://st.motortrend.com/uploads/sites/10/2017/08/2018-porsche-panamera-turbo-hatchback-angular-front.png" alt="" />
         </div>
+        <div className="uk-card-media-right">Hello</div>
+    </div>
+</div>
+<div id = "cardSection">
+    <div className="uk-card uk-card-default uk-column-1-2 uk-column-divider">
+    	<div className="uk-card-media-left">
+    	Hello</div>
+        <div className="uk-card-media-right" id="imageSection">
+            <img src="https://www.vehicledynamicsinternational.com/wp-content/uploads/2019/01/2019-bmw-7-series.png" alt="" />
+        </div>
+       
     </div>
 </div>
 
-<div className="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-    <div className="uk-flex-last@s uk-card-media-right uk-cover-container">
-        <img src="https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2019/03/21/105807049-1553189463674bugatti.530x298.jpg?v=1553189697" alt="" uk-cover />
-
-    </div>
-    <div>
-        <div class="uk-card-body">
-            <h3 class="uk-card-title">Media Right</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-        </div>
-    </div>
-</div>
 </div>
 
  )

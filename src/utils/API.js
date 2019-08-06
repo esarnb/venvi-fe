@@ -53,13 +53,14 @@ export const ListingAPI = {
 
   // Marketplace get all listings of cars (create join table)
   getAllListing() {
-    app.get("/api/listings").then(res => console.log(res.data));
+    return app.get("/api/listings");
   },
 
 
   // Create new listing
-  postListing() {
-    app.post("/api/listings", { msg: "New listing has been created" }).then(res => console.log(res.data));
+  postListing(listing) {
+
+    return app.post("/api/listings", listing);
   },
 
   // To update listing
@@ -227,21 +228,20 @@ export const Test = {
 
   //Testing CRUD
   getResponse() {
-    app.get("/api/vehicle/all").then(res => console.log(res.data));
+    app.get("/api/test/all").then(res => console.log(res.data));
   },
 
   postQuery() {
-    app.post("/api/vehicle/new", { msg: "Vehicle has been added" }).then(res => console.log(res.data));
+    app.post("/api/test/new", { msg: "Vehicle has been added" }).then(res => console.log(res.data));
   },
 
   putQuery(id) {
-    app.put(`/api/vehicle/update/${id}`, { msg: "update this listing" }).then(res => {
+    app.put(`/api/test/update/${id}`, { msg: "update this listing" }).then(res => {
       console.log(res.data);
     })
   },
-
   deleteQuery(id) {
-    app.delete(`/api/vehicle/delete/${id}`, { msg: "delete this listing" }).then(res => {
+    app.delete(`/api/test/delete/${id}`, { msg: "delete this listing" }).then(res => {
       console.log(res.data);
     })
   }

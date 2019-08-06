@@ -1,6 +1,7 @@
 {
   "name": "venvi-fe",
   "homepage": "https://phillipchang.github.io/venvi-fe",
+  "proxy": "http://localhost:3001",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,13 +12,15 @@
     "antd": "^3.20.7",
     "axios": "^0.19.0",
     "gh-pages": "^2.0.1",
+    "history": "^4.9.0",
     "materialize-css": "^1.0.0",
     "rc-banner-anim": "^2.3.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-materialize": "^3.3.4",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-swipeable-views": "^0.13.3"
   },
   "scripts": {
     "predeploy": "npm run build",
