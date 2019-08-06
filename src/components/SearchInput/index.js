@@ -7,7 +7,8 @@ class SearchInput extends Component {
 	state = {
 		make: "",
 		model: "",
-		year: ""
+		year: "",
+		imgURL: ""
 	}
 
 	searchAction = () => {
@@ -65,7 +66,10 @@ class SearchInput extends Component {
 										.then(response => {
 											var images = response.data.items[0].link;
 
-											console.log(images)
+											this.state.imgURL = images;
+											// console.log(this.state)
+
+											this.props.infoGet(this.state)
 										})
 								}
 								else {
