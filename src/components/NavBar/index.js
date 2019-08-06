@@ -127,6 +127,10 @@ function NavBar() {
           <StyledTab label="Search" className="navTab" href="/search"/>
           <StyledTab label="Market Place" className="navTab" href="/market"/>
           <StyledTab label="Profile" className="navTab" href="/profile"/>
+          <StyledTab label="Home2" className="navTab" href="/venvi-fe"/>
+          <StyledTab label="Search2" className="navTab" href="/venvi-fe/search"/>
+          <StyledTab label="Market Place 3" className="navTab" href="/venvi-fe/market"/>
+          <StyledTab label="Profile2" className="navTab" href="/venvi-fe/profile"/>
           <StyledTab label="" onClick={() => API.Auth.login()} href="/auth/google/" id ="signIn" className="fas fa-user" style={{float: "right"}}/>
           </StyledTabs>
 

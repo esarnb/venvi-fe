@@ -3,7 +3,7 @@ import Container from '../components/Container';
 import UserProfile from '../components/UserProfile';
 import ListCard from '../components/ListCard';
 
-
+//Component
 class Profile extends React.Component {
   render() {
     return (

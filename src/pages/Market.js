@@ -6,7 +6,7 @@ import NavBar from '../components/NavBar';
 import './index.css'
 
 
-
+//Component
 class Market extends React.Component {
 
 state = {

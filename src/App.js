@@ -9,7 +9,6 @@ import Profile from './pages/Profile'
 import Market from './pages/Market';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBar from './components/NavBar';
-import createHistory from "history/createBrowserHistory";
 
 class App extends React.Component {
 

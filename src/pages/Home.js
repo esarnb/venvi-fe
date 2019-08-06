@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import Card from '../components/Card';
 import './index.css'
 
-
+//Component
 class Home extends React.Component {
   render() {
     return (
