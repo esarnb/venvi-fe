@@ -14,7 +14,8 @@ state = {
     year:"",
     file:"",
     UserId: "",
-    listings: []
+    listings: [],
+    currentListingId: ""
 }
 
 componentDidMount() {
@@ -76,11 +77,20 @@ saveListing = () =>
                 vin: vin
             }
     console.log(listing);
-    ListingAPI.postListing(listing);
+    ListingAPI.postListing(listing).then(function(data)
+    {
+        console.log("saved listing");
+        console.log(data);
+
+
+        //Get back lisitng id to upload photo
+        console.log("saved listing id");
+        console.log(data.data.id);
+        this.setState(currentListingId: data.data.id);
+    });
 
     setTimeout(this.getAllListing, 3000);
 }
-
 
 
 
@@ -92,6 +102,14 @@ getAllListing = () =>
 
     });
 }
+
+
+uploadListingPhoto = () =>
+{
+    
+}
+
+
 
 
 handleChange = event => {

@@ -60,7 +60,7 @@ export const ListingAPI = {
   // Create new listing
   postListing(listing) {
 
-    app.post("/api/listings", listing, { msg: "New listing has been created" }).then(res => console.log(res.data));
+    return app.post("/api/listings", listing);
   },
 
   // To update listing
