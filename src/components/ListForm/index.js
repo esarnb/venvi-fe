@@ -77,7 +77,7 @@ saveListing = () =>
                 vin: vin
             }
     console.log(listing);
-    ListingAPI.postListing(listing).then(function(data)
+    ListingAPI.postListing(listing).then(data =>
     {
         console.log("saved listing");
         console.log(data);
@@ -86,10 +86,12 @@ saveListing = () =>
         //Get back lisitng id to upload photo
         console.log("saved listing id");
         console.log(data.data.id);
-        this.setState(currentListingId: data.data.id);
+        var templistingid = data.data.id;
+        this.setState({currentListingId: templistingid});
     });
 
-    setTimeout(this.getAllListing, 3000);
+    setTimeout(this.createListingUrl, 3000);
+    setTimeout(this.getAllListing, 5000);
 }
 
 
@@ -104,9 +106,22 @@ getAllListing = () =>
 }
 
 
-uploadListingPhoto = () =>
+createListingUrl = () =>
 {
-    
+        var listing = new FormData();
+        var name = this.state.vin;
+        var image = this.state.file;
+        var currentListingId = this.state.currentListingId;
+        console.log(name);
+        console.log(image);
+        console.log(currentListingId);
+
+
+        listing.append("name", name);
+        listing.append("file", image);
+        listing.append("currentListingId", currentListingId);
+
+        // ListingAPI.createListUrl(listing);
 }
 
 
