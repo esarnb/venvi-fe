@@ -12,6 +12,10 @@ import NavBar from './components/NavBar';
 
 class App extends React.Component {
 
+  state = {
+    userid: undefined
+  }
+
   componentDidMount() {
     //Testing CRUD Routes
     let id = 123;
@@ -20,13 +24,16 @@ class App extends React.Component {
     // Test.putQuery(id);
     // Test.deleteQuery(id);
     // UserAPI.getAllUsers();
+
   }
+
+
 
   render() {
     return (
       <Router>
         <div>
-          <NavBar />
+          <NavBar userid={this.state.userid}/>
           <Switch>
             {/* <Route exact path='/' component={Home} />
             <Route exact path='/search' component={Search} />
@@ -36,9 +43,16 @@ class App extends React.Component {
 
             <Route exact path='/venvi-fe/' component={Home} />
             <Route exact path='/venvi-fe/search' component={Search} />
-            <Route exact path='/venvi-fe/profile' component={Profile} />
-            <Route exact path='/venvi-fe/market' component={Market} /> 
-            <Route path='/venvi-fe/receive/:id' component={Auth} />
+            <Route path='/venvi-fe/receive/:id/'component={(props) => this.setState({userid: props.match.params.id})} />
+            
+            {this.state.userid ? (
+              <React.Fragment>
+                <Route exact path='/venvi-fe/profile' component={Profile} />
+                <Route exact path='/venvi-fe/market' component={Market} /> 
+              </React.Fragment>
+            ) : <React.Fragment />} 
+
+           
           </Switch>
         </div>
       </Router>
