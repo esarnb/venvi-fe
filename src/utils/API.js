@@ -53,13 +53,14 @@ export const ListingAPI = {
 
   // Marketplace get all listings of cars (create join table)
   getAllListing() {
-    app.get("/api/listings").then(res => console.log(res.data));
+    return app.get("/api/listings");
   },
 
 
   // Create new listing
-  postListing() {
-    app.post("/api/listings", { msg: "New listing has been created" }).then(res => console.log(res.data));
+  postListing(listing) {
+
+    app.post("/api/listings", listing, { msg: "New listing has been created" }).then(res => console.log(res.data));
   },
 
   // To update listing
