@@ -27,10 +27,17 @@ class App extends React.Component {
         <div>
           <NavBar />
           <Switch>
-            <Route exact path='/' component={Home} />
+            {/* <Route exact path='/' component={Home} />
             <Route exact path='/search' component={Search} />
             <Route exact path='/profile' component={Profile} />
-            <Route exact path='/market' component={Market} />
+            <Route exact path='/market' component={Market} /> 
+            <Route path='/receive/:id' component={Auth} />*/}
+
+            <Route exact path='/venvi-fe/' component={Home} />
+            <Route exact path='/venvi-fe/search' component={Search} />
+            <Route exact path='/venvi-fe/profile' component={Profile} />
+            <Route exact path='/venvi-fe/market' component={Market} /> 
+            <Route path='/venvi-fe/receive/:id' component={Auth} />
           </Switch>
         </div>
       </Router>

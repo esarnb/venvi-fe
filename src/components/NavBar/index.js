@@ -123,11 +123,18 @@ function NavBar() {
           onChange={handleChange}
           aria-label="styled tabs example"
         >
-          <StyledTab label="Home" className="navTab" href=""/>
+          {/* <StyledTab label="Home" className="navTab" href=""/>
           <StyledTab label="Search" className="navTab" href="search"/>
           <StyledTab label="Market Place" className="navTab" href="market"/>
           <StyledTab label="Profile" className="navTab" href="profile"/>
-          <StyledTab label="" onClick={() => API.Auth.login()} href="auth/google/" id ="signIn" className="fas fa-user" style={{float: "right"}}/>
+          <StyledTab label="" onClick={() => API.Auth.login()} href="auth/google/" id ="signIn" className="fas fa-user" style={{float: "right"}}/> */}
+          <Link to="/venvi-fe/"><StyledTab label="Home" className="navTab"/></Link>
+          <Link to="/venvi-fe/search"><StyledTab label="Search" className="navTab"/></Link>
+          <Link to="/venvi-fe/market"><StyledTab label="Market" className="navTab"/></Link>
+          <Link to="/venvi-fe/profile"><StyledTab label="Profile" className="navTab"/></Link>
+          <Link to="/venvi-fe/received/"><StyledTab label="Auth" className="navTab"/></Link>
+          <a onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}}>SignIn</a>
+
           </StyledTabs>
 
         <Typography className={classes.padding} />
