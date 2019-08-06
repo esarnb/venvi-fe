@@ -214,16 +214,22 @@ export const ReviewAPI = {
                         AUTH API
   ============================================================*/
 
-export const Auth = {
+  export const Auth = {
 
-  //
-  login() {
-    console.log("LOGIN ONCLICK");
-    
-    app.get("/auth/google/login").then(res => console.log("AUTH GET: ", res.data, res));
-
-  },
-}
+    //
+    login() {
+      console.log("LOGIN ONCLICK");
+      
+      window.location.href = "https://venvi-passport2.herokuapp.com/auth/google/login"
+  
+      app.get("/auth/google").then((res) => {
+        console.log("RESULT OF AUTH: ", res);
+        
+      })
+  
+    },
+  }
+  
 
 
 
