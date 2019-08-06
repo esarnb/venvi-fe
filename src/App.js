@@ -1,41 +1,40 @@
 import React from 'react';
 import './App.css';
-import API from '../src/utils/API'
+
+import { Test, UserAPI, ListingAPI, BookmarkAPI, VehicleAPI, ReviewAPI} from '../src/utils/API'
 import Home from './pages/home'
 import Search from './pages/search'
 import Profile from './pages/profile'
 import Market from './pages/market';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBar from './components/NavBar';
 
 class App extends React.Component {
 
   componentDidMount() {
-  let id = 123;
-  API.postQuery();
-  API.getResponse();
-  API.putQuery(id);
-  API.deleteQuery(id);
-}
+    //Testing CRUD Routes
+    let id = 123;
+    Test.postQuery();
+    Test.getResponse();
+    Test.putQuery(id);
+    Test.deleteQuery(id);
+  }
 
-
-
-render () {
-  return (
-    <Router>
-    <div>
-    <NavBar/>
-      <Switch>
-            <Route exact path='/' component={Home} /> 
-            <Route exact path='/search' component={Search} /> 
-            <Route exact path='/profile' component={Profile} /> 
-            <Route exact path='/market' component={Market} /> 
-      </Switch>   
-    </div> 
-    </Router>
-
-  );
-}
+  render() {
+    return (
+      <Router>
+        <div>
+          <NavBar />
+          <Switch>
+            <Route path={process.env.PUBLIC_URL + '/'} component={Home} />
+            <Route path={process.env.PUBLIC_URL + '/search'} component={Search} />
+            <Route path={process.env.PUBLIC_URL + '/profile'} component={Profile} />
+            <Route path={process.env.PUBLIC_URL + '/market'} component={Market} />
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;

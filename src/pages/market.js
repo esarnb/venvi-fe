@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
 import { MarketBuy, MarketSell } from '../components/MarketBtn';
 import SearchInput from '../components/SearchInput';
 import ListForm from '../components/ListForm';
