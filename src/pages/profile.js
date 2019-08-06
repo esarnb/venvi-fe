@@ -1,6 +1,4 @@
 import React from 'react';
-// import Banner from '../components/Banner';
-// import ButtonBases from '../components/ButtonBases';
 import Container from '../components/Container';
 import UserProfile from '../components/UserProfile';
 import ListCard from '../components/ListCard';

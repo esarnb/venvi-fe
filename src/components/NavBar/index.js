@@ -121,12 +121,19 @@ function NavBar() {
         <StyledTabs
           value={value}
           onChange={handleChange}
-          aria-label="styled tabs example"
+          aria-label="styled tabs"
         >
+<<<<<<< HEAD
           <StyledTab label="HOME" className="navTab" href="/"/>
           <StyledTab label="SEARCH" className="navTab" href="/search"/>
           <StyledTab label="MARKET PLACE" className="navTab" href="market"/>
           <StyledTab label="PROFILE" className="navTab" href="profile"/>
+=======
+          <StyledTab label="Home" className="navTab" href="/"/>
+          <StyledTab label="Search" className="navTab" href="/search"/>
+          <StyledTab label="Market Place" className="navTab" href="/market"/>
+          <StyledTab label="Profile" className="navTab" href="/profile"/>
+>>>>>>> 98130b927a8deca08bf1f63c8f4468e16cc43c8e
           <StyledTab label="" onClick={() => API.Auth.login()} href="/auth/google/" id ="signIn" className="fas fa-user" style={{float: "right"}}/>
           </StyledTabs>
 
