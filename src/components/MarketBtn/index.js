@@ -99,7 +99,7 @@ export function MarketBuy(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root} onClick={props.handleSearch} id = "popularSection">
+    <div className={classes.root} onClick={props.handleSearch} id = "popularSectionBuy">
       {images1.map(image => (
         <ButtonBase
           focusRipple
@@ -139,7 +139,7 @@ export function MarketSell(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root} onClick={props.showForm} id = "popularSection">
+    <div className={classes.root} onClick={props.showForm} id = "popularSectionSell">
       {images2.map(image => (
         <ButtonBase
           focusRipple

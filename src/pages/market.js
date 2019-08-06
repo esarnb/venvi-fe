@@ -1,7 +1,4 @@
 import React from 'react';
-// import Banner from '../components/Banner';
-// import ButtonBases from '../components/ButtonBases';
-import Container from '../components/Container';
 import { MarketBuy, MarketSell } from '../components/MarketBtn';
 import SearchInput from '../components/SearchInput';
 import ListForm from '../components/ListForm';
@@ -20,11 +17,13 @@ state = {
 
 handleSearch = () => {
   this.setState({buyshow: true})
+  this.setState({showForm:false})
 console.log("here")
 }
 
 showForm = () => {
   this.setState({showForm: true})
+    this.setState({buyshow:false})
   console.log("here2")
 }
 
@@ -32,19 +31,14 @@ render () {
   return (
     <div>
     <NavBar/>
-        {/* <Container> */}
-        	<h3> Market </h3>
-        	<span id="line"></span>
-        <div id="marketbtn">
+        <h3 id="market-head"> Market </h3>
+        <span id="market-line"></span>
+        <div id="market-btn">
         <MarketBuy handleSearch={this.handleSearch}/>
-        {this.state.buyshow ? <SearchInput /> : null}
-        </div>
         <MarketSell showForm={this.showForm}/>
+        </div>
+        {this.state.buyshow ? <SearchInput /> : null}
         {this.state.showForm ? <ListForm/>: null}
-        {/* <div id="searchInput">
-        <SearchInput/>
-         </div>  */}
-        {/* </Container> */}
     </div>
   );
 }

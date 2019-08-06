@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 
 import { Test, UserAPI, ListingAPI, BookmarkAPI, VehicleAPI, ReviewAPI} from '../src/utils/API'
