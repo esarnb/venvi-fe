@@ -2,7 +2,7 @@
     color: black !important;
 }
 
-#reviewButton {
+.reviewButton {
     background-color:#212121;
     color: #b29e33;
 }

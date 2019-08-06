@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TextInput, Row, Col, Modal, Button } from "react-materialize";
+import { Textarea, Row, Col, Modal, Button } from "react-materialize";
 import './style.css';
 
 class ReviewCard extends Component {
@@ -18,11 +18,11 @@ class ReviewCard extends Component {
                             {/* put reviews here */}
                         </div>
                         <div className="card-action">
-                        <Modal trigger={<Button waves="light" id="reviewButton">
+                        <Modal header="Add Review" fixedFooter trigger={<Button waves="light" className="reviewButton">
                                 Add Review
-                           </Button>}>
-                            <h4>Add Review</h4>
-                            <p>Add a form here</p>
+                           </Button>}
+                           actions={<Button modal="close" className="reviewButton">Submit Review</Button>}>
+                                <Textarea placeholder="Type review here"/>
                         </Modal>
                         </div>
                     </div>
