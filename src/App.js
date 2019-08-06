@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import API from '../src/utils/API'
 import Home from './pages/home'
@@ -25,7 +24,7 @@ render () {
   return (
     <Router>
     <div>
-    {/* <NavBar /> */}
+    <NavBar/>
       <Switch>
             <Route exact path='/' component={Home} /> 
             <Route exact path='/search' component={Search} /> 
@@ -33,7 +32,6 @@ render () {
             <Route exact path='/market' component={Market} /> 
       </Switch>   
     </div> 
-
     </Router>
 
   );

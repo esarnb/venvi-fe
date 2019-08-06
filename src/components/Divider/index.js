@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Icon, Spin} from 'antd';
 import './style.css';
 

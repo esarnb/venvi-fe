@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { TextInput, Row, Col, Button } from "react-materialize";
 import axios from "axios";
 
-// function SearchInput() {
 class ListForm extends Component {
 
 state = {
@@ -10,6 +9,7 @@ state = {
     make:"",
     model:"",
     year:"",
+    file:"",
 }
 
 searchAction() {
@@ -17,18 +17,40 @@ searchAction() {
 
     axios.get(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/${this.state.vin}*BA?format=json`)
         .then(response => {
-            console.log("response", response.data.Results);
             var vin = response.data.Results[0];
+            if(!vin.Model){
+                alert ("You have entered an invalid VIN")
+            }
+            else {
+            console.log("response data", vin)
+            console.log("all response data", response.data.Results)
             console.log("year",vin.ModelYear);
             console.log("model", vin.Model);
             console.log("make", vin.Make);
             this.setState({make:vin.Make, model:vin.Model, year:vin.ModelYear})
+            }
         })
 }
 
 handleChange = event => {
     const { name, value } = event.target;
     this.setState({[name]: value});
+}
+
+handleImageChange = event => {
+    this.setState({file:event.target.files[0]});
+    var image = this.state.file;
+    console.log(image);
+}
+
+validate = () => {
+    var carId = this.state.vin;
+    var file = this.state.file;
+    console.log("file", file)
+    if (!carId || !file) {
+        console.log("it works here")
+        alert ("Please fill out required fields")
+    }
 }
 
 render () {
@@ -53,23 +75,13 @@ render () {
                     <TextInput name="year" value={this.state.year} onChange={this.handleChange} type="text" label="Year" disabled={true} />                    
                 </Col>
                 </Row>
-                {/* <Row>    
-                <input
-                accept="image/*"
-                className={classes.input}
-                style={{ display: 'none' }}
-                id="raised-button-file"
-                multiple
-                type="file"
-                />
-                <label htmlFor="raised-button-file">
-                <Button variant="raised" component="span" className={classes.button}>
-                    Upload
-                </Button>
-                </label> 
-                </Row> */}
+                 <div class="uk-margin">
+                    <div uk-form-custom>
+                        <input id="file-input" onChange={this.handleImageChange} type="file"/>
+                    </div>
+                </div>
                 <Row>
-                    <Button type="submit" className="#37474f blue-grey darken-3" waves="light" style={{marginLeft: '22px'}}>Search</Button>
+                    <Button onClick={this.validate} type="submit" className="#37474f blue-grey darken-3" waves="light" style={{marginLeft: '22px'}}>Make Listing</Button>
                 </Row>
 
             </form>
