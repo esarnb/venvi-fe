@@ -15,10 +15,11 @@ class App extends React.Component {
   componentDidMount() {
     //Testing CRUD Routes
     let id = 123;
-    Test.postQuery();
-    Test.getResponse();
-    Test.putQuery(id);
-    Test.deleteQuery(id);
+    // Test.postQuery();
+    // Test.getResponse();
+    // Test.putQuery(id);
+    // Test.deleteQuery(id);
+    // UserAPI.getAllUsers();
   }
 
   render() {
@@ -27,10 +28,10 @@ class App extends React.Component {
         <div>
           <NavBar />
           <Switch>
-            <Route path={process.env.PUBLIC_URL + '/'} component={Home} />
-            <Route path={process.env.PUBLIC_URL + '/search'} component={Search} />
-            <Route path={process.env.PUBLIC_URL + '/profile'} component={Profile} />
-            <Route path={process.env.PUBLIC_URL + '/market'} component={Market} />
+            <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
+            <Route exact path={process.env.PUBLIC_URL + '/search'} component={Search} />
+            <Route exact path={process.env.PUBLIC_URL + '/profile'} component={Profile} />
+            <Route exact path={process.env.PUBLIC_URL + '/market'} component={Market} />
           </Switch>
         </div>
       </Router>
