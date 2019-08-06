@@ -5,7 +5,7 @@ import Container from '../components/Container';
 import SearchInput from '../components/SearchInput'
 import './index.css'
 
-
+//Component
 class Search extends React.Component {
   render() {
     return (
