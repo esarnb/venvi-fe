@@ -7,8 +7,9 @@ import Home from './pages/home'
 import Search from './pages/search'
 import Profile from './pages/profile'
 import Market from './pages/market';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Router, Route, Switch } from 'react-router-dom'
 import NavBar from './components/NavBar';
+import createHistory from "history/createBrowserHistory";
 
 class App extends React.Component {
 
@@ -23,14 +24,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
+      <Router history={createHistory({ basename: process.env.PUBLIC_URL })}>
         <div>
           <NavBar />
           <Switch>
-            <Route path={process.env.PUBLIC_URL + '/'} component={Home} />
-            <Route path={process.env.PUBLIC_URL + '/search'} component={Search} />
-            <Route path={process.env.PUBLIC_URL + '/profile'} component={Profile} />
-            <Route path={process.env.PUBLIC_URL + '/market'} component={Market} />
+            <Route exact path='/' component={Home} /> 
+            <Route exact path='/search' component={Search} /> 
+            <Route exact path='/profile' component={Profile} /> 
+            <Route exact path='/market' component={Market} /> 
           </Switch>
         </div>
       </Router>
