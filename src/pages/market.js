@@ -1,7 +1,6 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
-import Banner from '../components/Banner';
-import ButtonBases from '../components/ButtonBases';
+// import Banner from '../components/Banner';
+// import ButtonBases from '../components/ButtonBases';
 import Container from '../components/Container';
 import { MarketBuy, MarketSell } from '../components/MarketBtn';
 import SearchInput from '../components/SearchInput';
