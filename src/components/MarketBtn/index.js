@@ -10,12 +10,17 @@ const images1 = [
     title: 'Buy a Car',
     width: '40%',
   },
+];
+
+const images2 = [
   {
     url: 'https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2019/03/21/105807049-1553189463674bugatti.530x298.jpg?v=1553189697',
     title: 'Sell a Car',
     width: '40%',
   },
 ];
+
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -90,11 +95,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function MarketBtn() {
+export function MarketBuy(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root} id = "popularSection">
+    <div className={classes.root} onClick={props.handleSearch} id = "popularSection">
       {images1.map(image => (
         <ButtonBase
           focusRipple
@@ -130,4 +135,42 @@ function MarketBtn() {
   );
 }
 
-export default MarketBtn;
+export function MarketSell(props) {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.root} onClick={props.showForm} id = "popularSection">
+      {images2.map(image => (
+        <ButtonBase
+          focusRipple
+          key={image.title}
+          className={classes.image}
+          focusVisibleClassName={classes.focusVisible}
+          style={{
+            width: image.width,
+          }}
+        >
+          <span
+            className={classes.imageSrc}
+            style={{
+              backgroundImage: `url(${image.url})`,
+            }}
+          />
+          <span className={classes.imageBackdrop} />
+          <span className={classes.imageButton}>
+            <Typography
+              component="span"
+              variant="subtitle1"
+              color="inherit"
+              className={classes.imageTitle}
+            >
+              {image.title}
+              <span className={classes.imageMarked} />
+            </Typography>
+          </span>
+        </ButtonBase>
+      ))}
+    </div>
+
+  );
+}

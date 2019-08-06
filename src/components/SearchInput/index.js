@@ -81,7 +81,7 @@ handleChange = event => {
 
 render () {
     return (
-        <Row>
+        <Row className = "searchInput">
             <Col>
             <form onSubmit={e => {
                 e.preventDefault();

@@ -25,7 +25,7 @@ render () {
   return (
     <Router>
     <div>
-    <NavBar />
+    {/* <NavBar /> */}
       <Switch>
             <Route exact path='/' component={Home} /> 
             <Route exact path='/search' component={Search} /> 
