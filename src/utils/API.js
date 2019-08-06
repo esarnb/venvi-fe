@@ -76,6 +76,13 @@ export const ListingAPI = {
     })
   },
 
+
+  createListingUrl() {
+    app.post(`/api/listings/createurl`).then(res => {
+      console.log(res.data);
+    })
+  },
+
   // Delete Listing
   deleteListing(id) {
     app.delete(`/api/listings/${id}`, { msg: "delete this listing" }).then(res => {
