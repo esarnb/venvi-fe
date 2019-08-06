@@ -4,6 +4,7 @@ import ButtonBases from '../components/ButtonBases';
 import Container from '../components/Container';
 import Divider from '../components/Divider';
 import Footer from '../components/Footer';
+import Card from '../components/Card';
 import './index.css'
 
 
@@ -17,6 +18,7 @@ class Home extends React.Component {
           <h3> Top Consumer Picks </h3>
           <span id="line"> </span>
           <ButtonBases />
+          <Card />
         </Container>
         <Footer />
       </div>

@@ -45,8 +45,11 @@ class SearchInput extends Component {
 									if (value.Model_Name.toLowerCase().indexOf(queryModel) > -1) {
 										console.log("Model match!")
 										modelVeri = true;
+
 									}
 								})
+
+
 
 								var year = "";
 								if (Number.parseInt(this.state.year)) {
@@ -56,10 +59,12 @@ class SearchInput extends Component {
 
 								if (makeVeri && modelVeri) {
 									console.log("All input OK.")
+									
 									console.log(`https://www.googleapis.com/customsearch/v1?q=${year} ${queryMake}+${queryModel}&cx=014855097092208085078%3A6cwyf6e5-oc&searchType=image&fileType=png&key=AIzaSyBEg43tCIEFbmsUD3hVAMZtNOFGcj7M0Cs`)
 									axios.get(`https://www.googleapis.com/customsearch/v1?q=${year} ${queryMake}+${queryModel}&cx=014855097092208085078%3A6cwyf6e5-oc&searchType=image&fileType=png&key=AIzaSyBEg43tCIEFbmsUD3hVAMZtNOFGcj7M0Cs`)
 										.then(response => {
 											var images = response.data.items[0].link;
+
 											console.log(images)
 										})
 								}

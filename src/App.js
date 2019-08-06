@@ -2,7 +2,7 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
-import { Test } from '../src/utils/API'
+import { Test, UserAPI, ListingAPI, BookmarkAPI, VehicleAPI, ReviewAPI} from '../src/utils/API'
 import Home from './pages/home'
 import Search from './pages/search'
 import Profile from './pages/profile'
