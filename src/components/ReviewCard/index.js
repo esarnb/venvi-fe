@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TextInput, Row, Col } from "react-materialize";
+import { TextInput, Row, Col, Modal, Button } from "react-materialize";
 import './style.css';
 
 class ReviewCard extends Component {
@@ -15,12 +15,15 @@ class ReviewCard extends Component {
                             <span className="card-title">{this.props.year} {this.props.make} {this.props.model}</span>
                         </div>
                         <div className="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.
-                            </p>
+                            {/* put reviews here */}
                         </div>
                         <div className="card-action">
-                            <a href="#">This is a link</a>
+                        <Modal trigger={<Button waves="light" id="reviewButton">
+                                Add Review
+                           </Button>}>
+                            <h4>Add Review</h4>
+                            <p>Add a form here</p>
+                        </Modal>
                         </div>
                     </div>
                 </Col>

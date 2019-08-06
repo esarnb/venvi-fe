@@ -3,7 +3,7 @@ import React from 'react';
 // import ButtonBases from '../components/ButtonBases';
 import Container from '../components/Container';
 import SearchInput from '../components/SearchInput';
-import ReviewCard from '../components/ReviewCard'
+import ReviewCard from '../components/ReviewCard/index'
 
 import './index.css'
 
