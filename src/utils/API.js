@@ -77,10 +77,10 @@ export const ListingAPI = {
   },
 
 
-  createListingUrl() {
-    app.post(`/api/listings/createurl`).then(res => {
-      console.log(res.data);
-    })
+  createListingUrl(listing) {
+    console.log("hitting api before send to server")
+    console.log("listing", listing)
+    return app.post("/api/listings/createurl", listing);
   },
 
   // Delete Listing

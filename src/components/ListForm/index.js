@@ -121,7 +121,7 @@ createListingUrl = () =>
         listing.append("file", image);
         listing.append("currentListingId", currentListingId);
 
-        // ListingAPI.createListUrl(listing);
+        ListingAPI.createListingUrl(listing);
 }
 
 
