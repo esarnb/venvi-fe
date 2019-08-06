@@ -24,13 +24,17 @@ class App extends React.Component {
     // Test.putQuery(id);
     // Test.deleteQuery(id);
     // UserAPI.getAllUsers();
+
+    this.setState({userid: userid})
   }
+
+
 
   render() {
     return (
       <Router>
         <div>
-          <NavBar />
+          <NavBar userid={this.state.userid}/>
           <Switch>
             {/* <Route exact path='/' component={Home} />
             <Route exact path='/search' component={Search} />
@@ -40,7 +44,8 @@ class App extends React.Component {
 
             <Route exact path='/venvi-fe/' component={Home} />
             <Route exact path='/venvi-fe/search' component={Search} />
-            <Route path='/venvi-fe/receive/:id' component={Auth} />
+            <Route path='/venvi-fe/receive/:id/'component={(props) => this.setState({userid: props.match.params.id})} />
+            
             {this.state.userid ? (
               <React.Fragment>
                 <Route exact path='/venvi-fe/profile' component={Profile} />
