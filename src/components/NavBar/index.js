@@ -123,7 +123,7 @@ function NavBar() {
           onChange={handleChange}
           aria-label="styled tabs example"
         >
-          <StyledTab label="Home" className="navTab" href=""/>
+          <StyledTab label="Home" className="navTab" href="/"/>
           <StyledTab label="Search" className="navTab" href="search"/>
           <StyledTab label="Market Place" className="navTab" href="market"/>
           <StyledTab label="Profile" className="navTab" href="profile"/>
