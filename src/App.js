@@ -3,10 +3,10 @@ import React from 'react';
 import './App.css';
 
 import { Test } from '../src/utils/API'
-import Home from './pages/home'
-import Search from './pages/search'
-import Profile from './pages/profile'
-import Market from './pages/market';
+import Home from './pages/Home'
+import Search from './pages/Search'
+import Profile from './pages/Profile'
+import Market from './pages/Market';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBar from './components/NavBar';
 
