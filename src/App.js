@@ -23,14 +23,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <div>
           <NavBar />
           <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/search' component={Search} />
-            <Route exact path='/profile' component={Profile} />
-            <Route exact path='/market' component={Market} />
+            <Route path={process.env.PUBLIC_URL + '/'} component={Home} />
+            <Route path={process.env.PUBLIC_URL + '/search'} component={Search} />
+            <Route path={process.env.PUBLIC_URL + '/profile'} component={Profile} />
+            <Route path={process.env.PUBLIC_URL + '/market'} component={Market} />
           </Switch>
         </div>
       </Router>
