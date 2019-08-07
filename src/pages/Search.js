@@ -16,7 +16,8 @@ class Search extends React.Component {
         model: null,
         year: null,
         imgURL: null,
-        showReviewCard: false
+        showReviewCard: false,
+        rating: null
     };    
   }
 
@@ -31,6 +32,11 @@ class Search extends React.Component {
       showReviewCard: true
     })
   }
+
+  handleChange = event => {
+		const { name, value } = event.target;
+		this.setState({ [name]: value });
+	}
 
   render() {
     return (
