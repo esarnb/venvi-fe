@@ -162,8 +162,8 @@ export const VehicleAPI = {
 
 },
 
-  addVehicle() {
-    return app.post("/api/vehicles/", { msg: "New Vehicle has been created" }).then(res => console.log(res.data));
+  addVehicle(vehicle) {
+    return app.post("/api/vehicles/", vehicle);
   },
 
  

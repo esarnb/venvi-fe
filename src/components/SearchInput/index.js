@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { TextInput, Row, Col, Button } from "react-materialize";
 import axios from "axios";
+import { VehicleAPI } from '../../utils/API'
 import "./style.css"
 
 // function SearchInput() {
@@ -9,8 +10,11 @@ class SearchInput extends Component {
 		make: "",
 		model: "",
 		year: "",
-		imgURL: ""
+		imgURL: "",
+		vehicleId: ""
 	}
+
+
 
 	searchAction = () => {
 		console.log("Submit")
@@ -74,8 +78,11 @@ class SearchInput extends Component {
 											this.state.imgURL = images;
 											// console.log(this.state)
 
-											this.props.infoGet(this.state)
+											this.getVehicleByType();
+											
+										
 										})
+
 								}
 								else {
 									console.log("Error.")
@@ -94,6 +101,68 @@ class SearchInput extends Component {
 		const { name, value } = event.target;
 		this.setState({ [name]: value });
 	}
+
+
+	//Check if there is an existing type in vehicle database
+getVehicleByType = () =>
+{
+	var make = this.state.make.toLowerCase().trim();
+	var model = this.state.model.toLowerCase().trim();
+	var year = this.state.year.trim();
+    VehicleAPI.getVehicleByType(make, model, year).then( result => {
+        console.log(" data", result);
+        console.log(result.data[0]);
+        if (!result.data[0])
+        {
+        	this.addVehicle();
+        }
+        else
+        {
+        	this.setState({vehicleId: result.data[0].id});
+        	console.log(this.state.vehicleId); 
+	        console.log("state", this.state);
+	        this.props.infoGet(this.state);         
+        }
+
+    }); 
+}
+
+
+addVehicle = () =>
+{
+
+    let make = this.state.make;
+    let model = this.state.model;
+
+    let year = this.state.year;
+    let image = this.state.imgURL;
+
+     var vehicle =
+            {
+                make: make,
+                model: model,
+                year: year,
+                image: image,
+            }
+     console.log("vehicle before send", vehicle);
+
+	VehicleAPI.addVehicle(vehicle).then(result =>
+    {
+        console.log("saved vehicle");
+        console.log(result);
+
+        //Get back vehicle id
+        console.log("saved vehicle id");
+        console.log(result.data.id);
+        var tempvehicleid = result.data.id;
+        this.setState({vehicleId: tempvehicleid});
+        console.log(this.state.vehicleId);
+        console.log("state", this.state);
+        this.props.infoGet(this.state);  
+    });
+
+}
+
 
 	render() {
 		return (
