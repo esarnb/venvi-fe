@@ -13,7 +13,7 @@ import NavBar from './components/NavBar';
 class App extends React.Component {
 
   state = {
-    userid: undefined
+    userid: 1
   }
 
   componentDidMount() {
@@ -36,23 +36,13 @@ class App extends React.Component {
           <NavBar userid={this.state.userid}/>
           <Switch>
 // To test locally 
-//             <Route exact path='/' component={Home} />
-//             <Route exact path='/search' component={Search} />
-//             <Route exact path='/profile' component={Profile} />
-//             <Route exact path='/market' component={Market} /> 
-//             <Route path='/receive/:id' component={Auth} />
+            <Route exact path='/' component={Home} />
+            <Route exact path='/search' component={Search} />
+            <Route exact path='/profile' component={Profile} />
+            <Route exact path='/market' component={Market} /> 
+            <Route path='/receive/:id' component={Auth} />
 
-            <Route exact path='/venvi-fe/' component={Home} />
-            <Route exact path='/venvi-fe/search' component={Search} />
-            <Route path='/venvi-fe/receive/:id/'component={(props) => this.setState({userid: props.match.params.id})} />
-            
-            {this.state.userid ? (
-              <React.Fragment>
-                <Route exact path='/venvi-fe/profile' component={Profile} />
-                <Route exact path='/venvi-fe/market' component={Market} /> 
-              </React.Fragment>
-            ) : <React.Fragment />} 
-
+        
 
            
           </Switch>
@@ -61,6 +51,22 @@ class App extends React.Component {
     );
   }
 }
+
+    // <Route exact path='/venvi-fe/' component={Home} />
+            // <Route exact path='/venvi-fe/search' component={Search} />
+            // <Route path='/venvi-fe/receive/:id/'component={(props) => this.setState({userid: props.match.params.id})} />
+            
+            // {this.state.userid ? (
+            //   <React.Fragment>
+            //     <Route exact path='/venvi-fe/profile' component={Profile} />
+            //     <Route exact path='/venvi-fe/market' component={Market} /> 
+            //   </React.Fragment>
+            // ) : <React.Fragment />} 
+
+
+
+
+
 
  // <Route path='/receive/:id' component={Auth} />
 
