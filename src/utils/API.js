@@ -64,10 +64,8 @@ export const ListingAPI = {
   },
 
   // To update listing
-  editListing(id) {
-    return app.put(`/api/listings/${id}`, { msg: "update this listing" }).then(res => {
-      console.log(res.data);
-    })
+  editListing(id, listing) {
+    return app.put(`/api/listings/${id}`, listing);
   },
 
   updatePhoto(id) {
