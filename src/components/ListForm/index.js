@@ -27,6 +27,7 @@ componentDidMount() {
     // Test.deleteQuery(id);
     // UserAPI.getAllUsers();
     // this.getAllListing();
+  
 
   }
 
@@ -52,6 +53,7 @@ searchAction() {
 
 
     setTimeout(this.saveListing, 3000);
+
 
 }
 
@@ -98,6 +100,8 @@ saveListing = () =>
     // var ye = "2018";
     // setTimeout(this.getListingByVehicle(ma, mo, ye), 5000);
 
+    var user = this.state.UserId;
+    setTimeout(this.getListingByUser(user), 5000);
 }
 
 
@@ -119,9 +123,20 @@ getListingByVehicle = (make, model, year) =>
     // var model = "Model S";
     // var year = "2018";
 
-    ListingAPI.getListingByVehicle(make, model, year);
+    ListingAPI.getListingByVehicle(make, model, year).then(function(data){
+      console.log("all listings by vehicle databack");
+      console.log(data);
+  })
 }
 
+getListingByUser = (UserId) =>
+{
+    ListingAPI.getListingByUser(UserId).then(function(data){
+        console.log("Byuser data", data);
+    });
+        
+ 
+}
 
 
 createListingUrl = () =>
