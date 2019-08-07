@@ -161,7 +161,11 @@ addVehicle = (year) =>
         console.log("saved vehicle id");
         console.log(result.data.id);
         var tempvehicleid = result.data.id;
+        var tempvehicleyear = result.data.year;
+
         this.setState({vehicleId: tempvehicleid});
+        this.setState({year: tempvehicleyear});
+        
         console.log(this.state.vehicleId);
         console.log("state", this.state);
         this.props.infoGet(this.state);  
