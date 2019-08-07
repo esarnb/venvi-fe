@@ -3,7 +3,7 @@ import React from 'react';
 // import ButtonBases from '../components/ButtonBases';
 import Container from '../components/Container';
 import SearchInput from '../components/SearchInput';
-import ReviewCard from '../components/ReviewCard/index'
+import ReviewCard from '../components/ReviewCard/index';
 
 import './index.css'
 
@@ -16,6 +16,7 @@ class Search extends React.Component {
         model: null,
         year: null,
         imgURL: null,
+        vehicleId: null,
         showReviewCard: false
         // rating: null
     };    
@@ -29,6 +30,7 @@ class Search extends React.Component {
       model: data.model,
       year: data.year,
       imgURL: data.imgURL,
+      vehicleId: data.vehicleId,
       showReviewCard: true
     })
   }

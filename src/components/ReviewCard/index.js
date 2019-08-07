@@ -3,7 +3,7 @@ import { Textarea, Modal, Button } from "react-materialize";
 import StarRatings from 'react-star-ratings';
 
 import './style.css';
-import { VehicleAPI } from '../../utils/API'
+
 
 class ReviewCard extends Component {
     state = {
@@ -19,15 +19,6 @@ class ReviewCard extends Component {
 
 
 
-//Check if there is an existing type in vehicle database
-getVehicleByType = (make, model, year) =>
-{
-    VehicleAPI.getVehicleByType(make, model, year).then(function(data){
-        console.log(" data", data);
-    });
-        
- 
-}
 
     render() {
         return (
