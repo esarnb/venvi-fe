@@ -124,10 +124,11 @@ saveListing = () =>
 //     // var year = "2018";
 
 
-  //   ListingAPI.getListingByVehicle(make, model, year).then(function(data){
-  //     console.log("all listings by vehicle databack");
-  //     console.log(data);
-  // })
+//     ListingAPI.getListingByVehicle(make, model, year).then(function(data){
+//       console.log("all listings by vehicle databack");
+//       console.log(data);
+//   })
+
 // }
 
 getListingByUser = (UserId) =>
