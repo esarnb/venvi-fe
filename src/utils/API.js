@@ -220,15 +220,54 @@ export const ReviewAPI = {
   export const Auth = {
 
     //
+    checkAuth: function(){
+      return app.get("/auth/google/check")
+      // .then((res) => {
+      //   console.log("RES AND RES DATA CHECK", res, res.data);
+      //   return res.data;
+      // })
+    },
+
+    // handleLogin: function(){
+    //   return app.get("/auth/google/callback")
+    //   // .then((res) => {
+    //   //   console.log("RES AND RES DATA LOGIN", res, res.data);
+    //   //   return res.data;
+    //   // })
+    // },
+    
+
+    handlelogout: function(){
+      app.get("/logout").then((res) => {
+        console.log("RES AND RES DATA LOGOUT", res, res.data);
+        return res.data;
+
+        /*
+          
+       handlelogout() {
+        Actions.handlelogout()
+            .then(data => { return data.json() })
+            .then(response => {
+                this.setState({
+                    isLoggedIn: response
+                })
+
+                if (!response) {
+                    window.location.href = "/"
+                }
+            })
+            .catch(err => console.log("err", err))
+        }
+         */
+      })
+    },	
+
     login() {
       console.log("LOGIN ONCLICK");
       
-      window.location.href = "https://venvi-passport2.herokuapp.com/auth/google/login"
-  
-      app.get("/auth/google").then((res) => {
-        console.log("RESULT OF AUTH: ", res);
-        
-      })
+      window.location.href = "https://venvi-passport2.herokuapp.com/auth/google"
+
+      // API.Auth.checkAuth()
   
     },
   }

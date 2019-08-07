@@ -132,6 +132,7 @@ function NavBar(props) {
           
           <Link to="/venvi-fe/"><StyledTab label="Home" className="navTab"/></Link>
           <Link to="/venvi-fe/search"><StyledTab label="Search" className="navTab"/></Link>
+          <div>Welcome, {(props.userData && props.userData.username) ? props.userData.username : "guest"}</div>
           {props.userid ? (
             <React.Fragment>
               <Link to="/venvi-fe/market"><StyledTab label="Market" className="navTab"/></Link>
@@ -139,7 +140,7 @@ function NavBar(props) {
              </React.Fragment>
           ): <React.Fragment />}
           <a onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}}>SignIn</a>
-
+          
           </StyledTabs>
 
         <Typography className={classes.padding} />

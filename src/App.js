@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 
-import { Test, Auth } from '../src/utils/API'
+import * as API from '../src/utils/API'
 import Home from './pages/Home'
 import Search from './pages/Search'
 import Profile from './pages/Profile'
@@ -14,31 +14,44 @@ class App extends React.Component {
 
   state = {
     // userid: 1
-    userid: undefined
+    userid: undefined,
+    logged: false,
+    userObj: undefined
   }
 
   componentDidMount() {
-    //Testing CRUD Routes
     let id = 123;
-    // Test.postQuery();
-    // Test.getResponse();
-    // Test.putQuery(id);
-    // Test.deleteQuery(id);
-    // UserAPI.getAllUsers();
+    API.Test.postQuery();
+    API.Test.getResponse();
+    API.Test.putQuery(id);
+    API.Test.deleteQuery(id);
 
+    console.log("CURRENT STATE", this.state);
+    
+    
   }
 
+  componentWillMount() {
+    this.checkAuth()
+  }
+
+  checkAuth = () => {
+    API.Auth.checkAuth().then(res => {
+      console.log("APP JS CHECKAUTH RES", res);
+      
+      this.setState({ logged: res.data })
+    }).catch(err => console.log("err", err));
+  }
 
 
   render() {
     return (
       <Router>
         <div>
-          <NavBar userid={this.state.userid}/>
+          <NavBar userid={this.state.userid} userData={this.state.userObj}/>
           <Switch>
-      <Route exact path='/venvi-fe/search' component={Search} />
-            <Route path='/venvi-fe/receive/:id/'component={(props) => this.setState({userid: props.match.params.id})} />
-            
+            <Route exact path='/venvi-fe/' component={Home}/>
+            <Route exact path='/venvi-fe/search' component={Search} />
             {this.state.userid ? (
               <React.Fragment>
                 <Route exact path='/venvi-fe/profile' component={Profile} />
@@ -59,11 +72,11 @@ class App extends React.Component {
 
 
 // To test locally 
-            <Route exact path='/' component={Home} />
-            <Route exact path='/search' component={Search} />
-            <Route exact path='/profile' component={Profile} />
-            <Route exact path='/market' component={Market} /> 
-            <Route path='/receive/:id' component={Auth} />
+            // <Route exact path='/' component={Home} />
+            // <Route exact path='/search' component={Search} />
+            // <Route exact path='/profile' component={Profile} />
+            // <Route exact path='/market' component={Market} /> 
+            // <Route path='/receive/:id' component={Auth} />
 
 
 
@@ -78,18 +91,13 @@ class App extends React.Component {
             //   </React.Fragment>
             // ) : <React.Fragment />} 
 
-
-
-
-
-
- // <Route path='/receive/:id' component={Auth} />
+           // <Route path='/receive/:id' component={Auth} />
 
             // <Route exact path='/venvi-fe/' component={Home} />
+            // <Route path='/venvi-fe/receive/:id' component={Auth} />
             // <Route exact path='/venvi-fe/search' component={Search} />
             // <Route exact path='/venvi-fe/profile' component={Profile} />
             // <Route exact path='/venvi-fe/market' component={Market} /> 
-            // <Route path='/venvi-fe/receive/:id' component={Auth} />
 
 
 export default App;
