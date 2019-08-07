@@ -38,3 +38,8 @@ h3, h2 {
 #searchInput{
     margin-left:11%;
 }
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
