@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { TextInput, Row, Col, Button } from "react-materialize";
 import axios from "axios";
+import "./style.css"
 
 // function SearchInput() {
 class SearchInput extends Component {
@@ -90,29 +91,25 @@ class SearchInput extends Component {
 
 	render() {
 		return (
-			<Row>
-				<Col>
-					<form onSubmit={e => {
-						e.preventDefault();
-						this.searchAction();
-					}}>
-						<Row style={{ marginBottom: '0px' }}>
-							<Col className="input-field">
-								<TextInput name="make" value={this.state.make} onChange={this.handleChange} type="text" label="Make" />
-							</Col>
-							<Col className="input-field">
-								<TextInput name="model" value={this.state.model} onChange={this.handleChange} type="text" label="Model" />
-							</Col>
-							<Col className="input-field">
-								<TextInput name="year" value={this.state.year} onChange={this.handleChange} type="text" label="Year" />
-							</Col>
-						</Row>
-						<Row>
-							<Button type="submit" className="#37474f blue-grey darken-3" waves="light" style={{ marginLeft: '22px' }}>Search</Button>
-						</Row>
-					</form>
-				</Col>
-			</Row>
+			<form onSubmit={e => {
+				e.preventDefault();
+				this.searchAction();
+			}}>
+				<Row style={{ marginBottom: '0px' }}>
+					<Col className="input-field">
+						<TextInput name="make" value={this.state.make} onChange={this.handleChange} type="text" label="Make" />
+					</Col>
+					<Col className="input-field">
+						<TextInput name="model" value={this.state.model} onChange={this.handleChange} type="text" label="Model" />
+					</Col>
+					<Col className="input-field">
+						<TextInput name="year" value={this.state.year} onChange={this.handleChange} type="text" label="Year" />
+					</Col>
+				</Row>
+				<Row>
+					<Button type="submit" className="#37474f blue-grey darken-3" waves="light" style={{ marginLeft: '22px' }}>Search</Button>
+				</Row>
+			</form>
 		)
 	}
 }
