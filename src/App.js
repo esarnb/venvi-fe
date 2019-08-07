@@ -36,11 +36,13 @@ class App extends React.Component {
         <div>
           <NavBar userid={this.state.userid}/>
           <Switch>
-            <Route exact path='/' component={Home} />
+
+             <Route exact path='/' component={Home} />
             <Route exact path='/search' component={Search} />
             <Route exact path='/profile' component={Profile} />
             <Route exact path='/market' component={Market} /> 
             <Route path='/receive/:id' component={Auth} />
+
         
           </Switch>
         </div>
