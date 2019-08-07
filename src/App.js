@@ -13,7 +13,8 @@ import NavBar from './components/NavBar';
 class App extends React.Component {
 
   state = {
-    userid: 1
+    // userid: 1
+    userid: undefined
   }
 
   componentDidMount() {
@@ -35,16 +36,16 @@ class App extends React.Component {
         <div>
           <NavBar userid={this.state.userid}/>
           <Switch>
-// To test locally 
-            <Route exact path='/' component={Home} />
-            <Route exact path='/search' component={Search} />
-            <Route exact path='/profile' component={Profile} />
-            <Route exact path='/market' component={Market} /> 
-            <Route path='/receive/:id' component={Auth} />
-
+      <Route exact path='/venvi-fe/search' component={Search} />
+            <Route path='/venvi-fe/receive/:id/'component={(props) => this.setState({userid: props.match.params.id})} />
+            
+            {this.state.userid ? (
+              <React.Fragment>
+                <Route exact path='/venvi-fe/profile' component={Profile} />
+                <Route exact path='/venvi-fe/market' component={Market} /> 
+              </React.Fragment>
+            ) : <React.Fragment />} 
         
-
-           
           </Switch>
         </div>
       </Router>
@@ -53,6 +54,20 @@ class App extends React.Component {
 }
 
     // <Route exact path='/venvi-fe/' component={Home} />
+
+
+
+
+// To test locally 
+            <Route exact path='/' component={Home} />
+            <Route exact path='/search' component={Search} />
+            <Route exact path='/profile' component={Profile} />
+            <Route exact path='/market' component={Market} /> 
+            <Route path='/receive/:id' component={Auth} />
+
+
+
+ // Change back to this before push to master   
             // <Route exact path='/venvi-fe/search' component={Search} />
             // <Route path='/venvi-fe/receive/:id/'component={(props) => this.setState({userid: props.match.params.id})} />
             

@@ -93,10 +93,10 @@ saveListing = () =>
     setTimeout(this.createListingUrl, 3000);
     // setTimeout(this.getAllListing, 5000);
 
-    var ma = "TESLA";
-    var mo = "Model S";
-    var ye = "2018";
-    setTimeout(this.getListingByVehicle(ma, mo, ye), 5000);
+    // var ma = "TESLA";
+    // var mo = "Model S";
+    // var ye = "2018";
+    // setTimeout(this.getListingByVehicle(ma, mo, ye), 5000);
 
 }
 
