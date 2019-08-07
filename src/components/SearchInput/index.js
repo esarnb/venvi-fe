@@ -22,7 +22,7 @@ class SearchInput extends Component {
 				var allMakes = response.data.Results;
 				var queryMake = null;
 				if (this.state.make != "") {
-					queryMake = this.state.make.toLowerCase();
+					queryMake = this.state.make.toLowerCase().trim();
 				}
 
 				console.log(queryMake);
@@ -36,15 +36,15 @@ class SearchInput extends Component {
 				})
 
 				if (makeVeri) {
-				axios.get(`https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/${this.state.make}/vehicleType/car?format=json`)
+				axios.get(`https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/${queryMake}/vehicleType/car?format=json`)
 					.then(response => {
 						var carModels = response.data.Results;
-						axios.get(`https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/${this.state.make}/vehicleType/truck?format=json`)
+						axios.get(`https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/${queryMake}/vehicleType/truck?format=json`)
 							.then(resp => {
 								var truckModels = resp.data.Results;
 								var allModels = carModels.concat(truckModels);
 								console.log(allModels);
-								var queryModel = this.state.model.toLowerCase();
+								var queryModel = this.state.model.toLowerCase().trim();
 								console.log(queryModel);
 
 								allModels.forEach(value => {
@@ -58,8 +58,8 @@ class SearchInput extends Component {
 
 
 								var year = "";
-								if (Number.parseInt(this.state.year)) {
-									year = Number.parseInt(this.state.year)
+								if (Number.parseInt(this.state.year.trim())) {
+									year = Number.parseInt(this.state.year.trim())
 								}
 
 

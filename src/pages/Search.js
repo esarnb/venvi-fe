@@ -17,6 +17,7 @@ class Search extends React.Component {
         year: null,
         imgURL: null,
         showReviewCard: false
+        // rating: null
     };    
   }
 
@@ -32,6 +33,12 @@ class Search extends React.Component {
     })
   }
 
+  // getRating = data => {
+  //   this.setState({
+  //     rating: data
+  //   })
+  // }
+
   render() {
     return (
       <div>
@@ -43,6 +50,7 @@ class Search extends React.Component {
             make={this.state.make}
             model={this.state.model}
             year={this.state.year}
+            // ratingGet={this.getRating}
           /> : null}
         </Container>
       </div>
