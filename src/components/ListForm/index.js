@@ -13,14 +13,14 @@ state = {
     model:"",
     year:"",
     file:"",
-    UserId: "",
+    UserId: 1,
     listings: [],
     currentListingId: ""
 }
 
 componentDidMount() {
     //Testing CRUD Routes
-    let id = 123;
+    // let id = 123;
     // Test.postQuery();
     // Test.getResponse();
     // Test.putQuery(id);
@@ -62,7 +62,7 @@ saveListing = () =>
     let make = this.state.make;
     let model = this.state.model;
     let year = this.state.year;
-    let UserId = 1;
+    let UserId = this.state.UserId;
     let vin = this.state.vin;
 
     let image = this.state.file;
@@ -91,19 +91,37 @@ saveListing = () =>
     });
 
     setTimeout(this.createListingUrl, 3000);
-    setTimeout(this.getAllListing, 5000);
+    // setTimeout(this.getAllListing, 5000);
+
+    // var ma = "TESLA";
+    // var mo = "Model S";
+    // var ye = "2018";
+    // setTimeout(this.getListingByVehicle(ma, mo, ye), 5000);
+
 }
 
 
 
+
+//get all listing
 getAllListing = () =>
 {
     ListingAPI.getAllListing().then(function(data){
-      console.log("databack");
+      console.log("all listings databack");
       console.log(data);
-
     });
 }
+
+
+getListingByVehicle = (make, model, year) =>
+{   
+    // var make = "TESLA";
+    // var model = "Model S";
+    // var year = "2018";
+
+    ListingAPI.getListingByVehicle(make, model, year);
+}
+
 
 
 createListingUrl = () =>
