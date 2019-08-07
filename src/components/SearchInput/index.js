@@ -20,7 +20,10 @@ class SearchInput extends Component {
 		axios.get("https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json")
 			.then(response => {
 				var allMakes = response.data.Results;
-				var queryMake = this.state.make.toLowerCase();
+				var queryMake = null;
+				if (this.state.make != "") {
+					queryMake = this.state.make.toLowerCase();
+				}
 
 				console.log(queryMake);
 
@@ -32,6 +35,7 @@ class SearchInput extends Component {
 					}
 				})
 
+				if (makeVeri) {
 				axios.get(`https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/${this.state.make}/vehicleType/car?format=json`)
 					.then(response => {
 						var carModels = response.data.Results;
@@ -80,9 +84,11 @@ class SearchInput extends Component {
 
 							})
 					})
-
-			})
-	}
+				}
+	else {
+		console.log("Make not match.")
+	}})
+}
 
 	handleChange = event => {
 		const { name, value } = event.target;

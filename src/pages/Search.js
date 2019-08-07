@@ -15,7 +15,8 @@ class Search extends React.Component {
         make: null,
         model: null,
         year: null,
-        imgURL: null
+        imgURL: null,
+        showReviewCard: false
     };    
   }
 
@@ -26,7 +27,8 @@ class Search extends React.Component {
       make: data.make,
       model: data.model,
       year: data.year,
-      imgURL: data.imgURL
+      imgURL: data.imgURL,
+      showReviewCard: true
     })
   }
 
@@ -37,11 +39,11 @@ class Search extends React.Component {
           <h2> Top Consumer Picks </h2>
           <span id="line"> </span>
           <SearchInput infoGet={this.infoCallback}/>
-          <ReviewCard image={this.state.imgURL} 
+          {this.state.showReviewCard ? <ReviewCard image={this.state.imgURL} 
             make={this.state.make}
             model={this.state.model}
             year={this.state.year}
-          />
+          /> : null}
         </Container>
       </div>
     );
