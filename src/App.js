@@ -35,16 +35,16 @@ class App extends React.Component {
         <div>
           <NavBar userid={this.state.userid}/>
           <Switch>
-// To test locally 
+{/* // To test locally 
 //             <Route exact path='/' component={Home} />
 //             <Route exact path='/search' component={Search} />
 //             <Route exact path='/profile' component={Profile} />
 //             <Route exact path='/market' component={Market} /> 
-//             <Route path='/receive/:id' component={Auth} />
+//             <Route path='/receive/:id' component={Auth} /> */}
 
             <Route exact path='/venvi-fe/' component={Home} />
             <Route exact path='/venvi-fe/search' component={Search} />
-            <Route path='/venvi-fe/receive/:id/'component={(props) => this.setState({userid: props.match.params.id})} />
+            <Route path='/venvi-fe/receive/:id/'component={Home} />
             
             {this.state.userid ? (
               <React.Fragment>

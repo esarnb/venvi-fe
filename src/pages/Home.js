@@ -9,6 +9,15 @@ import './index.css'
 
 //Component
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    props ? this.state = {
+      userid: props.match.params.id
+    } : this.state = {
+      userid: undefined
+    };      
+  }
+
   render() {
     return (
       <div>
@@ -17,6 +26,7 @@ class Home extends React.Component {
         <Container>
           <h3> Top Consumer Picks </h3>
           <span id="line"> </span>
+          {this.state.userid ? <div>Logged In with id: {this.state.userid} </div> : <div>Not Logged In</div> }
           <ButtonBases />
       
         </Container>
