@@ -92,15 +92,12 @@ export const ListingAPI = {
 
   // Get User Listings
   getListingByUser(userId) {
-    app.get(`/api/listings/user/${userId}`).then(res => console.log(res.data));
+    app.get(`/api/listings/user/${userId}`).then(res => console.log("Byuser data", res.data));;
   },
 
   // Get Vehicle Listings
   getListingByVehicle(make, model, year) {
-    app.get(`/api/listings/vehicle/${make}/${model}/${year}`).then(function(data){
-      console.log("all listings by vehicle databack");
-      console.log(data);
-  })
+    app.get(`/api/listings/vehicle/${make}/${model}/${year}`);
 
 },
 }
