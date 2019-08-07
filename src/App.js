@@ -25,6 +25,8 @@ class App extends React.Component {
     // Test.deleteQuery(id);
     // UserAPI.getAllUsers();
 
+    var localID = localStorage.getItem("venvi-user")
+    localID ? this.setState({userid: localID}) : localID = undefined;
   }
 
 
@@ -44,7 +46,7 @@ class App extends React.Component {
 
             <Route exact path='/venvi-fe/' component={Home} />
             <Route exact path='/venvi-fe/search' component={Search} />
-            <Route path='/venvi-fe/receive/:id/'component={Home} />
+            <Route path='/venvi-fe/receive/:id/'component={Home} userid={this.state.userid} />
             
             {this.state.userid ? (
               <React.Fragment>
