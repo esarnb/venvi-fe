@@ -180,7 +180,7 @@ render () {
                     <TextInput name="vin" value={this.state.vin} onChange={this.handleChange} type="text" label="Vin" />                    
                 </Col>
                     <Col className="input-field">
-                    <TextInput name="price" value={this.state.price} onChange={this.handleChange} type="text" label="Price" />                    
+                    <TextInput name="price" value={this.state.price} onChange={this.handleChange} type="number" label="Price" />                    
                 </Col>
                 <Col className="input-field">
                     <TextInput name="make" value={this.state.make} onChange={this.handleChange} type="text" label="Make"  disabled={true}/>                    

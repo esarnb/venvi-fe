@@ -45,7 +45,18 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function ListCard() {
+const styles = {
+  button:{
+    '&:active':{
+      backgroundColor: "gold",
+    }
+  }
+}
+
+export default function ListCard(props) {
+  const {image,make,model,price,year} = props;
+  var name = `${year} ${make} ${model}`
+  console.log("name",name)
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -66,13 +77,11 @@ export default function ListCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
-      />
+        title= {name}      
+        />
       <CardMedia
         className={classes.media}
-        image="https://static.tcimg.net/vehicles/primary/d82385debfdb47d1/2019-Lamborghini-Aventador-white-full_color-driver_side_front_quarter.png"
-        title="Paella dish"
+        image={image}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
@@ -81,11 +90,11 @@ export default function ListCard() {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton id="favorite" aria-label="add to favorites">
-          <FavoriteIcon />
+          <FavoriteIcon id="fav"/>
         </IconButton>
-        <IconButton aria-label="share">
+        {/* <IconButton aria-label="share">
           <ShareIcon />
-        </IconButton>
+        </IconButton> */}
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -99,7 +108,7 @@ export default function ListCard() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Price: $500,000</Typography>
+          <Typography paragraph>Price: {price}</Typography>
           <Typography paragraph>
           </Typography>
           <Typography paragraph>

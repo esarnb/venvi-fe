@@ -76,7 +76,17 @@ render () {
         </div>
         {this.state.buyshow ? <SearchInput /> : null}
         {this.state.showForm ? <ListForm/>: null}
-    {listing}
+    <div>
+    {this.state.listings.map(item =>(
+    <ListCard key={item.id}
+      image={item.image}
+      make={item.make}
+      model={item.model}
+      price={item.price}
+      year={item.year}
+      vin={item.vin} />
+  ))}
+  </div>
     </div>
   );
 }
