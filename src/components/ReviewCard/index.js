@@ -7,7 +7,8 @@ import './style.css';
 
 class ReviewCard extends Component {
     state = {
-        rating: 0
+        rating: 0,
+        textreview: ""
     }
 
     changeRating = newRating => {
@@ -17,12 +18,24 @@ class ReviewCard extends Component {
         // this.props.ratingGet(this.state.rating)
       }
 
-
+      handleChange = event => {
+		const { name, value } = event.target;
+		this.setState({ [name]: value });
+    }
+    
+    showData = () => {
+        console.log(this.state)
+        console.log(this.props.id)
+        this.setState({
+            rating: 0,
+            textreview: ""
+        })
+    }
 
 
     render() {
         return (
-            <div className="card" id={this.props.id}>
+            <div className="card">
                 <div className="card-image">
                     <img src={this.props.image} />
                     <span className="card-title">{this.props.year} {this.props.make} {this.props.model}</span>
@@ -31,10 +44,10 @@ class ReviewCard extends Component {
                     {/* put reviews here */}
                 </div>
                 <div className="card-action">
-                <Modal header="Add Review" fixedFooter trigger={<Button waves="light" className="reviewButton">
+                <Modal header="Add Review" fixedFooter trigger={<Button waves="light" className="reviewButton" onClick={this.getVehicleByType}>
                         Add Review
                     </Button>}
-                    actions={<Button modal="close" className="reviewButton">Submit Review</Button>}>
+                    actions={<Button modal="close" className="reviewButton" onClick={this.showData}>Submit Review</Button>}>
                         <div><b>Rating:	&nbsp;	&nbsp;	&nbsp;	&nbsp;</b>
                         <StarRatings
                             rating={this.state.rating}
@@ -45,7 +58,7 @@ class ReviewCard extends Component {
                             starDimension='20px'
                         />
                         </div>
-                        <Textarea placeholder="Type review here"/>
+                        <Textarea placeholder="Type review here" value={this.state.textreview} name="textreview" onChange={this.handleChange}/>
                 </Modal>
                 </div>
             </div>
