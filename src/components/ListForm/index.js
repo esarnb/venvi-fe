@@ -131,7 +131,10 @@ getListingByVehicle = (make, model, year) =>
 
 getListingByUser = (UserId) =>
 {
-    ListingAPI.getListingByUser(UserId);
+    ListingAPI.getListingByUser(UserId).then(function(data){
+        console.log("Byuser data", data);
+    });
+        
  
 }
 
