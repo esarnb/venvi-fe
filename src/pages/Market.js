@@ -22,6 +22,7 @@ class Market extends React.Component {
 
 componentDidMount(){
   this.allListing();
+  this.editListing();
 }
 
 //get all listing
@@ -34,6 +35,20 @@ allListing = () =>
       this.setState({ listings: [...res.data] });
       console.log(this.state.listings)
     });
+}
+
+editListing = () =>
+{
+   
+     let price = 20;
+     let id = 10
+     var listing =
+            {
+                price: price,
+            }
+     ListingAPI.editListing(id, listing).then(res => {
+      console.log(res.data);
+    })
 }
 
 // Search for a specific car

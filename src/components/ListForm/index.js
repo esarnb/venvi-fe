@@ -27,7 +27,7 @@ componentDidMount() {
     // Test.deleteQuery(id);
     // UserAPI.getAllUsers();
     // this.getAllListing();
-  
+
 
   }
 
@@ -53,6 +53,7 @@ searchAction() {
 
 
     setTimeout(this.saveListing, 3000);
+
 
 
 }
@@ -157,6 +158,20 @@ createListingUrl = () =>
         listing.append("currentListingId", currentListingId);
 
         ListingAPI.createListingUrl(listing);
+}
+
+
+editListing = () =>
+{
+    console.log("in editlisting");
+     // let price = this.state.price;
+     let price = 20;
+     let id = 10
+     var listing =
+            {
+                price: price,
+            }
+     ListingAPI.editListing(id, listing);
 }
 
 
