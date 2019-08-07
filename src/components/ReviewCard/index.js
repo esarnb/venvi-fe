@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Textarea, Modal, Button } from "react-materialize";
 import StarRatings from 'react-star-ratings';
+import { ReviewAPI } from '../../utils/API'
 
 import './style.css';
 
@@ -23,14 +24,42 @@ class ReviewCard extends Component {
 		this.setState({ [name]: value });
     }
     
-    showData = () => {
-        console.log(this.state)
-        console.log(this.props.id)
+
+
+    addReview = () =>
+    {
+         let VehicleId = this.props.id;
+        let ratingNumber = this.state.rating;
+        let review = this.state.textreview;
+
+     var newReview =
+            {
+                VehicleId: VehicleId,
+                ratingNumber: ratingNumber,
+                review: review
+            }
+
+     console.log("newreview before send", newReview);
+
+      ReviewAPI.addReview(newReview).then(result =>
+    {
+        console.log("saved review");
+        console.log(result);
+
+        //Get back review id
+        console.log("saved review id");
+        console.log(result.data.id);
+
         this.setState({
-            rating: 0,
-            textreview: ""
+        rating: 0,
+        textreview: ""
         })
-    }
+
+    });
+}
+
+
+
 
 
     render() {
@@ -47,7 +76,7 @@ class ReviewCard extends Component {
                 <Modal header="Add Review" fixedFooter trigger={<Button waves="light" className="reviewButton" onClick={this.getVehicleByType}>
                         Add Review
                     </Button>}
-                    actions={<Button modal="close" className="reviewButton" onClick={this.showData}>Submit Review</Button>}>
+                    actions={<Button modal="close" className="reviewButton" onClick={this.addReview}>Submit Review</Button>}>
                         <div><b>Rating:	&nbsp;	&nbsp;	&nbsp;	&nbsp;</b>
                         <StarRatings
                             rating={this.state.rating}

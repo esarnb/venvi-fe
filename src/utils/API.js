@@ -196,8 +196,8 @@ export const ReviewAPI = {
   },
 
    //Create new review
-  addReview() {
-    return app.post(`/api/reviews`, { msg: "Review has been added" }).then(res => console.log(res.data));
+  addReview(newReview) {
+    return app.post(`/api/reviews`, newReview);
   },
 
   getReviewById(id) {

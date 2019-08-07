@@ -161,18 +161,7 @@ createListingUrl = () =>
 }
 
 
-editListing = () =>
-{
-    console.log("in editlisting");
-     // let price = this.state.price;
-     let price = 20;
-     let id = 10
-     var listing =
-            {
-                price: price,
-            }
-     ListingAPI.editListing(id, listing);
-}
+
 
 
 
