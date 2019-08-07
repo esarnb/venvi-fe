@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { TextInput, Row, Col, Button } from "react-materialize";
 import axios from "axios";
-import { UserAPI, ListingAPI, BookmarkAPI} from '../../utils/API'
+import { ListingAPI } from '../../utils/API'
 
 class ListForm extends Component {
 
@@ -103,24 +103,24 @@ saveListing = () =>
 
 
 
-//get all listing
-getAllListing = () =>
-{
-    ListingAPI.getAllListing().then(function(data){
-      console.log("all listings databack");
-      console.log(data);
-    });
-}
+// //get all listing
+// getAllListing = () =>
+// {
+//     ListingAPI.getAllListing().then(function(data){
+//       console.log("all listings databack");
+//       console.log(data);
+//     });
+// }
 
 
-getListingByVehicle = (make, model, year) =>
-{   
-    // var make = "TESLA";
-    // var model = "Model S";
-    // var year = "2018";
+// getListingByVehicle = (make, model, year) =>
+// {   
+//     // var make = "TESLA";
+//     // var model = "Model S";
+//     // var year = "2018";
 
-    ListingAPI.getListingByVehicle(make, model, year);
-}
+//     ListingAPI.getListingByVehicle(make, model, year);
+// }
 
 
 
