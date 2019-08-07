@@ -13,6 +13,7 @@ class ReviewCard extends Component {
         this.setState({
           rating: newRating
         });
+        // this.props.ratingGet(this.state.rating)
       }
 
 

@@ -6,3 +6,8 @@
     background-color:#212121;
     color: #b29e33;
 }
+
+.reviewButton:hover {
+    background-color:#535353;
+    color: #b29e33;
+}
