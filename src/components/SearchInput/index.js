@@ -62,9 +62,17 @@ class SearchInput extends Component {
 
 
 								var year = "";
+								console.log(this.state.year.trim());
 								if (Number.parseInt(this.state.year.trim())) {
-									year = Number.parseInt(this.state.year.trim())
+									year = Number.parseInt(this.state.year.trim());
+									if (year === "") {
+										year = 2019;
+									}
 								}
+								if (year === "") {
+									year = 2019;
+								}							
+								console.log(year);
 
 
 								if (makeVeri && modelVeri) {
@@ -78,7 +86,7 @@ class SearchInput extends Component {
 											this.state.imgURL = images;
 											// console.log(this.state)
 
-											this.getVehicleByType();
+											this.getVehicleByType(year);
 											
 										
 										})
@@ -104,17 +112,16 @@ class SearchInput extends Component {
 
 
 	//Check if there is an existing type in vehicle database
-getVehicleByType = () =>
+getVehicleByType = (year) =>
 {
 	var make = this.state.make.toLowerCase().trim();
 	var model = this.state.model.toLowerCase().trim();
-	var year = this.state.year.trim();
     VehicleAPI.getVehicleByType(make, model, year).then( result => {
         console.log(" data", result);
         console.log(result.data[0]);
         if (!result.data[0])
         {
-        	this.addVehicle();
+        	this.addVehicle(year);
         }
         else
         {
@@ -128,13 +135,12 @@ getVehicleByType = () =>
 }
 
 
-addVehicle = () =>
+addVehicle = (year) =>
 {
 
     let make = this.state.make;
     let model = this.state.model;
 
-    let year = this.state.year;
     let image = this.state.imgURL;
 
      var vehicle =
