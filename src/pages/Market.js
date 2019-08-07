@@ -1,6 +1,6 @@
 import React from 'react';
 import { MarketBuy, MarketSell } from '../components/MarketBtn';
-import SearchInput from '../components/SearchInput';
+import BuyForm from '../components/BuyForm';
 import ListForm from '../components/ListForm';
 import NavBar from '../components/NavBar';
 import { ListingAPI } from '../utils/API';
@@ -11,10 +11,13 @@ import './index.css'
 //Component
 class Market extends React.Component {
 
-state = {
-  buyshow: false,
-  showForm: false,
-  listings: []
+ constructor(props) {
+    super(props);
+    this.state = {
+    buyshow: false,
+    showForm: false,
+    listings: []
+  };
 }
 
 componentDidMount(){
@@ -33,15 +36,19 @@ allListing = () =>
     });
 }
 
-
-// getListingByVehicle = (make, model, year) =>
-// {   
-//     // var make = "TESLA";
-//     // var model = "Model S";
-//     // var year = "2018";
-
-//     ListingAPI.getListingByVehicle(make, model, year);
-// }
+// Search for a specific car
+getListingByVehicle = (data) =>
+{   
+  console.log("data passed");
+  console.log(`${data.year} + ${data.make} + ${data.model}`)
+    let make = data.make;
+    let model = data.model;
+    let year = data.year;
+    ListingAPI.getListingByVehicle(make, model, year).then(res=>{
+      console.log(res.data);
+      this.setState({listings:res.data})
+    });
+}
 
 handleSearch = () => {
   this.setState({buyshow: true})
@@ -74,7 +81,7 @@ render () {
         <MarketBuy handleSearch={this.handleSearch}/>
         <MarketSell showForm={this.showForm}/>
         </div>
-        {this.state.buyshow ? <SearchInput /> : null}
+        {this.state.buyshow ? <BuyForm infoBuy={this.getListingByVehicle}/> : null}
         {this.state.showForm ? <ListForm/>: null}
     <div>
     {this.state.listings.map(item =>(
