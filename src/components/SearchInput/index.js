@@ -59,8 +59,6 @@ class SearchInput extends Component {
 									}
 								})
 
-
-
 								var year = "";
 								console.log(this.state.year.trim());
 								if (Number.parseInt(this.state.year.trim())) {
