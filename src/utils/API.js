@@ -155,6 +155,13 @@ export const VehicleAPI = {
     return app.get("/api/vehicles").then(res => console.log(res.data));
   }, 
 
+
+
+  getVehicleByType(make, model, year) {
+    return app.get(`/api/vehicles/vehicle/${make}/${model}/${year}`);
+
+},
+
   addVehicle() {
     return app.post("/api/vehicles/", { msg: "New Vehicle has been created" }).then(res => console.log(res.data));
   },
