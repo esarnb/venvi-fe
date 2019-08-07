@@ -14,48 +14,48 @@ import { Link } from "react-router-dom";
 //  * UNUSED AntTabs AntTab
 //  */
 
-const AntTabs = withStyles({
-  root: {
-    borderBottom: "1px solid black"
-  },
-  indicator: {
-    backgroundColor: "#black"
-  }
-})(Tabs);
+// const AntTabs = withStyles({
+//   root: {
+//     borderBottom: "1px solid black"
+//   },
+//   indicator: {
+//     backgroundColor: "#black"
+//   }
+// })(Tabs);
 
-const AntTab = withStyles(theme => ({
-  root: {
-    textTransform: "none",
-    minWidth: 72,
-    fontWeight: theme.typography.fontWeightRegular,
-    marginRight: theme.spacing(4),
-    opacity: 1,
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"'
-    ].join(","),
-    "&:hover": {
-      color: "black",
-      opacity: 1
-    },
-    "&$selected": {
-      color: "black",
-      fontWeight: theme.typography.fontWeightHigh
-    },
-    "&:focus": {
-      color: "black",
-    }
-  },
-  selected: {}
-}))(props => <Tab disableRipple {...props} />);
+// const AntTab = withStyles(theme => ({
+//   root: {
+//     textTransform: "none",
+//     minWidth: 72,
+//     fontWeight: theme.typography.fontWeightRegular,
+//     marginRight: theme.spacing(4),
+//     opacity: 1,
+//     fontFamily: [
+//       "-apple-system",
+//       "BlinkMacSystemFont",
+//       '"Segoe UI"',
+//       "Roboto",
+//       '"Helvetica Neue"',
+//       "Arial",
+//       "sans-serif",
+//       '"Apple Color Emoji"',
+//       '"Segoe UI Emoji"',
+//       '"Segoe UI Symbol"'
+//     ].join(","),
+//     "&:hover": {
+//       color: "black",
+//       opacity: 1
+//     },
+//     "&$selected": {
+//       color: "black",
+//       fontWeight: theme.typography.fontWeightHigh
+//     },
+//     "&:focus": {
+//       color: "black",
+//     }
+//   },
+//   selected: {}
+// }))(props => <Tab disableRipple {...props} />);
 
 const StyledTabs = withStyles({
   indicator: {

@@ -42,7 +42,7 @@ class App extends React.Component {
             <Route exact path='/profile' component={Profile} />
             <Route exact path='/market' component={Market} /> 
             <Route path='/receive/:id' component={Auth} />
-     
+
         
           </Switch>
         </div>
