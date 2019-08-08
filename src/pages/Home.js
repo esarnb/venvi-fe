@@ -11,10 +11,13 @@ import './index.css'
 //Component
 class Home extends React.Component {
   render() {
+    console.log("MATCH QUERY", this.props.match.params.userid);
+    console.log("LOCATION QUERY", this.props.location.query);
+    console.log("LOCATION SEARCH", this.props.location.search);
     return (
       <div>
-        { this.props.match.params.userid ? (
-              <Redirect to="/venvi-fe/market" />
+        { this.props.location.search ? (
+              <Redirect to="/logged" />
         ) : (
           <React.Fragment>
             <Banner />

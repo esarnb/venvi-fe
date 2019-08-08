@@ -32,7 +32,7 @@ class App extends React.Component {
         <div>
           <NavBar userid={this.state.userid}/>
           <Switch>
-            <Route exact path='/' component={Home} />
+          <Route exact path='/' component={Home} />
             {/* <Route exact path='/:user' component={Home} /> */}
             <Route exact path='/search' component={Search} />
             <Route path="/logged" component={AuthSuccess} />
