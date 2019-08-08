@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { TextInput, Row, Col, Button } from "react-materialize";
 import axios from "axios";
-import { VehicleAPI } from '../../utils/API'
+import { VehicleAPI, ReviewAPI } from '../../utils/API'
 import "./style.css"
 
 // function SearchInput() {
@@ -62,13 +62,13 @@ class SearchInput extends Component {
 								var year = "";
 								console.log(this.state.year.trim());
 								if (Number.parseInt(this.state.year.trim())) {
-									year = Number.parseInt(this.state.year.trim());
+									year = this.state.year.trim();
 									if (year === "") {
-										year = 2019;
+										year = "2019";
 									}
 								}
 								if (year === "") {
-									year = 2019;
+									year = "2019";
 								}							
 								console.log(year);
 
@@ -114,30 +114,34 @@ getVehicleByType = (year) =>
 {
 	var make = this.state.make.toLowerCase().trim();
 	var model = this.state.model.toLowerCase().trim();
+
     VehicleAPI.getVehicleByType(make, model, year).then( result => {
         console.log(" data", result);
-        console.log(result.data[0]);
-        if (!result.data[0])
+        console.log(result.data);
+        if (!result.data)
         {
         	this.addVehicle(year);
         }
         else
         {
-        	this.setState({vehicleId: result.data[0].id});
+        	this.setState({vehicleId: result.data.id});
         	console.log(this.state.vehicleId); 
 	        console.log("state", this.state);
-	        this.props.infoGet(this.state);         
+	        this.props.infoGet(this.state); 
+	        this.getReviewByVehicleId();        
         }
+        console.log("before review call")
 
     }); 
+   
 }
 
 
 addVehicle = (year) =>
 {
 
-    let make = this.state.make;
-    let model = this.state.model;
+    let make = this.state.make.toLowerCase().trim();
+    let model = this.state.model.toLowerCase().trim();
 
     let image = this.state.imgURL;
 
@@ -166,10 +170,25 @@ addVehicle = (year) =>
         
         console.log(this.state.vehicleId);
         console.log("state", this.state);
-        this.props.infoGet(this.state);  
+        this.props.infoGet(this.state);
+        this.getReviewByVehicleId();  
     });
 
 }
+
+
+    getReviewByVehicleId = () =>
+    {
+      console.log("inside review call")
+      var id = this.state.vehicleId;
+      console.log("vehicle id", id);
+      ReviewAPI.getReviewByVehicle(id).then(function(data){
+      console.log("all reviews databack");
+      console.log(data);
+    });
+
+    }
+
 
 
 	render() {

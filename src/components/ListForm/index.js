@@ -108,7 +108,7 @@ saveListing = () =>
 
 
 
-// //get all listing
+//get all listing
 // getAllListing = () =>
 // {
 //     ListingAPI.getAllListing().then(function(data){

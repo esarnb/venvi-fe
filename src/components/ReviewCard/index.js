@@ -28,7 +28,7 @@ class ReviewCard extends Component {
 
     addReview = () =>
     {
-         let VehicleId = this.props.id;
+        let VehicleId = this.props.id;
         let ratingNumber = this.state.rating;
         let review = this.state.textreview;
 
@@ -57,9 +57,6 @@ class ReviewCard extends Component {
 
     });
 }
-
-
-
 
 
     render() {
