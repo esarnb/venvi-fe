@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Spin} from 'antd';
+import { Icon } from 'antd';
 import './style.css';
 
 function Divider(){
@@ -13,32 +13,26 @@ function Divider(){
 		<div >
 	  	<Icon type="car" className = "icon uk-align-center"/>
 	  </div>
-	  <h4>Chloe</h4>
-	  <p>From the latest trendy boutique hotel to the iconic palace with XXL pool, go for a mini-vacation just a few subway stops away from your home.</p>
+	  <h4>Reviews</h4>
 	</div>
-
 	<div>
-	<Spin />
+
+	
 
 	</div>
-
-
 	<div className = "section">
 	<div>
 		<Icon type="key"  className = "icon uk-align-center"/>
 	</div>
-	
-	<h4>Supreme</h4>
-	<p>Privatize a pool, take a Japanese bath or wake up in of garden… your Sundays will not be alike.</p>
+	<h4>Find a Car</h4>
 	</div>
 
 	<div className = "section">
 	<div>
-		<Icon type="smile" className = "icon uk-align-center"/>
+		<Icon type="dollar" className = "icon uk-align-center"/>
 	</div>
-	<h4>Leader</h4>
+	<h4>Sell Your Car</h4>
 
-	<p>By registering, you will access specially negotiated rates that you will not find anywhere else.</p>
 	</div>
 </div>
     )
