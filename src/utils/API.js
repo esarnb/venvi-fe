@@ -11,7 +11,6 @@ export const UserAPI = {
     return app.get("/api/users").then(res => console.log(res.data));
   },
 
-
   // To create user account in our database
   addUser() {
     return app.post("/api/users", { msg: "Hello Buddy" }).then(res => console.log(res.data));
@@ -44,7 +43,6 @@ export const UserAPI = {
   }
 }
 
-
 /*============================================================ 
                         LISTING API
   ============================================================*/
@@ -55,7 +53,6 @@ export const ListingAPI = {
   getAllListing() {
     return app.get("/api/listings");
   },
-
 
   // Create new listing
   postListing(listing) {
@@ -73,7 +70,6 @@ export const ListingAPI = {
       console.log(res.data);
     })
   },
-
 
   createListingUrl(listing) {
     console.log("hitting api before send to server")
@@ -96,12 +92,8 @@ export const ListingAPI = {
   // Get Vehicle Listings
   getListingByVehicle(make, model, year) {
     return app.get(`/api/listings/vehicle/${make}/${model}/${year}`);
-
-},
+  },
 }
-
-
-
 
 /*============================================================ 
                         BOOKMARK API
@@ -113,7 +105,6 @@ export const BookmarkAPI = {
   getAllBookmark() {
     return app.get("/api/bookmarks").then(res => console.log(res.data));
   },
-
 
   // Create new Bookmark
   addBookmark() {
@@ -139,9 +130,6 @@ export const BookmarkAPI = {
   }
 }
 
-
-
-
 /*============================================================ 
                         VEHICLE API
   ============================================================*/
@@ -153,17 +141,13 @@ export const VehicleAPI = {
     return app.get("/api/vehicles").then(res => console.log(res.data));
   }, 
 
-
-
   getVehicleByType(make, model, year) {
     return app.get(`/api/vehicles/vehicle/${make}/${model}/${year}`);
-
-},
+  },
 
   addVehicle(vehicle) {
     return app.post("/api/vehicles/", vehicle);
   },
-
  
   getVehicles(id) {
     return app.get(`/api/vehicles/${id}`).then(res => console.log(res.data));
@@ -218,24 +202,24 @@ export const ReviewAPI = {
                         AUTH API
   ============================================================*/
 
-  export const Auth = {
+export const Auth = {
+  // login() {
+  //   console.log("LOGIN ONCLICK");
+  //   window.location.href = "https://venvi-passport2.herokuapp.com/auth/google/login"
+  //   app.get("/auth/google").then((res) => {
+  //     console.log("RESULT OF AUTH: ", res);
+  //   })
+  // },
 
-    //
-    login() {
-      console.log("LOGIN ONCLICK");
-      
-      window.location.href = "https://venvi-passport2.herokuapp.com/auth/google/login"
-  
-      app.get("/auth/google").then((res) => {
-        console.log("RESULT OF AUTH: ", res);
-        
-      })
-  
-    },
-  }
-  
-
-
+  login() {
+    console.log("LOGIN ONCLICK");
+    const baseurl = "https://venvi-passport2.herokuapp.com";
+    const url = baseurl+"/auth/google";
+    const name = 'google';
+    const specs = 'width=500,height=500';
+    window.open(url, name, specs)
+  },
+}
 
 /*============================================================ 
                         TEST API
