@@ -13,8 +13,7 @@ import AuthSuccess from './components/AuthSuccess';
 class App extends React.Component {
 
   state = {
-    userid: 1,
-    logged: false
+    userid: undefined,
   }
 
   componentDidMount() {
@@ -26,13 +25,17 @@ class App extends React.Component {
     Test.deleteQuery(id);
   }
 
+  changeUserState = (newStateValue) => {
+    this.setState({userid: newStateValue});
+  }
+
   render() {
     return (
       <Router basename={process.env.PUBLIC_URL}>
         <div>
-          <NavBar userid={this.state.userid}/>
+          <NavBar username={this.state.userid.name}/>
           <Switch>
-          <Route exact path='/' component={Home} />
+          <Route exact path='/' component={Home} changeState={this.changeUserState} />
             {/* <Route exact path='/:user' component={Home} /> */}
             <Route exact path='/search' component={Search} />
             <Route path="/logged" component={AuthSuccess} />

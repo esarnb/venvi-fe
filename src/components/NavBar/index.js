@@ -132,11 +132,19 @@ function NavBar(props) {
           
           <Link to="/"><StyledTab label="Home" className="navTab"/></Link>
           <Link to="/search"><StyledTab label="Search" className="navTab"/></Link>
-          {props.userid ? (
+          {props.username ? (
               [<Link to="/market"><StyledTab label="Market" className="navTab"/></Link>,
               <Link to="/profile"><StyledTab label="Profile" className="navTab"/></Link>]
           ): []}
-          <a onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}}>[2] SignIn</a>
+          <React.Fragment>
+            Welcome, {props.username ? props.username: <React.Fragment>Guest</React.Fragment>}
+          </React.Fragment>
+          
+          {props.username ? (
+            <a onClick={() => API.Auth.logout()} id ="signOut" className="signOut" style={{float: "right"}}>SignOut</a>
+          ) : (
+            <a onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}}>SignIn</a>
+          )}
 
           </StyledTabs>
 
