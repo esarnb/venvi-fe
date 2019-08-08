@@ -1,0 +1,32 @@
+newmtl BodySG
+illum 4
+map_Kd diffuse.jpeg
+map_Ks spec.jpeg
+Ns 18.00
+
+newmtl BodySG_2
+illum 4
+map_Kd diffuse2.jpeg
+map_Ks spec.jpeg
+Ns 18.00
+
+newmtl BodySG_3
+illum 4
+map_Kd diffuse3.jpeg
+map_Ks spec.jpeg
+Ns 18.00
+
+newmtl GlassSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.06 0.06 0.06
+Ni 1.00
+Ks 0.70 0.70 0.70
+Ns 4.31
+
+newmtl WheelSG
+illum 4
+map_Kd diffuse.jpeg
+map_Ks spec.jpeg
+Ns 18.00
