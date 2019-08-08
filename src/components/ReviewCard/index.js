@@ -13,18 +13,21 @@ class ReviewCard extends Component {
         reviews: []
     }
 
+    componentDidMount() {
+        this.getReviewByVehicleId();
+    }
+
     changeRating = newRating => {
         this.setState({
           rating: newRating
         });
-        // this.props.ratingGet(this.state.rating)
       }
 
       handleChange = event => {
 		const { name, value } = event.target;
 		this.setState({ [name]: value });
     }
-    
+
 
 
     addReview = () =>
@@ -125,7 +128,15 @@ class ReviewCard extends Component {
                     <span className="card-title">{this.props.year} {this.props.make} {this.props.model}</span>
                 </div>
                 <div className="card-content">
-                    {/* put reviews here */}
+                    {this.state.reviews.map( (value, index) => {
+                        return (
+                            <div id={index}>
+                                <div><b>Rating: {value.ratingNumber}/5</b></div>
+                                <div>{value.review}</div>
+                                <br />
+                            </div>
+                        )
+                    })}
                 </div>
                 <div className="card-action">
                 <Modal header="Add Review" fixedFooter trigger={<Button waves="light" className="reviewButton" onClick={this.getVehicleByType}>

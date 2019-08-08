@@ -87,7 +87,6 @@ class SearchInput extends Component {
 
 											this.getVehicleByType(year);
 											
-										
 										})
 
 								}
@@ -128,8 +127,7 @@ getVehicleByType = (year) =>
         	this.setState({vehicleId: result.data.id});
         	console.log(this.state.vehicleId); 
 	        console.log("state", this.state);
-	        this.props.infoGet(this.state); 
-	         this.getReviewByVehicleId();   	               
+	        this.getReviewByVehicleId();   	               
         }
         
     }); 
@@ -188,7 +186,8 @@ addVehicle = (year) =>
       console.log(result.data);
       this.setState({reviews: result.data});
       console.log("reviews in state", this.state.reviews);
-      this.getAverageRating(result.data);           
+	  this.getAverageRating(result.data); 
+	  this.props.infoGet(this.state);          
     });
 
     }

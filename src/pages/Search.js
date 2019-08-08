@@ -17,14 +17,16 @@ class Search extends React.Component {
         year: null,
         imgURL: null,
         vehicleId: null,
-        showReviewCard: false
-        // rating: null
+        showReviewCard: false,
+        reviews: []
+        // relay: false
     };    
   }
 
   infoCallback = data => {
     console.log("Callback:");
     console.log(`${data.year} + ${data.make} + ${data.model}`);
+    console.log(data.reviews)
     this.setState({
       make: data.make,
       model: data.model,
@@ -33,13 +35,8 @@ class Search extends React.Component {
       vehicleId: data.vehicleId,
       showReviewCard: true
     })
+    console.log(this.state.reviews)
   }
-
-  // getRating = data => {
-  //   this.setState({
-  //     rating: data
-  //   })
-  // }
 
   render() {
     return (
@@ -47,13 +44,14 @@ class Search extends React.Component {
         <Container>
           <h2> Top Consumer Picks </h2>
           <span id="line"> </span>
-          <SearchInput infoGet={this.infoCallback}/>
+          <SearchInput infoGet={this.infoCallback}
+            relay={this.relayCall}/>
           {this.state.showReviewCard ? <ReviewCard image={this.state.imgURL} 
             make={this.state.make}
             model={this.state.model}
             year={this.state.year}
             id={this.state.vehicleId}
-            // ratingGet={this.getRating}
+            // relay={this.state.relay}
           /> : null}
         </Container>
       </div>
