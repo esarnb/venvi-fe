@@ -8,6 +8,7 @@ import Market from './pages/Market';
 import TestDrive from './pages/TestDrive';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBar from './components/NavBar';
+import AuthSuccess from './components/AuthSuccess';
 
 class App extends React.Component {
 
