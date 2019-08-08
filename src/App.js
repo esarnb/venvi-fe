@@ -27,23 +27,32 @@ class App extends React.Component {
   }
 
   render() {
+    
+const NoMatch = ({ location }) => (
+  <div>
+    <h3>No match for <code>{location.pathname}</code></h3>
+  </div>
+)
+
     return (
       <Router>
         <div>
           <NavBar userid={this.state.userid}/>
           <Switch>
-            <Route exact path='/venvi-fe/' component={Home} />
+            <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
             {/* <Route exact path='/venvi-fe/:user' component={Home} /> */}
-            <Route exact path='/venvi-fe/search' component={Search} />
-            <Route path="/venvi-fe/logged" component={AuthSuccess} />
+            <Route exact path={process.env.PUBLIC_URL + '/search'} component={Search} />
+            <Route path={process.env.PUBLIC_URL + '/logged'} component={AuthSuccess} />
              {/* <Route path='/venvi-fe/auth/google/search'component={(props) => this.setState({userid: props.match.params.id})} /> */}
                          
              {this.state.userid ? (
                <React.Fragment>
-                 <Route exact path='/venvi-fe/profile' component={Profile} />
-                 <Route exact path='/venvi-fe/market' component={Market} /> 
+                 <Route exact path={process.env.PUBLIC_URL + '/market'} component={Market} /> 
+                 <Route exact path={process.env.PUBLIC_URL + '/profile'} component={Profile} />
                </React.Fragment>
              ) : <React.Fragment />} 
+
+             <Route component={NoMatch} />
           </Switch>
         </div>
       </Router>
