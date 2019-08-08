@@ -1,6 +1,6 @@
 {
   "name": "venvi-fe",
-  "homepage": "https://esarnb.github.io/venvi-fe",
+  "homepage": "https://phillipchang.github.io/venvi-fe",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -52,12 +52,12 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/esarnb/venvi-fe.git"
+    "url": "git+https://github.com/phillipchang/venvi-fe.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/esarnb/venvi-fe/issues"
+    "url": "https://github.com/phillipchang/venvi-fe/issues"
   }
 }
