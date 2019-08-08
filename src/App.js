@@ -10,6 +10,7 @@ import Market from './pages/Market';
 import TestDrive from './pages/TestDrive';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 class App extends React.Component {
 
