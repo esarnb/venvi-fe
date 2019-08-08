@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from '../components/Container';
 import UserProfile from '../components/UserProfile';
-import ListCardProfile from '../components/ListCardProfile';
+import ListCardProfile from '../components/ListCard';
 import { ListingAPI } from '../utils/API';
 
 //Component
