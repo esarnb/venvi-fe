@@ -28,18 +28,21 @@ class Home extends React.Component {
   }
 
 
+ handleButtonClicked = event => {
+  console.log("value", event.currentTarget.value);
+  var key = event.currentTarget.value;
+  this.setState({ key: key});
+  this.componentDidUpdate = (prevState) => {
+   if (this.state.key !== prevState.key) {
+    this.afterClick()
+   }
+  }
+ };
 
+  afterClick = () => {
+    console.log("key", this.state.key)
+  }
 
-  // handleButtonClicked = event => {
-  //   console.log("value", event.currentTarget);
-  //   var key = event.currentTarget.value;
-  //   this.setState({ key: key});
-  //   this.afterClick();
-  // };
-
-  // afterClick = () => {
-  //   console.log("key", this.state.key)
-  // }
 
   //get all vehicles
   allVehicles = () =>
@@ -48,8 +51,8 @@ class Home extends React.Component {
         console.log("all vehicles databack");
         console.log(res.data);
         // console.log(data.data[0]);
-        // this.setState({ listings: [...res.data] });
-        // console.log(this.state.listings)
+        this.setState({ vehicles: [...res.data] });
+        console.log(this.state.vehicles)
       });
   }
 
