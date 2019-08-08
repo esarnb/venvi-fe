@@ -10,9 +10,9 @@ import * as API from "../../utils/API";
 import { Link } from "react-router-dom";
 
 
-// /**
-//  * UNUSED AntTabs AntTab
-//  */
+/**
+ * UNUSED AntTabs AntTab
+ */
 
 // const AntTabs = withStyles({
 //   root: {
@@ -61,7 +61,7 @@ const StyledTabs = withStyles({
   indicator: {
     display: "flex",
     justifyContent: "center",
-    backgroundColor: "transparent",
+    backgroundColor: "black",
     "& > div": {
       maxWidth: 80,
       width: "100%",
@@ -94,7 +94,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(0)
   },
   demo1: {
-    backgroundColor: theme.palette.background.paper
+    backgroundColor: "black"
   },
   demo2: {
     backgroundColor: "black"
@@ -124,10 +124,10 @@ function NavBar(props) {
           onChange={handleChange}
           aria-label="styled tabs"
         >
-          {/* <StyledTab label="Home" className="navTab" href=""/>
-          <StyledTab label="Search" className="navTab" href="search"/>
-          <StyledTab label="Market Place" className="navTab" href="market"/>
-          <StyledTab label="Profile" className="navTab" href="profile"/>
+          {/* <StyledTab label="Home" className="navTab demo2" href=""/>
+          <StyledTab label="Search" className="navTab demo2" href="search"/>
+          <StyledTab label="Market Place" className="navTab demo2" href="market"/>
+          <StyledTab label="Profile" className="navTab demo2" href="profile"/>
           <StyledTab label="" onClick={() => API.Auth.login()} href="auth/google/" id ="signIn" className="fas fa-user" style={{float: "right"}}/> */}
           
           <Link to="/venvi-fe/"><StyledTab label="Home" className="navTab"/></Link>
@@ -138,7 +138,7 @@ function NavBar(props) {
               <Link to="/venvi-fe/profile"><StyledTab label="Profile" className="navTab"/></Link>
              </React.Fragment>
           ): <React.Fragment />}
-          <a onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}}>SignIn</a>
+          <a onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}}>SIGN IN</a>
 
           </StyledTabs>
 

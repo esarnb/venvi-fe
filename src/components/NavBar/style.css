@@ -2,6 +2,7 @@
 {
 	position: absolute;
 	right: 12%;
+	top: 10%;
 }
 
 #NavBar
@@ -42,4 +43,24 @@
 	width: 100%;
 	z-index: 2;
 }
+
+button:focus {
+     background-color: black; 
+}
+
+
+.Component-root-47
+{
+	text-transform: uppercase !important;
+}
+
+.uk-link, a {
+	color: white;
+}
+
+.uk-link:hover, a:hover{
+	color: white;
+	text-decoration: none;
+}
+
 

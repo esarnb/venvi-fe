@@ -8,9 +8,12 @@ h4
 {
 	/*background-image: url("https://images.unsplash.com/photo-1521193089946-7aa29d1fe776?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");*/
 	background-color: black;
+	opacity: 0.9;
 	background-size: cover;
 	padding: 5%;
 	height: 100px;
+	bottom: 0;
+	width: 100%;
 }
 
 .footerSection
@@ -26,11 +29,10 @@ h4
 
 p
 {
-	padding-top: 5%;
-	text-align: center !important;
+		text-align: center !important;
 		font-family:'Poppins', sans-serif;
-		color: black;
-		font-size: 18px;
+		color: white;
+		font-size: 10px;
 
 
 }
