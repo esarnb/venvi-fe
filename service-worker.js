@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/venvi-fe/precache-manifest.5f8347bb954ac5c622f6d44ceea106bf.js"
+  "/venvi-fe/precache-manifest.dfdb1e59208a8ed49cab02495ef8ecfd.js"
 );
 
 self.addEventListener('message', (event) => {
