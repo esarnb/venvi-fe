@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from '../components/Container';
 import UserProfile from '../components/UserProfile';
-import ListCardProfile from '../components/ListCard';
+import { ListCardProfile } from '../components/ListCard';
 import { ListingAPI } from '../utils/API';
 
 //Component
@@ -17,7 +17,7 @@ state = {
 
 userListing = () =>
 {
-  let userId = 1;
+  let userId = 3;
     ListingAPI.getListingByUser(userId).then(res=>{
       console.log("all listings databack");
       console.log(res.data);
@@ -46,7 +46,9 @@ handleEdit = (id,price) => {
     return (
       <div>
         <Container>
-          <UserProfile />
+        <UserProfile />
+        </Container>
+          <div id="user-list">
           {this.state.userList.map(list =>(
           <ListCardProfile key={list.id}
             id={list.id}
@@ -59,7 +61,7 @@ handleEdit = (id,price) => {
             handleDelete={this.handleDelete}
             handleEdit={this.handleEdit} />
           ))}
-        </Container>
+          </div>
       </div>
     );
   }
