@@ -4,9 +4,9 @@ import ButtonBases from '../components/ButtonBases';
 import Container from '../components/Container';
 import Divider from '../components/Divider';
 import Footer from '../components/Footer';
-import Card from '../components/Card';
 import { Redirect } from "react-router";
 import './index.css'
+import $ from 'jquery'; 
 
 //Component
 class Home extends React.Component {
