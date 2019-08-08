@@ -13,18 +13,21 @@ class ReviewCard extends Component {
         reviews: []
     }
 
+    componentDidMount() {
+        this.getReviewByVehicleId();
+    }
+
     changeRating = newRating => {
         this.setState({
           rating: newRating
         });
-        // this.props.ratingGet(this.state.rating)
       }
 
       handleChange = event => {
 		const { name, value } = event.target;
 		this.setState({ [name]: value });
     }
-    
+
 
 
     addReview = () =>
@@ -130,6 +133,7 @@ class ReviewCard extends Component {
                             <div id={index}>
                                 <div><b>Rating: {value.ratingNumber}/5</b></div>
                                 <div>{value.review}</div>
+                                <br />
                             </div>
                         )
                     })}
