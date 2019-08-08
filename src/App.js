@@ -33,7 +33,7 @@ class App extends React.Component {
     return (
       <Router basename={process.env.PUBLIC_URL}>
         <div>
-          <NavBar username={this.state.userid ? this.state.userid.name ? this.state.userid.name : <React.Fragment /> : <React.Fragment /> }/>
+          <NavBar username={this.state.userid ? this.state.userid.name ? this.state.userid.name : undefined : undefined }/>
           <Switch>
           <Route exact path='/'  render={(props) => <Home {...props} changeUserState={this.changeUserState}/>}  />
             {/* <Route exact path='/:user' component={Home} /> */}
