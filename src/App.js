@@ -45,9 +45,8 @@ class App extends React.Component {
             <Route exact path='/market' component={Market} /> 
             <Route exact path='/testdrive' component={TestDrive} /> 
             <Route path='/receive/:id' component={Auth} />
-
         
-          </Switch>
+       </Switch>
         </div>
       </Router>
     );

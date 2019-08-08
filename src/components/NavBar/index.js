@@ -128,6 +128,7 @@ function NavBar(props) {
           <StyledTab label="Search" className="navTab demo2" href="search"/>
           <StyledTab label="Market Place" className="navTab demo2" href="market"/>
           <StyledTab label="Profile" className="navTab demo2" href="profile"/>
+          <StyledTab label="TestDrvie" className="navTab demo2" href="testdrive"/>
           <StyledTab label="" onClick={() => API.Auth.login()} href="auth/google/" id ="signIn" className="fas fa-user" style={{float: "right"}}/> */}
           
           <Link to="/venvi-fe/"><StyledTab label="Home" className="navTab"/></Link>
@@ -138,6 +139,7 @@ function NavBar(props) {
               <Link to="/venvi-fe/profile"><StyledTab label="Profile" className="navTab"/></Link>
              </React.Fragment>
           ): <React.Fragment />}
+          <Link to="/venvi-fe/testdrive"><StyledTab label="TestDrive" className="navTab"/></Link>
           <a onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}}>SIGN IN</a>
 
           </StyledTabs>
