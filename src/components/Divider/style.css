@@ -6,11 +6,8 @@ h4
 
 .content
 {
-	/*background-image: url("https://images.unsplash.com/photo-1547149600-a6cdf8fce60c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80");*/
 	background-size: cover;
-/*	background-color: go;*/
-	padding: 10%;
-	height: 400px;
+	height: 200px;
 }
 
 .section
@@ -18,19 +15,11 @@ h4
 	height: 100%;
 }
 
-.icon
-{
-	text-align: center !important;
-	font-size: 50px 
-}
 
 p
 {
-	padding-top: 5%;
 	text-align: center !important;
 		font-family:'Poppins', sans-serif;
-		color: black;
+		color: white;
 		font-size: 18px;
-
-
 }

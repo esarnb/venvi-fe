@@ -13,14 +13,13 @@ class Home extends React.Component {
     return (
       <div>
         <Banner />
-        <Divider />
         <Container>
+        <Divider />
           <h3> Top Consumer Picks </h3>
           <span id="line"> </span>
           <ButtonBases />
-      
         </Container>
-        <Card />
+        {/* <Card /> */}
         <Footer />
       </div>
     );
