@@ -9,6 +9,24 @@ import './index.css'
 
 //Component
 class Home extends React.Component {
+
+
+  state = {
+    key: ""
+  }
+
+  handleButtonClicked = event => {
+    console.log("value", event.currentTarget);
+    var key = event.currentTarget.value;
+    this.setState({ key: key});
+    this.afterClick();
+  };
+
+  afterClick = () => {
+    console.log("key", this.state.key)
+  }
+
+
   render() {
     return (
       <div>
@@ -17,7 +35,8 @@ class Home extends React.Component {
         <Divider />
           <h3> Top Consumer Picks </h3>
           <span id="line"> </span>
-          <ButtonBases />
+          <ButtonBases 
+          handleInputChange={this.handleButtonClicked}/>
         </Container>
         {/* <Card /> */}
         <Footer />
