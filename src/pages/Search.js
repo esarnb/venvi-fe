@@ -4,6 +4,7 @@ import React from 'react';
 import Container from '../components/Container';
 import SearchInput from '../components/SearchInput';
 import ReviewCard from '../components/ReviewCard/index';
+import Footer from '../components/Footer';
 
 import './index.css'
 
@@ -41,7 +42,7 @@ class Search extends React.Component {
   render() {
     return (
       <div>
-        <Container>
+        <div className = "wrapper2">
           <h2> Top Consumer Picks </h2>
           <span id="line"> </span>
           <SearchInput infoGet={this.infoCallback}
@@ -52,9 +53,10 @@ class Search extends React.Component {
             year={this.state.year}
             id={this.state.vehicleId}
             // relay={this.state.relay}
-          /> : null}
-        </Container>
+          /> : null}       
       </div>
+        <Footer />
+        </div>
     );
   }
 }
