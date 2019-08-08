@@ -24,6 +24,8 @@ class Search extends React.Component {
     };    
   }
 
+  
+
   infoCallback = data => {
     console.log("Callback:");
     console.log(`${data.year} + ${data.make} + ${data.model}`);
