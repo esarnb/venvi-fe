@@ -27,17 +27,11 @@ class App extends React.Component {
   }
 
   render() {
-    
-const NoMatch = ({ location }) => (
-  <div>
-    <h3>No match for <code>{location.pathname}</code></h3>
-  </div>
-)
-
     return (
       <Router>
         <div>
           <NavBar userid={this.state.userid}/>
+          1
           <Switch>
             <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
             {/* <Route exact path='/venvi-fe/:user' component={Home} /> */}
@@ -52,7 +46,7 @@ const NoMatch = ({ location }) => (
                </React.Fragment>
              ) : <React.Fragment />} 
 
-             <Route component={NoMatch} />
+             <Route path={process.env.PUBLIC_URL + "*"} component={<div>Not found</div>} />
           </Switch>
         </div>
       </Router>
