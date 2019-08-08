@@ -169,10 +169,8 @@ export const VehicleAPI = {
     return app.get(`/api/vehicles/${id}`).then(res => console.log(res.data));
   },
 
-  updateVehicle(id) {
-    return app.put(`/api/vehicles/${id}`, { msg: "update this Vehicle" }).then(res => {
-      console.log(res.data);
-    })
+  updateVehicle(id, vehicle) {
+    return app.put(`/api/vehicles/${id}`, vehicle);
   },
 
   deleteVehicle(id) {
@@ -201,8 +199,6 @@ export const ReviewAPI = {
   },
 
   getReviewById(id) {
-    console.log("in review api");
-    console.log("id in api", id);
     return app.get(`/api/reviews/${id}`);
   },
 

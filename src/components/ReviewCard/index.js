@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Textarea, Modal, Button } from "react-materialize";
 import StarRatings from 'react-star-ratings';
-import { ReviewAPI } from '../../utils/API'
+import { ReviewAPI, VehicleAPI } from '../../utils/API'
 
 import './style.css';
 
@@ -9,7 +9,8 @@ import './style.css';
 class ReviewCard extends Component {
     state = {
         rating: 0,
-        textreview: ""
+        textreview: "",
+        reviews: []
     }
 
     changeRating = newRating => {
@@ -53,10 +54,67 @@ class ReviewCard extends Component {
         this.setState({
         rating: 0,
         textreview: ""
-        })
+        });
+        this.getReviewByVehicleId();
 
     });
+
 }
+
+
+
+    getReviewByVehicleId = () =>
+    {
+      console.log("inside review call");
+      var id = this.props.id;
+      console.log("vehicle id", id);
+
+      ReviewAPI.getReviewByVehicle(id).then(result => {
+      console.log("all reviews databack");
+      console.log(result.data);
+      this.setState({reviews: result.data});
+      console.log("reviews in state", this.state.reviews);
+      this.getAverageRating(result.data);           
+    });
+
+    }
+
+
+    //calculate averate rating after add review
+    getAverageRating = (arr) =>
+    {
+        var sum = 0;
+        var averageRating;
+        if(!arr)
+        {
+            averageRating = 0;
+        }
+        else
+        {
+            for (var i = 0; i < arr.length; i ++)
+            {
+                sum += arr[i].ratingNumber;
+            }
+                averageRating = sum/arr.length;
+        }       
+        console.log(averageRating);
+        this.updateVehicleRating(averageRating);
+    }
+
+    updateVehicleRating = (rating) =>
+    {
+        var vehicleId = this.props.id;
+         var vehicle =
+            {
+               rating: rating
+            }
+        console.log("vehicle id before update rating", vehicleId);
+
+
+        VehicleAPI.updateVehicle(vehicleId, vehicle).then(res => {
+        console.log(res.data);
+    })
+    }
 
 
     render() {
