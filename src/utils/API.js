@@ -196,12 +196,14 @@ export const ReviewAPI = {
   },
 
    //Create new review
-  addReview() {
-    return app.post(`/api/reviews`, { msg: "Review has been added" }).then(res => console.log(res.data));
+  addReview(newReview) {
+    return app.post(`/api/reviews`, newReview);
   },
 
   getReviewById(id) {
-    return app.get(`/api/reviews/${id}`).then(res => console.log(res.data));
+    console.log("in review api");
+    console.log("id in api", id);
+    return app.get(`/api/reviews/${id}`);
   },
 
   deleteReview(id) {
@@ -211,7 +213,8 @@ export const ReviewAPI = {
   },
 
   getReviewByVehicle(id) {
-    return app.get(`/api/reviews/vehicle/${id}`).then(res => console.log(res.data));
+   
+    return app.get(`/api/reviews/vehicle/${id}`);
   },
 }
 
