@@ -49,8 +49,8 @@ class Home extends React.Component {
   }
 
   //Converts all queryParams into useable object.
-  QueryStringToJSON = () => {            
-    var pairs = window.location.search.slice(1).split('&');
+  QueryStringToJSON = (convertThis) => {            
+    var pairs = convertThis.slice(1).split('&');
     
     var result = {};
     pairs.forEach(function(pair) {

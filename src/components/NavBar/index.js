@@ -137,7 +137,7 @@ function NavBar(props) {
               <Link to="/profile"><StyledTab label="Profile" className="navTab"/></Link>]
           ): []}
           <React.Fragment>
-            Welcome, {(props && props["username"] && props.username) ? props.username: "Guest"}
+            [1] Welcome, {(props && props["username"] && props.username) ? props.username: "Guest"}
           </React.Fragment>
           
           {props.username ? (
