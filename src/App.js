@@ -32,10 +32,11 @@ class App extends React.Component {
         <div>
           <NavBar userid={this.state.userid}/>
           <Switch>
-          <Route exact path='/venvi-fe/' component={Home} />
-             <Route exact path='/venvi-fe/search' component={Search} />
+            <Route exact path='/venvi-fe/' component={Home} />
+            {/* <Route exact path='/venvi-fe/:user' component={Home} /> */}
+            <Route exact path='/venvi-fe/search' component={Search} />
+            <Route path="/venvi-fe/logged" component={AuthSuccess} />
              {/* <Route path='/venvi-fe/auth/google/search'component={(props) => this.setState({userid: props.match.params.id})} /> */}
-             <Route path="/venvi-fe/auth/google/success" component={AuthSuccess} />
                          
              {this.state.userid ? (
                <React.Fragment>

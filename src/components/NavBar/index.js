@@ -133,11 +133,9 @@ function NavBar(props) {
           <Link to="/venvi-fe/"><StyledTab label="Home" className="navTab"/></Link>
           <Link to="/venvi-fe/search"><StyledTab label="Search" className="navTab"/></Link>
           {props.userid ? (
-            <React.Fragment>
-              <Link to="/venvi-fe/market"><StyledTab label="Market" className="navTab"/></Link>
-              <Link to="/venvi-fe/profile"><StyledTab label="Profile" className="navTab"/></Link>
-             </React.Fragment>
-          ): <React.Fragment />}
+              [<Link to="/venvi-fe/market"><StyledTab label="Market" className="navTab"/></Link>,
+              <Link to="/venvi-fe/profile"><StyledTab label="Profile" className="navTab"/></Link>]
+          ): []}
           <a onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}}>SignIn</a>
 
           </StyledTabs>
