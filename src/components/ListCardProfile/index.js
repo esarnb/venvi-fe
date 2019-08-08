@@ -55,92 +55,32 @@ const styles = {
     }
   }
 }
+  
 
-export default function ListCard(props) {
-  const {image,make,model,price,year} = props;
-  var name = `${year} ${make} ${model}`
-  console.log("name",name)
-  const classes = useStyles();
+class ListCardProfile extends React.Component {
+
+  state = {
+    price: ""
+  }
+
+
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({[name]: value});
+  }
+
+  render () {
+  const {image,make,model,price,year} = this.props;
+  var name = `${year} ${make} ${model}`;
   const [expanded, setExpanded] = React.useState(false);
+
 
   function handleExpandClick() {
     setExpanded(!expanded);
   }
-
-  return (
-    <Card className={classes.card} id="list-card">
-      <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            SLC
-          </Avatar>
-        }
-        title= {name}      
-        />
-      <CardMedia
-        className={classes.media}
-        image={image}
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton id="favorite" aria-label="add to favorites">
-          <FavoriteIcon id="fav"/>
-        </IconButton>
-        {/* <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton> */}
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>Price: {price}</Typography>
-          <Typography paragraph>
-          </Typography>
-          <Typography paragraph>
-          </Typography>
-          <Typography paragraph>
-          </Typography>
-          <Typography>
-          </Typography>
-        </CardContent>
-      </Collapse>
-    </Card>
-  );
-}
-
-export function ListCardProfile(props) {
-
-  // state = {
-  //   price: ""
-  // }
-
-
-  // handleChange = event => {
-  //   const { name, value } = event.target;
-  //   this.setState({[name]: value});
-  // }
-
-  // render () {
-  const {image,make,model,price,year} = this.props;
-  var name = `${year} ${make} ${model}`;
-  const [expanded, setExpanded] = React.useState(false);
-  const classes = useStyles();
-
-  function handleExpandClick() {
-    setExpanded(!expanded);
+  
+  function classes(){
+  const classes = useStyles()
   }
 
   return (
@@ -172,9 +112,9 @@ export function ListCardProfile(props) {
         <IconButton id="edit" aria-label="edit price">
          
             <Modal header="Change Price" fixedFooter trigger={<EditIcon />}
-            actions={<Button modal="close" className="reviewButton" onClick={() => this.props.handleEdit(this.props.id)}>Submit</Button>}>
+            actions={<Button modal="close" className="reviewButton" onClick={() => this.props.handleEdit(this.props.id,this.state.price)}>Submit</Button>}>
             <Col className="input-field">
-            <TextInput name="price" type="number" label="Price" />   
+            <TextInput name="price" value={this.state.price} onChange={this.handleChange} type="number" label="Price" />   
             </Col>
             </Modal>
         </IconButton>
@@ -194,7 +134,7 @@ export function ListCardProfile(props) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Price:${price}</Typography>
+          <Typography paragraph>Price: {price}</Typography>
           <Typography paragraph>
           </Typography>
           <Typography paragraph>
@@ -209,3 +149,4 @@ export function ListCardProfile(props) {
   );
   }
 }
+export default ListCardProfile;
