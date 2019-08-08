@@ -35,6 +35,15 @@ h3, h2 {
     margin-bottom:3%;
     opacity: 0.5;
 }
+#market-list {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    padding-top:7%;
+    padding-left:15%;
+    padding-right:18%;
+}
 #searchInput{
     margin-left:11%;
 }
@@ -42,4 +51,9 @@ h3, h2 {
 .container {
     width: 80%;
     margin: 0 auto;
+}
+
+#user-list {
+    display:flex;
+    margin:20px;
 }

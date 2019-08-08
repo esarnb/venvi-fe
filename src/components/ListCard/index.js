@@ -15,8 +15,9 @@ import { yellow } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import EditIcon from '@material-ui/icons/Edit';
 import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
+import EditIcon from '@material-ui/icons/Edit';
+import "./style.css";
 
 
 const useStyles = makeStyles(theme => ({
@@ -122,29 +123,16 @@ export default function ListCard(props) {
 }
 
 export function ListCardProfile(props) {
-
-  // state = {
-  //   price: ""
-  // }
-
-
-  // handleChange = event => {
-  //   const { name, value } = event.target;
-  //   this.setState({[name]: value});
-  // }
-
-  // render () {
-  const {image,make,model,price,year} = this.props;
+  const {image,make,model,price,year} = props;
   var name = `${year} ${make} ${model}`;
-  const [expanded, setExpanded] = React.useState(false);
   const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
 
   function handleExpandClick() {
     setExpanded(!expanded);
   }
 
   return (
-    
     <Card className={classes.card} id="list-card">
       <CardHeader
         avatar={
@@ -207,5 +195,4 @@ export function ListCardProfile(props) {
       </Collapse>
     </Card>
   );
-  }
 }
