@@ -150,7 +150,7 @@ export const VehicleAPI = {
 
   // get all vehicles
   getAllVehicles() {
-    return app.get("/api/vehicles").then(res => console.log(res.data));
+    return app.get("/api/vehicles");
   }, 
 
 
