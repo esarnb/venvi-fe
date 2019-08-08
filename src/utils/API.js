@@ -1,4 +1,5 @@
 import app from "./index";
+import Cookies from "js-cookie";
 
 /*============================================================ 
                         USER API
@@ -218,6 +219,11 @@ export const Auth = {
     const name = 'google';
     const specs = 'width=500,height=500';
     window.open(url, name, specs)
+  },
+
+  
+  logout() {
+    Cookies.remove("venvi")
   },
 }
 

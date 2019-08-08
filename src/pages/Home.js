@@ -6,7 +6,7 @@ import Divider from '../components/Divider';
 import Footer from '../components/Footer';
 import { Redirect } from "react-router";
 import './index.css'
-import $ from 'jquery'; 
+import Cookies from "js-cookie";
 
 //Component
 class Home extends React.Component {
@@ -31,20 +31,20 @@ class Home extends React.Component {
 
   //Finds cookie from Front-End and returns as user-obj.
   findCookie = () => {
-    let userobj = $.cookie("venvi")
-    userobj ? userobj = this.QueryStringToJSON(userobj) : undefined;
+    let userobj = Cookies.get("venvi")
+    userobj ? userobj = this.QueryStringToJSON(userobj) : userobj = undefined;
     return userobj;
   }
 
   //Sets the cookie as queryParameters of sign-in.
   setCookie = (signIn) => {
-    $.cookie("venvi", signIn);
+    Cookies.set("venvi", signIn);
     this.findCookie();
   }
 
   //Converts all queryParams into useable object.
   QueryStringToJSON = () => {            
-    var pairs = location.search.slice(1).split('&');
+    var pairs = window.location.search.slice(1).split('&');
     
     var result = {};
     pairs.forEach(function(pair) {
