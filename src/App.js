@@ -28,25 +28,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div>
           <NavBar userid={this.state.userid}/>
-          1
           <Switch>
-            <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
-            {/* <Route exact path='/venvi-fe/:user' component={Home} /> */}
-            <Route exact path={process.env.PUBLIC_URL + '/search'} component={Search} />
-            <Route path={process.env.PUBLIC_URL + '/logged'} component={AuthSuccess} />
-             {/* <Route path='/venvi-fe/auth/google/search'component={(props) => this.setState({userid: props.match.params.id})} /> */}
+            <Route exact path='/' component={Home} />
+            {/* <Route exact path='/:user' component={Home} /> */}
+            <Route exact path='/search' component={Search} />
+            <Route path="/logged" component={AuthSuccess} />
+             {/* <Route path='/auth/google/search'component={(props) => this.setState({userid: props.match.params.id})} /> */}
                          
              {this.state.userid ? (
                <React.Fragment>
-                 <Route exact path={process.env.PUBLIC_URL + '/market'} component={Market} /> 
-                 <Route exact path={process.env.PUBLIC_URL + '/profile'} component={Profile} />
+                 <Route exact path='/profile' component={Profile} />
+                 <Route exact path='/market' component={Market} /> 
                </React.Fragment>
              ) : <React.Fragment />} 
-
-             <Route path={process.env.PUBLIC_URL + "*"} component={<div>Not found</div>} />
           </Switch>
         </div>
       </Router>

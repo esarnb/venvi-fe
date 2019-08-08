@@ -130,13 +130,13 @@ function NavBar(props) {
           <StyledTab label="Profile" className="navTab" href="profile"/>
           <StyledTab label="" onClick={() => API.Auth.login()} href="auth/google/" id ="signIn" className="fas fa-user" style={{float: "right"}}/> */}
           
-          <Link to="/venvi-fe/"><StyledTab label="Home" className="navTab"/></Link>
-          <Link to="/venvi-fe/search"><StyledTab label="Search" className="navTab"/></Link>
+          <Link to="/"><StyledTab label="Home" className="navTab"/></Link>
+          <Link to="/search"><StyledTab label="Search" className="navTab"/></Link>
           {props.userid ? (
-              [<Link to="/venvi-fe/market"><StyledTab label="Market" className="navTab"/></Link>,
-              <Link to="/venvi-fe/profile"><StyledTab label="Profile" className="navTab"/></Link>]
+              [<Link to="/market"><StyledTab label="Market" className="navTab"/></Link>,
+              <Link to="/profile"><StyledTab label="Profile" className="navTab"/></Link>]
           ): []}
-          <a onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}}>[1] SignIn</a>
+          <a onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}}>[2] SignIn</a>
 
           </StyledTabs>
 
