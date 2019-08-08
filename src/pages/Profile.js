@@ -2,7 +2,6 @@ import React from 'react';
 import Container from '../components/Container';
 import UserProfile from '../components/UserProfile';
 import { ListCardProfile } from '../components/ListCard';
-import Footer from '../components/Footer';
 import { ListingAPI } from '../utils/API';
 
 //Component
@@ -46,8 +45,9 @@ handleEdit = (id,price) => {
   render() {
     return (
       <div>
-        <div className= "wrapper2">
+        <Container>
         <UserProfile />
+        </Container>
           <div id="user-list">
           {this.state.userList.map(list =>(
           <ListCardProfile key={list.id}
@@ -62,8 +62,6 @@ handleEdit = (id,price) => {
             handleEdit={this.handleEdit} />
           ))}
           </div>
-          </ div>
-          <Footer />
       </div>
     );
   }
