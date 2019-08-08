@@ -22,9 +22,7 @@ class Home extends React.Component {
     if (this.props.location.search) this.setCookie(this.props.location.search);
     //If the user visits home, check if there is a cookie (signed-in), and update state
     else {
-      let findKey = this.findCookie();
-      console.log("THE FINDKEY VAR", findKey);
-      this.props.changeUserState(findKey);
+      this.newReactState();
     }
     //If there is no sign in, and no cookie, then the user is undefined and are signed out.
   }
@@ -38,8 +36,16 @@ class Home extends React.Component {
 
   //Sets the cookie as queryParameters of sign-in.
   setCookie = (signIn) => {
+    //Set cookie
     Cookies.set("venvi", signIn);
-    this.findCookie();
+    //Update React
+    this.newReactState();
+  }
+
+  newReactState = () => {
+    let findKey = this.findCookie();
+    console.log("THE FINDKEY VAR", findKey);
+    this.props.changeUserState(findKey);
   }
 
   //Converts all queryParams into useable object.
