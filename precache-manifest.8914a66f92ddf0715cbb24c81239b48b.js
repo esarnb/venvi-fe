@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1c078f312146255af8141b69870ffeba",
+    "revision": "e0f708a7c8dc76bcfaa65dbf58e31d94",
     "url": "/venvi-fe/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/venvi-fe/static/css/2.75adca66.chunk.css"
   },
   {
-    "revision": "f124115997caee7ea275",
+    "revision": "cc9eb827696187090db6",
     "url": "/venvi-fe/static/css/main.c5ef199c.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/venvi-fe/static/js/2.fdf1307e.chunk.js"
   },
   {
-    "revision": "f124115997caee7ea275",
-    "url": "/venvi-fe/static/js/main.ce622e81.chunk.js"
+    "revision": "cc9eb827696187090db6",
+    "url": "/venvi-fe/static/js/main.13318ce2.chunk.js"
   },
   {
     "revision": "7b77bfe0db83383134dc",
