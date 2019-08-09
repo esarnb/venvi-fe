@@ -16,7 +16,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount(){
-    this.setState({userId: this.props.state.userid.profileID})
+    // this.setState({userId: this.props.state.userid.profileID})
     this.userListing();
   }
 
