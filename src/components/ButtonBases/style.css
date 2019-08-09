@@ -1,0 +1,6 @@
+#spanbg
+{
+	/*background:  linear-gradient(to right bottom, rgba(255,0,0,0), rgba(255,0,0,1)) !important;*/
+	background: rgb(238,238,238);
+	background: radial-gradient(circle, rgba(238,238,238,1) 0%, rgba(144,144,144,1) 100%);
+}
