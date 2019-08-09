@@ -13,13 +13,16 @@ export const UserAPI = {
   },
 
   // To create user account in our database
-  addUser() {
-    return app.post("/api/users", { msg: "Hello Buddy" }).then(res => console.log(res.data));
-  },
+  addUser(newUser) {
+    return app.post("/api/users", newUser);
 
    // To return user profile page
   getUser(id) {
     return app.get("/api/users/:id").then(res => console.log(res.data));
+  },
+
+  getUserByProfileId(profileID) {
+    return app.get(`/api/users/profile/${profileId}`);
   },
 
   // Updates user profile pic using AWS
