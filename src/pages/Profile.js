@@ -9,7 +9,7 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
     
-    state = {
+    this.state = {
       userList: [],
       userId: 3
     }
