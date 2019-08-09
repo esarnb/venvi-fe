@@ -11,3 +11,9 @@
     background-color:#535353;
     color: #b29e33;
 }
+
+#search-result {
+    width:50%;
+    margin: auto;
+    margin-top:4%;
+}
