@@ -70,11 +70,13 @@ function NavBar(props) {
         >
           <Link to="/"><StyledTab label="Home" className="navTab"/></Link>
           <Link to="/search"><StyledTab label="Search" className="navTab"/></Link>
+          <Link to="/testdrive"><StyledTab label="TestDrive" className="navTab"/></Link>
+
           {props.username ? (
               [<Link to="/market"><StyledTab label="Market" className="navTab"/></Link>,
               <Link to="/profile"><StyledTab label="Profile" className="navTab"/></Link>]
           ): []}
-           <Link to="/testdrive"><StyledTab label="TestDrive" className="navTab"/></Link>
+           
           {/* <React.Fragment>
             [1] Welcome, {(props && props["username"] && props.username) ? props.username: "Guest"}
           </React.Fragment> */}

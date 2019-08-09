@@ -13,14 +13,18 @@ export const UserAPI = {
   },
 
   // To create user account in our database
-  addUser() {
-    return app.post("/api/users", { msg: "Hello Buddy" }).then(res => console.log(res.data));
+  addUser(newUser) {
+    return app.post("/api/users", newUser);
   },
 
    // To return user profile page
   getUser(id) {
-    return app.get("/api/users/:id").then(res => console.log(res.data));
+    return app.get("/api/users/:id");
   },
+  
+  // getUserByProfileId(profileID) {
+  //   return app.get(`/api/users/profile/${profileId}`);
+  // },
 
   // Updates user profile pic using AWS
   editUser(id) {
@@ -125,7 +129,7 @@ export const BookmarkAPI = {
   },
 
   getBookmarkByUser(id) {
-    return app.put(`/api/bookmarks/user/${id}`, { msg: "get bookmarks by userid" }).then(res => {
+    return app.get(`/api/bookmarks/user/${id}`, { msg: "get bookmarks by userid" }).then(res => {
       console.log(res.data);
     })
   }

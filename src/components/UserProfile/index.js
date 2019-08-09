@@ -19,9 +19,9 @@ export default function UserProfile(props){
   return (
     <div>
     <Grid container justify="center" alignItems="center">
-      <Avatar alt="Remy Sharp" src="https://previews.123rf.com/images/chutimakuanamon/chutimakuanamon1806/chutimakuanamon180600142/104749457-blossom-sitting-reading-the-powerpuff-girls-illustration.jpg" className={classes.bigAvatar} />
+      <Avatar alt="user" src="https://t7.rbxcdn.com/ea25dd4a7e620f87b1671122f7471ae4" className={classes.bigAvatar} />
     </Grid>
-    <h1> {props.userid} </h1>
+    <h2> Welcome back, {props.userid}! </h2>
     <span id="line"> </span>
   </div>
   );

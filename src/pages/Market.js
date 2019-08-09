@@ -4,7 +4,7 @@ import BuyForm from '../components/BuyForm';
 import ListForm from '../components/ListForm';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import { ListingAPI } from '../utils/API';
+import { ListingAPI, BookmarkAPI } from '../utils/API';
 import ListCard from '../components/ListCard';
 import Container from '../components/Container';
 import Card from '../components/Card';
@@ -25,7 +25,6 @@ class Market extends React.Component {
 
 componentDidMount(){
   this.allListing();
-  this.editListing();
 }
 
 //get all listing
@@ -80,16 +79,16 @@ showForm = () => {
   console.log("here2")
 }
 
+// handleFavorite = (ids) => {
+//   BookmarkAPI.addBookmark().then(res=>{
+//     console.log("hello", res.data)
+//     this.state.listings.filter(function(listing) {
+//       return 
+//     });
+//   })
+// }
+
 render () {
-  const listing = this.state.listings.map(function(item){
-    return <ListCard key={item.id}
-      image={item.image}
-      make={item.make}
-      model={item.model}
-      price={item.price}
-      year={item.year}
-      vin={item.vin} />
-  })
   return (
     <div>
         <div id = "wrapper">
@@ -104,12 +103,15 @@ render () {
     <div id="market-list">
     {this.state.listings.map(item =>(
     <ListCard key={item.id}
+      id={item.id}
+      user={item.UserId}
       image={item.image}
       make={item.make}
       model={item.model}
       price={item.price}
       year={item.year}
-      vin={item.vin} />
+      vin={item.vin}
+       />
   ))}
   </div>
   </div>
@@ -120,3 +122,5 @@ render () {
 }
 
 export default Market;
+
+// handleFavorite={this.handleFavorite}

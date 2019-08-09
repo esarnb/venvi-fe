@@ -8,13 +8,23 @@ import Market from './pages/Market';
 import TestDrive from './pages/TestDrive';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBar from './components/NavBar';
+
 import AuthSuccess from './components/AuthSuccess';
 import Footer from './components/Footer';
+import { UserAPI } from './utils/API';
 
 class App extends React.Component {
 
   state = {
-    userid: undefined,
+
+    userid: 1,
+
+    // userid: undefined,
+    email: "",
+    name: "",
+    profileID: "",
+    profilePhoto: "",
+    username: ""
   }
 
   componentDidMount() {
@@ -25,6 +35,63 @@ class App extends React.Component {
     Test.putQuery(id);
     Test.deleteQuery(id);
   }
+
+  // getUserByProfileId() {
+
+  //   var profileID = this.state.profileID;
+  //   UserAPI.getUser(profileID).then(result => {
+  //       console.log("data", result);
+  //       console.log(result.data);
+  //       if (!result.data)
+  //       {
+  //         this.addUser();
+  //       }
+  //       else
+  //       {
+  //         this.setState({userid: result.data.id});
+  //         console.log("state", this.state);                
+  //       }
+        
+  //   }); 
+
+  // }
+
+
+  // addUser()
+  // {
+  //   let email = this.state.email;
+  //   let name = this.state.name;
+  //   let profileID = this.state.profileID;
+  //   let profilePhoto = this.state.profilePhoto;
+  //   let username = this.state.username;
+
+
+  //    var newUser =
+  //           {
+  //               name: name,
+  //               username: username,
+  //               email: email,
+  //               profilePhoto: profilePhoto,
+  //               profileID: profileID
+  //           }
+
+  //     UserAPI.addUser(newUser).then(result =>
+  //   {
+  //       console.log("saved User");
+  //       console.log(result);
+
+  //       //Get back user id
+  //       console.log("saved user id");
+  //       console.log(result.data.id);
+  //       var tempuserid = result.data.id;
+  //       this.setState({userid: tempuserid});
+  //       console.log("state", this.state);
+    
+  //   });
+
+  // }
+
+  
 
   changeUserState = (newStateValue) => {
     this.setState({userid: newStateValue});
@@ -38,6 +105,7 @@ class App extends React.Component {
           <Switch>
           <Route exact path='/'  render={(props) => <Home {...props} changeUserState={this.changeUserState}/>}  />
             <Route exact path='/search' component={Search} />
+            <Route exact path='/testdrive' component={TestDrive} /> 
             <Route path="/logged" component={AuthSuccess} />
                          
              {this.state.userid ? (
@@ -46,7 +114,7 @@ class App extends React.Component {
                  <Route exact path='/market' component={Market} /> 
                </React.Fragment>
              ) : <React.Fragment />} 
-             <Route exact path='/testdrive' component={TestDrive} /> 
+             
           </Switch>
         </div>
       </Router>
