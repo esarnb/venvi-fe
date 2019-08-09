@@ -81,9 +81,12 @@ showForm = () => {
 }
 
 handleFavorite = (id) => {
+  console.log("this is id", id)
   BookmarkAPI.addBookmark(id).then(res=>{
     console.log("hello", res.data)
-    this.allListing();
+    this.state.listings.filter(function(listing) {
+      return 
+    });
   })
 }
 

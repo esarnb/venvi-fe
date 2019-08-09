@@ -75,5 +75,14 @@ h3, h2 {
 
 #user-list {
     display:flex;
-    margin:20px;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+}
+
+#bookmark-list {
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
 }
