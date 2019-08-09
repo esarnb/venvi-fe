@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { TextInput, Row, Col, Button } from "react-materialize";
 import axios from "axios";
 import { ListingAPI } from '../../utils/API'
+import "./style.css"
+// import UploadBtn from '../UploadBtn';
+// import RaisedButton from 'material-ui/RaisedButton'
+
 
 class ListForm extends Component {
 
@@ -196,7 +200,7 @@ render () {
                 e.preventDefault();
                 this.searchAction();
             }}>
-                <Row style={{marginBottom: '0px'}}>
+                <Row id="search-sell-input" style={{marginBottom: '0px'}}>
                 <Col className="input-field">
                     <TextInput name="vin" value={this.state.vin} onChange={this.handleChange} type="text" label="Vin" />                    
                 </Col>
@@ -212,13 +216,25 @@ render () {
                 <Col className="input-field">
                     <TextInput name="year" value={this.state.year} onChange={this.handleChange} type="text" label="Year" disabled={true} />                    
                 </Col>
-                </Row>
-                 <div class="uk-margin">
-                    <div uk-form-custom>
+                {/* <RaisedButton
+          label="Upload" />
+        <input
+          type='file'
+          ref='input'
+          style={{ display: 'none' }}
+          accept="image/*"
+          onChange={this.handleImageChange} /> */}
+               
+                {/* <input
+                    accept="image/*"
+                    type="file"
+                /> 
+                <UploadBtn className="input-field" type="file" onChange={this.handleImageChange}/>
+                
+                  */}
                         <input id="file-input" onChange={this.handleImageChange} type="file"/>
-                    </div>
-                </div>
-                <Row>
+                </Row>
+                <Row id="search-sell-btn">
                     <Button onClick={this.validate} type="submit" className="#37474f blue-grey darken-3" waves="light" style={{marginLeft: '22px'}}>Make Listing</Button>
                 </Row>
 

@@ -39,13 +39,13 @@ class Search extends React.Component {
       showReviewCard: true
     })
     console.log(this.state.reviews)
-  }
+  } 
 
   render() {
     return (
       <div>
         <div className = "wrapper2">
-          <h2> Top Consumer Picks </h2>
+          <h2> Search Reviews </h2>
           <span id="line"> </span>
           <SearchInput infoGet={this.infoCallback}
             relay={this.relayCall}/>
