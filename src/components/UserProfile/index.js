@@ -12,7 +12,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function UserProfile(){
+export default function UserProfile(props){
     
   const classes = useStyles();
     
@@ -21,7 +21,7 @@ export default function UserProfile(){
     <Grid container justify="center" alignItems="center">
       <Avatar alt="Remy Sharp" src="https://previews.123rf.com/images/chutimakuanamon/chutimakuanamon1806/chutimakuanamon180600142/104749457-blossom-sitting-reading-the-powerpuff-girls-illustration.jpg" className={classes.bigAvatar} />
     </Grid>
-    <h1> Welcome Supreme Leader Chloe </h1>
+    <h1> {props.userid} </h1>
     <span id="line"> </span>
   </div>
   );

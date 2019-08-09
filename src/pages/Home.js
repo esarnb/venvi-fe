@@ -4,32 +4,69 @@ import ButtonBases from '../components/ButtonBases';
 import Container from '../components/Container';
 import Divider from '../components/Divider';
 import Footer from '../components/Footer';
+import { Redirect } from "react-router";
 import Card from '../components/Card';
 import { VehicleAPI } from '../utils/API';
 import './index.css'
+import Cookies from "js-cookie";
 
 //Component
 class Home extends React.Component {
-
-
-  state = {
-    key: "",
-    vehicles: [],
-    vehicles1:[],
-    vehicles2:[],
-    vehicles3:[]
+  constructor(props) {
+    super(props);
+    this.state = {
+      key: "",
+      vehicles: [],
+      vehicles1:[],
+      vehicles2:[],
+      vehicles3:[]
+    }
   }
 
-   componentDidMount() {
-    //Testing CRUD Routes
-    // let id = 123;
-    // Test.postQuery();
-    // Test.getResponse();
-    // Test.putQuery(id);
-    // Test.deleteQuery(id);
+  componentDidMount() {
     this.allVehicles();
+    //If the user wants to sign in, create a cookie and update state
+    if (this.props.location.search) this.setCookie(this.props.location.search);
+    //If the user visits home, check if there is a cookie (signed-in), and update state
+    else {
+      this.newReactState();
+    }
+    //If there is no sign in, and no cookie, then the user is undefined and are signed out.
   }
 
+  //Finds cookie from Front-End and returns as user-obj.
+  findCookie = () => {
+    let userobj = Cookies.get("venvi")
+    userobj ? userobj = this.QueryStringToJSON(userobj) : userobj = undefined;
+    return userobj;
+  }
+
+  //Sets the cookie as queryParameters of sign-in.
+  setCookie = (signIn) => {
+    //Set cookie
+    Cookies.set("venvi", signIn);
+    //Update React
+    this.newReactState();
+  }
+
+  newReactState = () => {
+    let findKey = this.findCookie();
+    console.log("THE FINDKEY VAR", findKey);
+    this.props.changeUserState(findKey);
+  }
+
+  //Converts all queryParams into useable object.
+  QueryStringToJSON = (convertThis) => {            
+    var pairs = convertThis.slice(1).split('&');
+    
+    var result = {};
+    pairs.forEach(function(pair) {
+        pair = pair.split('=');
+        result[pair[0]] = decodeURIComponent(pair[1] || '');
+    });
+
+    return JSON.parse(JSON.stringify(result));
+  }
 
  handleButtonClicked = event => {
   console.log("value", event.currentTarget.value);
@@ -77,28 +114,32 @@ class Home extends React.Component {
       });
   }
 
-
-
-
-
   render() {
+    console.log("MATCH QUERY", this.props.match.params.userid);
+    console.log("LOCATION QUERY", this.props.location.query);
+    console.log("LOCATION SEARCH", this.props.location.search);
     return (
-      <div>
-        <Banner />
-        <Container>
-        <Divider />
-          <h3> TOP CONSUMER PICKS </h3>
-          <span id="line"> </span>
-          <ButtonBases 
-          handleInputChange={this.handleButtonClicked}
-          vehicles = {this.state.vehicles}
-          vehicles1 = {this.state.vehicles1}
-          vehicles2 = {this.state.vehicles2}
-          vehicles3 = {this.state.vehicles3}/>
-        </Container>
-        {/* <Card /> */}
-        <Footer />
-      </div>
+      <React.Fragment>
+        { this.props.location.search ? (
+              <Redirect to="/logged" />
+        ) : (
+          <React.Fragment>
+            <Banner />
+            <Container>
+            <Divider />
+              <h3> TOP CONSUMER PICKS </h3>
+              <span id="line"> </span>
+              <ButtonBases 
+              handleInputChange={this.handleButtonClicked}
+              vehicles = {this.state.vehicles}
+              vehicles1 = {this.state.vehicles1}
+              vehicles2 = {this.state.vehicles2}
+              vehicles3 = {this.state.vehicles3}/>
+            </Container>
+            <Footer />
+          </React.Fragment>
+        )}
+      </React.Fragment>
     );
   }
 }

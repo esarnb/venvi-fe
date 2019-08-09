@@ -12,6 +12,7 @@
     "axios": "^0.19.0",
     "gh-pages": "^2.0.1",
     "history": "^4.9.0",
+    "js-cookie": "^2.2.1",
     "materialize-css": "^1.0.0",
     "rc-banner-anim": "^2.3.0",
     "react": "^16.8.6",
@@ -52,12 +53,12 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PhillipChang/venvi-fe.git"
+    "url": "git+https://github.com/phillipchang/venvi-fe.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/PhillipChang/venvi-fe/issues"
+    "url": "https://github.com/phillipchang/venvi-fe/issues"
   }
 }
