@@ -122,7 +122,7 @@ class ReviewCard extends Component {
 
     render() {
         return (
-            <div className="card">
+            <div className="card" id="search-result">
                 <div className="card-image">
                     <img src={this.props.image} />
                     <span className="card-title">{this.props.year} {this.props.make} {this.props.model}</span>
