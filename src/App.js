@@ -11,7 +11,7 @@ import NavBar from './components/NavBar';
 
 import AuthSuccess from './components/AuthSuccess';
 import Footer from './components/Footer';
-import { UserAPI } from '../utils/API';
+import { UserAPI } from './utils/API';
 
 class App extends React.Component {
 
