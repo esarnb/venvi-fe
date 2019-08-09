@@ -280,7 +280,7 @@ addVehicle = (year) =>
 					<Button type="submit" className="#37474f blue-grey darken-3" waves="light" style={{ marginLeft: '22px' }}>Search</Button>
 				</Row>
 			</form>
-				{this.state.progress === 0 ? "" : this.state.progress === 101 ? "" : <Demo style={{width: "fit-content", textAlign: "center"}} progress={this.state.progress}/>}
+				{/* {this.state.progress === 0 ? "" : this.state.progress === 101 ? "" : <Demo style={{width: "fit-content", textAlign: "center"}} progress={this.state.progress}/>} */}
 				</React.Fragment>
 		)
 	}

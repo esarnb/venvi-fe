@@ -352,7 +352,7 @@ class TestDrive extends Component
     renderer.setSize(window.innerWidth, window.innerHeight);
     this.mount.appendChild(renderer.domElement);
     //camera.position.z = 400;
-    camera.position.y = 50;
+    camera.position.y = 40;
 
     var axis = new THREE.Vector3(1, 0, 0).normalize();
     var terrainAnim = null;
