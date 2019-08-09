@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from '../components/Container';
 import UserProfile from '../components/UserProfile';
-import { ListCardProfile, ListCardBookmark } from '../components/ListCard';
+import { ListCardProfile } from '../components/ListCard';
 import Footer from '../components/Footer';
 import { ListingAPI, BookmarkAPI } from '../utils/API';
 
@@ -53,12 +53,12 @@ handleDelete = (id) => {
   })
 }
 
-handleDeleteBookmark = (id) => {
-  BookmarkAPI.deleteBookmark(id).then(res=>{
-    console.log("bookmark removed");
-    this.userBookmark();
-  })
-}
+// handleDeleteBookmark = (id) => {
+//   BookmarkAPI.deleteBookmark(id).then(res=>{
+//     console.log("bookmark removed");
+//     this.userBookmark();
+//   })
+// }
 
 handleEdit = event => {
   console.log("id", event.target.id)
@@ -104,7 +104,7 @@ editChange = event => {
             />
           ))}
           </div>
-          <React.Fragment id="bookmark-list">
+          {/* <React.Fragment id="bookmark-list">
             <h2>My Favorites</h2>
             <span id="line"> </span>
           {this.state.userBookmark.map(bookmark =>(
@@ -119,7 +119,7 @@ editChange = event => {
             handleDelete={this.handleDelete}
             />
           ))}
-          </React.Fragment>
+          </React.Fragment> */}
            </ div>
           <Footer />
       </React.Fragment>

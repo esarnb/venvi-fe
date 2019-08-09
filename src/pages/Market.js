@@ -25,7 +25,6 @@ class Market extends React.Component {
 
 componentDidMount(){
   this.allListing();
-  this.editListing();
 }
 
 //get all listing
@@ -80,26 +79,16 @@ showForm = () => {
   console.log("here2")
 }
 
-handleFavorite = (id) => {
-  console.log("this is id", id)
-  BookmarkAPI.addBookmark(id).then(res=>{
-    console.log("hello", res.data)
-    this.state.listings.filter(function(listing) {
-      return 
-    });
-  })
-}
+// handleFavorite = (ids) => {
+//   BookmarkAPI.addBookmark().then(res=>{
+//     console.log("hello", res.data)
+//     this.state.listings.filter(function(listing) {
+//       return 
+//     });
+//   })
+// }
 
 render () {
-  // const listing = this.state.listings.map(function(item){
-  //   return <ListCard key={item.id}
-  //     image={item.image}
-  //     make={item.make}
-  //     model={item.model}
-  //     price={item.price}
-  //     year={item.year}
-  //     vin={item.vin} />
-  // })
   return (
     <div>
         <div id = "wrapper">
@@ -115,13 +104,14 @@ render () {
     {this.state.listings.map(item =>(
     <ListCard key={item.id}
       id={item.id}
+      user={item.UserId}
       image={item.image}
       make={item.make}
       model={item.model}
       price={item.price}
       year={item.year}
       vin={item.vin}
-      handleFavorite={this.handleFavorite} />
+       />
   ))}
   </div>
   </div>
@@ -132,3 +122,5 @@ render () {
 }
 
 export default Market;
+
+// handleFavorite={this.handleFavorite}
