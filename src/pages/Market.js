@@ -4,7 +4,7 @@ import BuyForm from '../components/BuyForm';
 import ListForm from '../components/ListForm';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import { ListingAPI } from '../utils/API';
+import { ListingAPI, BookmarkAPI } from '../utils/API';
 import ListCard from '../components/ListCard';
 import Container from '../components/Container';
 import Card from '../components/Card';
@@ -80,16 +80,23 @@ showForm = () => {
   console.log("here2")
 }
 
-render () {
-  const listing = this.state.listings.map(function(item){
-    return <ListCard key={item.id}
-      image={item.image}
-      make={item.make}
-      model={item.model}
-      price={item.price}
-      year={item.year}
-      vin={item.vin} />
+handleFavorite = (id) => {
+  BookmarkAPI.addBookmark(id).then(res=>{
+    console.log("hello", res.data)
+    this.allListing();
   })
+}
+
+render () {
+  // const listing = this.state.listings.map(function(item){
+  //   return <ListCard key={item.id}
+  //     image={item.image}
+  //     make={item.make}
+  //     model={item.model}
+  //     price={item.price}
+  //     year={item.year}
+  //     vin={item.vin} />
+  // })
   return (
     <div>
         <div id = "wrapper">
@@ -104,12 +111,14 @@ render () {
     <div id="market-list">
     {this.state.listings.map(item =>(
     <ListCard key={item.id}
+      id={item.id}
       image={item.image}
       make={item.make}
       model={item.model}
       price={item.price}
       year={item.year}
-      vin={item.vin} />
+      vin={item.vin}
+      handleFavorite={this.handleFavorite} />
   ))}
   </div>
   </div>

@@ -3,7 +3,7 @@ import Container from '../components/Container';
 import UserProfile from '../components/UserProfile';
 import { ListCardProfile } from '../components/ListCard';
 import Footer from '../components/Footer';
-import { ListingAPI } from '../utils/API';
+import { ListingAPI, BookmarkAPI } from '../utils/API';
 
 //Component
 class Profile extends React.Component {
@@ -12,7 +12,8 @@ class Profile extends React.Component {
     
     this.state = {
       userList: [],
-      userId: 3,
+      userBookmark: [],
+      userId: 1,
       values: ""
     }
   }
@@ -20,6 +21,7 @@ class Profile extends React.Component {
   componentDidMount(){
     // this.setState({userId: this.props.state.userid.profileID})
     this.userListing();
+    this.userBookmark();
   }
 
 userListing = () =>
@@ -31,6 +33,18 @@ userListing = () =>
       // console.log(data.data[0]);
       this.setState({ userList:res.data });
       console.log(this.state.userList)
+    });
+}
+
+userBookmark = () =>
+{
+  ;
+    BookmarkAPI.getBookmarkByUser(this.state.userId).then(res=>{
+      console.log("all listings databack");
+      console.log(res.data);
+      // console.log(data.data[0]);
+      this.setState({ userBookmark:res.data });
+      console.log(this.state.userBookmark)
     });
 }
 
@@ -82,6 +96,20 @@ editChange = event => {
             />
           ))}
           </div>
+          <React.Fragment id="bookmark-list">
+          {this.state.userBookmark.map(bookmark =>(
+            <ListCardProfile key={bookmark.id}
+            id={bookmark.id}
+            image={bookmark.image}
+            make={bookmark.make}
+            model={bookmark.model}
+            price={bookmark.price}
+            year={bookmark.year}
+            vin={bookmark.vin}
+            handleDelete={this.handleDelete}
+            />
+          ))}
+          </React.Fragment>
            </ div>
           <Footer />
       </React.Fragment>

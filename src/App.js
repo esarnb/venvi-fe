@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 class App extends React.Component {
 
   state = {
-    userid: undefined,
+    userid: 1,
   }
 
   componentDidMount() {

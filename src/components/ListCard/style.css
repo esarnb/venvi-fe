@@ -9,9 +9,13 @@
 
 .MuiIconButton-root{
   color:green;
-  background:black;
+  background:transparent !important;
 }
 
 p {
   color:black !important;
+}
+
+#fav:hover {
+  color:red !important;
 }
