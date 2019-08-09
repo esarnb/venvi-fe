@@ -3,6 +3,9 @@ import { TextInput, Row, Col, Button } from "react-materialize";
 import axios from "axios";
 import { ListingAPI } from '../../utils/API'
 import "./style.css"
+// import UploadBtn from '../UploadBtn';
+// import RaisedButton from 'material-ui/RaisedButton'
+
 
 class ListForm extends Component {
 
@@ -213,6 +216,22 @@ render () {
                 <Col className="input-field">
                     <TextInput name="year" value={this.state.year} onChange={this.handleChange} type="text" label="Year" disabled={true} />                    
                 </Col>
+                {/* <RaisedButton
+          label="Upload" />
+        <input
+          type='file'
+          ref='input'
+          style={{ display: 'none' }}
+          accept="image/*"
+          onChange={this.handleImageChange} /> */}
+               
+                {/* <input
+                    accept="image/*"
+                    type="file"
+                /> 
+                <UploadBtn className="input-field" type="file" onChange={this.handleImageChange}/>
+                
+                  */}
                         <input id="file-input" onChange={this.handleImageChange} type="file"/>
                 </Row>
                 <Row id="search-sell-btn">
