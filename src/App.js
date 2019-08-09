@@ -38,6 +38,7 @@ class App extends React.Component {
           <Switch>
           <Route exact path='/'  render={(props) => <Home {...props} changeUserState={this.changeUserState}/>}  />
             <Route exact path='/search' component={Search} />
+            <Route exact path='/testdrive' component={TestDrive} /> 
             <Route path="/logged" component={AuthSuccess} />
                          
              {this.state.userid ? (
@@ -46,7 +47,7 @@ class App extends React.Component {
                  <Route exact path='/market' component={Market} /> 
                </React.Fragment>
              ) : <React.Fragment />} 
-             <Route exact path='/testdrive' component={TestDrive} /> 
+             
           </Switch>
         </div>
       </Router>
