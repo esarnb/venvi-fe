@@ -160,9 +160,9 @@ export function ListCardProfile(props) {
         <IconButton id="edit" aria-label="edit price">
          
             <Modal header="Change Price" fixedFooter trigger={<EditIcon />}
-            actions={<Button modal="close" className="reviewButton" onClick={() => this.props.handleEdit(this.props.id)}>Submit</Button>}>
+            actions={<Button modal="close" className="reviewButton" id={props.id} onClick={props.handleEdit}>Submit</Button>}>
             <Col className="input-field">
-            <TextInput name="price" type="number" label="Price" />   
+            <TextInput name="price" type="number" label="Price" onChange={props.editchange}/>   
             </Col>
             </Modal>
         </IconButton>

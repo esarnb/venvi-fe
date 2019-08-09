@@ -9,7 +9,8 @@ import { ListingAPI } from '../utils/API';
 class Profile extends React.Component {
 
 state = {
-  userList: []
+  userList: [],
+  values: ""
 }
 
   componentDidMount(){
@@ -35,11 +36,23 @@ handleDelete = (id) => {
   })
 }
 
-handleEdit = (id,price) => {
-  console.log("id", id)
+handleEdit = event => {
+  console.log("id", event.target.id)
+  console.log("values", this.state.values)
   console.log("we got here")
-  ListingAPI.editListing(id,price).then(res=>{
+  var listing = 
+  {
+    price: this.state.values
+  }
+  ListingAPI.editListing(event.target.id, listing).then(res=>{
     console.log("edited listing", res.data);
+    this.userListing();
+  })
+}
+
+editChange = event => {
+  this.setState({
+    values: event.target.value
   })
 }
 
@@ -59,7 +72,9 @@ handleEdit = (id,price) => {
             year={list.year}
             vin={list.vin}
             handleDelete={this.handleDelete}
-            handleEdit={this.handleEdit} />
+            handleEdit={this.handleEdit} 
+            editchange={this.editChange}
+            />
           ))}
           </div>
            </ div>
