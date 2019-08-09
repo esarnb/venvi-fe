@@ -12,9 +12,6 @@ import Cookies from "js-cookie";
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      userid: undefined,
-    };
   }
 
   componentDidMount() {

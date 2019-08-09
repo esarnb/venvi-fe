@@ -6,19 +6,24 @@ import { ListingAPI } from '../utils/API';
 
 //Component
 class Profile extends React.Component {
-
-state = {
-  userList: []
-}
+  constructor(props) {
+    super(props);
+    
+    state = {
+      userList: [],
+      userId: 3
+    }
+  }
 
   componentDidMount(){
-  this.userListing();
-}
+    this.setState({userId: this.props.state.userid.profileID})
+    this.userListing();
+  }
 
 userListing = () =>
 {
-  let userId = 3;
-    ListingAPI.getListingByUser(userId).then(res=>{
+  ;
+    ListingAPI.getListingByUser(this.state.userId).then(res=>{
       console.log("all listings databack");
       console.log(res.data);
       // console.log(data.data[0]);
@@ -46,7 +51,7 @@ handleEdit = (id,price) => {
     return (
       <div>
         <Container>
-        <UserProfile />
+        <UserProfile userid={this.state.userId}/>
         </Container>
           <div id="user-list">
           {this.state.userList.map(list =>(

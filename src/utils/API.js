@@ -204,14 +204,7 @@ export const ReviewAPI = {
   ============================================================*/
 
 export const Auth = {
-  // login() {
-  //   console.log("LOGIN ONCLICK");
-  //   window.location.href = "https://venvi-passport2.herokuapp.com/auth/google/login"
-  //   app.get("/auth/google").then((res) => {
-  //     console.log("RESULT OF AUTH: ", res);
-  //   })
-  // },
-
+  
   login() {
     console.log("LOGIN ONCLICK");
     const baseurl = "https://venvi-passport2.herokuapp.com";
@@ -220,10 +213,10 @@ export const Auth = {
     const specs = 'width=500,height=500';
     window.open(url, name, specs)
   },
-
   
   logout() {
     Cookies.remove("venvi")
+    return Cookies.get("venvi")
   },
 }
 
