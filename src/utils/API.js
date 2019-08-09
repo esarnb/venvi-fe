@@ -18,8 +18,7 @@ export const UserAPI = {
 
    // To return user profile page
   getUser(id) {
-    return app.get("/api/users/:id").then(res => console.log(res.data));
-  },
+    return app.get("/api/users/:id");
 
   getUserByProfileId(profileID) {
     return app.get(`/api/users/profile/${profileId}`);
