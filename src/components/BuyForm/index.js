@@ -101,7 +101,7 @@ class BuyForm extends Component {
 				e.preventDefault();
 				this.searchAction();
 			}}>
-				<Row style={{ marginBottom: '0px' }}>
+				<Row id="search-param" style={{ marginBottom: '0px' }}>
 					<Col className="input-field">
 						<TextInput name="make" value={this.state.make} onChange={this.handleChange} type="text" label="Make" />
 					</Col>
@@ -112,7 +112,7 @@ class BuyForm extends Component {
 						<TextInput name="year" value={this.state.year} onChange={this.handleChange} type="text" label="Year" />
 					</Col>
 				</Row>
-				<Row>
+				<Row id="search-button">
 					<Button type="submit" className="#37474f blue-grey darken-3" waves="light" style={{ marginLeft: '22px' }}>Search</Button>
 				</Row>
 			</form>

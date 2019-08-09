@@ -57,8 +57,10 @@ const styles = {
   }
 }
 
+
+
 export default function ListCard(props) {
-  const {image,make,model,price,year} = props;
+  const {image,make,model,price,year,vin} = props;
   var name = `${year} ${make} ${model}`
   console.log("name",name)
   const classes = useStyles();
@@ -107,8 +109,8 @@ export default function ListCard(props) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Price: {price}</Typography>
-          <Typography paragraph>
+          <Typography paragraph>Price: ${price}</Typography>
+          <Typography paragraph>VIN: {vin}
           </Typography>
           <Typography paragraph>
           </Typography>
@@ -123,7 +125,7 @@ export default function ListCard(props) {
 }
 
 export function ListCardProfile(props) {
-  const {image,make,model,price,year} = props;
+  const {image,make,model,price,year,vin} = props;
   var name = `${year} ${make} ${model}`;
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
@@ -142,7 +144,7 @@ export function ListCardProfile(props) {
         }
         action={
           <IconButton aria-label="delete">
-            <DeleteSharpIcon onClick={() => this.props.handleDelete(this.props.id)}/>
+            <DeleteSharpIcon onClick={() => props.handleDelete(props.id)}/>
           </IconButton>
         }
         title= {name}      
@@ -183,7 +185,7 @@ export function ListCardProfile(props) {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Price:${price}</Typography>
-          <Typography paragraph>
+          <Typography paragraph>VIN: ${vin}
           </Typography>
           <Typography paragraph>
           </Typography>
