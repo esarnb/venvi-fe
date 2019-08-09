@@ -17,7 +17,13 @@ class App extends React.Component {
 
   state = {
 
-    userid: 1,
+    userid: {
+      email: "esarnb@gmail.com",
+      name: "Esar",
+      profileID: "110260281793715162152",
+      profilePhoto: "'https://lh5.googleusercontent.com/-8mzPV8-3p14/AAAAAAAAAAI/AAAAAAAAABA/-zNF15CRyfk/photo.jpg",
+      username: "esarnb"
+    },
 
     // userid: undefined,
     email: "",

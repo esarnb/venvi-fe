@@ -3,6 +3,18 @@ import { TextInput, Row, Col, Button } from "react-materialize";
 import axios from "axios";
 import { VehicleAPI, ReviewAPI } from '../../utils/API'
 import "./style.css"
+import { Progress } from 'antd';
+
+const Demo = (props) => (
+    <Progress
+      type="circle"
+      strokeColor={{
+        '0%': '#108ee9',
+        '100%': '#87d068',
+      }}
+      percent={props.progress}
+    />
+);
 
 // function SearchInput() {
 class SearchInput extends Component {
@@ -12,7 +24,8 @@ class SearchInput extends Component {
 		year: "",
 		imgURL: "",
 		vehicleId: "",
-		reviews: []
+		reviews: [],
+		progress: 0
 	}
 
 
@@ -24,6 +37,8 @@ class SearchInput extends Component {
 
 		axios.get("https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json")
 			.then(response => {
+			this.setState({progress: 15})
+
 				var allMakes = response.data.Results;
 				var queryMake = null;
 				if (this.state.make != "") {
@@ -36,6 +51,7 @@ class SearchInput extends Component {
 				allMakes.forEach(value => {
 					if (value.MakeName.toLowerCase().indexOf(queryMake) > -1) {
 						console.log("Make match!")
+						this.setState({progress: 30})
 						makeVeri = true;
 					}
 				})
@@ -55,6 +71,7 @@ class SearchInput extends Component {
 								allModels.forEach(value => {
 									if (value.Model_Name.toLowerCase().indexOf(queryModel) > -1) {
 										console.log("Model match!")
+										this.setState({progress: 50})
 										modelVeri = true;
 
 									}
@@ -76,7 +93,7 @@ class SearchInput extends Component {
 
 								if (makeVeri && modelVeri) {
 									console.log("All input OK.")
-									
+									this.setState({progress: 60})		
 									console.log(`https://www.googleapis.com/customsearch/v1?q=${year} ${queryMake}+${queryModel}&cx=014855097092208085078%3A6cwyf6e5-oc&searchType=image&fileType=png&key=AIzaSyBEg43tCIEFbmsUD3hVAMZtNOFGcj7M0Cs`)
 									axios.get(`https://www.googleapis.com/customsearch/v1?q=${year} ${queryMake}+${queryModel}&cx=014855097092208085078%3A6cwyf6e5-oc&searchType=image&fileType=png&key=AIzaSyBEg43tCIEFbmsUD3hVAMZtNOFGcj7M0Cs`)
 										.then(response => {
@@ -84,6 +101,7 @@ class SearchInput extends Component {
 
 											this.state.imgURL = images;
 											// console.log(this.state)
+											this.setState({progress: 70})
 
 											this.getVehicleByType(year);
 											
@@ -100,6 +118,8 @@ class SearchInput extends Component {
 				}
 	else {
 		console.log("Make not match.")
+		this.setState({progress: -1})
+
 	}})
 }
 
@@ -116,6 +136,8 @@ getVehicleByType = (year) =>
 	var model = this.state.model.toLowerCase().trim();
 
     VehicleAPI.getVehicleByType(make, model, year).then( result => {
+			this.setState({progress: 80})
+
         console.log(" data", result);
         console.log(result.data);
         if (!result.data)
@@ -128,6 +150,7 @@ getVehicleByType = (year) =>
         	console.log(this.state.vehicleId); 
 	        console.log("state", this.state);
 	        this.getReviewByVehicleId();   	               
+					this.setState({progress: 90})
         }
         
     }); 
@@ -186,8 +209,9 @@ addVehicle = (year) =>
       console.log(result.data);
       this.setState({reviews: result.data});
       console.log("reviews in state", this.state.reviews);
-	  this.getAverageRating(result.data); 
-	  this.props.infoGet(this.state);          
+			this.setState({progress: 95})
+			this.getAverageRating(result.data); 
+			this.props.infoGet(this.state);          
     });
 
     }
@@ -211,7 +235,9 @@ addVehicle = (year) =>
 	    		averageRating = sum/arr.length;
     	}  	  	
     	console.log(averageRating);
-    	this.updateVehicleRating(averageRating);
+			this.updateVehicleRating(averageRating);
+			this.setState({progress: 98})
+			
     }
 
     updateVehicleRating = (rating) =>
@@ -223,16 +249,18 @@ addVehicle = (year) =>
             }
     	console.log("vehicle id before update rating", vehicleId);
 
-
+			this.setState({progress: 100})
     	VehicleAPI.updateVehicle(vehicleId, vehicle).then(res => {
-      	console.log(res.data);
-    })
+				console.log(res.data);
+				this.setState({progress: 101})			
+    	})
     }
 
 
 
 	render() {
 		return (
+			<React.Fragment>
 			<form onSubmit={e => {
 				e.preventDefault();
 				this.searchAction();
@@ -252,6 +280,8 @@ addVehicle = (year) =>
 					<Button type="submit" className="#37474f blue-grey darken-3" waves="light" style={{ marginLeft: '22px' }}>Search</Button>
 				</Row>
 			</form>
+				{this.state.progress === 0 ? "" : this.state.progress === 101 ? "" : <Demo style={{width: "fit-content", textAlign: "center"}} progress={this.state.progress}/>}
+				</React.Fragment>
 		)
 	}
 }
