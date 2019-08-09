@@ -6,12 +6,11 @@ import Typography from "@material-ui/core/Typography";
 import './style.css';
 import * as API from "../../utils/API";
 import { Link } from "react-router-dom";
-
 const StyledTabs = withStyles({
   indicator: {
     display: "flex",
     justifyContent: "center",
-    backgroundColor: "transparent",
+    backgroundColor: "black",
     "& > div": {
       maxWidth: 80,
       width: "100%",
@@ -43,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(0)
   },
   demo1: {
-    backgroundColor: theme.palette.background.paper
+    backgroundColor: "black"
   },
   demo2: {
     backgroundColor: "black"
@@ -75,7 +74,7 @@ function NavBar(props) {
               [<Link to="/market"><StyledTab label="Market" className="navTab"/></Link>,
               <Link to="/profile"><StyledTab label="Profile" className="navTab"/></Link>]
           ): []}
-          
+           <Link to="/venvi-fe/testdrive"><StyledTab label="TestDrive" className="navTab"/></Link>
           {/* <React.Fragment>
             [1] Welcome, {(props && props["username"] && props.username) ? props.username: "Guest"}
           </React.Fragment> */}
@@ -85,7 +84,6 @@ function NavBar(props) {
           ) : (
             <a onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}}>SignIn</a>
           )}
-
           </StyledTabs>
 
         <Typography className={classes.padding} />

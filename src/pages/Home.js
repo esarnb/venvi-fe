@@ -5,6 +5,8 @@ import Container from '../components/Container';
 import Divider from '../components/Divider';
 import Footer from '../components/Footer';
 import { Redirect } from "react-router";
+import Card from '../components/Card';
+import { VehicleAPI } from '../utils/API';
 import './index.css'
 import Cookies from "js-cookie";
 
@@ -12,9 +14,17 @@ import Cookies from "js-cookie";
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      key: "",
+      vehicles: [],
+      vehicles1:[],
+      vehicles2:[],
+      vehicles3:[]
+    }
   }
 
   componentDidMount() {
+    this.allVehicles();
     //If the user wants to sign in, create a cookie and update state
     if (this.props.location.search) this.setCookie(this.props.location.search);
     //If the user visits home, check if there is a cookie (signed-in), and update state
@@ -58,12 +68,58 @@ class Home extends React.Component {
     return JSON.parse(JSON.stringify(result));
   }
 
+ handleButtonClicked = event => {
+  console.log("value", event.currentTarget.value);
+  var key = event.currentTarget.value;
+  this.setState({ key: key});
+  this.componentDidUpdate = (prevState) => {
+   if (this.state.key !== prevState.key) {
+    this.afterClick()
+   }
+  }
+ };
+
+  afterClick = () => {
+    console.log("key", this.state.key)
+  }
+
+
+  //get all vehicles
+  allVehicles = () =>
+  {
+      VehicleAPI.getAllVehicles().then(res=>{
+        console.log("all vehicles databack");
+        console.log(res.data);
+        // console.log(data.data[0]);
+
+        this.setState({ vehicles: [...res.data] });
+
+        res.data[0].width = "33%";
+        res.data[1].width = "34%";
+        res.data[2].width = "33%";
+        res.data[3].width = "34%";
+        res.data[4].width = "32%";
+        res.data[5].width = "34%";
+        res.data[6].width = "33%";
+        res.data[7].width = "34%";
+        res.data[8].width = "33%";
+
+        this.setState({ vehicles1: [res.data[0], res.data[1], res.data[2]]});
+        this.setState({ vehicles2: [res.data[3], res.data[4], res.data[5]]});
+        this.setState({ vehicles3: [res.data[6], res.data[7], res.data[8]]});
+        console.log(this.state.vehicles);
+        console.log("1", this.state.vehicles1);
+        console.log("2", this.state.vehicles2);
+        console.log("3", this.state.vehicles3);
+      });
+  }
+
   render() {
     console.log("MATCH QUERY", this.props.match.params.userid);
     console.log("LOCATION QUERY", this.props.location.query);
     console.log("LOCATION SEARCH", this.props.location.search);
     return (
-      <div>
+      <React.Fragment>
         { this.props.location.search ? (
               <Redirect to="/logged" />
         ) : (
@@ -71,14 +127,19 @@ class Home extends React.Component {
             <Banner />
             <Container>
             <Divider />
-              <h3> Top Consumer Picks </h3>
+              <h3> TOP CONSUMER PICKS </h3>
               <span id="line"> </span>
-              <ButtonBases />
+              <ButtonBases 
+              handleInputChange={this.handleButtonClicked}
+              vehicles = {this.state.vehicles}
+              vehicles1 = {this.state.vehicles1}
+              vehicles2 = {this.state.vehicles2}
+              vehicles3 = {this.state.vehicles3}/>
             </Container>
             <Footer />
           </React.Fragment>
         )}
-      </div>
+      </React.Fragment>
     );
   }
 }

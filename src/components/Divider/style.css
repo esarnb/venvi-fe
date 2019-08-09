@@ -2,12 +2,14 @@ h4
 {
 	text-align: center;
 	font-weight: bold;
+	font-family: 'Exo', sans-serif;
 }
 
 .content
 {
 	background-size: cover;
 	height: 200px;
+	margin-bottom: 5%;
 }
 
 .section
@@ -18,8 +20,8 @@ h4
 
 p
 {
-	text-align: center !important;
-		font-family:'Poppins', sans-serif;
+		text-align: center !important;
+		font-family: 'Exo', sans-serif;
 		color: white;
 		font-size: 18px;
 }

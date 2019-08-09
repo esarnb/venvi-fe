@@ -3,8 +3,11 @@ import { MarketBuy, MarketSell } from '../components/MarketBtn';
 import BuyForm from '../components/BuyForm';
 import ListForm from '../components/ListForm';
 import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 import { ListingAPI } from '../utils/API';
 import ListCard from '../components/ListCard';
+import Container from '../components/Container';
+import Card from '../components/Card';
 import './index.css'
 
 
@@ -89,7 +92,7 @@ render () {
   })
   return (
     <div>
-    <NavBar/>
+        <div id = "wrapper">
         <h3 id="market-head"> Market </h3>
         <span id="market-line"></span>
         <div id="market-btn">
@@ -109,6 +112,8 @@ render () {
       vin={item.vin} />
   ))}
   </div>
+  </div>
+    <Footer />
     </div>
   );
 }

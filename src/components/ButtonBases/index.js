@@ -9,6 +9,7 @@ const images1 = [
     url: 'https://images01.oe24.at/Aventador_SVJ-roadster2.jpg/bigStory/374.840.502',
     title: 'Lambo',
     width: '40%',
+    id: 1
   },
   {
     url: 'https://www.motorwerks.com/inventoryphotos/4857/wp1ab2ayxkda63292/ip/3.jpg?height=400',
@@ -106,6 +107,7 @@ const useStyles = makeStyles(theme => ({
     bottom: 0,
     backgroundSize: 'cover',
     backgroundPosition: 'center 40%',
+   
   },
   imageBackdrop: {
     position: 'absolute',
@@ -132,17 +134,19 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function ButtonBases() {
+function ButtonBases(props) {
   const classes = useStyles();
 
   return (
     <div className={classes.root} id = "popularSection">
-      {images1.map(image => (
-        <ButtonBase
+      {props.vehicles1.map(image => (
+        <ButtonBase  id="spanbg"
           focusRipple
-          key={image.title}
+          key={image.id}
+          value = {image.id}
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
+          onClick = {props.handleInputChange}
           style={{
             width: image.width,
           }}
@@ -150,7 +154,7 @@ function ButtonBases() {
           <span
             className={classes.imageSrc}
             style={{
-              backgroundImage: `url(${image.url})`,
+              backgroundImage: `url(${image.image})`,
             }}
           />
           <span className={classes.imageBackdrop} />
@@ -161,17 +165,18 @@ function ButtonBases() {
               color="inherit"
               className={classes.imageTitle}
             >
-              {image.title}
+              {image.make} {image.model}       
               <span className={classes.imageMarked} />
             </Typography>
           </span>
         </ButtonBase>
       ))}
 
-      {images2.map(image => (
-        <ButtonBase
+      {props.vehicles2.map(image => (
+        <ButtonBase id="spanbg"
           focusRipple
-          key={image.title}
+          key={image.id}
+          value = {image.id}
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
           style={{
@@ -181,7 +186,7 @@ function ButtonBases() {
           <span
             className={classes.imageSrc}
             style={{
-              backgroundImage: `url(${image.url})`,
+              backgroundImage: `url(${image.image})`,
             }}
           />
           <span className={classes.imageBackdrop} />
@@ -192,16 +197,17 @@ function ButtonBases() {
               color="inherit"
               className={classes.imageTitle}
             >
-              {image.title}
+              {image.make} {image.model}     
               <span className={classes.imageMarked} />
             </Typography>
           </span>
         </ButtonBase>
       ))}
-       {images3.map(image => (
-        <ButtonBase
+       {props.vehicles3.map(image => (
+        <ButtonBase id="spanbg"
           focusRipple
-          key={image.title}
+          key={image.id}
+          value = {image.id}
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
           style={{
@@ -211,7 +217,7 @@ function ButtonBases() {
           <span
             className={classes.imageSrc}
             style={{
-              backgroundImage: `url(${image.url})`,
+              backgroundImage: `url(${image.image})`,
             }}
           />
           <span className={classes.imageBackdrop} />
@@ -222,7 +228,7 @@ function ButtonBases() {
               color="inherit"
               className={classes.imageTitle}
             >
-              {image.title}
+              {image.make} {image.model}   
               <span className={classes.imageMarked} />
             </Typography>
           </span>

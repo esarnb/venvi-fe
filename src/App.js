@@ -9,6 +9,7 @@ import TestDrive from './pages/TestDrive';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBar from './components/NavBar';
 import AuthSuccess from './components/AuthSuccess';
+import Footer from './components/Footer';
 
 class App extends React.Component {
 
@@ -45,6 +46,7 @@ class App extends React.Component {
                  <Route exact path='/market' component={Market} /> 
                </React.Fragment>
              ) : <React.Fragment />} 
+             <Route exact path='/testdrive' component={TestDrive} /> 
           </Switch>
         </div>
       </Router>

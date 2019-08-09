@@ -11,3 +11,7 @@
   color:green;
   background:black;
 }
+
+p {
+  color:black !important;
+}

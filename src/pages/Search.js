@@ -4,6 +4,7 @@ import React from 'react';
 import Container from '../components/Container';
 import SearchInput from '../components/SearchInput';
 import ReviewCard from '../components/ReviewCard/index';
+import Footer from '../components/Footer';
 
 import './index.css'
 
@@ -23,6 +24,8 @@ class Search extends React.Component {
     };    
   }
 
+  
+
   infoCallback = data => {
     console.log("Callback:");
     console.log(`${data.year} + ${data.make} + ${data.model}`);
@@ -36,13 +39,13 @@ class Search extends React.Component {
       showReviewCard: true
     })
     console.log(this.state.reviews)
-  }
+  } 
 
   render() {
     return (
       <div>
-        <Container>
-          <h2> Top Consumer Picks </h2>
+        <div className = "wrapper2">
+          <h2> Search Reviews </h2>
           <span id="line"> </span>
           <SearchInput infoGet={this.infoCallback}
             relay={this.relayCall}/>
@@ -52,9 +55,10 @@ class Search extends React.Component {
             year={this.state.year}
             id={this.state.vehicleId}
             // relay={this.state.relay}
-          /> : null}
-        </Container>
+          /> : null}       
       </div>
+        <Footer />
+        </div>
     );
   }
 }

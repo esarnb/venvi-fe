@@ -2,6 +2,7 @@ import React from 'react';
 import Container from '../components/Container';
 import UserProfile from '../components/UserProfile';
 import { ListCardProfile } from '../components/ListCard';
+import Footer from '../components/Footer';
 import { ListingAPI } from '../utils/API';
 
 //Component
@@ -11,7 +12,8 @@ class Profile extends React.Component {
     
     this.state = {
       userList: [],
-      userId: 3
+      userId: 3,
+      values: ""
     }
   }
 
@@ -39,23 +41,34 @@ handleDelete = (id) => {
   })
 }
 
-handleEdit = (id,price) => {
-  console.log("id", id)
+handleEdit = event => {
+  console.log("id", event.target.id)
+  console.log("values", this.state.values)
   console.log("we got here")
-  ListingAPI.editListing(id,price).then(res=>{
+  var listing = 
+  {
+    price: this.state.values
+  }
+  ListingAPI.editListing(event.target.id, listing).then(res=>{
     console.log("edited listing", res.data);
+    this.userListing();
+  })
+}
+
+editChange = event => {
+  this.setState({
+    values: event.target.value
   })
 }
 
   render() {
     return (
-      <div>
-        <Container>
-        <UserProfile userid={this.state.userId}/>
-        </Container>
+      <React.Fragment>
+        <div className= "wrapper2">
+          <UserProfile userid={this.state.userId}/>
           <div id="user-list">
           {this.state.userList.map(list =>(
-          <ListCardProfile key={list.id}
+            <ListCardProfile key={list.id}
             id={list.id}
             image={list.image}
             make={list.make}
@@ -64,10 +77,14 @@ handleEdit = (id,price) => {
             year={list.year}
             vin={list.vin}
             handleDelete={this.handleDelete}
-            handleEdit={this.handleEdit} />
+            handleEdit={this.handleEdit} 
+            editchange={this.editChange}
+            />
           ))}
           </div>
-      </div>
+           </ div>
+          <Footer />
+      </React.Fragment>
     );
   }
 }
