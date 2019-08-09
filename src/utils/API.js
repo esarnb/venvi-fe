@@ -15,11 +15,13 @@ export const UserAPI = {
   // To create user account in our database
   addUser(newUser) {
     return app.post("/api/users", newUser);
+  },
 
    // To return user profile page
   getUser(id) {
     return app.get("/api/users/:id");
-
+  },
+  
   getUserByProfileId(profileID) {
     return app.get(`/api/users/profile/${profileId}`);
   },
