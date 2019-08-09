@@ -12,7 +12,7 @@ class Profile extends React.Component {
     
     this.state = {
       userList: [],
-      userId: 3,
+      userId: 1,
       values: ""
     }
   }
