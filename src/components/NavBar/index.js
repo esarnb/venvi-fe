@@ -82,7 +82,7 @@ function NavBar(props) {
           </React.Fragment> */}
           
           {props.username ? (
-            <a onClick={() => ( API.Auth.logout() ? window.location.href="/venvi" : window.location.href="/venvi" )} id ="signOut" className="signOut" style={{float: "right"}}>SignOut</a>
+            <a onClick={() => ( API.Auth.logout() ? window.location.href="/venvi-fe/" : window.location.href="/venvi-fe/" )} id ="signOut" className="signOut" style={{float: "right"}}>SignOut</a>
           ) : (
             <a onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}}>SignIn</a>
           )}
