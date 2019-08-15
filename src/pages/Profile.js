@@ -1,5 +1,4 @@
 import React from 'react';
-import Container from '../components/Container';
 import UserProfile from '../components/UserProfile';
 import { ListCardProfile } from '../components/ListCard';
 import Footer from '../components/Footer';

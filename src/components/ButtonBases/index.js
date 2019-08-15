@@ -4,62 +4,6 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import "./style.css";
 
-const images1 = [
-  {
-    url: 'https://images01.oe24.at/Aventador_SVJ-roadster2.jpg/bigStory/374.840.502',
-    title: 'Lambo',
-    width: '40%',
-    id: 1
-  },
-  {
-    url: 'https://www.motorwerks.com/inventoryphotos/4857/wp1ab2ayxkda63292/ip/3.jpg?height=400',
-    title: 'Porsche',
-    width: '20%',
-  },
-  {
-    url: 'https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2019/03/21/105807049-1553189463674bugatti.530x298.jpg?v=1553189697',
-    title: 'Bugatti',
-    width: '40%',
-  },
-];
-
-const images2 = [
-  {
-    url: 'https://images01.oe24.at/Aventador_SVJ-roadster2.jpg/bigStory/374.840.502',
-    title: 'Lambo',
-    width: '36%',
-  },
-  {
-    url: 'https://www.motorwerks.com/inventoryphotos/4857/wp1ab2ayxkda63292/ip/3.jpg?height=400',
-    title: 'Porsche',
-    width: '40%',
-  },
-  {
-    url: 'https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2019/03/21/105807049-1553189463674bugatti.530x298.jpg?v=1553189697',
-    title: 'Bugatti',
-    width: '24%',
-  },
-];
-
-const images3 = [
-  {
-    url: 'https://images01.oe24.at/Aventador_SVJ-roadster2.jpg/bigStory/374.840.502',
-    title: 'Lambo',
-    width: '40%',
-  },
-  {
-    url: 'https://www.motorwerks.com/inventoryphotos/4857/wp1ab2ayxkda63292/ip/3.jpg?height=400',
-    title: 'Porsche',
-    width: '20%',
-  },
-  {
-    url: 'https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2019/03/21/105807049-1553189463674bugatti.530x298.jpg?v=1553189697',
-    title: 'Bugatti',
-    width: '40%',
-  },
-];
-
-
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',

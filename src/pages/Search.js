@@ -1,7 +1,6 @@
 import React from 'react';
 // import Banner from '../components/Banner';
 // import ButtonBases from '../components/ButtonBases';
-import Container from '../components/Container';
 import SearchInput from '../components/SearchInput';
 import ReviewCard from '../components/ReviewCard/index';
 import Footer from '../components/Footer';

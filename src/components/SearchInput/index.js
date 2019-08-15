@@ -26,7 +26,7 @@ class SearchInput extends Component {
 			.then(response => {
 				var allMakes = response.data.Results;
 				var queryMake = null;
-				if (this.state.make != "") {
+				if (this.state.make !== "") {
 					queryMake = this.state.make.toLowerCase().trim();
 				}
 
@@ -81,8 +81,9 @@ class SearchInput extends Component {
 									axios.get(`https://www.googleapis.com/customsearch/v1?q=${year} ${queryMake}+${queryModel}&cx=014855097092208085078%3A6cwyf6e5-oc&searchType=image&fileType=png&key=AIzaSyBEg43tCIEFbmsUD3hVAMZtNOFGcj7M0Cs`)
 										.then(response => {
 											var images = response.data.items[0].link;
-
-											this.state.imgURL = images;
+											
+											this.setState({ imgURL:images })
+											// this.state.imgURL = images;
 											// console.log(this.state)
 
 											this.getVehicleByType(year);

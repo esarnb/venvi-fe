@@ -2,12 +2,9 @@ import React from 'react';
 import { MarketBuy, MarketSell } from '../components/MarketBtn';
 import BuyForm from '../components/BuyForm';
 import ListForm from '../components/ListForm';
-import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import { ListingAPI, BookmarkAPI } from '../utils/API';
+import { ListingAPI } from '../utils/API';
 import ListCard from '../components/ListCard';
-import Container from '../components/Container';
-import Card from '../components/Card';
 import './index.css'
 
 

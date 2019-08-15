@@ -12,7 +12,6 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { yellow } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
 import EditIcon from '@material-ui/icons/Edit';
