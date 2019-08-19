@@ -81,9 +81,9 @@ function NavBar(props) {
           </React.Fragment> */}
           
           {props.username ? (
-            <button onClick={() => (API.Auth.logout().then(() => window.location.href="/"))} id ="signOut" className="signOut" style={{float: "right"}} >SignOut</button>
+            <button onClick={() => (API.Auth.logout().then(() => window.location.href="/"))} id ="signOut" className="signOut" style={{float: "right"}} >Sign Out</button>
           ) : (
-            <button onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}} href="#">SignIn</button>
+            <button onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}} href="#">Sign In</button>
           )}
           </StyledTabs>
 
