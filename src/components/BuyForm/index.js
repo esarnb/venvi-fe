@@ -22,7 +22,7 @@ class BuyForm extends Component {
 			.then(response => {
 				var allMakes = response.data.Results;
 				var queryMake = null;
-				if (this.state.make != "") {
+				if (this.state.make !== "") {
 					queryMake = this.state.make.toLowerCase();
 				}
 
@@ -72,8 +72,8 @@ class BuyForm extends Component {
 										.then(response => {
 											var images = response.data.items[0].link;
 
-											this.state.imgURL = images;
-											// console.log(this.state)
+											this.setState({ imgURL:images })
+										
 
 											this.props.infoBuy(this.state)
 										})
@@ -81,8 +81,6 @@ class BuyForm extends Component {
 								else {
 									console.log("Error.")
 								}
-
-
 							})
 					})
 				}

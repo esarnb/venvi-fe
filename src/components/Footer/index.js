@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Icon } from 'antd';
 import './style.css';
 
 function Footer() {

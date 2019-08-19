@@ -5,7 +5,6 @@ import Container from '../components/Container';
 import Divider from '../components/Divider';
 import Footer from '../components/Footer';
 import { Redirect } from "react-router";
-import Card from '../components/Card';
 import { VehicleAPI } from '../utils/API';
 import './index.css'
 import Cookies from "js-cookie";

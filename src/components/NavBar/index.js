@@ -6,6 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import './style.css';
 import * as API from "../../utils/API";
 import { Link } from "react-router-dom";
+
+
 const StyledTabs = withStyles({
   indicator: {
     display: "flex",
@@ -13,17 +15,17 @@ const StyledTabs = withStyles({
     backgroundColor: "black",
     "& > div": {
       maxWidth: 80,
-      width: "100%",
+      width: "80%",
       backgroundColor: "gold",
       height: 1
     }
   }
-})(props => <Tabs {...props} TabIndicatorProps={{ children: <div /> }} />);
+})(style => <Tabs {...style} TabIndicatorProps={{ children: <div /> }} />);
 
 const StyledTab = withStyles(theme => ({
   root: {
     textTransform: "none",
-    color: "#fff",
+    color: "white",
     paddingBottom: 0,
     fontWeight: theme.typography.fontWeightRegular,
     fontSize: theme.typography.pxToRem(15),
@@ -32,7 +34,7 @@ const StyledTab = withStyles(theme => ({
       opacity: 1
     }
   }
-}))(props => <Tab disableRipple {...props} />);
+}))(style => <Tab disableRipple {...style} />);
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,10 +43,7 @@ const useStyles = makeStyles(theme => ({
   padding: {
     padding: theme.spacing(0)
   },
-  demo1: {
-    backgroundColor: "black"
-  },
-  demo2: {
+  bgcolor: {
     backgroundColor: "black"
   }
 }));
@@ -58,11 +57,11 @@ function NavBar(props) {
   }
 
   return (
-    <div className={classes.root} id = "navbarSection">
-      <div className={classes.demo1} id="logo">
+    <div className={classes.root} id="navbarSection">
+      <div id="logo">
         <Typography className={classes.padding} />
       </div>
-      <div className={classes.demo2} id="NavBar">
+      <div className={classes.bgcolor} id="NavBar">
         <StyledTabs
           value={value}
           onChange={handleChange}
@@ -82,9 +81,9 @@ function NavBar(props) {
           </React.Fragment> */}
           
           {props.username ? (
-            <a onClick={() => (API.Auth.logout().then(() => window.location.href="/"))} id ="signOut" className="signOut" style={{float: "right"}}>SignOut</a>
+            <button onClick={() => (API.Auth.logout().then(() => window.location.href="/"))} id ="signOut" className="signOut" style={{float: "right"}} >Sign Out</button>
           ) : (
-            <a onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}}>SignIn</a>
+            <button onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}} href="#">Sign In</button>
           )}
           </StyledTabs>
 

@@ -72,8 +72,6 @@ saveListing = () =>
     let UserId = this.state.UserId;
     let vin = this.state.vin;
 
-    let image = this.state.file;
-
      var listing =
             {
                 price: price,

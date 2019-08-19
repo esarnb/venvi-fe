@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Test, Auth } from '../src/utils/API'
+import { Test } from '../src/utils/API'
 import Home from './pages/Home'
 import Search from './pages/Search'
 import Profile from './pages/Profile'
@@ -10,8 +10,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBar from './components/NavBar';
 
 import AuthSuccess from './components/AuthSuccess';
-import Footer from './components/Footer';
-import { UserAPI } from './utils/API';
+// import Footer from './components/Footer';
+// import { UserAPI } from './utils/API';
 
 class App extends React.Component {
 

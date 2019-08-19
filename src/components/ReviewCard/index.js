@@ -124,7 +124,7 @@ class ReviewCard extends Component {
         return (
             <div className="card" id="search-result">
                 <div className="card-image">
-                    <img src={this.props.image} />
+                    <img src={this.props.image} alt={this.props.make} />
                     <span className="card-title">{this.props.year} {this.props.make} {this.props.model}</span>
                 </div>
                 <div className="card-content">

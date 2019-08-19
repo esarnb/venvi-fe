@@ -1,6 +1,5 @@
 
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import * as THREE from "three";
 import {MTLLoader, OBJLoader} from 'three-obj-mtl-loader'
 import carModel from "../model/t.obj";
