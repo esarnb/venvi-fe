@@ -22,6 +22,8 @@ class SearchInput extends Component {
 		var makeVeri = false;
 		var modelVeri = false;
 
+		this.props.searchStart();
+
 		axios.get("https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json")
 			.then(response => {
 				var allMakes = response.data.Results;
@@ -188,6 +190,7 @@ addVehicle = (year) =>
       this.setState({reviews: result.data});
       console.log("reviews in state", this.state.reviews);
 	  this.getAverageRating(result.data); 
+	  this.props.searchEnd();
 	  this.props.infoGet(this.state);          
     });
 
