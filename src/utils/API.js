@@ -112,8 +112,8 @@ export const BookmarkAPI = {
   },
 
   // Create new Bookmark
-  addBookmark() {
-    return app.post("/api/bookmarks", { msg: "New bookmark has been created" }).then(res => console.log(res.data));
+  addBookmark(bookmarkData) {
+    return app.post("/api/bookmarks", bookmarkData);
   },
 
   getBookmark(id) {
