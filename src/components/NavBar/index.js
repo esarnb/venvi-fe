@@ -3,6 +3,9 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import { Tab } from '@material-ui/core';
 import Typography from "@material-ui/core/Typography";
+import Button from '@material-ui/core/Button';
+import logo from './venvi.png';
+
 import './style.css';
 import * as API from "../../utils/API";
 import { Link } from "react-router-dom";
@@ -13,6 +16,7 @@ const StyledTabs = withStyles({
     display: "flex",
     justifyContent: "center",
     backgroundColor: "transparent",
+    minHeight: 10,
     "& > div": {
       maxWidth: 80,
       width: "80%",
@@ -46,6 +50,12 @@ const useStyles = makeStyles(theme => ({
   },
   bgcolor: {
     backgroundColor: "black"
+  },
+   button: {
+    margin: theme.spacing(1),
+  },
+  input: {
+    display: 'none',
   }
 }));
 
@@ -61,16 +71,18 @@ function NavBar(props) {
     <div className={classes.root} id="navbarSection">
       <div id="logo">
         <Typography className={classes.padding} />
+         <img src={logo} alt="logo" />
       </div>
       <div className={classes.bgcolor} id="NavBar">
         <StyledTabs
           value={value}
           onChange={handleChange}
           aria-label="styled tabs"
+          id = "tabContainer"
         >
           <StyledTab label="HOME" className="navTab" to="/" component={Link}/>
           <StyledTab label="SEARCH" className="navTab" to="/search" component={Link}/>
-          <StyledTab label="TESTDRIVE" className="navTab" to="/testdrive" component={Link}/>
+          <StyledTab label="TEST DRIVE" className="navTab" to="/testdrive" component={Link}/>
 
           {props.username ? (
               [<StyledTab label="MARKET" className="navTab" to="/market" component={Link}/>,
@@ -82,9 +94,9 @@ function NavBar(props) {
           </React.Fragment> */}
           
           {props.username ? (
-            <button onClick={() => (API.Auth.logout().then(() => window.location.href="/"))} id ="signOut" className="signOut" style={{float: "right"}} >SIGN OUT</button>
+            <Button onClick={() => (API.Auth.logout().then(() => window.location.href="/"))} id ="signOut" color="primary" className="signOut classes.button" style={{float: "right"}} >SIGN OUT</Button>
           ) : (
-            <button onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}} href="#">SIGN IN</button>
+            <Button onClick={() => API.Auth.login()} id ="signIn" className="signIn classes.button" color="primary" style={{float: "right"}} href="#">SIGN IN</Button>
           )}
           </StyledTabs>
 
