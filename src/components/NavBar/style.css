@@ -12,11 +12,22 @@
 	padding-left: 10%;
 }
 
+
 .navTab
 {
    letter-spacing: 0;
    padding-bottom: 0px;
 }	
+
+#logo
+{
+	width: 125px !important;
+	z-index: 100 !important;
+	margin-top: 2.7%;
+	margin-left: 2.2%;
+}
+
+
 
 #links
 {

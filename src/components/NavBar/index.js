@@ -3,6 +3,9 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import { Tab } from '@material-ui/core';
 import Typography from "@material-ui/core/Typography";
+import Button from '@material-ui/core/Button';
+import logo from './venvi.png';
+
 import './style.css';
 import * as API from "../../utils/API";
 import { Link } from "react-router-dom";
@@ -12,13 +15,15 @@ const StyledTabs = withStyles({
   indicator: {
     display: "flex",
     justifyContent: "center",
-    backgroundColor: "black",
+    backgroundColor: "transparent",
+    minHeight: 10,
     "& > div": {
       maxWidth: 80,
       width: "80%",
-      backgroundColor: "gold",
-      height: 1
-    }
+      backgroundColor: "#DFB400",
+      height: 0.8,
+    },
+     
   }
 })(style => <Tabs {...style} TabIndicatorProps={{ children: <div /> }} />);
 
@@ -45,6 +50,12 @@ const useStyles = makeStyles(theme => ({
   },
   bgcolor: {
     backgroundColor: "black"
+  },
+   button: {
+    margin: theme.spacing(1),
+  },
+  input: {
+    display: 'none',
   }
 }));
 
@@ -60,20 +71,22 @@ function NavBar(props) {
     <div className={classes.root} id="navbarSection">
       <div id="logo">
         <Typography className={classes.padding} />
+         <img src={logo} alt="logo" />
       </div>
       <div className={classes.bgcolor} id="NavBar">
         <StyledTabs
           value={value}
           onChange={handleChange}
           aria-label="styled tabs"
+          id = "tabContainer"
         >
-          <Link to="/"><StyledTab label="Home" className="navTab"/></Link>
-          <Link to="/search"><StyledTab label="Search" className="navTab"/></Link>
-          <Link to="/testdrive"><StyledTab label="TestDrive" className="navTab"/></Link>
+          <StyledTab label="HOME" className="navTab" to="/" component={Link}/>
+          <StyledTab label="SEARCH" className="navTab" to="/search" component={Link}/>
+          <StyledTab label="TEST DRIVE" className="navTab" to="/testdrive" component={Link}/>
 
           {props.username ? (
-              [<Link to="/market"><StyledTab label="Market" className="navTab"/></Link>,
-              <Link to="/profile"><StyledTab label="Profile" className="navTab"/></Link>]
+              [<StyledTab label="MARKET" className="navTab" to="/market" component={Link}/>,
+              <StyledTab label="PROFILE" className="navTab" to="/profile" component={Link}/>]
           ): []}
            
           {/* <React.Fragment>
@@ -81,9 +94,9 @@ function NavBar(props) {
           </React.Fragment> */}
           
           {props.username ? (
-            <button onClick={() => (API.Auth.logout().then(() => window.location.href="/"))} id ="signOut" className="signOut" style={{float: "right"}} >Sign Out</button>
+            <Button onClick={() => (API.Auth.logout().then(() => window.location.href="/"))} id ="signOut" color="primary" className="signOut classes.button" style={{float: "right"}} >SIGN OUT</Button>
           ) : (
-            <button onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}} href="#">Sign In</button>
+            <Button onClick={() => API.Auth.login()} id ="signIn" className="signIn classes.button" color="primary" style={{float: "right"}} href="#">SIGN IN</Button>
           )}
           </StyledTabs>
 
