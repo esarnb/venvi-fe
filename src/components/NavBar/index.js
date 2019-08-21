@@ -12,13 +12,14 @@ const StyledTabs = withStyles({
   indicator: {
     display: "flex",
     justifyContent: "center",
-    backgroundColor: "black",
+    backgroundColor: "transparent",
     "& > div": {
       maxWidth: 80,
       width: "80%",
-      backgroundColor: "gold",
-      height: 1
-    }
+      backgroundColor: "#DFB400",
+      height: 0.8,
+    },
+     
   }
 })(style => <Tabs {...style} TabIndicatorProps={{ children: <div /> }} />);
 
@@ -67,13 +68,13 @@ function NavBar(props) {
           onChange={handleChange}
           aria-label="styled tabs"
         >
-          <Link to="/"><StyledTab label="Home" className="navTab"/></Link>
-          <Link to="/search"><StyledTab label="Search" className="navTab"/></Link>
-          <Link to="/testdrive"><StyledTab label="TestDrive" className="navTab"/></Link>
+          <StyledTab label="HOME" className="navTab" to="/" component={Link}/>
+          <StyledTab label="SEARCH" className="navTab" to="/search" component={Link}/>
+          <StyledTab label="TESTDRIVE" className="navTab" to="/testdrive" component={Link}/>
 
           {props.username ? (
-              [<Link to="/market"><StyledTab label="Market" className="navTab"/></Link>,
-              <Link to="/profile"><StyledTab label="Profile" className="navTab"/></Link>]
+              [<Link to="/market"><StyledTab label="MARKET" className="navTab"/></Link>,
+              <Link to="/profile"><StyledTab label="PROFILE" className="navTab"/></Link>]
           ): []}
            
           {/* <React.Fragment>
@@ -81,9 +82,9 @@ function NavBar(props) {
           </React.Fragment> */}
           
           {props.username ? (
-            <button onClick={() => (API.Auth.logout().then(() => window.location.href="/"))} id ="signOut" className="signOut" style={{float: "right"}} >Sign Out</button>
+            <button onClick={() => (API.Auth.logout().then(() => window.location.href="/"))} id ="signOut" className="signOut" style={{float: "right"}} >SIGN OUT</button>
           ) : (
-            <button onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}} href="#">Sign In</button>
+            <button onClick={() => API.Auth.login()} id ="signIn" className="signIn" style={{float: "right"}} href="#">SIGN IN</button>
           )}
           </StyledTabs>
 
