@@ -3,7 +3,7 @@ import { MarketBuy, MarketSell } from '../components/MarketBtn';
 import BuyForm from '../components/BuyForm';
 import ListForm from '../components/ListForm';
 import Footer from '../components/Footer';
-import { ListingAPI } from '../utils/API';
+import { ListingAPI, BookmarkAPI } from '../utils/API';
 import ListCard from '../components/ListCard';
 import './index.css'
 
@@ -16,7 +16,9 @@ class Market extends React.Component {
     this.state = {
     buyshow: false,
     showForm: false,
+    user:1,
     listings: []
+    // searching:false
   };
 }
 
@@ -76,14 +78,28 @@ showForm = () => {
   console.log("here2")
 }
 
-// handleFavorite = (ids) => {
-//   BookmarkAPI.addBookmark().then(res=>{
-//     console.log("hello", res.data)
-//     this.state.listings.filter(function(listing) {
-//       return 
-//     });
+// startSearch = () => {
+//   this.setState({
+//     searching: true
 //   })
+//   console.log(this.state.start)
 // }
+
+// finishSearch = () => {
+//   this.setState({
+//     searching: false
+//   })
+//   console.log(this.state.start)
+// }
+
+handleFavorite = (bookmarkData) => {
+    BookmarkAPI.addBookmark(bookmarkData).then(res=>{
+    console.log("hello", res.data)
+    // this.state.listings.filter(function(listing) {
+    //   return 
+    // });
+  })
+}
 
 render () {
   return (
@@ -92,26 +108,32 @@ render () {
         <h3 id="market-head"> Market </h3>
         <span id="market-line-market"></span>
         <div id="market-btn">
-        <MarketBuy handleSearch={this.handleSearch}/>
+        <MarketBuy handleSearch={this.handleSearch}
+        startSearch={this.startSearch}
+        finishSearch={this.finishSearch}/>
         <MarketSell showForm={this.showForm}/>
         </div>
         {this.state.buyshow ? <BuyForm infoBuy={this.getListingByVehicle}/> : null}
         {this.state.showForm ? <ListForm/>: null}
     <div id="market-list">
+    {/* {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> :  */}
     {this.state.listings.map(item =>(
     <ListCard key={item.id}
       id={item.id}
-      user={item.UserId}
+      seller={item.UserId}
       image={item.image}
       make={item.make}
       model={item.model}
       price={item.price}
       year={item.year}
       vin={item.vin}
+      user={this.state.user}
+      handleFavorite={this.handleFavorite}
        />
   ))}
   </div>
   </div>
+    }
     <Footer />
     </div>
   );

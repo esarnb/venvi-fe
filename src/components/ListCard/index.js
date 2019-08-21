@@ -94,7 +94,7 @@ export default function ListCard(props) {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton id="favorite" aria-label="add to favorites">
-          <FavoriteIcon id="fav" onClick={()=> props.handleFavorite(props.id,props.user)}/>
+          <FavoriteIcon id="fav" onClick={()=> props.handleFavorite(bookmarkData)}/>
         </IconButton>
         {/* <IconButton aria-label="share">
           <ShareIcon />
