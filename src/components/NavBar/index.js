@@ -73,8 +73,8 @@ function NavBar(props) {
           <StyledTab label="TESTDRIVE" className="navTab" to="/testdrive" component={Link}/>
 
           {props.username ? (
-              [<Link to="/market"><StyledTab label="MARKET" className="navTab"/></Link>,
-              <Link to="/profile"><StyledTab label="PROFILE" className="navTab"/></Link>]
+              [<StyledTab label="MARKET" className="navTab" to="/market" component={Link}/>,
+              <StyledTab label="PROFILE" className="navTab" to="/profile" component={Link}/>]
           ): []}
            
           {/* <React.Fragment>
