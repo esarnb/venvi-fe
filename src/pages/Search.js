@@ -4,6 +4,7 @@ import React from 'react';
 import SearchInput from '../components/SearchInput';
 import ReviewCard from '../components/ReviewCard/index';
 import Footer from '../components/Footer';
+import Loader from 'react-loader-spinner';
 
 import './index.css'
 
@@ -18,8 +19,8 @@ class Search extends React.Component {
         imgURL: null,
         vehicleId: null,
         showReviewCard: false,
-        reviews: []
-        // relay: false
+        reviews: [],
+        searching: false
     };    
   }
 
@@ -40,6 +41,20 @@ class Search extends React.Component {
     console.log(this.state.reviews)
   } 
 
+  startSearch = () => {
+    this.setState({
+      searching: true
+    })
+    console.log(this.state.start)
+  }
+
+  finishSearch = () => {
+    this.setState({
+      searching: false
+    })
+    console.log(this.state.start)
+  }
+
   render() {
     return (
       <div>
@@ -47,7 +62,10 @@ class Search extends React.Component {
           <h2> Search Reviews </h2>
           <span id="line"> </span>
           <SearchInput infoGet={this.infoCallback}
-            relay={this.relayCall}/>
+            searchStart={this.startSearch}
+            searchEnd={this.finishSearch}
+            />
+          {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
           {this.state.showReviewCard ? <ReviewCard image={this.state.imgURL} 
             make={this.state.make}
             model={this.state.model}

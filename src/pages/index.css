@@ -27,6 +27,7 @@ h3, h2 {
       margin: 0 auto;
       padding-top: 10%;
       padding-bottom: 15%;
+      text-align: center;
 }
 
 
@@ -85,4 +86,8 @@ h3, h2 {
     flex-direction: row;
     flex-wrap:wrap;
     justify-content: space-evenly;
+}
+
+svg {
+    margin-top: 50px
 }
