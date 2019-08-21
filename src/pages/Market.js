@@ -93,6 +93,7 @@ showForm = () => {
 // }
 
 handleFavorite = (bookmarkData) => {
+  console.log("works here")
     BookmarkAPI.addBookmark(bookmarkData).then(res=>{
     console.log("hello", res.data)
     // this.state.listings.filter(function(listing) {

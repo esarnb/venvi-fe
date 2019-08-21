@@ -113,6 +113,7 @@ export const BookmarkAPI = {
 
   // Create new Bookmark
   addBookmark(bookmarkData) {
+    console.log("we are in api")
     return app.post("/api/bookmarks", bookmarkData);
   },
 
