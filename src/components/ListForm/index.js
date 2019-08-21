@@ -13,6 +13,7 @@ class ListForm extends Component {
 state = {
     vin: "",
     price:"",
+    mileage:"",
     make:"",
     model:"",
     year:"",
@@ -66,6 +67,7 @@ searchAction() {
 saveListing = () =>
 {
     let price = this.state.price;
+    let mileage = this.state.mileage;
     let make = this.state.make;
     let model = this.state.model;
     let year = this.state.year;
@@ -75,6 +77,7 @@ saveListing = () =>
      var listing =
             {
                 price: price,
+                mileage: mileage,
                 make: make,
                 model: model,
                 year: year,
@@ -205,6 +208,9 @@ render () {
                     <Col className="input-field">
                     <TextInput name="price" value={this.state.price} onChange={this.handleChange} type="number" label="Price" />                    
                 </Col>
+                    <Col className="input-field">
+                    <TextInput name="mileage" value={this.state.mileage} onChange={this.handleChange} type="number" label="Mileage" />                    
+                </Col>
                 <Col className="input-field">
                     <TextInput name="make" value={this.state.make} onChange={this.handleChange} type="text" label="Make"  disabled={true}/>                    
                 </Col>
@@ -214,23 +220,8 @@ render () {
                 <Col className="input-field">
                     <TextInput name="year" value={this.state.year} onChange={this.handleChange} type="text" label="Year" disabled={true} />                    
                 </Col>
-                {/* <RaisedButton
-          label="Upload" />
-        <input
-          type='file'
-          ref='input'
-          style={{ display: 'none' }}
-          accept="image/*"
-          onChange={this.handleImageChange} /> */}
-               
-                {/* <input
-                    accept="image/*"
-                    type="file"
-                /> 
-                <UploadBtn className="input-field" type="file" onChange={this.handleImageChange}/>
-                
-                  */}
-                        <input id="file-input" onChange={this.handleImageChange} type="file"/>
+                    <input id="file-input" className="img-input" onChange={this.handleImageChange} type="file"/>
+                    <label className="#37474f blue-grey darken-3" waves="light" for="img-input">Choose a file</label>
                 </Row>
                 <Row id="search-sell-btn">
                     <Button onClick={this.validate} type="submit" className="#37474f blue-grey darken-3" waves="light" style={{marginLeft: '22px'}}>Make Listing</Button>

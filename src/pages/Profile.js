@@ -3,6 +3,7 @@ import UserProfile from '../components/UserProfile';
 import { ListCardProfile } from '../components/ListCard';
 import Footer from '../components/Footer';
 import { ListingAPI, BookmarkAPI } from '../utils/API';
+import ListCardBookmark from '../utils/API';
 
 //Component
 class Profile extends React.Component {
@@ -104,7 +105,7 @@ editChange = event => {
             />
           ))}
           </div>
-          {/* <React.Fragment id="bookmark-list">
+          <React.Fragment id="bookmark-list">
             <h2>My Favorites</h2>
             <span id="line"> </span>
           {this.state.userBookmark.map(bookmark =>(
@@ -119,7 +120,7 @@ editChange = event => {
             handleDelete={this.handleDelete}
             />
           ))}
-          </React.Fragment> */}
+          </React.Fragment>
            </ div>
           <Footer />
       </React.Fragment>

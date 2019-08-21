@@ -14,6 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import { yellow } from '@material-ui/core/colors';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import EditIcon from '@material-ui/icons/Edit';
 import "./style.css";
 
@@ -53,17 +54,17 @@ export default function ListCard(props) {
   var name = `${year} ${make} ${model}`
   console.log("name",name)
 
-  // var bookmarkData = {
-  //   sellerId: props.seller,
-  //   UserId: props.user,
-  //   ListingId: props.id,
-  //   price: price,
-  //   vin: vin,
-  //   image: image,
-  //   make: make,
-  //   model: model,
-  //   year: year
-  // }
+  var bookmarkData = {
+    sellerId: props.seller,
+    UserId: props.user,
+    ListingId: props.id,
+    price: price,
+    vin: vin,
+    image: image,
+    make: make,
+    model: model,
+    year: year
+  }
 
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
@@ -92,9 +93,9 @@ export default function ListCard(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        {/* <IconButton id="favorite" aria-label="add to favorites">
+        <IconButton id="favorite" aria-label="add to favorites">
           <FavoriteIcon id="fav" onClick={()=> props.handleFavorite(props.id,props.user)}/>
-        </IconButton> */}
+        </IconButton>
         {/* <IconButton aria-label="share">
           <ShareIcon />
         </IconButton> */}
@@ -164,7 +165,7 @@ export function ListCardProfile(props) {
       <CardActions disableSpacing>
         <IconButton id="edit" aria-label="edit price">
          
-            <Modal header="Change Price" fixedFooter trigger={<EditIcon id="edit-btn"/>}
+            <Modal header="Edit Listing" fixedFooter trigger={<EditIcon id="edit-btn"/>}
             actions={<Button modal="close" className="reviewButton" id={props.id} onClick={props.handleEdit}>Submit</Button>}>
             <Col className="input-field">
             <TextInput name="price" type="number" label="Price" onChange={props.editchange}/>   
