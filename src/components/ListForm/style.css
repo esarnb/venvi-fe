@@ -6,3 +6,22 @@
 #search-sell-input{
     margin-left: 15% !important;
 }
+
+.img-input{
+    /* width: 0.1px;
+	height: 0.1px;
+    opacity: 0;
+    pointer-events: none;
+	position: absolute; */
+}
+
+/* .img-input + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color:blue;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+} */

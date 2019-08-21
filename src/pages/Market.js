@@ -90,7 +90,7 @@ render () {
     <div>
         <div id = "wrapper">
         <h3 id="market-head"> Market </h3>
-        <span id="market-line"></span>
+        <span id="market-line-market"></span>
         <div id="market-btn">
         <MarketBuy handleSearch={this.handleSearch}/>
         <MarketSell showForm={this.showForm}/>
