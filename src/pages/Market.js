@@ -52,6 +52,7 @@ editListing = () =>
     })
 }
 
+
 // Search for a specific car
 getListingByVehicle = (data) =>
 {   
