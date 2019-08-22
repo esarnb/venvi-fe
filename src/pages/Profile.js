@@ -104,24 +104,25 @@ editChange = event => {
             />
           ))}
           </div>
-          <React.Fragment id="bookmark-list">
             <h2>My Favorites</h2>
             <span id="line"> </span>
+            <div id="bookmark-list">
           {this.state.userBookmarkList.map(bookmark =>(
             <ListCardBookmark key={bookmark.id}
             id={bookmark.id}
+            user={bookmark.UserId}
             image={bookmark.Listing.image}
             make={bookmark.Listing.make}
             model={bookmark.Listing.model}
             price={bookmark.Listing.price}
             year={bookmark.Listing.year}
             vin={bookmark.Listing.vin}
-            handleDelete={this.handleDelete}
+            handleDeleteBookmark={this.handleDeleteBookmark}
             />
           ))}
-           </ React.Fragment>
-          <Footer />
+           </div>
           </div>
+          <Footer />
       </React.Fragment>
     );
   }

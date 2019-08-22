@@ -183,7 +183,7 @@ export function ListCardProfile(props) {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Price:${price}</Typography>
-          <Typography paragraph>VIN: ${vin}
+          <Typography paragraph>VIN: {vin}
           </Typography>
           <Typography paragraph>
           </Typography>
@@ -213,12 +213,12 @@ export function ListCardBookmark(props) {
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            SLC
+            {props.user}
           </Avatar>
         }
         action={
           <IconButton aria-label="delete">
-            <DeleteSharpIcon id="delete-btn" onClick={() => props.handleDelete(props.id)}/>
+            <DeleteSharpIcon id="delete-btn" onClick={() => props.handleDeleteBookmark(props.id)}/>
           </IconButton>
         }
         title= {name}      
@@ -250,8 +250,7 @@ export function ListCardBookmark(props) {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Price:${price}</Typography>
-          <Typography paragraph>VIN: ${vin}
-          </Typography>
+          <Typography paragraph>VIN: {vin} </Typography>
           <Typography paragraph>
           </Typography>
           <Typography paragraph>
