@@ -55,6 +55,7 @@ editListing = () =>
     })
 }
 
+
 // Gets UserBookmarks
 userBookmark = () =>
 {
@@ -69,6 +70,7 @@ userBookmark = () =>
       console.log("not here", listing)
     });
 }
+
 
 // Search for a specific car
 getListingByVehicle = (data) =>
