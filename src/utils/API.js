@@ -130,7 +130,9 @@ export const BookmarkAPI = {
   },
 
   getBookmarkByUser(id) {
-    return app.get(`/api/bookmarks/user/${id}`, { msg: "get bookmarks by userid" });
+    console.log("In bookmark api");
+    console.log(id);
+    return app.get(`/api/bookmarks/user/${id}`);
   }
 }
 
