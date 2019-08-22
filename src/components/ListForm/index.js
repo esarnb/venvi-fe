@@ -11,6 +11,7 @@ class ListForm extends Component {
 
 
 state = {
+
     vin: "",
     price:"",
     mileage:"",
@@ -19,7 +20,10 @@ state = {
     year:"",
     file:"",
     UserId: 1,
-    listings: [],
+    userName: "",
+    phone: "",
+    email:"",
+    location: "",
     currentListingId: ""
 }
 
@@ -72,6 +76,10 @@ saveListing = () =>
     let model = this.state.model;
     let year = this.state.year;
     let UserId = this.state.UserId;
+    let sellerName = this.state.userName;
+    let phone = this.state.phone;
+    let email = this.state.email;
+    let location = this.state.location;
     let vin = this.state.vin;
 
      var listing =
@@ -82,6 +90,10 @@ saveListing = () =>
                 model: model,
                 year: year,
                 UserId: UserId,
+                sellerName: sellerName,
+                phone: phone,
+                email: email,
+                location: location,
                 vin: vin
             }
     console.log(listing);
