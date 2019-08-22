@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from '../components/Banner';
 import ButtonBases from '../components/ButtonBases';
+import { Icon } from 'antd';
 import Container from '../components/Container';
 import Divider from '../components/Divider';
 import Footer from '../components/Footer';

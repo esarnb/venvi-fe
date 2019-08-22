@@ -1,5 +1,5 @@
 .banner-user{
-  height: 600px;
+  height: 800px;
 }
 .banner-user-elem{
   text-align: center;
@@ -17,7 +17,7 @@
 .banner-user-elem .banner-user-text{
   right: 26%;
   font-size: 20px;
-  top: 31%;
+  top: 55%;
   font-family: 'Open Sans', sans-serif;
 }
 .banner-anim-elem .bg{
@@ -28,3 +28,47 @@
   left: 0;
   overflow: hidden;
 }
+
+.banner-anim-thumb
+{
+  width: 10% !important;
+  margin-bottom: 2% !important;
+}
+
+.banner-anim-arrow
+{
+  opacity: 0;
+}
+
+
+#iconContainer 
+{
+    color: #DFB400;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+}
+
+#iconContainer img
+{  
+      width: 6% !important;
+      height: 0.05% !important;
+      margin-top: -7.5%;
+      z-index: 100;
+}
+
+
+@keyframes jump { 0% { top: 0; } 50% { top: 10px; } 100% { top: 0; } }
+
+
+#iconContainer 
+{ 
+  position: relative; 
+  margin: 0 auto; 
+  text-align: center;
+  animation: jump 1.5s infinite;
+  img:hover { color: #FFAAAA; }
+}
+
+
+

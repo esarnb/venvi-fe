@@ -19,7 +19,7 @@ const StyledTabs = withStyles({
     minHeight: 10,
     "& > div": {
       maxWidth: 80,
-      width: "80%",
+      width: "60%",
       backgroundColor: "#DFB400",
       height: 0.8,
     },
