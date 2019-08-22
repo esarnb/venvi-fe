@@ -1,9 +1,8 @@
 import React from 'react';
 import UserProfile from '../components/UserProfile';
-import { ListCardProfile } from '../components/ListCard';
+import { ListCardProfile, ListCardBookmark } from '../components/ListCard';
 import Footer from '../components/Footer';
 import { ListingAPI, BookmarkAPI } from '../utils/API';
-import ListCardBookmark from '../utils/API';
 
 //Component
 class Profile extends React.Component {
@@ -13,7 +12,7 @@ class Profile extends React.Component {
     this.state = {
       userList: [],
       userId: 1,
-      userBookmark: [],
+      userBookmarkList: [],
 
       values: ""
     }
@@ -42,8 +41,8 @@ userBookmark = () =>
       console.log("all bookmarks databack");
       console.log(res.data);
       // console.log(data.data[0]);
-      // this.setState({ userBookmark:res.data });
-      console.log(this.state.userBookmark)
+      this.setState({ userBookmarkList:res.data });
+      console.log(this.state.userBookmarkList)
     });
 }
 
@@ -105,23 +104,24 @@ editChange = event => {
             />
           ))}
           </div>
-          <React.Fragment id="bookmark-list">
             <h2>My Favorites</h2>
             <span id="line"> </span>
-          {this.state.userBookmark.map(bookmark =>(
+            <div id="bookmark-list">
+          {this.state.userBookmarkList.map(bookmark =>(
             <ListCardBookmark key={bookmark.id}
             id={bookmark.id}
-            image={bookmark.image}
-            make={bookmark.make}
-            model={bookmark.model}
-            price={bookmark.price}
-            year={bookmark.year}
-            vin={bookmark.vin}
-            handleDelete={this.handleDelete}
+            user={bookmark.UserId}
+            image={bookmark.Listing.image}
+            make={bookmark.Listing.make}
+            model={bookmark.Listing.model}
+            price={bookmark.Listing.price}
+            year={bookmark.Listing.year}
+            vin={bookmark.Listing.vin}
+            handleDeleteBookmark={this.handleDeleteBookmark}
             />
           ))}
-          </React.Fragment>
-           </ div>
+           </div>
+          </div>
           <Footer />
       </React.Fragment>
     );
