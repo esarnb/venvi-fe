@@ -22,7 +22,7 @@ class Profile extends React.Component {
   componentDidMount(){
     // this.setState({userId: this.props.state.userid.profileID})
     this.userListing();
-    // this.userBookmark();
+    this.userBookmark();
   }
 
 userListing = () =>
@@ -39,10 +39,10 @@ userListing = () =>
 userBookmark = () =>
 {
     BookmarkAPI.getBookmarkByUser(this.state.userId).then(res=>{
-      console.log("all listings databack");
-      // console.log(res.data);
+      console.log("all bookmarks databack");
+      console.log(res);
       // console.log(data.data[0]);
-      this.setState({ userBookmark:res.data });
+      // this.setState({ userBookmark:res.data });
       console.log(this.state.userBookmark)
     });
 }
@@ -54,12 +54,12 @@ handleDelete = (id) => {
   })
 }
 
-// handleDeleteBookmark = (id) => {
-//   BookmarkAPI.deleteBookmark(id).then(res=>{
-//     console.log("bookmark removed");
-//     this.userBookmark();
-//   })
-// }
+handleDeleteBookmark = (id) => {
+  BookmarkAPI.deleteBookmark(id).then(res=>{
+    console.log("bookmark removed");
+    this.userBookmark();
+  })
+}
 
 handleEdit = event => {
   console.log("id", event.target.id)
