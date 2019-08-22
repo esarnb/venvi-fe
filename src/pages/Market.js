@@ -94,13 +94,10 @@ showForm = () => {
 
 handleFavorite = (bookmarkData) => {
   console.log("works here")
-    BookmarkAPI.addBookmark(bookmarkData).then(res=>{
-    console.log("hello", res.data)
-    // this.state.listings.filter(function(listing) {
-    //   return 
-    // });
-  })
-}
+    BookmarkAPI.addBookmark(bookmarkData).then(res=>
+    this.setState({listings: this.state.listings.filter(x => x.vin !== res.data.vin)})
+    )
+  }
 
 render () {
   return (
