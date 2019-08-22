@@ -55,15 +55,9 @@ export default function ListCard(props) {
   console.log("name",name)
 
   var bookmarkData = {
-    sellerId: props.seller,
     UserId: props.user,
     ListingId: props.id,
-    price: price,
-    vin: vin,
-    image: image,
-    make: make,
-    model: model,
-    year: year
+    vin: vin
   }
 
   const classes = useStyles();

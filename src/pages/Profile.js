@@ -40,7 +40,7 @@ userBookmark = () =>
 {
     BookmarkAPI.getBookmarkByUser(this.state.userId).then(res=>{
       console.log("all bookmarks databack");
-      console.log(res);
+      console.log(res.data);
       // console.log(data.data[0]);
       // this.setState({ userBookmark:res.data });
       console.log(this.state.userBookmark)
