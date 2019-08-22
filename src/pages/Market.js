@@ -17,7 +17,8 @@ class Market extends React.Component {
     buyshow: false,
     showForm: false,
     user:1,
-    listings: []
+    listings: [],
+    userBookmarkList: []
     // searching:false
   };
 }
@@ -35,7 +36,9 @@ allListing = () =>
       // console.log(data.data[0]);
       this.setState({ listings: [...res.data] });
       console.log(this.state.listings)
+    this.userBookmark();
     });
+
 }
 
 editListing = () =>
@@ -50,6 +53,22 @@ editListing = () =>
      ListingAPI.editListing(id, listing).then(res => {
       console.log(res.data);
     })
+}
+
+
+// Gets UserBookmarks
+userBookmark = () =>
+{
+    BookmarkAPI.getBookmarkByUser(this.state.user).then(res=>{
+      console.log("all bookmarks databack");
+      console.log(res.data);
+      this.setState({ userBookmarkList:res.data });
+      console.log(this.state.userBookmarkList)
+      var bookmark = this.state.userBookmarkList.map(bookmark => { return bookmark.vin});
+      this.setState({listings: this.state.listings.filter(x => bookmark.indexOf(x.vin) === -1)})
+      var listing = this.state.listings;
+      console.log("not here", listing)
+    });
 }
 
 
