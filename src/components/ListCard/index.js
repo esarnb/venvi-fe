@@ -198,68 +198,68 @@ export function ListCardProfile(props) {
 }
 
 
-// export function ListCardBookmark(props) {
-//   const {image,make,model,price,year,vin} = props;
-//   var name = `${year} ${make} ${model}`;
-//   const classes = useStyles();
-//   const [expanded, setExpanded] = React.useState(false);
+export function ListCardBookmark(props) {
+  const {image,make,model,price,year,vin} = props;
+  var name = `${year} ${make} ${model}`;
+  const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
 
-//   function handleExpandClick() {
-//     setExpanded(!expanded);
-//   }
+  function handleExpandClick() {
+    setExpanded(!expanded);
+  }
 
-//   return (
-//     <Card className={classes.card} id="list-card">
-//       <CardHeader
-//         avatar={
-//           <Avatar aria-label="recipe" className={classes.avatar}>
-//             SLC
-//           </Avatar>
-//         }
-//         action={
-//           <IconButton aria-label="delete">
-//             <DeleteSharpIcon id="delete-btn" onClick={() => props.handleDelete(props.id)}/>
-//           </IconButton>
-//         }
-//         title= {name}      
-//         />
-//       <CardMedia
-//         className={classes.media}
-//         image={image}
-//       />
-//       <CardContent>
-//         <Typography variant="body2" color="textSecondary" component="p">
+  return (
+    <Card className={classes.card} id="list-card">
+      <CardHeader
+        avatar={
+          <Avatar aria-label="recipe" className={classes.avatar}>
+            SLC
+          </Avatar>
+        }
+        action={
+          <IconButton aria-label="delete">
+            <DeleteSharpIcon id="delete-btn" onClick={() => props.handleDelete(props.id)}/>
+          </IconButton>
+        }
+        title= {name}      
+        />
+      <CardMedia
+        className={classes.media}
+        image={image}
+      />
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
 
-//         </Typography>
-//       </CardContent>
-//       <CardActions disableSpacing>
-//         {/* <IconButton aria-label="share">
-//           <ShareIcon />
-//         </IconButton> */}
-//         <IconButton
-//           className={clsx(classes.expand, {
-//             [classes.expandOpen]: expanded,
-//           })}
-//           onClick={handleExpandClick}
-//           aria-expanded={expanded}
-//           aria-label="show more"
-//         >
-//           <ExpandMoreIcon />
-//         </IconButton>
-//       </CardActions>
-//       <Collapse in={expanded} timeout="auto" unmountOnExit>
-//         <CardContent>
-//           <Typography paragraph>Price:${price}</Typography>
-//           <Typography paragraph>VIN: ${vin}
-//           </Typography>
-//           <Typography paragraph>
-//           </Typography>
-//           <Typography paragraph>
-//           </Typography>
-//           <Typography>
-//           </Typography>
-//         </CardContent>
-//       </Collapse>
-//     </Card>
-//   );
-// }
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        {/* <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton> */}
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography paragraph>Price:${price}</Typography>
+          <Typography paragraph>VIN: ${vin}
+          </Typography>
+          <Typography paragraph>
+          </Typography>
+          <Typography paragraph>
+          </Typography>
+          <Typography>
+          </Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+  );
+}
