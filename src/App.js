@@ -15,11 +15,11 @@ import AuthSuccess from './components/AuthSuccess';
 class App extends React.Component {
 
   state = {
-    email: "",
+    email: undefined,
     name: "Guest!",
     profileID: 1,
-    profilePhoto: "",
-    username: ""
+    profilePhoto: "https://media1.giphy.com/media/H4uE6w9G1uK4M/source.gif",
+    username: undefined
   }
 
   componentDidMount() {
@@ -106,7 +106,7 @@ class App extends React.Component {
                          
              {this.state.profileID ? (
                <React.Fragment>
-                 <Route exact path='/profile' render={(props) => <Profile {...props} name={this.state.name}/> } />
+                 <Route exact path='/profile' render={(props) => <Profile {...props} name={this.state.name} photo={this.state.profilePhoto}/> } />
                  <Route exact path='/market' component={Market} /> 
                </React.Fragment>
              ) : <React.Fragment />} 
