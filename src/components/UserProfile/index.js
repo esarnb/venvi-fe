@@ -15,13 +15,13 @@ const useStyles = makeStyles({
 export default function UserProfile(props){
     
   const classes = useStyles();
-
-  var imgsrc = "https://mongoboy.herokuapp.com/";
   if (props.photo) imgsrc = props.photo;
+  else imgsrc = "https://i.stack.imgur.com/34AD2.jpg";
+  
   return (
     <div>
     <Grid container justify="center" alignItems="center">
-      <Avatar alt="user" src={imgsrc} className={classes.bigAvatar} />
+      <Avatar alt="Google Profile Picture" src={imgsrc} className={classes.bigAvatar} />
     </Grid>
     <h2> Welcome back, {props.userid}! </h2>
     <span id="line"> </span>
