@@ -11,7 +11,7 @@ class Profile extends React.Component {
     
     this.state = {
       userList: [],
-      userId: 1,
+      userId: props.name,
       userBookmarkList: [],
 
       values: ""
