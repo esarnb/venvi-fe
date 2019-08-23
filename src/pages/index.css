@@ -1,4 +1,32 @@
 
+#iconContainer 
+{
+    color: #DFB400;
+    z-index: 90;
+    display: flex;
+    justify-content: center;
+}
+
+#iconContainer img
+{  
+      width: 6% !important;
+      height: 0.05% !important;
+      margin-top: -7.5%;
+      z-index: 90;
+}
+
+
+@keyframes jump { 0% { top: 0; } 50% { top: 10px; } 100% { top: 0; } }
+
+
+#iconContainer 
+{ 
+  position: relative; 
+  margin: 0 auto; 
+  text-align: center;
+  animation: jump 1.5s infinite;
+  img:hover { color: #FFAAAA; }
+}
 
 
 

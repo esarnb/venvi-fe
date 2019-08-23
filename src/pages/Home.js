@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from '../components/Banner';
 import ButtonBases from '../components/ButtonBases';
-import { Icon } from 'antd';
+import down from './down.png';
 import Container from '../components/Container';
 import Divider from '../components/Divider';
 import Footer from '../components/Footer';
@@ -125,9 +125,16 @@ class Home extends React.Component {
         ) : (
           <React.Fragment>
             <Banner />
+             <a href="#next">
+                <div id="iconContainer">
+                  <img src={down} alt="down" />
+                </div>
+              </a>
             <Container>
-            <Divider />
-              <h3> TOP CONSUMER PICKS </h3>
+            <div id="next">
+            </div>
+            <Divider/>
+              <h3 id="toppick"> TOP CONSUMER PICKS </h3>
               <span id="line"> </span>
               <ButtonBases 
               handleInputChange={this.handleButtonClicked}
