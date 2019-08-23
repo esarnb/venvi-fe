@@ -17,7 +17,7 @@ class App extends React.Component {
   state = {
     email: "",
     name: "Guest!",
-    profileID: 0,
+    profileID: 1,
     profilePhoto: "",
     username: ""
   }
@@ -89,7 +89,7 @@ class App extends React.Component {
   
 
   changeUserState = (newStateValue) => {
-    if (newStateValue && newStateValue.profileID) this.setState({profileID: newStateValue.profileID, name: newStateValue.name});
+    if (newStateValue && newStateValue.profileID) this.setState(...newStateValue);
   }
 
   render() {
