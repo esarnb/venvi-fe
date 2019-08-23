@@ -21,8 +21,9 @@ export default function UserProfile(props){
   return (
     <div>
     <Grid container justify="center" alignItems="center">
-      <Avatar alt="Google Profile Picture" src={imgsrc} className={classes.bigAvatar} />
-    </Grid>
+      {/* <Avatar alt="Google Profile Picture" src={imgsrc} className={classes.bigAvatar} /> */}
+      <Avatar alt={imgsrc} src={imgsrc} className={classes.bigAvatar} />
+      </Grid>
     <h2> Welcome back, {props.userid}! </h2>
     <span id="line"> </span>
   </div>
