@@ -33,16 +33,16 @@ function Popcard(props){
   //console.log(first.make);
 
   const listData1 = [];
-  //  listData1.push({
-  //   href: 'http://ant.design',
-  //   title: `${first.make} ${first.model}`,
-  //   rating: `${first.rating}`,
-  //   image: `${first.image}`,
-  //   description:
-  //     'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-  //   content:
-  //     'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-  // });
+   listData1.push({
+    href: 'http://ant.design',
+    title: `${first.make} ${first.model}`,
+    rating: `${first.rating}`,
+    image: `${first.image}`,
+    description:
+      'Ant Design, a design language for background applications, is refined by Ant UED Team.',
+    content:
+      'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+  });
    listData1.push({
     href: 'http://ant.design',
     title: `ant design part`,
