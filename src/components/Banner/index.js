@@ -1,7 +1,5 @@
 import React from 'react';
 import "./style.css";
-import down from './down.png';
-
 import BannerAnim, { Element } from 'rc-banner-anim';
 import TweenOne from 'rc-tween-one';
 import 'rc-banner-anim/assets/index.css';
@@ -73,7 +71,7 @@ class Banner extends React.Component {
             className="bg"
             style={{
         
-             backgroundImage: `url('https://images.unsplash.com/photo-1517994112540-009c47ea476b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1981&q=80')`,             
+             backgroundImage: `url('https://cdn.motor1.com/images/mgl/BVx1v/s1/ferrari-812-superfast.jpg')`,             
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               // background: '#364D79'
@@ -91,12 +89,8 @@ class Banner extends React.Component {
         </Element>
         
       </BannerAnim>
-       <div id="iconContainer">
-          <img src={down} alt="down" />
-       </div>
        </div>
        )        
-
   }
 }
 export default Banner;

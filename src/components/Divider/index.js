@@ -10,23 +10,19 @@ function Divider(){
 
 <div className="uk-container-fluid uk-column-1-3 uk-column-divider content">
 	<div className = "section">
-		<div >
+		<div>
 	  	<Icon type="car" className = "icon uk-align-center"/>
-	  </div>
+	  	</div>
 	  <h4>Reviews</h4>
 	</div>
 	<div>
-
-	
-
 	</div>
 	<div className = "section">
 	<div>
-		<Icon type="key"  className = "icon uk-align-center"/>
+		<Icon type="key" className = "icon uk-align-center"/>
 	</div>
 	<h4>Find a Car</h4>
 	</div>
-
 	<div className = "section">
 	<div>
 		<Icon type="dollar" className = "icon uk-align-center"/>
