@@ -10,7 +10,7 @@ class ReviewCard extends Component {
     state = {
         rating: 0,
         textreview: "",
-        reviews: []
+        reviews: [] 
     }
 
     componentDidMount() {
@@ -101,6 +101,9 @@ class ReviewCard extends Component {
                 averageRating = sum/arr.length;
         }       
         console.log(averageRating);
+        this.setState({
+            rating: averageRating
+        })
         this.updateVehicleRating(averageRating);
     }
 
@@ -128,6 +131,15 @@ class ReviewCard extends Component {
                     <span className="card-title">{this.props.year} {this.props.make} {this.props.model}</span>
                 </div>
                 <div className="card-content">
+                    <div><b>Average Rating:</b>
+                    <StarRatings
+                        rating={this.state.rating}
+                        starRatedColor="#ed9d1c"
+                        numberOfStars={5}
+                        name='avgrating'
+                        starDimension='20px'
+                    />
+                    </div>
                     {this.state.reviews.map( (value, index) => {
                         return (
                             <div id={index}>
