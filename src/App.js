@@ -89,13 +89,16 @@ class App extends React.Component {
   
 
   changeUserState = (newStateValue) => {
-    if (newStateValue && newStateValue.profileID) this.setState({
-      email: newStateValue.email,
-      name: newStateValue.name,
-      profileID: newStateValue.profileID,
-      profilePhoto: newStateValue.profilePhoto,
-      username: newStateValue.username
-    });
+    if (newStateValue && newStateValue.profileID) {
+      console.log("\n\n\nNewStateValue: \n\n\n", newStateValue, "\n\n\n");
+      this.setState({
+        email: newStateValue.email,
+        name: newStateValue.name,
+        profileID: newStateValue.profileID,
+        profilePhoto: newStateValue.profilePhoto,
+        username: newStateValue.username
+      });
+    }
   }
 
   render() {
