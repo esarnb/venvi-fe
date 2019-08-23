@@ -131,7 +131,16 @@ class ReviewCard extends Component {
                     {this.state.reviews.map( (value, index) => {
                         return (
                             <div id={index}>
-                                <div><b>Rating: {value.ratingNumber}/5</b></div>
+                            <hr />
+                                <div><b>Rating:</b> 
+                                <StarRatings
+                                    rating={value.ratingNumber}
+                                    starRatedColor="#ed9d1c"
+                                    numberOfStars={5}
+                                    name='rating'
+                                    starDimension='20px'
+                                />
+                                </div>
                                 <div>{value.review}</div>
                                 <br />
                             </div>
