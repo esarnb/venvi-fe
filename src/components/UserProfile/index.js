@@ -13,11 +13,11 @@ const useStyles = makeStyles({
 });
 
 export default function UserProfile(props){
-    
+  let imgsrc;
   const classes = useStyles();
   if (props.photo) imgsrc = props.photo;
   else imgsrc = "https://i.stack.imgur.com/34AD2.jpg";
-  
+
   return (
     <div>
     <Grid container justify="center" alignItems="center">
