@@ -5,6 +5,7 @@ import down from './down.png';
 import Container from '../components/Container';
 import Divider from '../components/Divider';
 import Footer from '../components/Footer';
+import Popcard from '../components/Popcard';
 import { Redirect } from "react-router";
 import { VehicleAPI } from '../utils/API';
 import './index.css'
@@ -19,7 +20,11 @@ class Home extends React.Component {
       vehicles: [],
       vehicles1:[],
       vehicles2:[],
-      vehicles3:[]
+      vehicles3:[],
+      pop1: "1",
+      pop2: "2",
+      pop3: "3",
+      pop4: "4"
     }
   }
 
@@ -90,27 +95,33 @@ class Home extends React.Component {
       VehicleAPI.getAllVehicles().then(res=>{
         console.log("all vehicles databack");
         console.log(res.data);
-        // console.log(data.data[0]);
+        var phillip = res.data;
 
-        this.setState({ vehicles: [...res.data] });
+        // this.setState({ vehicles: phillip});
+        this.setState({vehicles: [ ...this.state.vehicles, phillip ]})
 
-        res.data[0].width = "33%";
-        res.data[1].width = "34%";
-        res.data[2].width = "33%";
-        res.data[3].width = "34%";
-        res.data[4].width = "32%";
-        res.data[5].width = "34%";
-        res.data[6].width = "33%";
-        res.data[7].width = "34%";
-        res.data[8].width = "33%";
+        // res.data[0].width = "33%";
+        // res.data[1].width = "34%";
+        // res.data[2].width = "33%";
+        // res.data[3].width = "34%";
+        // res.data[4].width = "32%";
+        // res.data[5].width = "34%";
+        // res.data[6].width = "33%";
+        // res.data[7].width = "34%";
+        // res.data[8].width = "33%";
 
-        this.setState({ vehicles1: [res.data[0], res.data[1], res.data[2]]});
-        this.setState({ vehicles2: [res.data[3], res.data[4], res.data[5]]});
-        this.setState({ vehicles3: [res.data[6], res.data[7], res.data[8]]});
+        // this.setState({ vehicles1: [res.data[0], res.data[1], res.data[2]]});
+        // this.setState({ vehicles2: [res.data[3], res.data[4], res.data[5]]});
+        // this.setState({ vehicles3: [res.data[6], res.data[7], res.data[8]]});
+
+
+
         console.log(this.state.vehicles);
-        console.log("1", this.state.vehicles1);
-        console.log("2", this.state.vehicles2);
-        console.log("3", this.state.vehicles3);
+        console.log(this.state.vehicles[0]);
+        // console.log("1", this.state.vehicles1);
+        // console.log("2", this.state.vehicles2);
+        // console.log("3", this.state.vehicles3);
+
       });
   }
 
@@ -136,13 +147,15 @@ class Home extends React.Component {
             <Divider/>
               <h3 id="toppick"> TOP CONSUMER PICKS </h3>
               <span id="line"> </span>
-              <ButtonBases 
-              handleInputChange={this.handleButtonClicked}
-              vehicles = {this.state.vehicles}
-              vehicles1 = {this.state.vehicles1}
-              vehicles2 = {this.state.vehicles2}
-              vehicles3 = {this.state.vehicles3}/>
+    
             </Container>
+  
+            {(this.state.vehicles[0]) ? <Popcard number="1" pop={this.state.vehicles}/> : null}
+            {(this.state.vehicles[0]) ? <Popcard number="2" pop={this.state.vehicles}/> : null}
+            {(this.state.vehicles[0]) ? <Popcard number="3" pop={this.state.vehicles}/> : null}
+            {(this.state.vehicles[0]) ? <Popcard number="4" pop={this.state.vehicles}/> : null}
+
+
             <Footer />
           </React.Fragment>
         )}
