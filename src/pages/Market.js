@@ -63,13 +63,16 @@ userBookmark = () =>
 {
     BookmarkAPI.getBookmarkByUser(this.state.user).then(res=>{
       console.log("all bookmarks databack");
-      console.log(res.data);
-      this.setState({ userBookmarkList:res.data });
-      console.log(this.state.userBookmarkList)
-      var bookmark = this.state.userBookmarkList.map(bookmark => { return bookmark.vin});
-      this.setState({listings: this.state.listings.filter(x => bookmark.indexOf(x.vin) === -1)})
-      var listing = this.state.listings;
-      console.log("not here", listing)
+      var bookmarkList = res.data;
+      if (!bookmarkList) {
+        console.log("empty");
+      }
+      else {
+        var bookmark = this.state.userBookmarkList.map(bookmark => { return bookmark.vin});
+        this.setState({ userBookmarkList:res.data });
+        console.log(this.state.userBookmarkList)
+        this.setState({listings: this.state.listings.filter(x => bookmark.indexOf(x.vin) === -1)})
+      }
     });
 }
 
@@ -147,6 +150,7 @@ render () {
       make={item.make}
       model={item.model}
       price={item.price}
+      mileage={item.mileage}
       year={item.year}
       vin={item.vin}
       user={this.state.user}
