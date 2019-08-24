@@ -87,11 +87,6 @@ class ListCardProfile extends React.Component {
     
     <Card className={classes.card} id="list-card">
       <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            SLC
-          </Avatar>
-        }
         action={
           <IconButton aria-label="delete">
             <DeleteSharpIcon onClick={() => this.props.handleDelete(this.props.id)}/>
@@ -118,9 +113,6 @@ class ListCardProfile extends React.Component {
             </Col>
             </Modal>
         </IconButton>
-        {/* <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton> */}
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,

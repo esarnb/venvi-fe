@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Textarea, Modal, Button } from "react-materialize";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { UserAPI } from '../../utils/API';
 import "./style.css";
 
 
@@ -8,7 +9,8 @@ import "./style.css";
 class UserSetting extends Component {
 	state = {
         location:"",
-        phone:""
+        phone:"",
+        userId: 1
 	}
 
 	handleChange = event => {
@@ -17,7 +19,13 @@ class UserSetting extends Component {
     }
     
     updateUser = () => {
-
+    let info = {
+        location: this.state.location,
+        phone: this.state.phone
+    }
+    UserAPI.editUser(this.state.userId,info).then(res=> {
+        console.log("We update user");
+    })
     }
 
 	render() {

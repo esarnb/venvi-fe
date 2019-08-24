@@ -8,7 +8,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { yellow } from '@material-ui/core/colors';
@@ -16,6 +15,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import EditIcon from '@material-ui/icons/Edit';
+import { Tooltip } from "antd";
 import "./style.css";
 
 
@@ -70,11 +70,6 @@ export default function ListCard(props) {
   return (
     <Card className={classes.card} id="list-card">
       <CardHeader 
-        avatar={
-          <Avatar aria-label={props.id} className={classes.avatar}>
-            {props.id}
-          </Avatar>
-        }
         title= {name}      
         />
       <CardMedia
@@ -87,12 +82,15 @@ export default function ListCard(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
+      <Tooltip placement="bottomLeft" title="Favorites" arrowPointAtCenter>
         <IconButton id="favorite" aria-label="add to favorites">
           <FavoriteIcon id="fav" onClick={()=> props.handleFavorite(bookmarkData)}/>
         </IconButton>
+      </Tooltip>
         {/* <IconButton aria-label="share">
           <ShareIcon />
         </IconButton> */}
+      <Tooltip placement="bottomLeft" title="Expand" arrowPointAtCenter>
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -103,6 +101,7 @@ export default function ListCard(props) {
         >
           <ExpandMoreIcon />
         </IconButton>
+      </Tooltip>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
@@ -133,15 +132,12 @@ export function ListCardProfile(props) {
   return (
     <Card className={classes.card} id="list-card">
       <CardHeader
-        avatar={
-          <Avatar aria-label={props.user} className={classes.avatar}>
-            {props.user}
-          </Avatar>
-        }
         action={
+        <Tooltip placement="bottomLeft" title="Delete" arrowPointAtCenter>
           <IconButton aria-label="delete">
             <DeleteSharpIcon id="delete-btn" onClick={() => props.handleDelete(props.id)}/>
           </IconButton>
+        </Tooltip>
         }
         title= {name}      
         />
@@ -155,6 +151,8 @@ export function ListCardProfile(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
+      <Tooltip placement="bottomLeft" title="Edit Listing" arrowPointAtCenter>
+
         <IconButton id="edit" aria-label="edit price">
          
             <Modal header="Edit Listing" fixedFooter trigger={<EditIcon id="edit-btn"/>}
@@ -164,9 +162,9 @@ export function ListCardProfile(props) {
             </Col>
             </Modal>
         </IconButton>
-        {/* <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton> */}
+        </Tooltip>
+
+      <Tooltip placement="bottomLeft" title="Expand" arrowPointAtCenter>        
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -177,6 +175,7 @@ export function ListCardProfile(props) {
         >
           <ExpandMoreIcon />
         </IconButton>
+      </Tooltip>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
@@ -207,15 +206,12 @@ export function ListCardBookmark(props) {
   return (
     <Card className={classes.card} id="list-card">
       <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            {props.user}
-          </Avatar>
-        }
         action={
+        <Tooltip placement="bottomLeft" title="Unfavorite" arrowPointAtCenter>
           <IconButton aria-label="delete">
             <DeleteSharpIcon id="delete-btn" onClick={() => props.handleDeleteBookmark(props.id)}/>
           </IconButton>
+        </Tooltip>
         }
         title= {name}      
         />
@@ -229,9 +225,8 @@ export function ListCardBookmark(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        {/* <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton> */}
+
+      <Tooltip placement="bottomLeft" title="Expand" arrowPointAtCenter>
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -242,6 +237,7 @@ export function ListCardBookmark(props) {
         >
           <ExpandMoreIcon />
         </IconButton>
+      </Tooltip>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
