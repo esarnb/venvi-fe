@@ -78,6 +78,7 @@ class BuyForm extends Component {
 										
 
 											this.props.infoBuy(this.state)
+											this.props.finishSearch();
 										})
 								}
 								else {
@@ -89,7 +90,6 @@ class BuyForm extends Component {
 	else {
 		console.log("Make not match.")
 	}})
-	this.props.finishSearch();
 }
 
 	handleChange = event => {

@@ -102,7 +102,8 @@ showForm = () => {
 
 startSearch = () => {
   this.setState({
-    searching: true
+    searching: true,
+    showResult: false
   })
   console.log(this.state.start)
 }
@@ -137,8 +138,10 @@ render () {
         finishSearch={this.finishSearch}/>  
         : null}
         {this.state.showForm ? <ListForm allListing={this.allListing}/>: null}
+    <div className = "loader">
+      {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
+    </div>
     <div id="market-list">
-    {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
     {this.state.showResult ? this.state.listings.map(item =>(
     <ListCard key={item.id}
       id={item.id}

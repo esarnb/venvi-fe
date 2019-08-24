@@ -43,7 +43,8 @@ class Search extends React.Component {
 
   startSearch = () => {
     this.setState({
-      searching: true
+      searching: true,
+      showReviewCard: false
     })
     console.log(this.state.start)
   }
