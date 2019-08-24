@@ -133,7 +133,7 @@ class ReviewCard extends Component {
                     <span className="card-title">{this.props.year} {this.props.make} {this.props.model}</span>
                 </div>
                 <div className="card-content">
-                    <div><b>Average Rating:</b>
+                    <div className="avgrating"><b>Average Rating: </b>
                     <StarRatings
                         rating={this.state.avgrate}
                         starRatedColor="#ed9d1c"
@@ -146,7 +146,7 @@ class ReviewCard extends Component {
                         return (
                             <div id={index}>
                             <hr />
-                                <div><b>Rating:</b> 
+                                <div><b>Rating: </b> 
                                 <StarRatings
                                     rating={value.ratingNumber}
                                     starRatedColor="#ed9d1c"
@@ -154,6 +154,7 @@ class ReviewCard extends Component {
                                     name='rating'
                                     starDimension='20px'
                                 />
+                                <br />
                                 </div>
                                 <div>{value.review}</div>
                                 <br />
