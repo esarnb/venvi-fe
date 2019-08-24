@@ -5,6 +5,7 @@ import ListForm from '../components/ListForm';
 import Footer from '../components/Footer';
 import { ListingAPI, BookmarkAPI } from '../utils/API';
 import ListCard from '../components/ListCard';
+import Loader from 'react-loader-spinner';
 import './index.css'
 
 
@@ -18,8 +19,9 @@ class Market extends React.Component {
     showForm: false,
     user:1,
     listings: [],
-    userBookmarkList: []
-    // searching:false
+    userBookmarkList: [],
+    searching:false,
+    showResult:true
   };
 }
 
@@ -82,7 +84,7 @@ getListingByVehicle = (data) =>
     let year = data.year;
     ListingAPI.getListingByVehicle(make, model, year).then(res=>{
       console.log(res.data);
-      this.setState({listings:res.data})
+      this.setState({listings:res.data, showResult:true})
     });
 }
 
@@ -98,19 +100,19 @@ showForm = () => {
   console.log("here2")
 }
 
-// startSearch = () => {
-//   this.setState({
-//     searching: true
-//   })
-//   console.log(this.state.start)
-// }
+startSearch = () => {
+  this.setState({
+    searching: true
+  })
+  console.log(this.state.start)
+}
 
-// finishSearch = () => {
-//   this.setState({
-//     searching: false
-//   })
-//   console.log(this.state.start)
-// }
+finishSearch = () => {
+  this.setState({
+    searching: false
+  })
+  console.log(this.state.start)
+}
 
 handleFavorite = (bookmarkData) => {
   console.log("works here")
@@ -126,16 +128,18 @@ render () {
         <h3 id="market-head"> Market </h3>
         <span id="market-line-market"></span>
         <div id="market-btn">
-        <MarketBuy handleSearch={this.handleSearch}
-        startSearch={this.startSearch}
-        finishSearch={this.finishSearch}/>
+        <MarketBuy handleSearch={this.handleSearch}/>
         <MarketSell showForm={this.showForm}/>
         </div>
-        {this.state.buyshow ? <BuyForm infoBuy={this.getListingByVehicle}/> : null}
-        {this.state.showForm ? <ListForm/>: null}
+        {this.state.buyshow ? 
+        <BuyForm infoBuy={this.getListingByVehicle} 
+        startSearch={this.startSearch}
+        finishSearch={this.finishSearch}/>  
+        : null}
+        {this.state.showForm ? <ListForm allListing={this.allListing}/>: null}
     <div id="market-list">
-    {/* {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> :  */}
-    {this.state.listings.map(item =>(
+    {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
+    {this.state.showResult ? this.state.listings.map(item =>(
     <ListCard key={item.id}
       id={item.id}
       seller={item.UserId}
@@ -147,8 +151,8 @@ render () {
       vin={item.vin}
       user={this.state.user}
       handleFavorite={this.handleFavorite}
-       />
-  ))}
+       /> 
+  )):null}
   </div>
   </div>
     }

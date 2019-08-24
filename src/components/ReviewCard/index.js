@@ -154,7 +154,7 @@ class ReviewCard extends Component {
                         />
                         </div>
                         <Textarea placeholder="Type review here" value={this.state.textreview} name="textreview" onChange={this.handleChange}/>
-                </Modal>
+                    </Modal>
                 </div>
             </div>
         )
