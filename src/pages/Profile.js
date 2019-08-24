@@ -32,7 +32,8 @@ userListing = () =>
       console.log(res.data);
       // console.log(data.data[0]);
       this.setState({ userList:res.data });
-      console.log(this.state.userList)
+      var userlist= this.state.userList;
+      console.log(userlist)
     });
 }
 
@@ -86,7 +87,8 @@ editChange = event => {
       <React.Fragment>
         <div className= "wrapper2">
           <UserProfile userid={this.state.userId}/>
-          <UserSetting/>
+          <UserSetting handleUserList={this.userListing}
+          handleBookmarkList={this.userBookmark}/>
           <h2>My Listings</h2>
           <span id="line"> </span>
           <div id="user-list">
@@ -100,6 +102,10 @@ editChange = event => {
             price={list.price}
             year={list.year}
             vin={list.vin}
+            phone={list.User.phone}
+            email={list.User.email}
+            seller={list.User.name}
+            location={list.User.location}
             handleDelete={this.handleDelete}
             handleEdit={this.handleEdit} 
             editchange={this.editChange}
@@ -119,6 +125,10 @@ editChange = event => {
             price={bookmark.Listing.price}
             year={bookmark.Listing.year}
             vin={bookmark.Listing.vin}
+            // phone={bookmark.User.phone}
+            // email={bookmark.User.email}
+            // name={bookmark.User.name}
+            // location={bookmark.User.location}
             handleDeleteBookmark={this.handleDeleteBookmark}
             />
           )): <h2> No Favorite Listings </h2>}

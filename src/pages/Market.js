@@ -151,9 +151,15 @@ render () {
       model={item.model}
       price={item.price}
       mileage={item.mileage}
+      phone={item.phone}
+      location={item.location}
       year={item.year}
       vin={item.vin}
       user={this.state.user}
+      phone={item.User.phone}
+      email={item.User.email}
+      name={item.User.name}
+      location={item.User.location}
       handleFavorite={this.handleFavorite}
        /> 
   )):null}

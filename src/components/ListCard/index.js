@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
 
 
 export default function ListCard(props) {
-  const {image,make,model,price,year,vin,mileage} = props;
+  const {image,make,model,price,year,vin,mileage,location,seller,email,phone} = props;
   var name = `${year} ${make} ${model}`
   console.log("name",name)
 
@@ -87,9 +87,6 @@ export default function ListCard(props) {
           <FavoriteIcon id="fav" onClick={()=> props.handleFavorite(bookmarkData)}/>
         </IconButton>
       </Tooltip>
-        {/* <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton> */}
       <Tooltip placement="bottomLeft" title="Expand" arrowPointAtCenter>
         <IconButton
           className={clsx(classes.expand, {
@@ -106,12 +103,13 @@ export default function ListCard(props) {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Price: ${price}</Typography>
-          <Typography paragraph>VIN: {vin}</Typography>
           <Typography paragraph>Mileage: {mileage} miles </Typography>
-          <Typography paragraph>
-          </Typography>
-          <Typography>
-          </Typography>
+          <Typography paragraph>Location: {location}</Typography>
+          <Typography paragraph>VIN: {vin}</Typography>
+          <hr/>
+          <Typography paragraph>Seller: {seller} </Typography>
+          {phone ? <Typography paragraph>Phone: {phone} </Typography> : null}
+          {email ? <Typography paragraph>Email: {email} </Typography> : null}
         </CardContent>
       </Collapse>
     </Card>
@@ -119,7 +117,7 @@ export default function ListCard(props) {
 }
 
 export function ListCardProfile(props) {
-  const {image,make,model,price,year,vin,mileage} = props;
+  const {image,make,model,price,year,vin,mileage,location,seller,email,phone} = props;
   var name = `${year} ${make} ${model}`;
 
   const classes = useStyles();
@@ -179,13 +177,14 @@ export function ListCardProfile(props) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Price:${price}</Typography>
+          <Typography paragraph>Price: ${price}</Typography>
+          <Typography paragraph>Mileage: {mileage} miles </Typography>
+          <Typography paragraph>Location: {location}</Typography>
           <Typography paragraph>VIN: {vin}</Typography>
-          <Typography paragraph>Mileage: {mileage} miles</Typography>
-          <Typography paragraph>
-          </Typography>
-          <Typography>
-          </Typography>
+          <hr/>
+          <Typography paragraph>Seller: {seller} </Typography>
+          {phone ? <Typography paragraph>Phone: {phone} </Typography> : null}
+          {email ? <Typography paragraph>Email: {email} </Typography> : null}
         </CardContent>
       </Collapse>
     </Card>
@@ -194,7 +193,7 @@ export function ListCardProfile(props) {
 
 
 export function ListCardBookmark(props) {
-  const {image,make,model,price,year,vin,mileage} = props;
+  const {image,make,model,price,year,vin,mileage,location,seller,email,phone} = props;
   var name = `${year} ${make} ${model}`;
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
@@ -241,13 +240,14 @@ export function ListCardBookmark(props) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Price:${price}</Typography>
-          <Typography paragraph>VIN: {vin} </Typography>
-          <Typography paragraph>Mileage: {mileage} miles</Typography>
-          <Typography paragraph>
-          </Typography>
-          <Typography>
-          </Typography>
+          <Typography paragraph>Price: ${price}</Typography>
+          <Typography paragraph>Mileage: {mileage} miles </Typography>
+          {/* <Typography paragraph>Location: {location}</Typography> */}
+          <Typography paragraph>VIN: {vin}</Typography>
+          <hr/>
+          {/* <Typography paragraph>Seller: {seller} </Typography>
+          {phone ? <Typography paragraph>Phone: {phone} </Typography> : null}
+          {email ? <Typography paragraph>Email: {email} </Typography> : null} */}
         </CardContent>
       </Collapse>
     </Card>

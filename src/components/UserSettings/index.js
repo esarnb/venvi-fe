@@ -25,6 +25,8 @@ class UserSetting extends Component {
     }
     UserAPI.editUser(this.state.userId,info).then(res=> {
         console.log("We update user");
+        this.props.handleUserList();
+        this.props.handleBookmarkList();
     })
     }
 
