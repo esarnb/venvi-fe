@@ -3,6 +3,7 @@ import UserProfile from '../components/UserProfile';
 import { ListCardProfile, ListCardBookmark } from '../components/ListCard';
 import Footer from '../components/Footer';
 import { ListingAPI, BookmarkAPI } from '../utils/API';
+import UserSetting from '../components/UserSettings';
 
 //Component
 class Profile extends React.Component {
@@ -85,6 +86,7 @@ editChange = event => {
       <React.Fragment>
         <div className= "wrapper2">
           <UserProfile userid={this.state.userId}/>
+          <UserSetting/>
           <h2>My Listings</h2>
           <span id="line"> </span>
           <div id="user-list">
