@@ -95,6 +95,7 @@ class SearchInput extends Component {
 								}
 								else {
 									console.log("Error.")
+									this.props.fail();
 								}
 
 
@@ -103,6 +104,7 @@ class SearchInput extends Component {
 				}
 	else {
 		console.log("Make not match.")
+		this.props.fail();
 	}})
 }
 

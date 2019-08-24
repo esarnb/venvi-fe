@@ -138,3 +138,7 @@ svg {
 .widget-svg {
     margin-top: -10px !important;
 }
+
+#failmsg {
+    text-align: center;
+}

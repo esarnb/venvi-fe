@@ -36,7 +36,8 @@ allListing = () =>
       console.log("all listings databack");
       console.log(res.data);
       // console.log(data.data[0]);
-      this.setState({ listings: [...res.data] });
+      this.setState({ listings: [...res.data],
+      showResult: true });
       console.log(this.state.listings)
     this.userBookmark();
     });
@@ -137,7 +138,8 @@ render () {
         startSearch={this.startSearch}
         finishSearch={this.finishSearch}/>  
         : null}
-        {this.state.showForm ? <ListForm allListing={this.allListing}/>: null}
+        {this.state.showForm ? <ListForm allListing={this.allListing} startSearch={this.startSearch}
+        finishSearch={this.finishSearch} />: null}
     <div className = "loader">
       {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
     </div>
