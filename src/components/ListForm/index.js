@@ -21,7 +21,8 @@ state = {
     file:"",
     UserId: 1,
     listings: [],
-    currentListingId: ""
+    currentListingId: "",
+    validated:false
 }
 
 componentDidMount() {
@@ -164,6 +165,7 @@ createListingUrl = () =>
         listing.append("currentListingId", currentListingId);
 
         ListingAPI.createListingUrl(listing);
+        this.props.allListing();
 }
 
 
@@ -192,6 +194,9 @@ validate = () => {
         console.log("it works here")
         alert ("Please fill out required fields")
     }
+    else {
+        this.searchAction();
+    }
 }
 
 render () {
@@ -200,8 +205,7 @@ render () {
             <Col>
             <form onSubmit={e => {
                 e.preventDefault();
-                this.searchAction();
-            }}>
+            }}> 
                 <Row id="search-sell-input" style={{marginBottom: '0px'}}>
                 <Col className="input-field">
                     <TextInput name="vin" value={this.state.vin} onChange={this.handleChange} type="text" label="Vin" />                    
@@ -221,8 +225,9 @@ render () {
                 <Col className="input-field">
                     <TextInput name="year" value={this.state.year} onChange={this.handleChange} type="text" label="Year" disabled={true} />                    
                 </Col>
-                    <input id="file-input" className="img-input" onChange={this.handleImageChange} type="file"/>
-                    <label className="#37474f blue-grey darken-3" waves="light" for="img-input">Choose a file</label>
+                <label className="#37474f blue-grey darken-3" waves="light" for="img-input">
+                    <input id="file-input" className="img-input" onChange={this.handleImageChange} label= "image" type="file"/>
+                    Choose a file</label>
                 </Row>
                 <Row id="search-sell-btn">
                     <Button onClick={this.validate} type="submit" className="#37474f blue-grey darken-3" waves="light" style={{marginLeft: '22px'}}>Make Listing</Button>
