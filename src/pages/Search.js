@@ -4,7 +4,6 @@ import React from 'react';
 import SearchInput from '../components/SearchInput';
 import ReviewCard from '../components/ReviewCard/index';
 import Footer from '../components/Footer';
-import Banner from '../components/Banner';
 import Loader from 'react-loader-spinner';
 
 import './index.css'
