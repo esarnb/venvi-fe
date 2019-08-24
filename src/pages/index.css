@@ -31,7 +31,7 @@ h3, h2 {
       margin: 0 auto;
       padding-top: 10%;
       padding-bottom: 15%;
-      text-align: center;
+      /* text-align: center; */
 }
 
 
@@ -101,5 +101,9 @@ h3, h2 {
 }
 
 svg {
-    margin-top: 50px
+    margin-top: 50px;
+}
+
+.loader {
+    text-align: center;
 }

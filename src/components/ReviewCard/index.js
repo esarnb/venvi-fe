@@ -9,6 +9,7 @@ import './style.css';
 class ReviewCard extends Component {
     state = {
         rating: 0,
+        avgrate: 0,
         textreview: "",
         reviews: [] 
     }
@@ -55,7 +56,7 @@ class ReviewCard extends Component {
         console.log(result.data.id);
 
         this.setState({
-        rating: 0,
+        avgrate: 0,
         textreview: ""
         });
         this.getReviewByVehicleId();
@@ -101,9 +102,10 @@ class ReviewCard extends Component {
                 averageRating = sum/arr.length;
         }       
         console.log(averageRating);
+        if (averageRating) {
         this.setState({
-            rating: averageRating
-        })
+            avgrate: averageRating
+        })}
         this.updateVehicleRating(averageRating);
     }
 
@@ -112,7 +114,7 @@ class ReviewCard extends Component {
         var vehicleId = this.props.id;
          var vehicle =
             {
-               rating: rating
+               avgrate: rating
             }
         console.log("vehicle id before update rating", vehicleId);
 
@@ -133,7 +135,7 @@ class ReviewCard extends Component {
                 <div className="card-content">
                     <div><b>Average Rating:</b>
                     <StarRatings
-                        rating={this.state.rating}
+                        rating={this.state.avgrate}
                         starRatedColor="#ed9d1c"
                         numberOfStars={5}
                         name='avgrating'

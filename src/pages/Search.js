@@ -59,7 +59,6 @@ class Search extends React.Component {
   render() {
     return (
       <div>
-        <Banner />
         <div className = "wrapper2">
           <h2> Search Reviews </h2>
           <span id="line"> </span>
@@ -67,7 +66,9 @@ class Search extends React.Component {
             searchStart={this.startSearch}
             searchEnd={this.finishSearch}
             />
-          {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
+          <div className = "loader">
+            {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
+          </div>
           {this.state.showReviewCard ? <ReviewCard image={this.state.imgURL} 
             make={this.state.make}
             model={this.state.model}
