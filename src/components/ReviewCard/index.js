@@ -9,8 +9,9 @@ import './style.css';
 class ReviewCard extends Component {
     state = {
         rating: 0,
+        avgrate: 0,
         textreview: "",
-        reviews: []
+        reviews: [] 
     }
 
     componentDidMount() {
@@ -55,7 +56,7 @@ class ReviewCard extends Component {
         console.log(result.data.id);
 
         this.setState({
-        rating: 0,
+        avgrate: 0,
         textreview: ""
         });
         this.getReviewByVehicleId();
@@ -101,6 +102,10 @@ class ReviewCard extends Component {
                 averageRating = sum/arr.length;
         }       
         console.log(averageRating);
+        if (averageRating) {
+        this.setState({
+            avgrate: averageRating
+        })}
         this.updateVehicleRating(averageRating);
     }
 
@@ -109,7 +114,7 @@ class ReviewCard extends Component {
         var vehicleId = this.props.id;
          var vehicle =
             {
-               rating: rating
+               avgrate: rating
             }
         console.log("vehicle id before update rating", vehicleId);
 
@@ -128,10 +133,29 @@ class ReviewCard extends Component {
                     <span className="card-title">{this.props.year} {this.props.make} {this.props.model}</span>
                 </div>
                 <div className="card-content">
+                    <div className="avgrating"><b>Average Rating: </b>
+                    <StarRatings
+                        rating={this.state.avgrate}
+                        starRatedColor="#ed9d1c"
+                        numberOfStars={5}
+                        name='avgrating'
+                        starDimension='20px'
+                    />
+                    </div>
                     {this.state.reviews.map( (value, index) => {
                         return (
                             <div id={index}>
-                                <div><b>Rating: {value.ratingNumber}/5</b></div>
+                            <hr />
+                                <div><b>Rating: </b> 
+                                <StarRatings
+                                    rating={value.ratingNumber}
+                                    starRatedColor="#ed9d1c"
+                                    numberOfStars={5}
+                                    name='rating'
+                                    starDimension='20px'
+                                />
+                                <br />
+                                </div>
                                 <div>{value.review}</div>
                                 <br />
                             </div>
