@@ -1,0 +1,14 @@
+.ant-pagination
+{
+	width: 0 !important;
+	opacity: 0;
+}
+
+#title1
+{
+	position: absolute;
+	font-size: 50px;
+	left: 8%;
+	top: -5%;
+
+}
