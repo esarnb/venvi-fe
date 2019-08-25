@@ -5,13 +5,10 @@ import { Tab } from '@material-ui/core';
 import Typography from "@material-ui/core/Typography";
 import Button from '@material-ui/core/Button';
 import logo from './venvi.png';
-
 import './style.css';
 import * as API from "../../utils/API";
 import { Link } from "react-router-dom";
 import UserSetting from '../UserSettings';
-
-
 
 const StyledTabs = withStyles({
   indicator: {
@@ -86,17 +83,12 @@ function NavBar(props) {
           <StyledTab label="SEARCH" className="navTab" to="/search" component={Link}/>
           <StyledTab label="TEST DRIVE" className="navTab" to="/testdrive" component={Link}/>
 
-          {props.username ? (
+          {props.userid ? (
               [<StyledTab label="MARKET" className="navTab" to="/market" component={Link}/>,
               <StyledTab label="PROFILE" className="navTab" to="/profile" component={Link}/>]
           ): []}
            
-          {/* <React.Fragment>
-            [1] Welcome, {(props && props["username"] && props.username) ? props.username: "Guest"}
-          </React.Fragment> */}
-          
-          {props.username ? (
-            // <UserSetting/>&& \
+          {props.userid ? (
             <Button onClick={() => (API.Auth.logout().then(() => window.location.href="/"))} id ="signOut" color="primary" className="signOut classes.button" style={{float: "right"}} >SIGN OUT</Button>
           ) : (
             <Button onClick={() => API.Auth.login()} id ="signIn" className="signIn classes.button" color="primary" style={{float: "right"}} href="#">SIGN IN</Button>

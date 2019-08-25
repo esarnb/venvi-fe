@@ -15,15 +15,11 @@ import AuthSuccess from './components/AuthSuccess';
 class App extends React.Component {
 
   state = {
-
-    userid: 1,
-
-    // userid: undefined,
-    email: "",
-    name: "",
-    profileID: "",
-    profilePhoto: "",
-    username: ""
+    email: undefined,
+    name: "Guest!",
+    profileID: 0,
+    profilePhoto: "https://media1.giphy.com/media/H4uE6w9G1uK4M/source.gif",
+    username: undefined
   }
 
   componentDidMount() {
@@ -93,23 +89,33 @@ class App extends React.Component {
   
 
   changeUserState = (newStateValue) => {
-    this.setState({userid: newStateValue});
+    if (newStateValue && newStateValue.profileID) {
+      console.log("\n\n\nNewStateValue: \n\n\n", newStateValue, "\n\n\n");
+      this.setState({
+        email: newStateValue.email,
+        name: newStateValue.name,
+        profileID: newStateValue.profileID,
+        profilePhoto: newStateValue.profilePhoto,
+        username: newStateValue.username
+      });
+    }
   }
 
   render() {
     return (
       <Router basename={process.env.PUBLIC_URL}>
         <div>
-          <NavBar username={this.state.userid ? this.state.userid.name ? this.state.userid.name : undefined : undefined }/>
+          {/* Look for a profile id, if so: look for a name, if so: use that name, else send false */}
+          <NavBar userid={this.state.profileID ? this.state.profileID : false }/>
           <Switch>
           <Route exact path='/'  render={(props) => <Home {...props} changeUserState={this.changeUserState}/>}  />
             <Route exact path='/search' component={Search} />
             <Route exact path='/testdrive' component={TestDrive} /> 
             <Route path="/logged" component={AuthSuccess} />
                          
-             {this.state.userid ? (
+             {this.state.profileID ? (
                <React.Fragment>
-                 <Route exact path='/profile' component={Profile} />
+                 <Route exact path='/profile' render={(props) => <Profile {...props} name={this.state.name} photo={this.state.profilePhoto}/> } />
                  <Route exact path='/market' component={Market} /> 
                </React.Fragment>
              ) : <React.Fragment />} 
