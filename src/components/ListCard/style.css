@@ -45,8 +45,21 @@ p {
 
 .makeStyles-card-101 {
   width: 27% !important;
+  max-width: 27% !important;
+}
+
+.makeStyles-media-102 {
+  width: 89% !important;
 }
 
 .MuiCardHeader-action {
   margin-top: -52px !important;
+}
+
+.MuiCardHeader-title {
+  font-size:1rem !important;
+}
+
+.MuiTypography-paragraph {
+  font-size:1rem !important;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import UserProfile from '../components/UserProfile';
 import { ListCardProfile, ListCardBookmark } from '../components/ListCard';
 import Footer from '../components/Footer';
-import { ListingAPI, BookmarkAPI } from '../utils/API';
+import { ListingAPI, BookmarkAPI, UserAPI } from '../utils/API';
 import UserSetting from '../components/UserSettings';
 
 //Component
@@ -32,7 +32,8 @@ userListing = () =>
       console.log(res.data);
       // console.log(data.data[0]);
       this.setState({ userList:res.data });
-      console.log(this.state.userList)
+      var userlist= this.state.userList;
+      console.log(userlist)
     });
 }
 
@@ -41,6 +42,16 @@ userBookmark = () =>
     BookmarkAPI.getBookmarkByUser(this.state.userId).then(res=>{
       console.log("all bookmarks databack");
       console.log(res.data);
+       var bookmarks = res.data;
+
+      bookmarks.map(bookmark =>
+      {
+        var UserId = bookmark.Listing.UserId;
+        console.log(UserId);
+        UserAPI.getUser(UserId).then(res=>{
+          console.log(res);
+    })     
+      })
       // console.log(data.data[0]);
       this.setState({ userBookmarkList:res.data });
       console.log(this.state.userBookmarkList)
@@ -86,7 +97,8 @@ editChange = event => {
       <React.Fragment>
         <div className= "wrapper2">
           <UserProfile userid={this.state.userId}/>
-          <UserSetting/>
+          <UserSetting handleUserList={this.userListing}
+          handleBookmarkList={this.userBookmark}/>
           <h2>My Listings</h2>
           <span id="line"> </span>
           <div id="user-list">
@@ -100,6 +112,10 @@ editChange = event => {
             price={list.price}
             year={list.year}
             vin={list.vin}
+            phone={list.User.phone}
+            email={list.User.email}
+            seller={list.User.name}
+            location={list.User.location}
             handleDelete={this.handleDelete}
             handleEdit={this.handleEdit} 
             editchange={this.editChange}
@@ -109,7 +125,7 @@ editChange = event => {
             <h2>My Favorites</h2>
             <span id="line"> </span>
             <div id="bookmark-list">
-          {this.state.userBookmarkList.map(bookmark =>(
+          {this.state.userBookmarkList ? this.state.userBookmarkList.map(bookmark =>(
             <ListCardBookmark key={bookmark.id}
             id={bookmark.id}
             user={bookmark.UserId}
@@ -119,9 +135,13 @@ editChange = event => {
             price={bookmark.Listing.price}
             year={bookmark.Listing.year}
             vin={bookmark.Listing.vin}
+            // phone={bookmark.User.phone}
+            // email={bookmark.User.email}
+            // seller={bookmark.User.name}
+            // location={bookmark.User.location}
             handleDeleteBookmark={this.handleDeleteBookmark}
             />
-          ))}
+          )): <h2> No Favorite Listings </h2>}
            </div>
           </div>
           <Footer />
