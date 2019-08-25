@@ -29,7 +29,6 @@ class App extends React.Component {
     Test.getResponse();
     Test.putQuery(id);
     Test.deleteQuery(id);
-    console.log("\n\n\n\n\n CURRENT STATE: ", this.state, "\n\n\n\n\n")
   }
 
   // getUserByProfileId() {
