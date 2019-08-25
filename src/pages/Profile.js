@@ -14,7 +14,7 @@ class Profile extends React.Component {
       userList: [],
       userId: 1,
       userBookmark: [],
-
+      seller
       values: ""
     }
   }
@@ -41,6 +41,17 @@ userBookmark = () =>
     BookmarkAPI.getBookmarkByUser(this.state.userId).then(res=>{
       console.log("all bookmarks databack");
       console.log(res.data);
+      var bookmarks = res.data;
+
+      bookmarks.map(bookmark =>
+      {
+        var UserId = bookmark.Listing.UserId;
+        console.log(UserId);
+
+        UserAPI.getUser(UserId).then(res=>{
+          console.log(res);
+    })     
+      })
       // console.log(data.data[0]);
       // this.setState({ userBookmark:res.data });
       console.log(this.state.userBookmark)

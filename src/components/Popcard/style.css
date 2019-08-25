@@ -4,11 +4,21 @@
 	opacity: 0;
 }
 
-#title1
+.title
 {
 	position: absolute;
 	font-size: 50px;
 	left: 8%;
 	top: -5%;
+	z-index: 100;
+	color: black;
+	font-family: 'Saira Stencil One', cursive;
 
 }
+
+#rating
+{
+	width: 20px;
+	margin: 0 !important;
+}
+
