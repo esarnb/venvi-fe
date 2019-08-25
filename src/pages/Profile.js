@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import { ListingAPI, BookmarkAPI, UserAPI } from '../utils/API';
 import UserSetting from '../components/UserSettings';
 
+
 //Component
 class Profile extends React.Component {
   constructor(props) {
@@ -14,7 +15,6 @@ class Profile extends React.Component {
       userList: [],
       userId: 1,
       userBookmarkList: [],
-
       values: ""
     }
   }
@@ -43,7 +43,6 @@ userBookmark = () =>
       console.log("all bookmarks databack");
       console.log(res.data);
        var bookmarks = res.data;
-
       bookmarks.map(bookmark =>
       {
         var UserId = bookmark.Listing.UserId;
