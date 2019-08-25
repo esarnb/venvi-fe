@@ -20,7 +20,8 @@ class Search extends React.Component {
         vehicleId: null,
         showReviewCard: false,
         reviews: [],
-        searching: false
+        searching: false,
+        failure: false
     };    
   }
 
@@ -43,7 +44,8 @@ class Search extends React.Component {
 
   startSearch = () => {
     this.setState({
-      searching: true
+      searching: true,
+      showReviewCard: false
     })
     console.log(this.state.start)
   }
@@ -55,6 +57,13 @@ class Search extends React.Component {
     console.log(this.state.start)
   }
 
+  searchFail = () => {
+    this.setState({
+      failure: true,
+      searching: false
+    })
+  }
+
   render() {
     return (
       <div>
@@ -64,6 +73,7 @@ class Search extends React.Component {
           <SearchInput infoGet={this.infoCallback}
             searchStart={this.startSearch}
             searchEnd={this.finishSearch}
+            fail={this.searchFail}
             />
           <div className = "loader">
             {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
@@ -73,8 +83,8 @@ class Search extends React.Component {
             model={this.state.model}
             year={this.state.year}
             id={this.state.vehicleId}
-            // relay={this.state.relay}
-          /> : null}       
+          /> : null}
+          {this.state.failure ? <div id="failmsg">Invalid Search!</div> : null}
       </div>
         <Footer />
         </div>

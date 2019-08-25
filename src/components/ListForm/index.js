@@ -41,6 +41,7 @@ componentDidMount() {
 
 searchAction() {
     console.log("Submit")
+    this.props.startSearch();
 
     axios.get(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/${this.state.vin}*BA?format=json`)
         .then(response => {
@@ -166,6 +167,7 @@ createListingUrl = () =>
 
         ListingAPI.createListingUrl(listing);
         this.props.allListing();
+        this.props.finishSearch();
 }
 
 
@@ -225,9 +227,9 @@ render () {
                 <Col className="input-field">
                     <TextInput name="year" value={this.state.year} onChange={this.handleChange} type="text" label="Year" disabled={true} />                    
                 </Col>
-                <label className="#37474f blue-grey darken-3" waves="light" for="img-input">
+                {/* <label className="#37474f blue-grey darken-3" waves="light" for="img-input"> */}
                     <input id="file-input" className="img-input" onChange={this.handleImageChange} label= "image" type="file"/>
-                    Choose a file</label>
+                    {/* Choose a file</label> */}
                 </Row>
                 <Row id="search-sell-btn">
                     <Button onClick={this.validate} type="submit" className="#37474f blue-grey darken-3" waves="light" style={{marginLeft: '22px'}}>Make Listing</Button>

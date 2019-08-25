@@ -76,20 +76,21 @@ class BuyForm extends Component {
 
 											this.setState({ imgURL:images })
 										
-
 											this.props.infoBuy(this.state)
+												
 										})
 								}
 								else {
 									console.log("Error.")
+									this.props.fail();
 								}
 							})
 					})
 				}
 	else {
 		console.log("Make not match.")
+		this.props.fail();
 	}})
-	this.props.finishSearch();
 }
 
 	handleChange = event => {

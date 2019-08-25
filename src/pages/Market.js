@@ -21,7 +21,8 @@ class Market extends React.Component {
     listings: [],
     userBookmarkList: [],
     searching:false,
-    showResult:true
+    showResult:true,
+    failure: false
   };
 }
 
@@ -36,7 +37,8 @@ allListing = () =>
       console.log("all listings databack");
       console.log(res.data);
       // console.log(data.data[0]);
-      this.setState({ listings: [...res.data] });
+      this.setState({ listings: [...res.data],
+      showResult: true });
       console.log(this.state.listings)
     this.userBookmark();
     });
@@ -105,7 +107,8 @@ showForm = () => {
 
 startSearch = () => {
   this.setState({
-    searching: true
+    searching: true,
+    showResult: false
   })
   console.log(this.state.start)
 }
@@ -124,6 +127,13 @@ handleFavorite = (bookmarkData) => {
     )
   }
 
+  searchFail = () => {
+    this.setState({
+      failure: true,
+      searching: false
+    })
+  }
+
 render () {
   return (
     <div>
@@ -137,11 +147,15 @@ render () {
         {this.state.buyshow ? 
         <BuyForm infoBuy={this.getListingByVehicle} 
         startSearch={this.startSearch}
-        finishSearch={this.finishSearch}/>  
+        finishSearch={this.finishSearch}
+        fail={this.searchFail}/>  
         : null}
-        {this.state.showForm ? <ListForm allListing={this.allListing}/>: null}
+        {this.state.showForm ? <ListForm allListing={this.allListing} startSearch={this.startSearch}
+        finishSearch={this.finishSearch} />: null}
+    <div className = "loader">
+      {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
+    </div>
     <div id="market-list">
-    {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
     {this.state.showResult ? this.state.listings.map(item =>(
     <ListCard key={item.id}
       id={item.id}
@@ -163,6 +177,7 @@ render () {
       handleFavorite={this.handleFavorite}
        /> 
   )):null}
+  {this.state.failure ? <div id="failmsg">Invalid Search!</div> : null}
   </div>
   </div>
     }
