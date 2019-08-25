@@ -109,6 +109,7 @@ editChange = event => {
             make={list.make}
             model={list.model}
             price={list.price}
+            mileage={list.mileage}
             year={list.year}
             vin={list.vin}
             phone={list.User.phone}
