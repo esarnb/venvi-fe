@@ -86,7 +86,7 @@ editChange = event => {
       <React.Fragment>
         <div className= "wrapper2">
           <UserProfile userid={this.state.userId} photo={this.state.photo}/>
-          {/* <h2>My Listings</h2>
+          <h2>My Listings</h2>
           <span id="line"> </span>
           <div id="user-list">
           {this.state.userList.map(list =>(
@@ -121,7 +121,7 @@ editChange = event => {
             handleDeleteBookmark={this.handleDeleteBookmark}
             />
           ))}
-           </div> */}
+           </div>
           </div>
           <Footer />
       </React.Fragment>
