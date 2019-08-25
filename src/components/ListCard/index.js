@@ -104,7 +104,7 @@ export default function ListCard(props) {
         <CardContent>
           <Typography paragraph>Price: ${price}</Typography>
           <Typography paragraph>Mileage: {mileage} miles </Typography>
-          <Typography paragraph>Location: {location}</Typography>
+          {location ? <Typography paragraph>Location: {location}</Typography>:null}
           <Typography paragraph>VIN: {vin}</Typography>
           <hr/>
           <Typography paragraph>Seller: {seller} </Typography>
@@ -179,7 +179,7 @@ export function ListCardProfile(props) {
         <CardContent>
           <Typography paragraph>Price: ${price}</Typography>
           <Typography paragraph>Mileage: {mileage} miles </Typography>
-          <Typography paragraph>Location: {location}</Typography>
+          {location ? <Typography paragraph>Location: {location}</Typography>:null}
           <Typography paragraph>VIN: {vin}</Typography>
           <hr/>
           <Typography paragraph>Seller: {seller} </Typography>
@@ -242,12 +242,12 @@ export function ListCardBookmark(props) {
         <CardContent>
           <Typography paragraph>Price: ${price}</Typography>
           <Typography paragraph>Mileage: {mileage} miles </Typography>
-          {/* <Typography paragraph>Location: {location}</Typography> */}
+          {location ? <Typography paragraph>Location: {location}</Typography>:null}
           <Typography paragraph>VIN: {vin}</Typography>
           <hr/>
-          {/* <Typography paragraph>Seller: {seller} </Typography>
+          <Typography paragraph>Seller: {seller} </Typography>
           {phone ? <Typography paragraph>Phone: {phone} </Typography> : null}
-          {email ? <Typography paragraph>Email: {email} </Typography> : null} */}
+          {email ? <Typography paragraph>Email: {email} </Typography> : null}
         </CardContent>
       </Collapse>
     </Card>

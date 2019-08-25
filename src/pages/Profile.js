@@ -2,7 +2,7 @@ import React from 'react';
 import UserProfile from '../components/UserProfile';
 import { ListCardProfile, ListCardBookmark } from '../components/ListCard';
 import Footer from '../components/Footer';
-import { ListingAPI, BookmarkAPI } from '../utils/API';
+import { ListingAPI, BookmarkAPI, UserAPI } from '../utils/API';
 import UserSetting from '../components/UserSettings';
 
 //Component
@@ -42,6 +42,16 @@ userBookmark = () =>
     BookmarkAPI.getBookmarkByUser(this.state.userId).then(res=>{
       console.log("all bookmarks databack");
       console.log(res.data);
+       var bookmarks = res.data;
+
+      bookmarks.map(bookmark =>
+      {
+        var UserId = bookmark.Listing.UserId;
+        console.log(UserId);
+        UserAPI.getUser(UserId).then(res=>{
+          console.log(res);
+    })     
+      })
       // console.log(data.data[0]);
       this.setState({ userBookmarkList:res.data });
       console.log(this.state.userBookmarkList)
@@ -127,7 +137,7 @@ editChange = event => {
             vin={bookmark.Listing.vin}
             // phone={bookmark.User.phone}
             // email={bookmark.User.email}
-            // name={bookmark.User.name}
+            // seller={bookmark.User.name}
             // location={bookmark.User.location}
             handleDeleteBookmark={this.handleDeleteBookmark}
             />

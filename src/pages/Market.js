@@ -158,7 +158,7 @@ render () {
       user={this.state.user}
       phone={item.User.phone}
       email={item.User.email}
-      name={item.User.name}
+      seller={item.User.name}
       location={item.User.location}
       handleFavorite={this.handleFavorite}
        /> 
