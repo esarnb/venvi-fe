@@ -2,7 +2,7 @@ import React from 'react';
 import UserProfile from '../components/UserProfile';
 import { ListCardProfile } from '../components/ListCard';
 import Footer from '../components/Footer';
-import { ListingAPI, BookmarkAPI } from '../utils/API';
+import { ListingAPI, BookmarkAPI, UserAPI } from '../utils/API';
 import ListCardBookmark from '../utils/API';
 
 //Component
@@ -14,7 +14,6 @@ class Profile extends React.Component {
       userList: [],
       userId: 1,
       userBookmark: [],
-      seller
       values: ""
     }
   }
