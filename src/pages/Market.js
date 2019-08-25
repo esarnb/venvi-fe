@@ -21,7 +21,8 @@ class Market extends React.Component {
     listings: [],
     userBookmarkList: [],
     searching:false,
-    showResult:true
+    showResult:true,
+    failure: false
   };
 }
 
@@ -123,6 +124,13 @@ handleFavorite = (bookmarkData) => {
     )
   }
 
+  searchFail = () => {
+    this.setState({
+      failure: true,
+      searching: false
+    })
+  }
+
 render () {
   return (
     <div>
@@ -136,7 +144,8 @@ render () {
         {this.state.buyshow ? 
         <BuyForm infoBuy={this.getListingByVehicle} 
         startSearch={this.startSearch}
-        finishSearch={this.finishSearch}/>  
+        finishSearch={this.finishSearch}
+        fail={this.searchFail}/>  
         : null}
         {this.state.showForm ? <ListForm allListing={this.allListing} startSearch={this.startSearch}
         finishSearch={this.finishSearch} />: null}
@@ -158,6 +167,7 @@ render () {
       handleFavorite={this.handleFavorite}
        /> 
   )):null}
+  {this.state.failure ? <div id="failmsg">Invalid Search!</div> : null}
   </div>
   </div>
     }
