@@ -4,7 +4,6 @@ import React from 'react';
 import SearchInput from '../components/SearchInput';
 import ReviewCard from '../components/ReviewCard/index';
 import Footer from '../components/Footer';
-import Banner from '../components/Banner';
 import Loader from 'react-loader-spinner';
 
 import './index.css'
@@ -21,7 +20,8 @@ class Search extends React.Component {
         vehicleId: null,
         showReviewCard: false,
         reviews: [],
-        searching: false
+        searching: false,
+        failure: false
     };    
   }
 
@@ -44,7 +44,8 @@ class Search extends React.Component {
 
   startSearch = () => {
     this.setState({
-      searching: true
+      searching: true,
+      showReviewCard: false
     })
     console.log(this.state.start)
   }
@@ -56,25 +57,34 @@ class Search extends React.Component {
     console.log(this.state.start)
   }
 
+  searchFail = () => {
+    this.setState({
+      failure: true,
+      searching: false
+    })
+  }
+
   render() {
     return (
       <div>
-        <Banner />
         <div className = "wrapper2">
           <h2> Search Reviews </h2>
           <span id="line"> </span>
           <SearchInput infoGet={this.infoCallback}
             searchStart={this.startSearch}
             searchEnd={this.finishSearch}
+            fail={this.searchFail}
             />
-          {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
+          <div className = "loader">
+            {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
+          </div>
           {this.state.showReviewCard ? <ReviewCard image={this.state.imgURL} 
             make={this.state.make}
             model={this.state.model}
             year={this.state.year}
             id={this.state.vehicleId}
-            // relay={this.state.relay}
-          /> : null}       
+          /> : null}
+          {this.state.failure ? <div id="failmsg">Invalid Search!</div> : null}
       </div>
         <Footer />
         </div>

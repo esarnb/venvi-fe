@@ -5,6 +5,7 @@ import ListForm from '../components/ListForm';
 import Footer from '../components/Footer';
 import { ListingAPI, BookmarkAPI } from '../utils/API';
 import ListCard from '../components/ListCard';
+import Loader from 'react-loader-spinner';
 import './index.css'
 
 
@@ -18,8 +19,10 @@ class Market extends React.Component {
     showForm: false,
     user:1,
     listings: [],
-    userBookmarkList: []
-    // searching:false
+    userBookmarkList: [],
+    searching:false,
+    showResult:true,
+    failure: false
   };
 }
 
@@ -34,7 +37,8 @@ allListing = () =>
       console.log("all listings databack");
       console.log(res.data);
       // console.log(data.data[0]);
-      this.setState({ listings: [...res.data] });
+      this.setState({ listings: [...res.data],
+      showResult: true });
       console.log(this.state.listings)
     this.userBookmark();
     });
@@ -61,13 +65,16 @@ userBookmark = () =>
 {
     BookmarkAPI.getBookmarkByUser(this.state.user).then(res=>{
       console.log("all bookmarks databack");
-      console.log(res.data);
-      this.setState({ userBookmarkList:res.data });
-      console.log(this.state.userBookmarkList)
-      var bookmark = this.state.userBookmarkList.map(bookmark => { return bookmark.vin});
-      this.setState({listings: this.state.listings.filter(x => bookmark.indexOf(x.vin) === -1)})
-      var listing = this.state.listings;
-      console.log("not here", listing)
+      var bookmarkList = res.data;
+      if (!bookmarkList) {
+        console.log("empty");
+      }
+      else {
+        var bookmark = this.state.userBookmarkList.map(bookmark => { return bookmark.vin});
+        this.setState({ userBookmarkList:res.data });
+        console.log(this.state.userBookmarkList)
+        this.setState({listings: this.state.listings.filter(x => bookmark.indexOf(x.vin) === -1)})
+      }
     });
 }
 
@@ -82,7 +89,7 @@ getListingByVehicle = (data) =>
     let year = data.year;
     ListingAPI.getListingByVehicle(make, model, year).then(res=>{
       console.log(res.data);
-      this.setState({listings:res.data})
+      this.setState({listings:res.data, showResult:true})
     });
 }
 
@@ -98,25 +105,33 @@ showForm = () => {
   console.log("here2")
 }
 
-// startSearch = () => {
-//   this.setState({
-//     searching: true
-//   })
-//   console.log(this.state.start)
-// }
+startSearch = () => {
+  this.setState({
+    searching: true,
+    showResult: false
+  })
+  console.log(this.state.start)
+}
 
-// finishSearch = () => {
-//   this.setState({
-//     searching: false
-//   })
-//   console.log(this.state.start)
-// }
+finishSearch = () => {
+  this.setState({
+    searching: false
+  })
+  console.log(this.state.start)
+}
 
 handleFavorite = (bookmarkData) => {
   console.log("works here")
     BookmarkAPI.addBookmark(bookmarkData).then(res=>
     this.setState({listings: this.state.listings.filter(x => x.vin !== res.data.vin)})
     )
+  }
+
+  searchFail = () => {
+    this.setState({
+      failure: true,
+      searching: false
+    })
   }
 
 render () {
@@ -126,16 +141,22 @@ render () {
         <h3 id="market-head"> Market </h3>
         <span id="market-line-market"></span>
         <div id="market-btn">
-        <MarketBuy handleSearch={this.handleSearch}
-        startSearch={this.startSearch}
-        finishSearch={this.finishSearch}/>
+        <MarketBuy handleSearch={this.handleSearch}/>
         <MarketSell showForm={this.showForm}/>
         </div>
-        {this.state.buyshow ? <BuyForm infoBuy={this.getListingByVehicle}/> : null}
-        {this.state.showForm ? <ListForm/>: null}
+        {this.state.buyshow ? 
+        <BuyForm infoBuy={this.getListingByVehicle} 
+        startSearch={this.startSearch}
+        finishSearch={this.finishSearch}
+        fail={this.searchFail}/>  
+        : null}
+        {this.state.showForm ? <ListForm allListing={this.allListing} startSearch={this.startSearch}
+        finishSearch={this.finishSearch} />: null}
+    <div className = "loader">
+      {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
+    </div>
     <div id="market-list">
-    {/* {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> :  */}
-    {this.state.listings.map(item =>(
+    {this.state.showResult ? this.state.listings.map(item =>(
     <ListCard key={item.id}
       id={item.id}
       seller={item.UserId}
@@ -143,12 +164,20 @@ render () {
       make={item.make}
       model={item.model}
       price={item.price}
+      mileage={item.mileage}
+      phone={item.phone}
+      location={item.location}
       year={item.year}
       vin={item.vin}
       user={this.state.user}
+      phone={item.User.phone}
+      email={item.User.email}
+      seller={item.User.name}
+      location={item.User.location}
       handleFavorite={this.handleFavorite}
-       />
-  ))}
+       /> 
+  )):null}
+  {this.state.failure ? <div id="failmsg">Invalid Search!</div> : null}
   </div>
   </div>
     }

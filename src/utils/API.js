@@ -27,10 +27,8 @@ export const UserAPI = {
   // },
 
   // Updates user profile pic using AWS
-  editUser(id) {
-    return app.put(`/api/users/${id}`, { msg: "update profile" }).then(res => {
-      console.log(res.data);
-    })
+  editUser(id, info) {
+    return app.put(`/api/users/${id}`, info);
   },
 
   // Updates user profile pic using AWS
