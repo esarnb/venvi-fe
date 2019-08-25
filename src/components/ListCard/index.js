@@ -8,7 +8,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { yellow } from '@material-ui/core/colors';
@@ -16,6 +15,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import EditIcon from '@material-ui/icons/Edit';
+import { Tooltip } from "antd";
 import "./style.css";
 
 
@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 345,
     '&:hover': {
         border: "1px",
-        boxShadow: "5px 10px 8px 10px lightgrey",
+        boxShadow: "5px 10px 8px 10px grey",
     }
   },
   media: {
@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
 
 
 export default function ListCard(props) {
-  const {image,make,model,price,year,vin} = props;
+  const {image,make,model,price,year,vin,mileage,location,seller,email,phone} = props;
   var name = `${year} ${make} ${model}`
   console.log("name",name)
 
@@ -69,12 +69,7 @@ export default function ListCard(props) {
 
   return (
     <Card className={classes.card} id="list-card">
-      <CardHeader
-        avatar={
-          <Avatar aria-label={props.id} className={classes.avatar}>
-            {props.id}
-          </Avatar>
-        }
+      <CardHeader 
         title= {name}      
         />
       <CardMedia
@@ -87,12 +82,12 @@ export default function ListCard(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
+      <Tooltip placement="bottomLeft" title="Favorites" arrowPointAtCenter>
         <IconButton id="favorite" aria-label="add to favorites">
           <FavoriteIcon id="fav" onClick={()=> props.handleFavorite(bookmarkData)}/>
         </IconButton>
-        {/* <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton> */}
+      </Tooltip>
+      <Tooltip placement="bottomLeft" title="Expand" arrowPointAtCenter>
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -103,18 +98,18 @@ export default function ListCard(props) {
         >
           <ExpandMoreIcon />
         </IconButton>
+      </Tooltip>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Price: ${price}</Typography>
-          <Typography paragraph>VIN: {vin}
-          </Typography>
-          <Typography paragraph>
-          </Typography>
-          <Typography paragraph>
-          </Typography>
-          <Typography>
-          </Typography>
+          <Typography paragraph>Mileage: {mileage} miles </Typography>
+          {location ? <Typography paragraph>Location: {location}</Typography>:null}
+          <Typography paragraph>VIN: {vin}</Typography>
+          <hr/>
+          <Typography paragraph>Seller: {seller} </Typography>
+          {phone ? <Typography paragraph>Phone: {phone} </Typography> : null}
+          {email ? <Typography paragraph>Email: {email} </Typography> : null}
         </CardContent>
       </Collapse>
     </Card>
@@ -122,7 +117,7 @@ export default function ListCard(props) {
 }
 
 export function ListCardProfile(props) {
-  const {image,make,model,price,year,vin} = props;
+  const {image,make,model,price,year,vin,mileage,location,seller,email,phone} = props;
   var name = `${year} ${make} ${model}`;
 
   const classes = useStyles();
@@ -135,15 +130,12 @@ export function ListCardProfile(props) {
   return (
     <Card className={classes.card} id="list-card">
       <CardHeader
-        avatar={
-          <Avatar aria-label={props.user} className={classes.avatar}>
-            {props.user}
-          </Avatar>
-        }
         action={
+        <Tooltip placement="bottomLeft" title="Delete" arrowPointAtCenter>
           <IconButton aria-label="delete">
             <DeleteSharpIcon id="delete-btn" onClick={() => props.handleDelete(props.id)}/>
           </IconButton>
+        </Tooltip>
         }
         title= {name}      
         />
@@ -157,6 +149,8 @@ export function ListCardProfile(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
+      <Tooltip placement="bottomLeft" title="Edit Listing" arrowPointAtCenter>
+
         <IconButton id="edit" aria-label="edit price">
          
             <Modal header="Edit Listing" fixedFooter trigger={<EditIcon id="edit-btn"/>}
@@ -166,9 +160,9 @@ export function ListCardProfile(props) {
             </Col>
             </Modal>
         </IconButton>
-        {/* <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton> */}
+        </Tooltip>
+
+      <Tooltip placement="bottomLeft" title="Expand" arrowPointAtCenter>        
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -179,18 +173,18 @@ export function ListCardProfile(props) {
         >
           <ExpandMoreIcon />
         </IconButton>
+      </Tooltip>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Price:${price}</Typography>
-          <Typography paragraph>VIN: ${vin}
-          </Typography>
-          <Typography paragraph>
-          </Typography>
-          <Typography paragraph>
-          </Typography>
-          <Typography>
-          </Typography>
+          <Typography paragraph>Price: ${price}</Typography>
+          <Typography paragraph>Mileage: {mileage} miles </Typography>
+          {location ? <Typography paragraph>Location: {location}</Typography>:null}
+          <Typography paragraph>VIN: {vin}</Typography>
+          <hr/>
+          <Typography paragraph>Seller: {seller} </Typography>
+          {phone ? <Typography paragraph>Phone: {phone} </Typography> : null}
+          {email ? <Typography paragraph>Email: {email} </Typography> : null}
         </CardContent>
       </Collapse>
     </Card>
@@ -198,68 +192,64 @@ export function ListCardProfile(props) {
 }
 
 
-// export function ListCardBookmark(props) {
-//   const {image,make,model,price,year,vin} = props;
-//   var name = `${year} ${make} ${model}`;
-//   const classes = useStyles();
-//   const [expanded, setExpanded] = React.useState(false);
+export function ListCardBookmark(props) {
+  const {image,make,model,price,year,vin,mileage,location,seller,email,phone} = props;
+  var name = `${year} ${make} ${model}`;
+  const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
 
-//   function handleExpandClick() {
-//     setExpanded(!expanded);
-//   }
+  function handleExpandClick() {
+    setExpanded(!expanded);
+  }
 
-//   return (
-//     <Card className={classes.card} id="list-card">
-//       <CardHeader
-//         avatar={
-//           <Avatar aria-label="recipe" className={classes.avatar}>
-//             SLC
-//           </Avatar>
-//         }
-//         action={
-//           <IconButton aria-label="delete">
-//             <DeleteSharpIcon id="delete-btn" onClick={() => props.handleDelete(props.id)}/>
-//           </IconButton>
-//         }
-//         title= {name}      
-//         />
-//       <CardMedia
-//         className={classes.media}
-//         image={image}
-//       />
-//       <CardContent>
-//         <Typography variant="body2" color="textSecondary" component="p">
+  return (
+    <Card className={classes.card} id="list-card">
+      <CardHeader
+        action={
+        <Tooltip placement="bottomLeft" title="Unfavorite" arrowPointAtCenter>
+          <IconButton aria-label="delete">
+            <DeleteSharpIcon id="delete-btn" onClick={() => props.handleDeleteBookmark(props.id)}/>
+          </IconButton>
+        </Tooltip>
+        }
+        title= {name}      
+        />
+      <CardMedia
+        className={classes.media}
+        image={image}
+      />
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
 
-//         </Typography>
-//       </CardContent>
-//       <CardActions disableSpacing>
-//         {/* <IconButton aria-label="share">
-//           <ShareIcon />
-//         </IconButton> */}
-//         <IconButton
-//           className={clsx(classes.expand, {
-//             [classes.expandOpen]: expanded,
-//           })}
-//           onClick={handleExpandClick}
-//           aria-expanded={expanded}
-//           aria-label="show more"
-//         >
-//           <ExpandMoreIcon />
-//         </IconButton>
-//       </CardActions>
-//       <Collapse in={expanded} timeout="auto" unmountOnExit>
-//         <CardContent>
-//           <Typography paragraph>Price:${price}</Typography>
-//           <Typography paragraph>VIN: ${vin}
-//           </Typography>
-//           <Typography paragraph>
-//           </Typography>
-//           <Typography paragraph>
-//           </Typography>
-//           <Typography>
-//           </Typography>
-//         </CardContent>
-//       </Collapse>
-//     </Card>
-//   );
-// }
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+
+      <Tooltip placement="bottomLeft" title="Expand" arrowPointAtCenter>
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </Tooltip>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography paragraph>Price: ${price}</Typography>
+          <Typography paragraph>Mileage: {mileage} miles </Typography>
+          {location ? <Typography paragraph>Location: {location}</Typography>:null}
+          <Typography paragraph>VIN: {vin}</Typography>
+          <hr/>
+          <Typography paragraph>Seller: {seller} </Typography>
+          {phone ? <Typography paragraph>Phone: {phone} </Typography> : null}
+          {email ? <Typography paragraph>Email: {email} </Typography> : null}
+        </CardContent>
+      </Collapse>
+    </Card>
+  );
+}

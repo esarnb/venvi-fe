@@ -18,6 +18,8 @@ class BuyForm extends Component {
 		var makeVeri = false;
 		var modelVeri = false;
 
+		this.props.startSearch();
+
 		axios.get("https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json")
 			.then(response => {
 				var allMakes = response.data.Results;
@@ -87,6 +89,7 @@ class BuyForm extends Component {
 	else {
 		console.log("Make not match.")
 	}})
+	this.props.finishSearch();
 }
 
 	handleChange = event => {

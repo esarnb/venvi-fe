@@ -1,9 +1,10 @@
 import React from 'react';
 import UserProfile from '../components/UserProfile';
-import { ListCardProfile } from '../components/ListCard';
+import { ListCardProfile, ListCardBookmark } from '../components/ListCard';
 import Footer from '../components/Footer';
 import { ListingAPI, BookmarkAPI, UserAPI } from '../utils/API';
-import ListCardBookmark from '../utils/API';
+import UserSetting from '../components/UserSettings';
+
 
 //Component
 class Profile extends React.Component {
@@ -13,7 +14,7 @@ class Profile extends React.Component {
     this.state = {
       userList: [],
       userId: 1,
-      userBookmark: [],
+      userBookmarkList: [],
       values: ""
     }
   }
@@ -31,7 +32,8 @@ userListing = () =>
       console.log(res.data);
       // console.log(data.data[0]);
       this.setState({ userList:res.data });
-      console.log(this.state.userList)
+      var userlist= this.state.userList;
+      console.log(userlist)
     });
 }
 
@@ -40,20 +42,18 @@ userBookmark = () =>
     BookmarkAPI.getBookmarkByUser(this.state.userId).then(res=>{
       console.log("all bookmarks databack");
       console.log(res.data);
-      var bookmarks = res.data;
-
+       var bookmarks = res.data;
       bookmarks.map(bookmark =>
       {
         var UserId = bookmark.Listing.UserId;
         console.log(UserId);
-
         UserAPI.getUser(UserId).then(res=>{
           console.log(res);
     })     
       })
       // console.log(data.data[0]);
-      // this.setState({ userBookmark:res.data });
-      console.log(this.state.userBookmark)
+      this.setState({ userBookmarkList:res.data });
+      console.log(this.state.userBookmarkList)
     });
 }
 
@@ -96,6 +96,8 @@ editChange = event => {
       <React.Fragment>
         <div className= "wrapper2">
           <UserProfile userid={this.state.userId}/>
+          <UserSetting handleUserList={this.userListing}
+          handleBookmarkList={this.userBookmark}/>
           <h2>My Listings</h2>
           <span id="line"> </span>
           <div id="user-list">
@@ -109,29 +111,38 @@ editChange = event => {
             price={list.price}
             year={list.year}
             vin={list.vin}
+            phone={list.User.phone}
+            email={list.User.email}
+            seller={list.User.name}
+            location={list.User.location}
             handleDelete={this.handleDelete}
             handleEdit={this.handleEdit} 
             editchange={this.editChange}
             />
           ))}
           </div>
-          <React.Fragment id="bookmark-list">
             <h2>My Favorites</h2>
             <span id="line"> </span>
-          {this.state.userBookmark.map(bookmark =>(
+            <div id="bookmark-list">
+          {this.state.userBookmarkList ? this.state.userBookmarkList.map(bookmark =>(
             <ListCardBookmark key={bookmark.id}
             id={bookmark.id}
-            image={bookmark.image}
-            make={bookmark.make}
-            model={bookmark.model}
-            price={bookmark.price}
-            year={bookmark.year}
-            vin={bookmark.vin}
-            handleDelete={this.handleDelete}
+            user={bookmark.UserId}
+            image={bookmark.Listing.image}
+            make={bookmark.Listing.make}
+            model={bookmark.Listing.model}
+            price={bookmark.Listing.price}
+            year={bookmark.Listing.year}
+            vin={bookmark.Listing.vin}
+            // phone={bookmark.User.phone}
+            // email={bookmark.User.email}
+            // seller={bookmark.User.name}
+            // location={bookmark.User.location}
+            handleDeleteBookmark={this.handleDeleteBookmark}
             />
-          ))}
-          </React.Fragment>
-           </ div>
+          )): <h2> No Favorite Listings </h2>}
+           </div>
+          </div>
           <Footer />
       </React.Fragment>
     );
