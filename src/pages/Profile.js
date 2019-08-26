@@ -54,6 +54,7 @@ userBookmark = () =>
           console.log(res.data);
           bookmark.Listing.phone = res.data.phone;
           bookmark.Listing.location = res.data.location;
+          bookmark.Listing.sellerName = res.data.name;
           console.log(bookmark);
     })     
       })
