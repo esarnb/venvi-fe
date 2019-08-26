@@ -10,7 +10,7 @@ class SearchInput extends Component {
 		make: "",
 		model: "",
 		year: "",
-		imgURL: "",
+		imgURL: [],
 		vehicleId: "",
 		reviews: []
 	}
@@ -82,23 +82,23 @@ class SearchInput extends Component {
 									console.log(`https://www.googleapis.com/customsearch/v1?q=${year} ${queryMake}+${queryModel}&cx=014855097092208085078%3A6cwyf6e5-oc&searchType=image&fileType=png&key=AIzaSyBEg43tCIEFbmsUD3hVAMZtNOFGcj7M0Cs`)
 									axios.get(`https://www.googleapis.com/customsearch/v1?q=${year} ${queryMake}+${queryModel}&cx=014855097092208085078%3A6cwyf6e5-oc&searchType=image&fileType=png&key=AIzaSyBEg43tCIEFbmsUD3hVAMZtNOFGcj7M0Cs`)
 										.then(response => {
-											var images = response.data.items[0].link;
-											
+											var images = []
+
+											images.push(response.data.items[0].link) 
+											images.push(response.data.items[1].link) 
+											images.push(response.data.items[2].link) 
+										
 											this.setState({ imgURL:images })
-											// this.state.imgURL = images;
-											// console.log(this.state)
+											console.log(this.state)
 
 											this.getVehicleByType(year);
 											
 										})
-
 								}
 								else {
 									console.log("Error.")
 									this.props.fail();
 								}
-
-
 							})
 					})
 				}
