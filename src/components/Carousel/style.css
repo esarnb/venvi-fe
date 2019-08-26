@@ -1,11 +1,15 @@
 .makeStyles-image-88 {
-    height:300px !important;
-    width:661px !important;
-    margin-left:23% !important;
+    height:54% !important;
+    width:70% !important;
+    margin-left:32% !important;
     margin-top:12% !important;
 }
 
 .makeStyles-text-92 {
     color: white !important;
     font-family: 'Saira Stencil One', cursive !important;
+}
+
+.MuiBox-root-84 {
+    height:100% !important;
 }

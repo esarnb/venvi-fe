@@ -82,18 +82,18 @@
       },
     },
     title: {
-      top: 20,
+      top: 30,
       left: '20%',
-      height: '40%',
-      fontSize: 40,
+      height: '60%',
+      fontSize: 25,
       zIndex: 1,
       background: 'linear-gradient(0deg, rgba(255,255,255,0) 0%, #9c9c9c 100%)',
       [breakpoints.up('sm')]: {
         top: 40,
-        fontSize: 72,
+        fontSize: 20,
       },
       [breakpoints.up('md')]: {
-        top: 52,
+        top: 89,
         fontSize: 72,
       },
     },
@@ -107,11 +107,11 @@
       [breakpoints.up('sm')]: {
         top: 112,
         left: '6%',
-        fontSize: 96,
+        fontSize: 66,
       },
       [breakpoints.up('md')]: {
-        top: 128,
-        fontSize: 104,
+        top: 150,
+        fontSize: 74
       },
     },
     indicatorContainer: {
