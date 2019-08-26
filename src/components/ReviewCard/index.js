@@ -4,7 +4,7 @@ import StarRatings from 'react-star-ratings';
 import { ReviewAPI, VehicleAPI } from '../../utils/API'
 
 import './style.css';
-import Demo from "../Carousel/index";
+import Carousel from "../Carousel/index";
 
 
 class ReviewCard extends Component {
@@ -127,39 +127,39 @@ class ReviewCard extends Component {
 
     render() {
         
-    const data = [
-        {
-          id: 1,
-          title: `${this.props.year} ${this.props.make}`,
-          subtitle: `${this.props.model}`,
-          image:
-            // eslint-disable-next-line max-len
-            `${this.props.image}`,
-        },
-        {
-          id: 2,
-          title: '2019 Mercedes',
-          subtitle: 'GLA 250',
-          image:
-            // eslint-disable-next-line max-len
-            'https://crls.io/s/evox%2Fcolor_2400_032_png%2FMY2019%2F13164%2F13164_cc2400_032_696.png/feature/n/mercedes-benz-gla.png',
-        },
-        {
-          id: 3,
-          title: '2019 Lambo',
-          subtitle: 'GLA 250',
-          image:
-            // eslint-disable-next-line max-len
-            'https://i.dlpng.com/static/png/4309176_preview.png',
-        },
-      ];
+    // const data = [
+    //     {
+    //       id: 1,
+    //       title: `${this.props.year} ${this.props.make}`,
+    //       subtitle: `${this.props.model}`,
+    //       image:
+    //         // eslint-disable-next-line max-len
+    //         `${this.props.image}`,
+    //     },
+    //     {
+    //       id: 2,
+    //       title: '2019 Mercedes',
+    //       subtitle: 'GLA 250',
+    //       image:
+    //         // eslint-disable-next-line max-len
+    //         'https://crls.io/s/evox%2Fcolor_2400_032_png%2FMY2019%2F13164%2F13164_cc2400_032_696.png/feature/n/mercedes-benz-gla.png',
+    //     },
+    //     {
+    //       id: 3,
+    //       title: '2019 Lambo',
+    //       subtitle: 'GLA 250',
+    //       image:
+    //         // eslint-disable-next-line max-len
+    //         'https://i.dlpng.com/static/png/4309176_preview.png',
+    //     },
+    //   ];
         return (
             <div className="card" id="search-result">
-            {/* <Demo data={data}/> */}
-                <div className="card-image">
+            <Carousel year={this.props.year} make={this.props.make} model={this.props.model} images={this.props.image}/>
+                {/* <div className="card-image">
                     <img src={this.props.image} alt={this.props.make} />
                     <span className="card-title">{this.props.year} {this.props.make} {this.props.model}</span>
-                </div>
+                </div> */}
                 <div className="card-content">
                     <div className="avgrating"><b>Average Rating: </b>
                     <StarRatings
