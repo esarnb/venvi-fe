@@ -141,14 +141,11 @@ class Home extends React.Component {
                   <img src={down} alt="down" />
                 </div>
               </a>
-            <Container>
             <div id="next">
             </div>
-            <Divider/>
-              <h3 id="toppick"> TOP CONSUMER PICKS </h3>
+              <h3 id="toppick"> TOP 10 CONSUMER PICKS </h3>
               <span id="line"> </span>
-    
-            </Container>
+
   
             {(this.state.vehicles[0]) ? <Popcard number="1" pop={this.state.vehicles}/> : null}
             {(this.state.vehicles[0]) ? <Popcard number="2" pop={this.state.vehicles}/> : null}
