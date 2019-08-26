@@ -144,7 +144,7 @@ class Home extends React.Component {
             <div id="next">
             </div>
               <h3 id="toppick"> TOP 10 CONSUMER PICKS </h3>
-              <span id="line"> </span>
+              <span id="homeline"> </span>
 
   
             {(this.state.vehicles[0]) ? <Popcard number="1" pop={this.state.vehicles}/> : null}
