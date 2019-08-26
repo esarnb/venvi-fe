@@ -19,12 +19,8 @@ export const UserAPI = {
 
    // To return user profile page
   getUser(id) {
-    return app.get("/api/users/:id");
+    return app.get(`/api/users/${id}`);
   },
-  
-  // getUserByProfileId(profileID) {
-  //   return app.get(`/api/users/profile/${profileId}`);
-  // },
 
   // Updates user profile pic using AWS
   editUser(id, info) {

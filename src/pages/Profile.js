@@ -13,7 +13,8 @@ class Profile extends React.Component {
     
     this.state = {
       userList: [],
-      userId: props.name,
+      // userId: props.name,
+      userId: 1,
       photo: props.photo,
       userBookmarkList: [],
       values: ""
@@ -41,6 +42,7 @@ userListing = () =>
 userBookmark = () =>
 {
     BookmarkAPI.getBookmarkByUser(this.state.userId).then(res=>{
+      console.log(this.state.userId);
       console.log("all bookmarks databack");
       console.log(res.data);
        var bookmarks = res.data;
@@ -49,11 +51,14 @@ userBookmark = () =>
         var UserId = bookmark.Listing.UserId;
         console.log(UserId);
         UserAPI.getUser(UserId).then(res=>{
-          console.log(res);
+          console.log(res.data);
+          bookmark.Listing.phone = res.data.phone;
+          bookmark.Listing.location = res.data.location;
+          console.log(bookmark);
     })     
       })
       // console.log(data.data[0]);
-      this.setState({ userBookmarkList:res.data });
+      this.setState({ userBookmarkList:bookmarks });
       console.log(this.state.userBookmarkList)
     });
 }
