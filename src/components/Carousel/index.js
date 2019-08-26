@@ -39,7 +39,7 @@ class Carousel extends Component {
             subtitle: `${this.props.model}`,
             image:
               // eslint-disable-next-line max-len
-              `${this.props.image[0]}`
+              `${this.props.images[0]}`
           },
           {
             id: 2,
@@ -47,7 +47,7 @@ class Carousel extends Component {
             subtitle: `${this.props.model}`,
             image:
               // eslint-disable-next-line max-len
-              `${this.props.image[1]}`
+              `${this.props.images[1]}`
           },
           {
             id: 3,
@@ -55,7 +55,7 @@ class Carousel extends Component {
             subtitle: `${this.props.model}`,
             image:
               // eslint-disable-next-line max-len
-              `${this.props.image[2]}`
+              `${this.props.images[2]}`
           },
         ];
     return (
