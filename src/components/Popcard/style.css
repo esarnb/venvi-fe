@@ -1,7 +1,33 @@
+.cardSection
+{
+	margin-top: 6%;
+	margin-bottom: 10%;
+}
+
+.cardSectionleft
+{
+	margin-top: 6%;
+	margin-bottom: 15%;
+}
+
+.ant-card-bordered
+{
+	border: none !important;
+}
+
+
+
+
 .ant-pagination
 {
 	width: 0 !important;
 	opacity: 0;
+}
+
+.ant-card-body
+{
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .title
@@ -9,16 +35,174 @@
 	position: absolute;
 	font-size: 50px;
 	left: 8%;
-	top: -5%;
 	z-index: 100;
 	color: black;
 	font-family: 'Saira Stencil One', cursive;
 
 }
 
-#rating
+
+.ratingright
 {
-	width: 20px;
-	margin: 0 !important;
+	font-size: 40px;
+	position: absolute;
+	margin-left: 10%;
+	margin-top: 5.5%;
+	margin-bottom: 0;
+	z-index: 100;
 }
+
+
+
+
+.out
+{
+	position: absolute;
+	margin-left: 15%;
+	margin-top: 6%;
+	z-index: 100;
+	font-weight: 200px !important;
+
+}
+
+.five
+{
+	position: absolute;
+	margin-left: 15%;
+	margin-top: 7%;
+	z-index: 100;
+	font-weight: 200px !important;
+
+}
+
+.ratingleft
+{
+	font-size: 40px;
+	position: absolute;
+	margin-left: 10%;
+	margin-top: 5.5%;
+	margin-bottom: 0;
+	z-index: 100;
+}
+
+.outleft
+{
+	position: absolute;
+	margin-left: 15%;
+	margin-top: 6%;
+	z-index: 100;
+	font-weight: 200px !important;
+
+}
+
+.fiveleft
+{
+	position: absolute;
+	margin-left: 15%;
+	margin-top: 7%;
+	z-index: 100;
+	font-weight: 200px !important;
+
+}
+
+
+
+#right
+{	
+	width: 600px;
+	margin-top: 10%;
+	margin-left: 40%;
+		
+}
+
+#rightContainer
+{
+
+	height: 400px;
+	width: 1300px;
+	background-image: url("https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80");
+	background-size: 80%;
+	background-position: 60% 90%;
+	background-repeat: repeat-x;
+	margin-left: 10%;
+	margin-top: 13%;
+
+
+
+}
+
+
+#front
+{
+	width: 0;
+	height: 0;
+	border-left: 0px solid transparent;
+	border-right: 400px solid transparent;
+	border-top: 450px solid white;
+	position: absolute;
+	margin-left: 10%;
+	margin-top: 10%;
+}
+
+#back
+{
+	width: 0;
+	height: 0;
+	border-left: 250px solid transparent;
+	border-right: 0px solid transparent;
+	border-bottom: 300px solid white;
+	position: absolute;
+	bottom: -10%;
+	margin-left: 80%;
+	
+}
+
+#left
+{
+	width: 600px;
+	margin-top: 15%;
+	margin-left: 5%;
+
+
+}
+
+#leftContainer
+{
+
+	height: 400px;
+	width: 1200px;
+	margin-top: 13%;
+	background-image: url("https://images.unsplash.com/photo-1466803000100-40016de08ade?ixlib=rb-1.2.1&auto=format&fit=crop&w=2019&q=80");
+	background-size: 80%;
+	background-position: 70% 0%;
+	background-repeat: repeat-x;
+	background-position: bottom;
+
+}	
+
+
+#front2
+{
+	width: 0;
+	height: 0;
+	margin-top: 13%;
+	border-right: 135px solid transparent;
+	border-left: 0px solid transparent;
+	border-top: 155px solid white;
+	position: absolute;
+}
+
+
+#back2
+{
+	width: 0;
+	height: 0;
+	border-right: 0px solid transparent;
+	border-left: 400px solid transparent;
+	border-bottom: 450px solid white;
+	position: absolute;
+	bottom: 0%;
+	margin-left: 55%;
+}
+
 
