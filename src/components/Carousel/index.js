@@ -23,11 +23,11 @@
     },
     {
       id: 3,
-      title: 'Type R',
-      subtitle: '2019 Civic',
+      title: '2019 Lamborghini',
+      subtitle: 'Urus',
       image:
         // eslint-disable-next-line max-len
-        'https://dealerimages.dealereprocess.com/image/upload/c_limit,f_auto,fl_lossy/v1/svp/dep/19hondacivictyper/honda_19civictyper_angularfront_blue',
+        'https://i.dlpng.com/static/png/4309176_preview.png',
     },
   ];
   
