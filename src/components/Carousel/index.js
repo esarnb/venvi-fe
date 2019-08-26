@@ -3,6 +3,7 @@
   import Box from '@material-ui/core/Box';
   import ParallaxCarousel from './ParallaxCarousel';
   import './style.css';
+
   
   const data = [
     {
@@ -23,17 +24,17 @@
     },
     {
       id: 3,
-      title: '2019 Lamborghini',
-      subtitle: 'Urus',
+      title: '2019 Lambo',
+      subtitle: 'GLA 250',
       image:
         // eslint-disable-next-line max-len
         'https://i.dlpng.com/static/png/4309176_preview.png',
     },
   ];
   
-  const Demo = () => (
+  const Demo = (props) => (
     <Box width={'100%'} maxWidth={840} mx={'auto'}>
-      <ParallaxCarousel data={data} />
+      <ParallaxCarousel data={props.data} />
     </Box>
   )
   
