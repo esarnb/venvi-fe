@@ -10,7 +10,7 @@
   import React from 'react';
   import cx from 'clsx';
   import PropTypes from 'prop-types';
-  import { makeStyles } from '@material-ui/styles';
+  import { makeStyles } from '@material-ui/core/styles';
   import MuiIcon from '@material-ui/core/Icon';
   
   const injectColor = color => {
@@ -28,23 +28,23 @@
   };
   
   const useStyles = makeStyles(({ palette, transitions, spacing }) => {
-    const invertedColor = 'white';
+    const invertedColor = palette.common.white;
     return {
       root: {
         // STANDALONE
         verticalAlign: 'sub',
         '&.-push-left': {
-          marginLeft: 1,
+          marginLeft: spacing(1),
         },
         '&.-push-right': {
-          marginRight: 1,
+          marginRight: spacing(1),
         },
         '&.-link': {
           cursor: 'pointer',
           '&:not([class*="-color"])': {
-            // color: palette.text.primary,
+            color: palette.text.primary,
           },
-        //   transition: transitions.create(),
+          transition: transitions.create(),
           '&:hover': {
             transform: 'scale(1.2)',
           },
@@ -54,10 +54,10 @@
           color: '#28a745',
         },
         '&.-color-danger': {
-          color: 'red',
+          color: palette.error.main,
         },
         '&.-inverted': {
-          color: 'invertedColor',
+          color: invertedColor,
         },
         // icon
         '& .MuiIcon--fa': {
@@ -101,28 +101,28 @@
           padding: '0.25em',
         },
         '&.-bg-default': {
-          backgroundColor: 'grey',
+          backgroundColor: palette.grey[200],
         },
         '&.-bg-primary': {
-          backgroundColor: 'blue',
+          backgroundColor: palette.primary.main,
           color: invertedColor,
         },
         '&.-bg-secondary': {
-          backgroundColor: 'blue',
+          backgroundColor: palette.secondary.main,
           color: invertedColor,
         },
         '&.-bg-danger': {
-          backgroundColor: 'red',
+          backgroundColor: palette.error.main,
           color: invertedColor,
         },
         '&.-bg-white': {
           backgroundColor: invertedColor,
         },
         '&.-bg-lightPrimary': {
-          backgroundColor: 'lightgrey',
+          backgroundColor: palette.primary.light,
         },
         '&.-bg-lightSecondary': {
-          backgroundColor: 'grey',
+          backgroundColor: palette.secondary.light,
         },
         // shapes
         '&.-shape-square': {
@@ -137,7 +137,7 @@
   
         // COMBINATION
         '&.-bg-default.-link.-inverted': {
-          color: 'blue',
+          color: palette.text.primary,
         },
         '&.-link.-inverted:not([class*="-color"])': {
           color: invertedColor,

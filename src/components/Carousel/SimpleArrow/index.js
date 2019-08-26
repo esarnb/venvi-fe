@@ -1,10 +1,11 @@
 
   import React from 'react';
   import PropTypes from 'prop-types';
-  import { makeStyles } from '@material-ui/styles';
+  import { makeStyles } from '@material-ui/core/styles';
   import Button from '@material-ui/core/Button';
   import Icon from '../Icon';
   
+
   const useStyles = makeStyles(({ breakpoints }) => ({
     root: {
       borderRadius: '50%',
@@ -18,21 +19,21 @@
       '&:hover': {
         '& .MuiIcon-root': {
           transform: 'scale(1.3)',
-        //   [breakpoints.up('md')]: {
-        //     transform: 'scale(1.7)',
-        //   },
+          [breakpoints.up('md')]: {
+            transform: 'scale(1.7)',
+          },
         },
       },
-    //   [breakpoints.up('sm')]: {
-    //     width: 48,
-    //     minWidth: 48,
-    //     height: 48,
-    //   },
-    //   [breakpoints.up('md')]: {
-    //     width: 64,
-    //     minWidth: 64,
-    //     height: 64,
-    //   },
+      [breakpoints.up('sm')]: {
+        width: 48,
+        minWidth: 48,
+        height: 48,
+      },
+      [breakpoints.up('md')]: {
+        width: 64,
+        minWidth: 64,
+        height: 64,
+      },
     },
   }));
   
