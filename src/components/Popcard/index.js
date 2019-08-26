@@ -40,16 +40,28 @@ function Popcard(props){
 
   return (
   <div>
-  <Card style={{ width: 1000 }}>
+  <Card style={{ width: 1500}}>
     <p className="title">{first.make} {first.model}</p>
-    <p>{first.rating}</p>
-     <img width={272} alt="logo" src={first.image}/>
+    <p className="rating">{first.rating}</p>
+    <p className="out">out of</p> 
+    <p className="five">5 stars</p>
+    <div id="front"></div>
+    <div id="rightContainer">
+     <img id="right" alt="car" src={first.image}/>
+    </div>
+    <div id="back"></div>
   </Card>
 
-   <Card style={{ width: 1000 }}>
+   <Card style={{ width: 1500 }}>
     <p className="title">{second.make} {second.model}</p>
-    <p>{second.rating}</p>
-     <img width={272} alt="logo" src={second.image}/>
+    <p className="rating">{second.rating}</p>
+    <p className="out">out of</p>
+    <p className="five">5 stars</p>
+
+    <div id="leftContainer">
+    <img id="left" alt="car" src={second.image}/>
+    </div>
+
   </Card>
   </div>
   );
