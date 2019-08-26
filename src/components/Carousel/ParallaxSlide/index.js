@@ -8,7 +8,6 @@
     if (Math.abs(diff) > 1) return 0;
     return `${diff * speed}%`;
   };
-  
   const ParallaxSlide = ({ transition, children, renderElements, ...props }) => {
     const [index, setIndex] = useState(0);
     const [fineIndex, setFineIndex] = useState(index);

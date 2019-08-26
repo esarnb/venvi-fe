@@ -2,13 +2,13 @@
   import React from 'react';
   import PropTypes from 'prop-types';
   import cx from 'clsx';
-  import { makeStyles } from '@material-ui/styles';
+  import { makeStyles } from '@material-ui/core/styles';
   import Typography from '@material-ui/core/Typography';
   import ParallaxSlide from '../ParallaxSlide';
   import SimpleArrow from '../SimpleArrow';
   import DotIndicator from '../DotIndicator';
   
-  const useStyles = makeStyles(({ palette, breakpoints})=> ({
+  const useStyles = makeStyles(({ palette, breakpoints, spacing }) => ({
     root: {
       // a must if you want to set arrows, indicator as absolute
       position: 'relative',
@@ -18,13 +18,13 @@
       overflow: 'hidden',
       // relative is a must if you want to create overlapping layers in children
       position: 'relative',
-      paddingTop: '8px',
-    //   [breakpoints.up('sm')]: {
-    //     paddingTop: '10px',
-    //   },
-    //   [breakpoints.up('md')]: {
-    //     paddingTop: '14px',
-    //   },
+      paddingTop: spacing(8),
+      [breakpoints.up('sm')]: {
+        paddingTop: spacing(10),
+      },
+      [breakpoints.up('md')]: {
+        paddingTop: spacing(14),
+      },
     },
     imageContainer: {
       display: 'block',
@@ -40,46 +40,46 @@
       height: '100%',
       objectFit: 'cover',
       marginLeft: '12%',
-    //   [breakpoints.up('sm')]: {
-    //     marginLeft: '4%',
-    //   },
+      [breakpoints.up('sm')]: {
+        marginLeft: '4%',
+      },
     },
     arrow: {
       display: 'none',
       position: 'absolute',
       top: '50%',
       transform: 'translateY(-50%)',
-    //   [breakpoints.up('sm')]: {
-    //     display: 'inline-flex',
-    //   },
+      [breakpoints.up('sm')]: {
+        display: 'inline-flex',
+      },
     },
     arrowLeft: {
       left: 0,
-    //   [breakpoints.up('lg')]: {
-    //     left: -64,
-    //   },
+      [breakpoints.up('lg')]: {
+        left: -64,
+      },
     },
     arrowRight: {
       right: 0,
-    //   [breakpoints.up('lg')]: {
-    //     right: -64,
-    //   },
+      [breakpoints.up('lg')]: {
+        right: -64,
+      },
     },
     text: {
       // shared style for text-top and text-bottom
       fontFamily: 'Poppins, san-serif',
       fontWeight: 900,
       position: 'absolute',
-      color: 'white',
+      color: palette.common.white,
       padding: '0 8px',
       transform: 'rotateY(45deg)',
       lineHeight: 1.2,
-    //   [breakpoints.up('sm')]: {
-    //     padding: '0 16px',
-    //   },
-    //   [breakpoints.up('md')]: {
-    //     padding: '0 24px',
-    //   },
+      [breakpoints.up('sm')]: {
+        padding: '0 16px',
+      },
+      [breakpoints.up('md')]: {
+        padding: '0 24px',
+      },
     },
     title: {
       top: 20,
@@ -88,14 +88,14 @@
       fontSize: 40,
       zIndex: 1,
       background: 'linear-gradient(0deg, rgba(255,255,255,0) 0%, #9c9c9c 100%)',
-    //   [breakpoints.up('sm')]: {
-    //     top: 40,
-    //     fontSize: 72,
-    //   },
-    //   [breakpoints.up('md')]: {
-    //     top: 52,
-    //     fontSize: 72,
-    //   },
+      [breakpoints.up('sm')]: {
+        top: 40,
+        fontSize: 72,
+      },
+      [breakpoints.up('md')]: {
+        top: 52,
+        fontSize: 72,
+      },
     },
     subtitle: {
       top: 60,
@@ -104,15 +104,15 @@
       fontSize: 56,
       zIndex: 2,
       background: 'linear-gradient(0deg, rgba(255,255,255,0) 0%, #888888 100%)',
-    //   [breakpoints.up('sm')]: {
-    //     top: 112,
-    //     left: '6%',
-    //     fontSize: 96,
-    //   },
-    //   [breakpoints.up('md')]: {
-    //     top: 128,
-    //     fontSize: 104,
-    //   },
+      [breakpoints.up('sm')]: {
+        top: 112,
+        left: '6%',
+        fontSize: 96,
+      },
+      [breakpoints.up('md')]: {
+        top: 128,
+        fontSize: 104,
+      },
     },
     indicatorContainer: {
       textAlign: 'center',

@@ -2,8 +2,9 @@
   import React from 'react';
   import PropTypes from 'prop-types';
   import cx from 'clsx';
-  import { makeStyles } from '@material-ui/styles';
+  import { makeStyles } from '@material-ui/core/styles';
   
+
   const useStyles = makeStyles(({ palette, transitions, breakpoints }) => {
     const SIZES = {
       xs: 8,
@@ -25,36 +26,36 @@
           width: SIZES.xs,
           height: SIZES.xs,
           borderRadius: '50%',
-          backgroundColor: active ? 'blue' : 'grey',
-        //   transition: transitions.create(),
-        //   [breakpoints.up('sm')]: {
-        //     width: SIZES.sm,
-        //     height: SIZES.sm,
-        //   },
-        //   [breakpoints.up('lg')]: {
-        //     '&:after': {
-        //       width: SIZES.lg,
-        //       height: SIZES.lg,
-        //     },
-        //   },
+          backgroundColor: active ? palette.text.primary : palette.text.disabled,
+          transition: transitions.create(),
+          [breakpoints.up('sm')]: {
+            width: SIZES.sm,
+            height: SIZES.sm,
+          },
+          [breakpoints.up('lg')]: {
+            '&:after': {
+              width: SIZES.lg,
+              height: SIZES.lg,
+            },
+          },
         },
         '&:hover': {
           '&:after': {
             transform: 'scale(1.2)',
           },
         },
-        // [breakpoints.up('sm')]: {
-        //   padding: SIZES.sm,
-        //   '& + .Indicator-root': {
-        //     marginLeft: SIZES.sm,
-        //   },
-        // },
-        // [breakpoints.up('lg')]: {
-        //   padding: SIZES.lg,
-        //   '& + .Indicator-root': {
-        //     marginLeft: SIZES.lg,
-        //   },
-        // },
+        [breakpoints.up('sm')]: {
+          padding: SIZES.sm,
+          '& + .Indicator-root': {
+            marginLeft: SIZES.sm,
+          },
+        },
+        [breakpoints.up('lg')]: {
+          padding: SIZES.lg,
+          '& + .Indicator-root': {
+            marginLeft: SIZES.lg,
+          },
+        },
       }),
     };
   });
