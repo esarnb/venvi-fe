@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/venvi-fe/static/css/main.b406d87f.chunk.css",
-    "main.js": "/venvi-fe/static/js/main.91bc55d4.chunk.js",
-    "main.js.map": "/venvi-fe/static/js/main.91bc55d4.chunk.js.map",
+    "main.css": "/venvi-fe/static/css/main.7cf6702f.chunk.css",
+    "main.js": "/venvi-fe/static/js/main.c411017a.chunk.js",
+    "main.js.map": "/venvi-fe/static/js/main.c411017a.chunk.js.map",
     "runtime~main.js": "/venvi-fe/static/js/runtime~main.6dba387e.js",
     "runtime~main.js.map": "/venvi-fe/static/js/runtime~main.6dba387e.js.map",
     "static/css/2.472da827.chunk.css": "/venvi-fe/static/css/2.472da827.chunk.css",
-    "static/js/2.d6f68554.chunk.js": "/venvi-fe/static/js/2.d6f68554.chunk.js",
-    "static/js/2.d6f68554.chunk.js.map": "/venvi-fe/static/js/2.d6f68554.chunk.js.map",
+    "static/js/2.376bdd73.chunk.js": "/venvi-fe/static/js/2.376bdd73.chunk.js",
+    "static/js/2.376bdd73.chunk.js.map": "/venvi-fe/static/js/2.376bdd73.chunk.js.map",
     "index.html": "/venvi-fe/index.html",
-    "precache-manifest.a426799e8baa1c2a7ec3b39d259de197.js": "/venvi-fe/precache-manifest.a426799e8baa1c2a7ec3b39d259de197.js",
+    "precache-manifest.83f0c5ad38b8328d78aef277683fd1e7.js": "/venvi-fe/precache-manifest.83f0c5ad38b8328d78aef277683fd1e7.js",
     "service-worker.js": "/venvi-fe/service-worker.js",
     "static/css/2.472da827.chunk.css.map": "/venvi-fe/static/css/2.472da827.chunk.css.map",
-    "static/css/main.b406d87f.chunk.css.map": "/venvi-fe/static/css/main.b406d87f.chunk.css.map",
+    "static/css/main.7cf6702f.chunk.css.map": "/venvi-fe/static/css/main.7cf6702f.chunk.css.map",
     "static/media/diffuse.jpeg": "/venvi-fe/static/media/diffuse.4e452981.jpeg",
     "static/media/diffuse2.jpeg": "/venvi-fe/static/media/diffuse2.369bf98e.jpeg",
     "static/media/diffuse3.jpeg": "/venvi-fe/static/media/diffuse3.cfbdca81.jpeg",
     "static/media/down.png": "/venvi-fe/static/media/down.2f67b49c.png",
     "static/media/spec.jpeg": "/venvi-fe/static/media/spec.df9dfff0.jpeg",
-    "static/media/t.obj": "/venvi-fe/static/media/t.27e70918.obj",
-    "static/media/t.mtl": "/venvi-fe/static/media/t.ebb75ab3.mtl"
+    "static/media/t.obj": "/venvi-fe/static/media/t.475682ea.obj",
+    "static/media/t.mtl": "/venvi-fe/static/media/t.bf31b44e.mtl"
   }
 }
