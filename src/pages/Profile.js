@@ -14,8 +14,8 @@ class Profile extends React.Component {
     
     this.state = {
       userList: [],
-      // userId: props.name,
-      userId: 1,
+      userId: props.name,
+      // userId: 1,
       photo: props.photo,
       userBookmarkList: [],
       values: ""
@@ -56,13 +56,21 @@ userBookmark = () =>
           bookmark.Listing.phone = res.data.phone;
           bookmark.Listing.location = res.data.location;
           bookmark.Listing.sellerName = res.data.name;
+          bookmark.Listing.email = res.data.email;
           console.log(bookmark);
+          console.log(bookmark.Listing.sellerName)
     })     
       })
-      // console.log(data.data[0]);
-      this.setState({ userBookmarkList:bookmarks });
-      console.log(this.state.userBookmarkList)
+      setTimeout(
+       () =>
+      {
+        console.log("after set state", "bookmarks", bookmarks);
+        this.setState({ userBookmarkList:bookmarks });
+      }
+, 100
+      )
     });
+
 }
 
 handleDelete = (id) => {
@@ -104,10 +112,10 @@ editChange = event => {
       <React.Fragment>
         <div className= "wrapper2">
           <UserProfile userid={this.state.userId} photo={this.state.photo}/>
-          <h2>My Listings</h2>
+          <h2 id="list-title">My Listings</h2>
           <span id="line"> </span>
           <div id="user-list">
-          {this.state.userList.map(list =>(
+          {this.state.userList[0] ? this.state.userList.map(list =>(
             <ListCardProfile key={list.id}
             id={list.id}
             user={list.UserId}
@@ -126,9 +134,9 @@ editChange = event => {
             handleEdit={this.handleEdit} 
             editchange={this.editChange}
             />
-          ))}
+          )) : <h6 id="list-msg">Oops... looks like you don't have any listings</h6>}
           </div>
-            <h2>My Favorites</h2>
+            <h2 id="fav-title">My Favorites</h2>
             <span id="line"> </span>
             <div id="bookmark-list">
           {this.state.userBookmarkList[0] ? this.state.userBookmarkList.map(bookmark =>(
@@ -141,13 +149,14 @@ editChange = event => {
             price={bookmark.Listing.price}
             year={bookmark.Listing.year}
             vin={bookmark.Listing.vin}
-            // phone={bookmark.User.phone}
-            // email={bookmark.User.email}
-            // seller={bookmark.User.name}
-            // location={bookmark.User.location}
+            phone={bookmark.Listing.phone}
+            email={bookmark.Listing.email}
+            seller={bookmark.Listing.sellerName}
+            location={bookmark.Listing.location}
             handleDeleteBookmark={this.handleDeleteBookmark}
             />
-          )) : <h2> No Favorite Listings </h2>}
+          )) : <h6 id="fav-msg"> Have prospective cars in mind? <br/><br/>Add some of your favorites from Market page </h6>}
+
            </div>
           </div>
           <Footer />
