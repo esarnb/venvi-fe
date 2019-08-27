@@ -29,7 +29,7 @@
 }
 
 
-h3, h2 {
+h3, h2, h6 {
 
 	text-align:center;
 	font-weight: bold;
@@ -163,3 +163,15 @@ svg {
     text-align: center;
     font-size: 55px;
 }
+
+
+/* Profile Page */
+
+#fav-title{
+    margin-top:5%;
+}
+
+#list-msg {
+    margin-top: 1%;
+}
+

@@ -32,6 +32,7 @@ userListing = () =>
     ListingAPI.getListingByUser(this.state.userId).then(res=>{
       console.log("all listings databack");
       console.log(res.data);
+      // console.log(data.data[0]);
       this.setState({ userList:res.data });
       var userlist= this.state.userList;
       console.log(userlist)
@@ -59,17 +60,24 @@ userBookmark = () =>
           console.log(bookmark.Listing.sellerName)
     })     
       })
-      console.log("before set state", "seller name", bookmarks[0].Listing.price);
+      // console.log(data.data[0]);
+      // console.log("before set state", "seller name", bookmarks[0].Listing.price);
       setTimeout(
        () =>
       {
         console.log("after set state", "bookmarks", bookmarks);
-        console.log("after set state", "bookmarks", bookmarks[0].Listing.sellerName);
+        // console.log("after set state", "bookmarks", bookmarks[0].Listing.sellerName);
         this.setState({ userBookmarkList:bookmarks });
-        console.log("after set state", "bookmarks", this.state.userBookmarkList);
-        console.log("after set state", "bookmarks", this.state.userBookmarkList[0].Listing.sellerName);
-      }, 50
+        // console.log("after set state", "bookmarks", this.state.userBookmarkList);
+        // console.log("after set state", "bookmarks", this.state.userBookmarkList[0].Listing.sellerName);
+      }
+, 100
       )
+      // console.log(bookmarked)
+      // console.log(bookmarked[0].Listing.sellerName)
+      // console.log(bookmarked.Listing.sellerName)
+      // console.log(bookmarked[0].Listing.email)
+      // console.log(bookmarked.Listing.email)
     });
 
 }
@@ -113,10 +121,10 @@ editChange = event => {
       <React.Fragment>
         <div className= "wrapper2">
           <UserProfile userid={this.state.userId} photo={this.state.photo}/>
-          <h2>My Listings</h2>
+          <h2 id="list-title">My Listings</h2>
           <span id="line"> </span>
           <div id="user-list">
-          {this.state.userList.map(list =>(
+          {this.state.userList[0] ? this.state.userList.map(list =>(
             <ListCardProfile key={list.id}
             id={list.id}
             user={list.UserId}
@@ -135,12 +143,12 @@ editChange = event => {
             handleEdit={this.handleEdit} 
             editchange={this.editChange}
             />
-          ))}
+          )) : <h6 id="list-msg">Oops... looks like you don't have any listings</h6>}
           </div>
-            <h2>My Favorites</h2>
+            <h2 id="fav-title">My Favorites</h2>
             <span id="line"> </span>
             <div id="bookmark-list">
-          {this.state.userBookmarkList ? this.state.userBookmarkList.map(bookmark =>(
+          {this.state.userBookmarkList[0] ? this.state.userBookmarkList.map(bookmark =>(
             <ListCardBookmark key={bookmark.id}
             id={bookmark.id}
             user={bookmark.UserId}
@@ -156,7 +164,7 @@ editChange = event => {
             location={bookmark.Listing.location}
             handleDeleteBookmark={this.handleDeleteBookmark}
             />
-          )): <h2> No Favorite Listings </h2>}
+          )) : <h6 id="fav-msg"> Have prospective cars in mind? <br/><br/>Add some of your favorites from Market page </h6>}
            </div>
           </div>
           <Footer />
