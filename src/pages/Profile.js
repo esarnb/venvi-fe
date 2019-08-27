@@ -32,7 +32,6 @@ userListing = () =>
     ListingAPI.getListingByUser(this.state.userId).then(res=>{
       console.log("all listings databack");
       console.log(res.data);
-      // console.log(data.data[0]);
       this.setState({ userList:res.data });
       var userlist= this.state.userList;
       console.log(userlist)
@@ -55,13 +54,24 @@ userBookmark = () =>
           bookmark.Listing.phone = res.data.phone;
           bookmark.Listing.location = res.data.location;
           bookmark.Listing.sellerName = res.data.name;
+          bookmark.Listing.email = res.data.email;
           console.log(bookmark);
+          console.log(bookmark.Listing.sellerName)
     })     
       })
-      // console.log(data.data[0]);
-      this.setState({ userBookmarkList:bookmarks });
-      console.log(this.state.userBookmarkList)
+      console.log("before set state", "seller name", bookmarks[0].Listing.price);
+      setTimeout(
+       () =>
+      {
+        console.log("after set state", "bookmarks", bookmarks);
+        console.log("after set state", "bookmarks", bookmarks[0].Listing.sellerName);
+        this.setState({ userBookmarkList:bookmarks });
+        console.log("after set state", "bookmarks", this.state.userBookmarkList);
+        console.log("after set state", "bookmarks", this.state.userBookmarkList[0].Listing.sellerName);
+      }, 50
+      )
     });
+
 }
 
 handleDelete = (id) => {
@@ -140,10 +150,10 @@ editChange = event => {
             price={bookmark.Listing.price}
             year={bookmark.Listing.year}
             vin={bookmark.Listing.vin}
-            // phone={bookmark.User.phone}
-            // email={bookmark.User.email}
-            // seller={bookmark.User.name}
-            // location={bookmark.User.location}
+            phone={bookmark.Listing.phone}
+            email={bookmark.Listing.email}
+            seller={bookmark.Listing.sellerName}
+            location={bookmark.Listing.location}
             handleDeleteBookmark={this.handleDeleteBookmark}
             />
           )): <h2> No Favorite Listings </h2>}
