@@ -112,7 +112,8 @@ editChange = event => {
       <React.Fragment>
         <div className= "wrapper2">
           <UserProfile userid={this.state.userId} photo={this.state.photo}/>
-          <h2 id="list-title">My Listings</h2>
+          <h2 id="list-title">My Listings </h2>
+          <UserSetting/>
           <span id="line"> </span>
           <div id="user-list">
           {this.state.userList[0] ? this.state.userList.map(list =>(
