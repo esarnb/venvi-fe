@@ -6,6 +6,7 @@ import { ListingAPI, BookmarkAPI, UserAPI } from '../utils/API';
 import UserSetting from '../components/UserSettings';
 
 
+
 //Component
 class Profile extends React.Component {
   constructor(props) {
@@ -130,7 +131,7 @@ editChange = event => {
             <h2>My Favorites</h2>
             <span id="line"> </span>
             <div id="bookmark-list">
-          {this.state.userBookmarkList ? this.state.userBookmarkList.map(bookmark =>(
+          {this.state.userBookmarkList[0] ? this.state.userBookmarkList.map(bookmark =>(
             <ListCardBookmark key={bookmark.id}
             id={bookmark.id}
             user={bookmark.UserId}
@@ -146,7 +147,7 @@ editChange = event => {
             // location={bookmark.User.location}
             handleDeleteBookmark={this.handleDeleteBookmark}
             />
-          )): <h2> No Favorite Listings </h2>}
+          )) : <h2> No Favorite Listings </h2>}
            </div>
           </div>
           <Footer />
