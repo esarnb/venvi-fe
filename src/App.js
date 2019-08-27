@@ -17,7 +17,7 @@ class App extends React.Component {
   state = {
     email: undefined,
     name: "Guest!",
-    profileID: 0,
+    profileID: "Steve",
     profilePhoto: "https://media1.giphy.com/media/H4uE6w9G1uK4M/source.gif",
     username: undefined
   }
