@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
   media: {
     width: 325,
     paddingTop: '47%', // 16:9
-    marginLeft: '5%',
+    marginLeft: '2%',
     marginTop: '7%',
   },
   expand: {
@@ -73,6 +73,7 @@ export default function ListCard(props) {
         title= {name}      
         />
       <CardMedia
+        id="card-pic"
         className={classes.media}
         image={image}
       />

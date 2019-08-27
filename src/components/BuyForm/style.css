@@ -1,8 +1,16 @@
 #search-param{
     width: 704px;
-    margin: 0 auto;
 }
 
 #search-button {
     text-align:center;
+}
+
+@media only screen and (max-width: 640px) {
+
+    #search-param{
+        width: 100%;
+        margin-left:80px;
+    }
+
 }

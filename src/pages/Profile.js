@@ -14,8 +14,8 @@ class Profile extends React.Component {
     
     this.state = {
       userList: [],
-      userId: props.name,
-      // userId: 1,
+      // userId: props.name,
+      userId: 1,
       photo: props.photo,
       userBookmarkList: [],
       values: ""
@@ -112,7 +112,8 @@ editChange = event => {
       <React.Fragment>
         <div className= "wrapper2">
           <UserProfile userid={this.state.userId} photo={this.state.photo}/>
-          <h2 id="list-title">My Listings</h2>
+          <h2 id="list-title">My Listings </h2>
+          <UserSetting/>
           <span id="line"> </span>
           <div id="user-list">
           {this.state.userList[0] ? this.state.userList.map(list =>(

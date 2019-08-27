@@ -3,6 +3,7 @@ import { Textarea, Modal, Button } from "react-materialize";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { UserAPI } from '../../utils/API';
 import "./style.css";
+import { Tooltip } from "antd";
 
 
 
@@ -32,8 +33,10 @@ class UserSetting extends Component {
 
 	render() {
 		return (			
-                <Modal header="User Setting" fixedFooter trigger={<AccountCircleIcon className="userSetting">
-                    </AccountCircleIcon>}
+                <Modal header="User Setting" className="modal-user" fixedFooter trigger={<Tooltip placement="bottomLeft" title="User Settings" arrowPointAtCenter>
+                <AccountCircleIcon className="userSetting">
+                    </AccountCircleIcon> 
+                    </Tooltip>}
                     actions={<Button modal="close" className="saveChanges" onClick={this.updateUser}>Save Changes</Button>}>
                         <Textarea placeholder="Location" value={this.state.location} name="location" onChange={this.handleChange}/>
                         <Textarea placeholder="Phone" value={this.state.phone} name="phone" onChange={this.handleChange}/>
