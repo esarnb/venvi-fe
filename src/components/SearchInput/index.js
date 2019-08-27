@@ -79,8 +79,8 @@ class SearchInput extends Component {
 								if (makeVeri && modelVeri) {
 									console.log("All input OK.")
 									
-									console.log(`https://www.googleapis.com/customsearch/v1?q=${year} ${queryMake}+${queryModel}&cx=014855097092208085078%3A6cwyf6e5-oc&searchType=image&fileType=png&key=AIzaSyBEg43tCIEFbmsUD3hVAMZtNOFGcj7M0Cs`)
-									axios.get(`https://www.googleapis.com/customsearch/v1?q=${year} ${queryMake}+${queryModel}&cx=014855097092208085078%3A6cwyf6e5-oc&searchType=image&fileType=png&key=AIzaSyBEg43tCIEFbmsUD3hVAMZtNOFGcj7M0Cs`)
+									console.log(`https://www.googleapis.com/customsearch/v1?q=${year} ${queryMake}+${queryModel}+transparent&cx=014855097092208085078%3A6cwyf6e5-oc&searchType=image&fileType=png&key=AIzaSyBEg43tCIEFbmsUD3hVAMZtNOFGcj7M0Cs`)
+									axios.get(`https://www.googleapis.com/customsearch/v1?q=${year} ${queryMake}+${queryModel}+transparent&cx=014855097092208085078%3A6cwyf6e5-oc&searchType=image&fileType=png&key=AIzaSyBEg43tCIEFbmsUD3hVAMZtNOFGcj7M0Cs`)
 										.then(response => {
 											var images = []
 
@@ -146,7 +146,7 @@ addVehicle = (year) =>
     let make = this.state.make.toLowerCase().trim();
     let model = this.state.model.toLowerCase().trim();
 
-    let image = this.state.imgURL;
+    let image = this.state.imgURL[0];
 
      var vehicle =
             {
@@ -222,12 +222,13 @@ addVehicle = (year) =>
 
     updateVehicleRating = (rating) =>
     {
+    	console.log("in rupdatevehiclerating");
     	var vehicleId = this.state.vehicleId;
     	 var vehicle =
             {
                rating: rating
             }
-    	console.log("vehicle id before update rating", vehicleId);
+    	console.log("vehicle id before update 230 rating", vehicleId);
 
 
     	VehicleAPI.updateVehicle(vehicleId, vehicle).then(res => {
