@@ -100,22 +100,6 @@ class Home extends React.Component {
         // this.setState({ vehicles: phillip});
         this.setState({vehicles: [ ...this.state.vehicles, phillip ]})
 
-        // res.data[0].width = "33%";
-        // res.data[1].width = "34%";
-        // res.data[2].width = "33%";
-        // res.data[3].width = "34%";
-        // res.data[4].width = "32%";
-        // res.data[5].width = "34%";
-        // res.data[6].width = "33%";
-        // res.data[7].width = "34%";
-        // res.data[8].width = "33%";
-
-        // this.setState({ vehicles1: [res.data[0], res.data[1], res.data[2]]});
-        // this.setState({ vehicles2: [res.data[3], res.data[4], res.data[5]]});
-        // this.setState({ vehicles3: [res.data[6], res.data[7], res.data[8]]});
-
-
-
         console.log(this.state.vehicles);
         console.log(this.state.vehicles[0]);
         // console.log("1", this.state.vehicles1);
