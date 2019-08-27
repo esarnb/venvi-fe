@@ -31,60 +31,59 @@ class App extends React.Component {
     Test.deleteQuery(id);
   }
 
-  // getUserByProfileId() {
+  getUserByProfileId() {
 
-  //   var profileID = this.state.profileID;
-  //   UserAPI.getUser(profileID).then(result => {
-  //       console.log("data", result);
-  //       console.log(result.data);
-  //       if (!result.data)
-  //       {
-  //         this.addUser();
-  //       }
-  //       else
-  //       {
-  //         this.setState({userId: result.data.id});
-  //         console.log("state", this.state);                
-  //       }
+    var profileID = this.state.profileID;
+    UserAPI.getUser(profileID).then(result => {
+        console.log("data", result);
+        console.log(result.data);
+        if (!result.data)
+        {
+          this.addUser();
+        }
+        else
+        {
+          this.setState({userId: result.data.id});
+          console.log("state", this.state);                
+        }
         
-  //   }); 
+    }); 
 
-  // }
-
-
-  // addUser()
-  // {
-  //   let email = this.state.email;
-  //   let name = this.state.name;
-  //   let profileID = this.state.profileID;
-  //   let profilePhoto = this.state.profilePhoto;
-  //   let username = this.state.username;
+  }
 
 
-  //    var newUser =
-  //           {
-  //               name: name,
-  //               username: username,
-  //               email: email,
-  //               profilePhoto: profilePhoto,
-  //               profileID: profileID
-  //           }
+  addUser()
+  {
+    let email = this.state.email;
+    let name = this.state.name;
+    let profileID = this.state.profileID;
+    let profilePhoto = this.state.profilePhoto;
+    let username = this.state.username;
 
-  //     UserAPI.addUser(newUser).then(result =>
-  //   {
-  //       console.log("saved User");
-  //       console.log(result);
 
-  //       //Get back user id
-  //       console.log("saved user id");
-  //       console.log(result.data.id);
-  //       var tempuserid = result.data.id;
-  //       this.setState({userId: tempuserid});
-  //       console.log("state", this.state);
-    
-  //   });
+     var newUser =
+            {
+                name: name,
+                username: username,
+                email: email,
+                profilePhoto: profilePhoto,
+                profileID: profileID
+            }
 
-  // }
+      UserAPI.addUser(newUser).then(result =>
+    {
+        console.log("saved User");
+        console.log(result);
+
+        //Get back user id
+        console.log("saved user id");
+        console.log(result.data.id);
+        var tempuserid = result.data.id;
+        this.setState({userId: tempuserid});
+        console.log("state", this.state);
+    });
+
+  }
 
   
 
