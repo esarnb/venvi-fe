@@ -9,13 +9,13 @@ import TestDrive from './pages/TestDrive';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBar from './components/NavBar';
 import AuthSuccess from './components/AuthSuccess';
-// import Footer from './components/Footer';
 // import { UserAPI } from './utils/API';
 
 class App extends React.Component {
 
   state = {
     email: undefined,
+    userId: "",
     name: "Guest!",
     profileID: 1,
     profilePhoto: "https://media1.giphy.com/media/H4uE6w9G1uK4M/source.gif",
@@ -43,7 +43,7 @@ class App extends React.Component {
   //       }
   //       else
   //       {
-  //         this.setState({userid: result.data.id});
+  //         this.setState({userId: result.data.id});
   //         console.log("state", this.state);                
   //       }
         
@@ -79,7 +79,7 @@ class App extends React.Component {
   //       console.log("saved user id");
   //       console.log(result.data.id);
   //       var tempuserid = result.data.id;
-  //       this.setState({userid: tempuserid});
+  //       this.setState({userId: tempuserid});
   //       console.log("state", this.state);
     
   //   });

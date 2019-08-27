@@ -13,8 +13,8 @@ class Profile extends React.Component {
     
     this.state = {
       userList: [],
-      // userId: props.name,
-      userId: 1,
+      userId: props.name,
+      // userId: 1,
       photo: props.photo,
       userBookmarkList: [],
       values: ""
@@ -60,24 +60,14 @@ userBookmark = () =>
           console.log(bookmark.Listing.sellerName)
     })     
       })
-      // console.log(data.data[0]);
-      // console.log("before set state", "seller name", bookmarks[0].Listing.price);
       setTimeout(
        () =>
       {
         console.log("after set state", "bookmarks", bookmarks);
-        // console.log("after set state", "bookmarks", bookmarks[0].Listing.sellerName);
         this.setState({ userBookmarkList:bookmarks });
-        // console.log("after set state", "bookmarks", this.state.userBookmarkList);
-        // console.log("after set state", "bookmarks", this.state.userBookmarkList[0].Listing.sellerName);
       }
 , 100
       )
-      // console.log(bookmarked)
-      // console.log(bookmarked[0].Listing.sellerName)
-      // console.log(bookmarked.Listing.sellerName)
-      // console.log(bookmarked[0].Listing.email)
-      // console.log(bookmarked.Listing.email)
     });
 
 }
