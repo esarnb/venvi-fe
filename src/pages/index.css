@@ -25,7 +25,11 @@
   margin: 0 auto; 
   text-align: center;
   animation: jump 1.5s infinite;
-  img:hover { color: #FFAAAA; }
+}
+
+img:hover
+{ 
+  color: #FFAAAA; 
 }
 
 
@@ -80,7 +84,7 @@ h3, h2, h6 {
       padding-bottom: 15%;
 }
 
-
+/* Market Page*/
 #market-btn{
     display:flex;
     flex:row;
@@ -117,6 +121,27 @@ h3, h2, h6 {
     padding-left:15%;
     padding-right:18%;
 }
+
+@media only screen and (max-width: 640px) {
+    
+    
+    #market-list {
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:space-between;
+        padding-top:7%;
+        padding-left:15%;
+        padding-right:18%;
+    }
+
+    #market-btn{
+       all:unset !important;
+    }
+}
+
+
+/* Search Page */
 #searchInput{
     margin-left:11%;
 }
@@ -174,4 +199,8 @@ svg {
 #list-msg {
     margin-top: 1%;
 }
+
+
+
+
 

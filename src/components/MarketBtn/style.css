@@ -5,3 +5,22 @@
 #popularSectionSell {
     width:49%;
 }
+
+@media only screen and (max-width: 640px) {
+#popularSectionBuy {
+    width:18%;
+    margin:auto;
+}
+#popularSectionSell {
+    width:49%;
+    margin:auto;
+    margin-top:4%;
+}
+
+.makeStyles-root-83 {
+min-width:200px;
+display:flex;
+flex-wrap: wrap;
+}
+
+}
