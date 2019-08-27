@@ -6,6 +6,7 @@ import { ListingAPI, BookmarkAPI, UserAPI } from '../utils/API';
 import UserSetting from '../components/UserSettings';
 
 
+
 //Component
 class Profile extends React.Component {
   constructor(props) {
@@ -155,6 +156,7 @@ editChange = event => {
             handleDeleteBookmark={this.handleDeleteBookmark}
             />
           )) : <h6 id="fav-msg"> Have prospective cars in mind? <br/><br/>Add some of your favorites from Market page </h6>}
+
            </div>
           </div>
           <Footer />

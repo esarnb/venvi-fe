@@ -1,11 +1,9 @@
 import React from 'react';
-// import Banner from '../components/Banner';
-// import ButtonBases from '../components/ButtonBases';
 import SearchInput from '../components/SearchInput';
 import ReviewCard from '../components/ReviewCard/index';
 import Footer from '../components/Footer';
 import Loader from 'react-loader-spinner';
-import Demo from '../components/Carousel';
+import Error from '../components/Error';
 import './index.css'
 
 //Component
@@ -45,7 +43,8 @@ class Search extends React.Component {
   startSearch = () => {
     this.setState({
       searching: true,
-      showReviewCard: false
+      showReviewCard: false,
+      failure: false
     })
     console.log(this.state.start)
   }
@@ -70,7 +69,6 @@ class Search extends React.Component {
         <div className = "wrapper2">
           <h2> Search Reviews </h2>
           <span id="line"> </span>
-          <Demo/>
           <SearchInput infoGet={this.infoCallback}
             searchStart={this.startSearch}
             searchEnd={this.finishSearch}
@@ -85,7 +83,7 @@ class Search extends React.Component {
             year={this.state.year}
             id={this.state.vehicleId}
           /> : null}
-          {this.state.failure ? <div id="failmsg">Invalid Search!</div> : null}
+          {this.state.failure ? <Error /> : null}
       </div>
         <Footer />
         </div>
