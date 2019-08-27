@@ -9,7 +9,7 @@ import TestDrive from './pages/TestDrive';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBar from './components/NavBar';
 import AuthSuccess from './components/AuthSuccess';
-// import { UserAPI } from './utils/API';
+import { UserAPI } from './utils/API';
 
 class App extends React.Component {
 
