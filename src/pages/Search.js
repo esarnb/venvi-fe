@@ -5,7 +5,6 @@ import SearchInput from '../components/SearchInput';
 import ReviewCard from '../components/ReviewCard/index';
 import Footer from '../components/Footer';
 import Loader from 'react-loader-spinner';
-import Demo from '../components/Carousel';
 import './index.css'
 
 //Component
@@ -70,7 +69,6 @@ class Search extends React.Component {
         <div className = "wrapper2">
           <h2> Search Reviews </h2>
           <span id="line"> </span>
-          <Demo/>
           <SearchInput infoGet={this.infoCallback}
             searchStart={this.startSearch}
             searchEnd={this.finishSearch}
