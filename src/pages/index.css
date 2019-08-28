@@ -11,7 +11,7 @@
 {  
       width: 6% !important;
       height: 0.05% !important;
-      margin-top: -7.5%;
+      margin-top: -7.5% !important;
       z-index: 90;
 }
 
