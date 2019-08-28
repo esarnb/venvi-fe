@@ -123,7 +123,7 @@ editChange = event => {
           <UserSetting/>
           <span id="line"> </span>
           <div id="user-list">
-          {this.state.userList[0] ? this.state.userList.map(list =>(
+          {this.state.userList ? this.state.userList.map(list =>(
             <ListCardProfile key={list.id}
             id={list.id}
             user={list.UserId}
@@ -147,7 +147,7 @@ editChange = event => {
             <h2 id="fav-title">My Favorites</h2>
             <span id="line"> </span>
             <div id="bookmark-list">
-          {this.state.userBookmarkList[0] ? this.state.userBookmarkList.map(bookmark =>(
+          {this.state.userBookmarkList ? this.state.userBookmarkList.map(bookmark =>(
             <ListCardBookmark key={bookmark.id}
             id={bookmark.id}
             user={bookmark.UserId}
