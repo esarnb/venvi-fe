@@ -98,7 +98,7 @@ button:focus {
 	min-width: 55px !important;
 	font-size: 0.40rem !important;
 	}
-	.MuiButton-root {
+	#signOut, #signIn {
 		min-width: 55px !important;
 		font-size:0.40rem !important;
 		position:absolute !important;
@@ -131,7 +131,7 @@ button:focus {
 	min-width: 64px !important;
 	font-size: 0.55rem !important;
 	}
-	.MuiButton-root {
+	#signOut, #signIn {
 		min-width: 64px !important;
 		font-size:0.55rem !important;
 		position:absolute !important;
@@ -163,7 +163,7 @@ button:focus {
 	min-width: 70px !important;
 	font-size: 0.80rem !important;
 	}
-	.MuiButton-root {
+	#signOut, #signIn {
 		min-width: 55px !important;
 		font-size: 0.80rem !important;
 		margin-left: 25% !important;
@@ -227,7 +227,7 @@ button:focus {
 		z-index: 97;
 		font-size:1vw;
 	}
-	.MuiButton-root {
+	#signOut, #signIn {
 		min-width: 55px !important;
 		font-size:0.97rem !important;
 		/* right:0 !important;		 */
@@ -290,7 +290,7 @@ button:focus {
 		z-index: 97;
 		font-size:1vw;
 	}
-	.MuiButton-root {
+	#signOut, #signIn {
 		min-width: 57% !important;
 		font-size:0.97rem !important;
 		position:absolute !important;
