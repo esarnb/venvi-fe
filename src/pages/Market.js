@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import { ListingAPI, BookmarkAPI } from '../utils/API';
 import ListCard from '../components/ListCard';
 import Loader from 'react-loader-spinner';
+import Error from '../components/Error';
 import './index.css'
 
 
@@ -108,7 +109,8 @@ showForm = () => {
 startSearch = () => {
   this.setState({
     searching: true,
-    showResult: false
+    showResult: false,
+    failure: false
   })
   console.log(this.state.start)
 }
@@ -155,6 +157,7 @@ render () {
     <div className = "loader">
       {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
     </div>
+    {this.state.failure ? <Error /> : null}
     <div id="market-list">
     {this.state.showResult ? this.state.listings.map(item =>(
     <ListCard key={item.id}
@@ -177,7 +180,7 @@ render () {
       handleFavorite={this.handleFavorite}
        /> 
   )):null}
-  {this.state.failure ? <div id="failmsg">Invalid Search!</div> : null}
+
   </div>
   </div>
     }
