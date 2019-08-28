@@ -104,18 +104,18 @@
       top: 60,
       left: '0%',
       height: '52%',
-      fontSize: 56,
+      fontSize: 25,
       zIndex: 2,
       color: 'white',
       background: 'linear-gradient(0deg, rgba(255,255,255,0) 0%, #888888 100%)',
       [breakpoints.up('sm')]: {
-        top: 112,
+        top: 75,
         left: '6%',
-        fontSize: 66,
+        fontSize: 20,
       },
       [breakpoints.up('md')]: {
-        top: 150,
-        fontSize: 74
+        top: 167,
+        fontSize: 72
       },
     },
     indicatorContainer: {
