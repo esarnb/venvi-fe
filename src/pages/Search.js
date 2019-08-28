@@ -85,7 +85,7 @@ class Search extends React.Component {
           /> : null}
           {this.state.failure ? <Error /> : null}
       </div>
-        <Footer />
+      <Footer />
         </div>
     );
   }
