@@ -87,22 +87,50 @@ function Popcard(props){
 
   </Card>
 
-   <Card className = "cardSectionleft" style={{ width: 1500 }}>
-    <p className="title">{second.make} {second.model}</p>
-    <p className="ratingleft">{second.rating}</p>
-    <p className="outleft">out of</p>
-    <p className="fiveleft">5 stars</p>
-     <div id="front2"></div>
-    <div id="leftContainer" style={{ backgroundImage: props.number === "2" || props.number === "4" ? 
-    `url(${left1})` :
-    `url(${left2})`
-    }}>
-    <img id="left" alt="car" src={second.image}/>
-     <div id="back2"></div>
-
+  <Card className = "cardSectionleft">
+    <div className="titleSection" >
+      <Row>
+        <Col span={12}>
+          <p className="title">{second.make} {second.model}</p>
+        </Col>
+      </Row>
+      <Row  gutter={16} align="center">
+        <Col span={1} offset={2} className="gutter-row">
+          <p className="ratingleft">{second.rating}</p>
+        </Col>
+        <Col span={4} className="gutter-row">
+          <Row>
+            <Col span={12} align="center">
+              <p className="outleft">out of</p> 
+            </Col>
+          </Row>
+          <Row>
+             <Col span={12} align="center">
+               <p className="fiveleft">5 stars</p>
+             </Col>
+          </Row>
+        </Col>
+      </Row>
     </div>
 
+      <Row id="leftDemo">
+
+        <Col span={24} id="leftbg">       
+          <div id="leftContainer" style={{ backgroundImage: props.number === "2" || props.number === "4" ? 
+          `url(${left1})`
+          : `url(${left2})`}}>
+            <div id="front2"></div>
+           <img id="left" alt="car" src={second.image}/>
+             <div id="back2wrap">
+             <div id="back2"></div>
+             </div>
+          </div>
+        </Col>
+      </Row>
+
   </Card>
+
+   
   </div>
   );
 }

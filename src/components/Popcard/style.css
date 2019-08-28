@@ -11,6 +11,28 @@
 	margin-bottom: 15%;
 }
 
+
+
+@media only screen and (max-width: 600px) {
+  	.cardSection
+{
+	margin-top: 4%;
+	margin-bottom: -20%;
+
+}
+
+.cardSectionleft
+{
+	margin-top: -30%;
+	margin-bottom: -30%;
+}
+
+}
+
+
+
+
+
 .ant-card-bordered
 {
 	border: none !important;
@@ -32,6 +54,9 @@
 	width: 100%;
 }
 
+
+
+
 .title
 {
 	font-size: 4vw;
@@ -39,12 +64,15 @@
 	margin: 0;
 	color: black;
 	font-family: 'Saira Stencil One', cursive;
+	text-align: left !important;
+	padding-left: 18%;
 
 }
 
 .titleSection
 {
 	width: 100%;
+	text-align: left;
 }
 
 .ratingright
@@ -71,32 +99,29 @@
 }
 
 
-
 .ratingleft
 {
 	font-size: 3vw;
-	margin-left: 10%;
-	margin-top: 5.5%;
 	margin-bottom: 0;
 	z-index: 100;
 }
 
 .outleft
 {
-	margin-left: 15%;
-	margin-top: 6%;
+
 	z-index: 100;
 	font-weight: 2vw !important;
+	font-size: 1vw;
+	text-align: center;
 
 }
 
 .fiveleft
 {
-	margin-left: 15%;
-	margin-top: 7%;
 	z-index: 100;
 	font-weight: 2vw !important;
-
+	font-size: 1vw;
+	text-align: center;
 }
 
 #rightDemo
@@ -111,16 +136,7 @@
 	justify-content: flex-end;
 }
 
-/*#right
-{
-	clear: both;
-	width: 50%;
-	position: relative;
-	top: -74%;
-	left: 40%;
-	float: left;
-}
-*/
+
 @media only screen and (max-width: 600px) {
   	#right
 	{
@@ -197,12 +213,6 @@
 
 }*/
 
-#frontwrap
-{
-	position: relative;
-	width: 20% !important
-
-}
 
 #front {
     width: 0;
@@ -275,35 +285,136 @@
 
 
 
-#left
-{
-	width: 600px;
-	margin-top: 15%;
-	margin-left: 5%;
 
+#leftDemo
+{
+	margin-top: 2%;
 
 }
+
+#leftbg
+{
+	display: flex;
+	justify-content: flex-start;
+}
+
+
+#left
+{
+	margin-top: 33%;
+	margin-left: 5%;
+}
+
+@media only screen and (max-width: 600px) {
+  	#left
+	{
+		clear: both;
+		width: 50%;
+		position: relative;
+		top: -12%;
+		left: 10%;
+		float: left;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+  	#left
+	{
+		clear: both;
+		width: 50%;
+		position: relative;
+		top: -12%;
+		left: 10%;
+		float: left;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+  	#left
+	{
+		clear: both;
+		width: 50%;
+		position: relative;
+		top: -25%;
+		left: 10%;
+		float: left;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+  	#left
+	{
+		clear: both;
+		width: 50%;
+		position: relative;
+		top: -50%;
+		left: 10%;
+		float: left;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+  	#left
+	{
+		clear: both;
+		width: 50%;
+		position: relative;
+		left: 10%;
+		float: left;
+		bottom: -5%;
+	}
+}
+
+
+
+
+
 
 #leftContainer
 {
 
+	position: relative;;
 	height: 400px;
-	width: 1200px;
-	margin-top: 13%;
+	width: 86.66%;
 	background-image: url("https://images.unsplash.com/photo-1466803000100-40016de08ade?ixlib=rb-1.2.1&auto=format&fit=crop&w=2019&q=80");
 	background-size: 100%;
-	background-position: 70% 0%;
+	background-position: top right;
 	background-repeat: repeat-x;
-	background-position: bottom;
+
+	/*position: relative;
+	height: 400px;
+	width: 86.66%;
+	background-image: url("https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80");
+	background-size: 90%;
+	background-position: top right;
+	background-repeat: repeat-x;*/
 
 }	
+
+/*#front {
+    width: 0;
+    height: 0;
+    padding-bottom: 40%;
+    padding-left: 40%;
+    overflow: hidden;
+}
+
+
+#front:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: -500px;
+    border-bottom: 500px solid transparent;
+    border-left: 500px solid white;
+}*/
 
 
 #front2
 {
 	width: 0;
 	height: 0;
-	margin-top: 13%;
 	border-right: 135px solid transparent;
 	border-left: 0px solid transparent;
 	border-top: 155px solid white;
@@ -320,7 +431,7 @@
 	border-bottom: 450px solid white;
 	position: absolute;
 	bottom: 0%;
-	margin-left: 55%;
+	margin-left: 68%;
 }
 
 
