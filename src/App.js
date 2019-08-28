@@ -29,6 +29,7 @@ class App extends React.Component {
     Test.getResponse();
     Test.putQuery(id);
     Test.deleteQuery(id);
+    getUserByProfileId();
   }
 
   getUserByProfileId() {
