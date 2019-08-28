@@ -25,7 +25,6 @@ class Profile extends React.Component {
 
   componentDidMount(){
     // this.setState({userId: this.props.state.userid.profileID})
-    console.log(props);
     this.userListing();
     this.userBookmark();
   }
