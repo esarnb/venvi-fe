@@ -137,9 +137,9 @@ class Home extends React.Component {
             {(this.state.vehicles[0]) ? <Popcard number="4" pop={this.state.vehicles}/> : null}
 
 
-            <Footer />
           </React.Fragment>
         )}
+        <Footer />
       </React.Fragment>
     );
   }
