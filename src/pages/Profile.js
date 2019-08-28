@@ -48,6 +48,11 @@ userBookmark = () =>
       console.log("all bookmarks databack");
       console.log(res.data);
        var bookmarks = res.data;
+
+      if (!bookmarks){
+        console.log("no bookmark data")
+      }
+      else {
       bookmarks.map(bookmark =>
       {
         var UserId = bookmark.Listing.UserId;
@@ -70,6 +75,7 @@ userBookmark = () =>
       }
 , 100
       )
+    }
     });
 
 }
