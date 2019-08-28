@@ -8,7 +8,9 @@ import logo from './venvi.png';
 import './style.css';
 import * as API from "../../utils/API";
 import { Link } from "react-router-dom";
-import UserSetting from '../UserSettings';
+import { Row, Col } from 'antd';
+
+
 
 const StyledTabs = withStyles({
   indicator: {
@@ -55,23 +57,31 @@ const useStyles = makeStyles(theme => ({
   },
   input: {
     display: 'none',
-  }
+  },
 }));
+
 
 function NavBar(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
+
   function handleChange(event, newValue) {
     setValue(newValue);
   }
 
+
+
   return (
+
+    
     <div className={classes.root} id="navbarSection">
       <div id="logo">
         <Typography className={classes.padding} />
          <img src={logo} alt="logo" />
       </div>
+      {/* <Row>
+      <Col lg = {{span:12}} xs = {{span:12}} sm = {{span:12}}> */}
       <div className={classes.bgcolor} id="NavBar">
         <StyledTabs
           value={value}
@@ -96,8 +106,10 @@ function NavBar(props) {
           </StyledTabs>
 
         <Typography className={classes.padding} />
-      </div>
 
+      </div>
+      {/* </Col> */}
+      {/* </Row> */}
     </div>
   );
 }
