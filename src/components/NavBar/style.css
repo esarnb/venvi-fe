@@ -53,6 +53,7 @@
 	top: 0;
 	width: 100%;
 	z-index: 97;
+	font-size:1vw;
 }
 
 button:focus {
@@ -74,4 +75,227 @@ button:focus {
 	text-decoration: none;
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	#navbarSection, #NavBar
+	{
+		position: fixed;
+		top: 0;
+		width: 100% !important;
+		z-index: 97;
+		font-size:1px !important;
+	}
+	#logo {
+		width: 15% !important;
+	}
+	img {
+		margin-top: 18px !important;
+		max-width:45% !important;
+	}
+	.MuiTab-root
+	{
+	letter-spacing: 0 !important;
+	min-width: 55px !important;
+	font-size: 0.40rem !important;
+	}
+	.MuiButton-root {
+		min-width: 55px !important;
+		font-size:0.40rem !important;
+		position:absolute !important;
+		right:0 !important;
+		top:30% !important;
+	}
+
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	#navbarSection, #NavBar
+	{
+		position: fixed;
+		top: 0;
+		width: 100% !important;
+		z-index: 97;
+		font-size:1px !important;
+	}
+	#logo {
+		width: 20% !important;
+	}
+	img {
+		margin-top: 10% !important;
+		max-width:45% !important;
+	}
+	.MuiTab-root
+	{
+	letter-spacing: 0 !important;
+	min-width: 64px !important;
+	font-size: 0.55rem !important;
+	}
+	.MuiButton-root {
+		min-width: 64px !important;
+		font-size:0.55rem !important;
+		position:absolute !important;
+		right:0 !important;
+		top:20% !important;
+	}
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	#navbarSection, #NavBar
+	{
+		position: fixed;
+		top: 0;
+		width: 100% !important;
+		z-index: 97;
+		font-size:1px !important;
+	}
+	#logo {
+		width: 13% !important;
+	}
+	img {
+		margin-top: 9% !important;
+		max-width:70% !important;
+	}
+	.MuiTab-root
+	{
+	letter-spacing: 0 !important;
+	min-width: 70px !important;
+	font-size: 0.80rem !important;
+	}
+	.MuiButton-root {
+		min-width: 55px !important;
+		font-size: 0.80rem !important;
+		margin-left: 25% !important;
+	}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	#signIn
+	{
+		position: absolute;
+		right: 12%;
+		top: 10%;
+	}
+	
+	#NavBar
+	{
+		padding: 2%;
+		opacity: 0.8;
+		padding-left: 11%;
+	}
+	
+	.navTab
+	{
+	   letter-spacing: 0;
+	   padding-bottom: 0px;
+	}	
+	
+	#logo
+	{
+		width: 125px !important;
+		z-index: 100 !important;
+		margin-top: 2.5% !important;
+		margin-left: 3.5%;
+	}
+	
+	#links
+	{
+		margin-left: 5%;
+	}
+	
+	.MuiTab-root
+	{
+		letter-spacing: 0 !important;
+		min-width: 100px !important;
+		font-size: 0.97rem !important;
+	}
+	
+	
+	.PrivateTabIndicator-root-69
+	{
+		height: 1px !important;
+		bottom: 1 !important;
+	}
+	
+	#navbarSection, #NavBar,#logo
+	{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 97;
+		font-size:1vw;
+	}
+	.MuiButton-root {
+		min-width: 55px !important;
+		font-size:0.97rem !important;
+		/* right:0 !important;		 */
+	}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	#signIn
+	{
+		position: absolute;
+		right: 12%;
+		top: 10%;
+	}
+	
+	#NavBar
+	{
+		padding: 2%;
+		opacity: 0.8;
+		padding-left: 11%;
+	}
+	
+	.navTab
+	{
+	   letter-spacing: 0;
+	   padding-bottom: 0px;
+	}	
+	
+	#logo
+	{
+		width: 10% !important;
+		z-index: 100 !important;
+		margin-top: 1.7% !important;
+		margin-left: 3.5%;
+	}
+	
+	#links
+	{
+		margin-left: 5%;
+	}
+	
+	.MuiTab-root
+	{
+		letter-spacing: 0 !important;
+		min-width: 100px !important;
+	}
+	
+	
+	.PrivateTabIndicator-root-69
+	{
+		height: 1px !important;
+		bottom: 1 !important;
+	}
+	
+	#navbarSection, #NavBar,#logo
+	{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 97;
+		font-size:1vw;
+	}
+	.MuiButton-root {
+		min-width: 57% !important;
+		font-size:0.97rem !important;
+		position:absolute !important;
+		right:-25% !important;
+		top:13% !important;
+	}
+}
 
