@@ -157,6 +157,7 @@ render () {
     <div className = "loader">
       {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
     </div>
+    {this.state.failure ? <Error /> : null}
     <div id="market-list">
     {this.state.showResult ? this.state.listings.map(item =>(
     <ListCard key={item.id}
@@ -179,7 +180,7 @@ render () {
       handleFavorite={this.handleFavorite}
        /> 
   )):null}
-  {this.state.failure ? <Error /> : null}
+
   </div>
   </div>
     }
