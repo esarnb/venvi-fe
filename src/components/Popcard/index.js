@@ -6,6 +6,7 @@ import left1 from './left1.jpg';
 import left2 from './left2.jpg';
 import right1 from './right1.jpg';
 import right2 from './right2.jpg';
+import { Row, Col } from 'antd';
 import { Card } from 'antd';
 
 
@@ -43,18 +44,47 @@ function Popcard(props){
 
   return (
   <div>
-  <Card className = "cardSection" style={{ width: 1500}}>
-    <p className="title">{first.make} {first.model}</p>
-    <p className="ratingright">{first.rating}</p>
-    <p className="out">out of</p> 
-    <p className="five">5 stars</p>
-    <div id="front"></div>
-    <div id="rightContainer" style={{ backgroundImage: props.number === "1" || props.number === "3" ? 
-    `url(${right1})`
-    : `url(${right2})`}}>
-     <img id="right" alt="car" src={first.image}/>
+  <Card className = "cardSection">
+    <div className="titleSection" >
+      <Row>
+        <Col span={12}>
+          <p className="title">{first.make} {first.model}</p>
+        </Col>
+      </Row>
+      <Row  gutter={16} align="center">
+        <Col span={1} offset={2} className="gutter-row">
+          <p className="ratingright">{first.rating}</p>
+        </Col>
+        <Col span={4} className="gutter-row">
+          <Row>
+            <Col span={12} align="center">
+              <p className="out">out of</p> 
+            </Col>
+          </Row>
+          <Row>
+             <Col span={12} align="center">
+               <p className="five">5 stars</p>
+             </Col>
+          </Row>
+        </Col>
+      </Row>
     </div>
-    <div id="back"></div>
+
+      <Row id="rightDemo">
+
+        <Col span={24} id="rightbg">       
+          <div id="rightContainer" style={{ backgroundImage: props.number === "1" || props.number === "3" ? 
+          `url(${right1})`
+          : `url(${right2})`}}>
+            <div id="front"></div>
+           <img id="right" alt="car" src={first.image}/>
+             <div id="backwrap">
+             <div id="back"></div>
+             </div>
+          </div>
+        </Col>
+      </Row>
+
   </Card>
 
    <Card className = "cardSectionleft" style={{ width: 1500 }}>
