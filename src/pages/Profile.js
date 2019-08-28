@@ -43,6 +43,7 @@ userListing = () =>
 
 userBookmark = () =>
 {
+  console.log(this.state.userId)
     BookmarkAPI.getBookmarkByUser(this.state.userId).then(res=>{
       console.log(this.state.userId);
       console.log("all bookmarks databack");
