@@ -114,8 +114,8 @@ class App extends React.Component {
                          
              {this.state.profileID ? (
                <React.Fragment>
-                 <Route exact path='/profile' render={(props) => <Profile {...props} name={this.state.name} photo={this.state.profilePhoto}/> } />
-                 <Route exact path='/market' component={Market} /> 
+                 <Route exact path='/profile' render={(props) => <Profile {...props} name={this.state.name} id={this.state.userId} photo={this.state.profilePhoto}/> } />
+                 <Route exact path='/market' id={this.state.userId} component={Market} /> 
                </React.Fragment>
              ) : <React.Fragment />} 
              

@@ -14,8 +14,9 @@ class Profile extends React.Component {
     
     this.state = {
       userList: [],
-      // userId: props.name,
-      userId: 1,
+      userId: props.id,
+      userName: props.name,
+      // userId: 1,
       photo: props.photo,
       userBookmarkList: [],
       values: ""
@@ -111,7 +112,7 @@ editChange = event => {
     return (
       <React.Fragment>
         <div className= "wrapper2">
-          <UserProfile userid={this.state.userId} photo={this.state.photo}/>
+          <UserProfile userid={this.state.userName} photo={this.state.photo}/>
           <h2 id="list-title">My Listings </h2>
           <UserSetting/>
           <span id="line"> </span>
