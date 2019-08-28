@@ -1,11 +1,9 @@
-.makeStyles-image-88 {
-    height:54% !important;
-    width:70% !important;
-    margin-left:32% !important;
-    margin-top:12% !important;
+#slide-pic {
+    margin-left:42% !important;
+    object-fit:contain !important;
 }
 
-.makeStyles-text-92 {
+#title-text, #sub-text {
     color: white !important;
     font-family: 'Saira Stencil One', cursive !important;
 }

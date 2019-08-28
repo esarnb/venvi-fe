@@ -36,10 +36,12 @@
       display: 'block',
       position: 'absolute',
       zIndex: 10,
-      width: '100%',
-      height: '100%',
+      width: '57%',
+      height: '64%',
       objectFit: 'cover',
-      marginLeft: '12%',
+      marginLeft: '45%',
+      marginTop:'12%',
+      borderRadius:'30%',
       [breakpoints.up('sm')]: {
         marginLeft: '4%',
       },
@@ -67,10 +69,10 @@
     },
     text: {
       // shared style for text-top and text-bottom
-      fontFamily: 'Poppins, san-serif',
+      fontFamily: 'Saira Stencil One, cursive',
       fontWeight: 900,
       position: 'absolute',
-      color: palette.common.white,
+      color: 'white',
       padding: '0 8px',
       transform: 'rotateY(45deg)',
       lineHeight: 1.2,
@@ -87,6 +89,7 @@
       height: '60%',
       fontSize: 25,
       zIndex: 1,
+      color: 'white',
       background: 'linear-gradient(0deg, rgba(255,255,255,0) 0%, #9c9c9c 100%)',
       [breakpoints.up('sm')]: {
         top: 40,
@@ -103,6 +106,7 @@
       height: '52%',
       fontSize: 56,
       zIndex: 2,
+      color: 'white',
       background: 'linear-gradient(0deg, rgba(255,255,255,0) 0%, #888888 100%)',
       [breakpoints.up('sm')]: {
         top: 112,
@@ -157,14 +161,14 @@
     const renderChildren = ({ injectStyle, fineIndex }) =>
       data.map(({ id, title, subtitle, image }, i) => (
         <div key={id} className={classes.slide}>
-          <Typography
+          <Typography id="title-text"
             noWrap
             className={cx(classes.text, classes.title)}
             style={{ ...injectStyle(i, 60), ...createStyle(i, fineIndex) }}
           >
             {title}
           </Typography>
-          <Typography
+          <Typography id="sub-text"
             noWrap
             className={cx(classes.text, classes.subtitle)}
             style={{ ...injectStyle(i, 40), ...createStyle(i, fineIndex) }}
@@ -172,7 +176,7 @@
             {subtitle}
           </Typography>
           <div className={classes.imageContainer}>
-            <img className={classes.image} src={image} alt={'slide'} />
+            <img id="slide-pic" className={classes.image} src={image} alt={'slide'} />
           </div>
         </div>
       ));
