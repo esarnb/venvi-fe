@@ -2,15 +2,82 @@
 
 .banner-user{
   height: 800px;
+  width: 100vw !important;
+  max-width: 100% !important;
 }
 .banner-user-elem{
   text-align: center;
   color: #fff;
   position: relative;
-  overflow: hidden;
+  width: 100vw !important;
+  max-width: 100% !important;
+
 }
+
+
+@media only screen and (max-width: 600px) {
+  .banner-user{
+  width: 600px;
+  height: 300px;
+  }
+
+  .banner-user-elem{
+  width: 600px;
+  height: 300px;
+
+}
+}
+
+@media only screen and (min-width: 600px) {
+
+.banner-user{
+  min-width: 600px;
+  height: 300px;
+}
+ .banner-user-elem{
+  min-width: 600px;
+  height: 300px;
+}
+
+}
+
+@media only screen and (min-width: 768px) {
+.banner-user{
+  min-width: 768px;
+  height: 350px;
+}
+ .banner-user-elem{
+  min-width: 768px;
+  height: 350px;
+}
+}
+
+@media only screen and (min-width: 992px) {
+.banner-user{
+  min-width: 992px;
+  height: 700px;
+}
+ .banner-user-elem{
+  width: 992px;
+  height: 700px;
+}
+}
+
+@media only screen and (min-width: 1200px) {
+ .banner-user{
+  min-width: 1200px;
+  height: 800px;
+}
+ .banner-user-elem{
+  min-width: 1200px;
+  height: 800px;
+}
+}
+
+
+
 .banner-user-elem .banner-user-title{
-  font-size: 45px;
+  font-size: 3vw;
   right: 34.5%;
   top: 25%;
   font-weight: bold;
@@ -18,7 +85,7 @@
 }
 .banner-user-elem .banner-user-text{
   right: 26%;
-  font-size: 20px;
+  font-size: 1.5vw;
   top: 55%;
   font-family: 'Open Sans', sans-serif;
 }
