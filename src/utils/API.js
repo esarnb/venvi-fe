@@ -206,7 +206,7 @@ export const Auth = {
   
   login() {
     console.log("LOGIN ONCLICK");
-    const baseurl = "https://venvi-passport2.herokuapp.com";
+    const baseurl = "https://venvi-be.herokuapp.com";
     const url = baseurl+"/auth/google";
     const name = 'google';
     const specs = 'width=500,height=500';
@@ -215,7 +215,7 @@ export const Auth = {
   
   logout() {
     Cookies.remove("venvi")
-    return Cookies.get("venvi")
+    // return Cookies.get("venvi")
   },
 }
 

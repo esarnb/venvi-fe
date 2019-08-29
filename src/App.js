@@ -15,7 +15,7 @@ class App extends React.Component {
 
   state = {
     email: undefined,
-    userId: "",
+    userId: 1,
     name: "Guest!",
     profileID: 0,
     profilePhoto: "https://media1.giphy.com/media/H4uE6w9G1uK4M/source.gif",
@@ -29,24 +29,18 @@ class App extends React.Component {
     Test.getResponse();
     Test.putQuery(id);
     Test.deleteQuery(id);
-    this.getUserByProfileId();
+    // this.getUserByProfileId();
   }
 
   getUserByProfileId() {
-
+    console.log("in get user by profileid");
     var profileID = this.state.profileID;
+
     UserAPI.getUser(profileID).then(result => {
         console.log("data", result);
         console.log(result.data);
-        if (!result.data)
-        {
-          this.addUser();
-        }
-        else
-        {
-          this.setState({userId: result.data.id});
-          console.log("state", this.state);                
-        }
+      this.setState({userId: result.data.id});
+      console.log("state", this.state);                
         
     }); 
 
@@ -96,7 +90,8 @@ class App extends React.Component {
         name: newStateValue.name,
         profileID: newStateValue.profileID,
         profilePhoto: newStateValue.profilePhoto,
-        username: newStateValue.username
+        username: newStateValue.username,
+        userId: newStateValue.id
       });
     }
   }
@@ -115,7 +110,7 @@ class App extends React.Component {
                          
              {this.state.profileID ? (
                <React.Fragment>
-                 <Route exact path='/profile' render={(props) => <Profile {...props} name={this.state.name} id={this.state.userId} photo={this.state.profilePhoto}/> } />
+                 <Route exact path='/profile' render={(props) => <Profile {...props} name={this.state.name} profileID = {this.state.profileID} photo={this.state.profilePhoto}/> } />
                  <Route exact path='/market' id={this.state.userId} component={Market} /> 
                </React.Fragment>
              ) : <React.Fragment />} 
