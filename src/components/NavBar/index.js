@@ -8,7 +8,6 @@ import logo from './venvi.png';
 import './style.css';
 import * as API from "../../utils/API";
 import { Link } from "react-router-dom";
-import { Row, Col } from 'antd';
 
 
 
