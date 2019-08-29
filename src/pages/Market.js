@@ -30,8 +30,7 @@ class Market extends React.Component {
 
 componentDidMount(){
   this.allListing();
- 
-}
+ }
 
 //get all listing
 allListing = () =>

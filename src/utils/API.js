@@ -123,6 +123,13 @@ export const BookmarkAPI = {
     })
   },
 
+  deleteBookmarkByListing(id) {
+    return app.delete(`/api/bookmarks/listing/${id}`, { msg: "delete this listing" }).then(res => {
+      console.log(res.data);
+    })
+  },
+
+
   getBookmarkByUser(id) {
     console.log("In bookmark api");
     console.log(id);
