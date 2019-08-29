@@ -17,7 +17,7 @@ class App extends React.Component {
     email: undefined,
     userId: "",
     name: "Guest!",
-    profileID: 1,
+    profileID: 0,
     profilePhoto: "https://media1.giphy.com/media/H4uE6w9G1uK4M/source.gif",
     username: undefined
   }
