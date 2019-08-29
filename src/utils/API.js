@@ -215,7 +215,7 @@ export const Auth = {
   
   logout() {
     Cookies.remove("venvi");
-    window.location.href="/"
+    window.location.href="/venvi-fe/"
     // return Cookies.get("venvi")
   },
 }
