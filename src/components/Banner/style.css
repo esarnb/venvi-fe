@@ -1,4 +1,16 @@
 
+.banner-user-title
+{
+  font-family: 'Exo', sans-serif !important;
+  margin-top: 5%;
+}
+
+.banner-user-text
+{
+  position: absolute !important;
+  bottom: 70% !important;
+  left: -25%;
+}
 
 .banner-user{
   height: 800px;
@@ -11,7 +23,6 @@
   position: relative;
   width: 100vw !important;
   max-width: 100% !important;
-
 }
 
 
