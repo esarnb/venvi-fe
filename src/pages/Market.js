@@ -25,16 +25,17 @@ class Market extends React.Component {
     searching:false,
     showResult:true,
     failure: false
-  };
+  }
 }
 
 componentDidMount(){
   this.allListing();
-}
+ }
 
 //get all listing
 allListing = () =>
 {
+    console.log("phillip aaaaaaaaaaaa", this.state.user);
     ListingAPI.getAllListing().then(res=>{
       console.log("all listings databack");
       console.log(res.data);
@@ -65,6 +66,7 @@ editListing = () =>
 // Gets UserBookmarks
 userBookmark = () =>
 {
+
     BookmarkAPI.getBookmarkByUser(this.state.user).then(res=>{
       console.log("all bookmarks databack");
       var bookmarkList = res.data;

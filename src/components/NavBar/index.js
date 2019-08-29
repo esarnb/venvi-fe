@@ -77,7 +77,7 @@ function NavBar(props) {
     <div className={classes.root} id="navbarSection">
       <div id="logo">
         <Typography className={classes.padding} />
-         <img src={logo} alt="logo" />
+         <img src={logo} id = "venvilogo" alt="logo" />
       </div>
       {/* <Row>
       <Col lg = {{span:12}} xs = {{span:12}} sm = {{span:12}}> */}
