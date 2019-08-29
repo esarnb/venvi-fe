@@ -8,11 +8,15 @@ import { Tooltip } from "antd";
 
 
 class UserSetting extends Component {
+    constructor(props) {
+    super(props);
+
 	state = {
         location:"",
         phone:"",
-        userId: 1
-	}
+        userId: props.userId
+	   }
+    }
 
 	handleChange = event => {
 		const { name, value } = event.target;

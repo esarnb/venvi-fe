@@ -9,7 +9,8 @@ import "./style.css"
 
 class ListForm extends Component {
 
-
+constructor(props) {
+super(props);
 state = {
 
     vin: "",
@@ -19,10 +20,11 @@ state = {
     model:"",
     year:"",
     file:"",
-    UserId: 1,
+    UserId: props.user,
     listings: [],
     currentListingId: "",
     validated:false
+}
 }
 
 componentDidMount() {

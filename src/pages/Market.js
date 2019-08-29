@@ -153,7 +153,7 @@ render () {
         finishSearch={this.finishSearch}
         fail={this.searchFail}/>  
         : null}
-        {this.state.showForm ? <ListForm allListing={this.allListing} startSearch={this.startSearch}
+        {this.state.showForm ? <ListForm allListing={this.allListing} userId = {this.state.user} startSearch={this.startSearch}
         finishSearch={this.finishSearch} />: null}
     <div className = "loader">
       {this.state.searching ? <Loader type="Oval" color="#d0b23e" height={60} width={60} /> : null}
