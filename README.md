@@ -15,7 +15,7 @@ A Full-stack Web Application for User-Made Car Reviews and a Car Marketplace.
 This app is built with React. The app is decoupled; the front end GitHub page can be found [here](https://github.com/PhillipChang/venvi-fe), while the back end page can be found [here](https://github.com/chloezhouny/venvi-be).
 
 # The App
-*GIF HERE*
+<img src="public/images/2019-08-29_16-43-36.gif" alt="website gif"></a>
 
 # Features
 * Search for car reviews based on make, model, and year
