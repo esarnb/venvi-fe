@@ -32,53 +32,53 @@ class App extends React.Component {
     // this.getUserByProfileId();
   }
 
-  getUserByProfileId() {
-    console.log("in get user by profileid");
-    var profileID = this.state.profileID;
+  // getUserByProfileId() {
+  //   console.log("in get user by profileid");
+  //   var profileID = this.state.profileID;
 
-    UserAPI.getUser(profileID).then(result => {
-        console.log("data", result);
-        console.log(result.data);
-      this.setState({userId: result.data.id});
-      console.log("state", this.state);                
+  //   UserAPI.getUser(profileID).then(result => {
+  //       console.log("data", result);
+  //       console.log(result.data);
+  //     this.setState({userId: result.data.id});
+  //     console.log("state", this.state);                
         
-    }); 
+  //   }); 
 
-  }
-
-
-  addUser()
-  {
-    let email = this.state.email;
-    let name = this.state.name;
-    let profileID = this.state.profileID;
-    let profilePhoto = this.state.profilePhoto;
-    let username = this.state.username;
+  // }
 
 
-     var newUser =
-            {
-                name: name,
-                username: username,
-                email: email,
-                profilePhoto: profilePhoto,
-                profileID: profileID
-            }
+  // addUser()
+  // {
+  //   let email = this.state.email;
+  //   let name = this.state.name;
+  //   let profileID = this.state.profileID;
+  //   let profilePhoto = this.state.profilePhoto;
+  //   let username = this.state.username;
 
-      UserAPI.addUser(newUser).then(result =>
-    {
-        console.log("saved User");
-        console.log(result);
 
-        //Get back user id
-        console.log("saved user id");
-        console.log(result.data.id);
-        var tempuserid = result.data.id;
-        this.setState({userId: tempuserid});
-        console.log("state", this.state);
-    });
+  //    var newUser =
+  //           {
+  //               name: name,
+  //               username: username,
+  //               email: email,
+  //               profilePhoto: profilePhoto,
+  //               profileID: profileID
+  //           }
 
-  }
+  //     UserAPI.addUser(newUser).then(result =>
+  //   {
+  //       console.log("saved User");
+  //       console.log(result);
+
+  //       //Get back user id
+  //       console.log("saved user id");
+  //       console.log(result.data.id);
+  //       var tempuserid = result.data.id;
+  //       this.setState({userId: tempuserid});
+  //       console.log("state", this.state);
+  //   });
+
+  // }
 
   
 
@@ -110,7 +110,7 @@ class App extends React.Component {
                          
              {this.state.profileID ? (
                <React.Fragment>
-                 <Route exact path='/profile' render={(props) => <Profile {...props} name={this.state.name} profileID = {this.state.profileID} photo={this.state.profilePhoto}/> } />
+                 <Route exact path='/profile' render={(props) => <Profile {...props} id={this.state.userId} name={this.state.name} profileID = {this.state.profileID} photo={this.state.profilePhoto}/> } />
                  <Route exact path='/market' id={this.state.userId} component={Market} /> 
                </React.Fragment>
              ) : <React.Fragment />} 
