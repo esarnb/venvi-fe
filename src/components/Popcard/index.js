@@ -38,6 +38,15 @@ function Popcard(props){
   console.log(first);
   console.log(first.make);
   console.log(first.rating);
+  if (first.rating) = 5
+  {
+    first.rating = "5.0";
+  }
+
+  if (second.rating) = 5
+  {
+    second.rating = "5.0";
+  }
 
 
 
