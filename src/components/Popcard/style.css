@@ -220,6 +220,7 @@
     padding-bottom: 40%;
     padding-left: 40%;
     overflow: hidden;
+    right: 2%;
 }
 
 
@@ -230,7 +231,7 @@
     height: 0;
     margin-left: -500px;
     border-bottom: 500px solid transparent;
-    border-left: 500px solid white;
+    border-left: 500px solid red;
 }
 
 
