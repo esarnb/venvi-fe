@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5c62d1f139355c61f1c4e0a929618a22",
+    "revision": "b5886e6c1b8bb7424c012f40d37ebe7a",
     "url": "/venvi-fe/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/venvi-fe/static/css/2.472da827.chunk.css"
   },
   {
-    "revision": "39b70567adc9b20491a9",
-    "url": "/venvi-fe/static/css/main.b991f334.chunk.css"
+    "revision": "1271fde1eb4eebe468f3",
+    "url": "/venvi-fe/static/css/main.080e43a1.chunk.css"
   },
   {
     "revision": "800a7f164727423decc4",
     "url": "/venvi-fe/static/js/2.0a913459.chunk.js"
   },
   {
-    "revision": "39b70567adc9b20491a9",
-    "url": "/venvi-fe/static/js/main.71053b6e.chunk.js"
+    "revision": "1271fde1eb4eebe468f3",
+    "url": "/venvi-fe/static/js/main.88c11dcc.chunk.js"
   },
   {
     "revision": "7b77bfe0db83383134dc",
@@ -48,12 +48,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/venvi-fe/static/media/left2.e3c86879.jpg"
   },
   {
-    "revision": "1ab08d08969f59f9fda1c29c93d3d184",
-    "url": "/venvi-fe/static/media/right1.1ab08d08.jpg"
+    "revision": "e0d1e8971359d40cfb874df0a4da84b1",
+    "url": "/venvi-fe/static/media/right1.e0d1e897.jpg"
   },
   {
-    "revision": "608ea424c8fe8d838e453b1c828ceb66",
-    "url": "/venvi-fe/static/media/right2.608ea424.jpg"
+    "revision": "3a1a9b4b3887c79a2293418e64839482",
+    "url": "/venvi-fe/static/media/right2.3a1a9b4b.jpg"
   },
   {
     "revision": "df9dfff0d11121e24054bedc9f20e78f",
