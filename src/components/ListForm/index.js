@@ -19,7 +19,7 @@ this.state = {
     model:"",
     year:"",
     file:"",
-    UserId: props.user,
+    UserId: props.userId,
     listings: [],
     currentListingId: "",
     validated:false
