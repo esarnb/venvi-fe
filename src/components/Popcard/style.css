@@ -69,17 +69,20 @@
 
 }
 
+
 .titleSection
 {
 	width: 100%;
 	text-align: left;
 }
 
+
 .ratingright
 {
 	font-size: 3vw;
 	margin-bottom: 0;
 	z-index: 100;
+	font-family: 'Saira Stencil One', cursive;
 }
 
 .out
@@ -104,6 +107,7 @@
 	font-size: 3vw;
 	margin-bottom: 0;
 	z-index: 100;
+	font-family: 'Saira Stencil One', cursive;
 }
 
 .outleft
@@ -222,8 +226,6 @@
     padding-left: 40%;
     overflow: hidden;
     border-color: white;
-
-
 
 }
 
@@ -408,6 +410,7 @@
     padding-left: 15%;
     overflow: hidden;
     border-color: white;
+    left: 0;
 
 }
 
@@ -417,9 +420,9 @@
     display: block;
     width: 0;
     height: 0;
-    margin-left: -175px;
-    border-bottom: 175px solid transparent;
-    border-left: 175px solid white;
+    margin-left: -230px;
+    border-bottom: 230px solid transparent;
+    border-left: 230px solid white;
     z-index: 52;
     left: 0;
  
@@ -442,11 +445,10 @@
 	width: 0;
 	height: 0;
 	border-right: 0px solid transparent;
-	border-left: 400px solid transparent;
-	border-bottom: 450px solid white;
-	position: absolute;
+	border-left: 500px solid transparent;
+	border-bottom: 550px solid white;
 	bottom: 0%;
-	margin-left: 68%;
+	margin-left: 70%;
 }
 /*
 #back2

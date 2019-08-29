@@ -29,8 +29,8 @@ class Banner extends React.Component {
               // background: '#64CBCC',
             }}
           />
-          <TweenOne className="banner-user-title" animation={{ x: -30, opacity: 0, type: 'from' }}>
-           
+          <TweenOne className="banner-user-title bannerTitle" animation={{ x: -30, opacity: 0, type: 'from' }}>
+           BUY ...
           </TweenOne>
           <TweenOne className="banner-user-text" 
             animation={{ x: -30, opacity: 0, type: 'from', delay: 100 }}
@@ -53,8 +53,8 @@ class Banner extends React.Component {
               // background: '#64CBCC',
             }}
           />
-          <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
- 
+          <TweenOne className="banner-user-title bannerTitle" animation={{ y: 30, opacity: 0, type: 'from' }}>
+          SELL ...
           </TweenOne>
           <TweenOne className="banner-user-text" 
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
@@ -78,8 +78,8 @@ class Banner extends React.Component {
 
             }}
           />
-          <TweenOne className="banner-user-title" animation={{ x: -30, opacity: 0, type: 'from' }}>
-
+          <TweenOne className="banner-user-title bannerTitle" id="bannerreview" animation={{ x: -30, opacity: 0, type: 'from' }}>
+          ... AND REVIEW
           </TweenOne>
           <TweenOne className="banner-user-text" 
             animation={{ x: -30, opacity: 0, type: 'from', delay: 100 }}

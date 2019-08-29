@@ -92,16 +92,19 @@ handleDeleteBookmarkByListing = (id) => {
     console.log("bookmark by Listing removed");
     console.log("response back from delete bookmark", res);
     this.userBookmark();
+    this.listingDeletion(id);
 
-    setTimeout(function(){ 
-  ListingAPI.deleteListing(id).then(res=>{
+  })
+} 
+
+listingDeletion = (id) => {
+    ListingAPI.deleteListing(id).then(res=>{
     console.log("deleted file");
     this.userListing();
     this.userBookmark();
-    }, 1000);  
   })
-  })
-} 
+
+}
 
 handleDeleteBookmark = (id) => {
   BookmarkAPI.deleteBookmark(id).then(res=>{
