@@ -11,8 +11,7 @@ class ListForm extends Component {
 
 constructor(props) {
 super(props);
-state = {
-
+this.state = {
     vin: "",
     price:"",
     mileage:"",
