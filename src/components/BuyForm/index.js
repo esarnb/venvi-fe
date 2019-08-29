@@ -77,6 +77,7 @@ class BuyForm extends Component {
 											this.setState({ imgURL:images })
 										
 											this.props.infoBuy(this.state)
+											this.props.finishSearch();
 												
 										})
 								}
