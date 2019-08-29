@@ -98,7 +98,7 @@ handleDeleteBookmarkByListing = (id) => {
     console.log("deleted file");
     this.userListing();
     this.userBookmark();
-    }, 3000);  
+    }, 100);  
   })
   })
 } 
