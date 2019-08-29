@@ -26,3 +26,17 @@ This app is built with React. The app is decoupled; the front end GitHub page ca
 * Buy vehicles by searching for make, model, and year
 * Mark vehicle listings as favorites
 * View your listings and favorites on user profile page
+
+# Technologies Used
+* HTML
+* CSS
+* JavaScript
+* React
+* React Materialize
+* Material UI
+* Ant Design
+* Axios
+* gh-pages
+* Passport
+
+
