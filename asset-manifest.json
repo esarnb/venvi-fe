@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/venvi-fe/static/css/main.df71ef93.chunk.css",
+    "main.css": "/venvi-fe/static/css/main.52f6f627.chunk.css",
     "main.js": "/venvi-fe/static/js/main.71053b6e.chunk.js",
     "main.js.map": "/venvi-fe/static/js/main.71053b6e.chunk.js.map",
     "runtime~main.js": "/venvi-fe/static/js/runtime~main.6dba387e.js",
@@ -9,10 +9,10 @@
     "static/js/2.0a913459.chunk.js": "/venvi-fe/static/js/2.0a913459.chunk.js",
     "static/js/2.0a913459.chunk.js.map": "/venvi-fe/static/js/2.0a913459.chunk.js.map",
     "index.html": "/venvi-fe/index.html",
-    "precache-manifest.9554edfb1777e38dc7ff71ef7247efa7.js": "/venvi-fe/precache-manifest.9554edfb1777e38dc7ff71ef7247efa7.js",
+    "precache-manifest.7ecb47ab6bc952a0edf5eb195c56a48b.js": "/venvi-fe/precache-manifest.7ecb47ab6bc952a0edf5eb195c56a48b.js",
     "service-worker.js": "/venvi-fe/service-worker.js",
     "static/css/2.472da827.chunk.css.map": "/venvi-fe/static/css/2.472da827.chunk.css.map",
-    "static/css/main.df71ef93.chunk.css.map": "/venvi-fe/static/css/main.df71ef93.chunk.css.map",
+    "static/css/main.52f6f627.chunk.css.map": "/venvi-fe/static/css/main.52f6f627.chunk.css.map",
     "static/media/diffuse.jpeg": "/venvi-fe/static/media/diffuse.4e452981.jpeg",
     "static/media/diffuse2.jpeg": "/venvi-fe/static/media/diffuse2.369bf98e.jpeg",
     "static/media/diffuse3.jpeg": "/venvi-fe/static/media/diffuse3.cfbdca81.jpeg",
