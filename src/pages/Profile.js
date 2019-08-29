@@ -122,7 +122,7 @@ editChange = event => {
         <div className= "wrapper2">
           <UserProfile userid={this.state.userName} photo={this.state.photo}/>
           <h2 id="list-title">My Listings </h2>
-          <UserSetting/>
+          <UserSetting userId={this.state.userId} />
           <span id="line"> </span>
           <div id="user-list">
           {this.state.userList ? this.state.userList.map(list =>(
