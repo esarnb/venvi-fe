@@ -25,17 +25,18 @@ class Market extends React.Component {
     searching:false,
     showResult:true,
     failure: false
-  };
+  }
 }
 
 componentDidMount(){
   this.allListing();
-  console.log("phillip aaaaaaaaaaaa", this.state.user);
+ 
 }
 
 //get all listing
 allListing = () =>
 {
+    console.log("phillip aaaaaaaaaaaa", this.state.user);
     ListingAPI.getAllListing().then(res=>{
       console.log("all listings databack");
       console.log(res.data);
