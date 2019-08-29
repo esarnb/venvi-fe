@@ -167,7 +167,7 @@
 		clear: both;
 		width: 50%;
 		position: relative;
-		top: -60%;
+		top: -40%;
 		left: 40%;
 		float: left;
 	}
@@ -179,7 +179,7 @@
 		clear: both;
 		width: 50%;
 		position: relative;
-		top: -75%;
+		top: -60%;
 		left: 40%;
 		float: left;
 	}
@@ -191,7 +191,7 @@
 		clear: both;
 		width: 50%;
 		position: relative;
-		top: -110%;
+		top: -80%;
 		left: 40%;
 		float: left;
 	}
@@ -220,7 +220,6 @@
     padding-bottom: 40%;
     padding-left: 40%;
     overflow: hidden;
-    right: 2%;
 }
 
 
@@ -231,7 +230,7 @@
     height: 0;
     margin-left: -500px;
     border-bottom: 500px solid transparent;
-    border-left: 500px solid red;
+    border-left: 500px solid white;
 }
 
 
@@ -302,7 +301,7 @@
 
 #left
 {
-	margin-top: 35% !important;
+	margin-top: 38% !important;
 	margin-left: 5%;
 }
 
