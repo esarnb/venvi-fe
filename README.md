@@ -39,4 +39,8 @@ This app is built with React. The app is decoupled; the front end GitHub page ca
 * gh-pages
 * Passport
 
-
+# Authors
+* Chloe Zhou | [GitHub Page](https://github.com/chloezhouny)
+* Alfred Chan | [GitHub Page](https://github.com/b0bland)
+* Phillip Chang | [GitHub Page](https://github.com/PhillipChang)
+* Esar Behlum | [GitHub Page](https://github.com/esarnb)
