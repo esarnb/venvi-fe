@@ -30,6 +30,7 @@ class Market extends React.Component {
 
 componentDidMount(){
   this.allListing();
+  console.log("phillip aaaaaaaaaaaa", this.state.user);
 }
 
 //get all listing
@@ -65,6 +66,7 @@ editListing = () =>
 // Gets UserBookmarks
 userBookmark = () =>
 {
+
     BookmarkAPI.getBookmarkByUser(this.state.user).then(res=>{
       console.log("all bookmarks databack");
       var bookmarkList = res.data;
