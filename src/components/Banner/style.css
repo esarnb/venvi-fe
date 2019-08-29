@@ -1,21 +1,11 @@
 
-.bannerTitle
+
+.banner-user-title
 {
   font-family: 'Exo', sans-serif !important;
   margin-top: 5%;
-  background-color: black;
-  opacity: 0.6;
-  width: 53.74% !important;
-  position:absolute;
-  text-align:right !important;
-  padding-right:5% !important;
 }
 
-#bannerreview
-{
-  font-family: 'Exo', sans-serif !important;
-  width: 62.78% !important;
-}
 
 .banner-user-text
 {
