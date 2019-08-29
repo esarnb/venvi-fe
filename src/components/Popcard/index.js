@@ -85,6 +85,7 @@ function Popcard(props){
           <div id="rightContainer" style={{ backgroundImage: props.number === "1" || props.number === "3" ? 
           `url(${right1})`
           : `url(${right2})`}}>
+
             <div id="front"></div>
            <img id="right" alt="car" src={first.image}/>
              <div id="backwrap">
