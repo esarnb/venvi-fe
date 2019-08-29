@@ -11,7 +11,7 @@ class UserSetting extends Component {
     constructor(props) {
     super(props);
 
-	state = {
+	this.state = {
         location:"",
         phone:"",
         userId: props.userId
