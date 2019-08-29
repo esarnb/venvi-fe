@@ -19,7 +19,7 @@ class Market extends React.Component {
     buyshow: false,
     showForm: false,
     // user:1,
-    user:props.id,
+    user: props.id,
     listings: [],
     userBookmarkList: [],
     searching:false,

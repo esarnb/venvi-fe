@@ -16,6 +16,7 @@ class Profile extends React.Component {
       userList: [],
       userId: props.id,
       userName: props.name,
+      profileID: props.profileID,
       // userId: 1,
       photo: props.photo,
       userBookmarkList: [],
