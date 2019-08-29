@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="public/venvi.png" alt="Logo" width="50%"></a>
+    <img src="public/inv_venvi.png" alt="Logo" width="50%"></a>
 </h1>
 <h2 align="center">
 A Full-stack Web Application for User-Made Car Reviews and a Car Marketplace.
