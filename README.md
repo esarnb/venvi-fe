@@ -2,7 +2,8 @@
     <img src="public/inv_venvi.png" alt="Logo" width="50%"></a>
 </h1>
 <h2 align="center">
-A Full-stack Web Application for User-Made Car Reviews and a Car Marketplace.
+A Decoupled MERN Stack Web Application for Consumer Car Reviews and Marketplace.
+    
 
 [Link to Deployment](https://phillipchang.github.io/venvi-fe/)
 
@@ -26,6 +27,33 @@ This app is built with React. The app is decoupled; the front end GitHub page ca
 * Buy vehicles by searching for make, model, and year
 * Mark vehicle listings as favorites
 * View your listings and favorites on user profile page
+
+## Logic
+<hr>
+
+### Getting Started
+
+* Software Requirements
+    * Node.js
+    * MySQL
+    * Passport.js
+        * Generation of own Google Client ID and Secret
+    * AWS S3 Buckets
+        * Generation of own AWS buckets API keys, bucket name and secret access
+
+<b>*** It is important to keep all API Keys and secret access confidential through the storage of keys in a .env file and securing upload of .env in a .gitignore file.</b>
+
+ * Installing all node packages
+    * >Initialize terminal and execute npm i to install all necessary node packages
+
+### Deployment
+
+#### Front-end Deployment
+* Since this is a decoupled app, the deployment of front-end is done through github-pages [Instructions to deploy](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages)
+
+#### Back-end Deployment
+* After successful installation of npm packages, deployment is done on Heroku for free.
+* Be sure to include access keys, api keys and other secrets on Heroku's Config settings.
 
 # Technologies Used
 * HTML
